@@ -1,0 +1,16 @@
+{
+  "name": "Dashboard - Day One Empty",
+  "id": "8b733ca1-8a48-42e5-8d41-0aeff41a8ead",
+  "url": "/",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "dailyBriefing": [],
+    "vital": [],
+    "workout": []
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/page.tsx"
+}

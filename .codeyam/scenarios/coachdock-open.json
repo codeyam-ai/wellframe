@@ -1,0 +1,11 @@
+{
+  "name": "CoachDock - Open",
+  "id": "6d05009f-abca-45f5-9d28-1e91e433f71c",
+  "url": "/isolated-components/CoachDock?s=Open",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CoachDock",
+  "scenarioType": "component"
+}

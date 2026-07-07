@@ -1,0 +1,11 @@
+{
+  "name": "DashboardConsole - Coach Open",
+  "id": "8c765ac0-59fa-4c5a-8c9c-e2f47e61ac9b",
+  "url": "/isolated-components/DashboardConsole?s=CoachOpen",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "DashboardConsole",
+  "scenarioType": "component"
+}

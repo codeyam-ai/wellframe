@@ -1,0 +1,61 @@
+{
+  "name": "Dashboard - Partial Data",
+  "id": "78a1fe81-5455-4f82-9cd0-5dcd75ab74fe",
+  "url": "/",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "dailyBriefing": [
+      {
+        "coachDirective": "[ Directive ] Easy · 30 min / conversational",
+        "coachMessage": "Only sleep and steps synced overnight. *Connect* your strap for HRV and resting HR to sharpen tomorrow's read.",
+        "coachSignature": "// local model · 07:14 · 0 cloud calls",
+        "date": "2026-07-05",
+        "dateLabel": "05 Jul · 07:14",
+        "elevation": "1,240 FT",
+        "headline": "A *solid* base. Fill in the gaps.",
+        "readinessDelta": null,
+        "readinessLabel": "Steady",
+        "readinessScore": 71,
+        "statusLine": "[ STEADY ] · PARTIAL SYNC",
+        "suggestedWorkout": "▶ Easy run · 30 min",
+        "wind": null,
+        "windowLabel": "07–10"
+      }
+    ],
+    "vital": [
+      {
+        "delta": null,
+        "label": "Sleep",
+        "order": 3,
+        "positive": true,
+        "trackPct": 80,
+        "unit": "q80",
+        "value": "7:02"
+      },
+      {
+        "delta": "▲1,400",
+        "label": "Steps",
+        "order": 4,
+        "positive": true,
+        "trackPct": 91,
+        "unit": "91%",
+        "value": "9,120"
+      }
+    ],
+    "workout": [
+      {
+        "distance": "3.4 mi",
+        "pace": "9:38",
+        "photoUrl": "https://loremflickr.com/800/600/running?lock=9&match=all",
+        "title": "Neighborhood Loop",
+        "typeLabel": "▸ Roads · Easy",
+        "vertical": "180 ft"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/page.tsx"
+}

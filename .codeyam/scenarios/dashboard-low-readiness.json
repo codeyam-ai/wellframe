@@ -1,0 +1,79 @@
+{
+  "name": "Dashboard - Low Readiness",
+  "id": "8a9ea809-7d5c-4c4e-9775-08ffc7a23314",
+  "url": "/",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "dailyBriefing": [
+      {
+        "coachDirective": "[ Directive ] Recovery · 25 min / easy / hold load",
+        "coachMessage": "Resting HR is up 7 bpm and HRV dropped two nights running. *Skip* the intervals; a short walk protects Thursday's race.",
+        "coachSignature": "// local model · 06:48 · 0 cloud calls",
+        "date": "2026-07-07",
+        "dateLabel": "07 Jul · 06:48",
+        "elevation": "1,240 FT",
+        "headline": "Back off today. *Recover* first.",
+        "readinessDelta": -19,
+        "readinessLabel": "Compromised",
+        "readinessScore": 38,
+        "statusLine": "[ COMPROMISED ] · -19 VS 7-DAY AVERAGE",
+        "suggestedWorkout": "▶ Take a recovery walk · 25 min",
+        "wind": "11 KT",
+        "windowLabel": null
+      }
+    ],
+    "vital": [
+      {
+        "delta": "▼12",
+        "label": "HRV",
+        "order": 1,
+        "positive": false,
+        "trackPct": 38,
+        "unit": "ms",
+        "value": "41"
+      },
+      {
+        "delta": "▲7",
+        "label": "Resting HR",
+        "order": 2,
+        "positive": false,
+        "trackPct": 74,
+        "unit": "bpm",
+        "value": "55"
+      },
+      {
+        "delta": null,
+        "label": "Sleep",
+        "order": 3,
+        "positive": false,
+        "trackPct": 52,
+        "unit": "q52",
+        "value": "5:38"
+      },
+      {
+        "delta": null,
+        "label": "Steps",
+        "order": 4,
+        "positive": false,
+        "trackPct": 31,
+        "unit": "31%",
+        "value": "3,100"
+      }
+    ],
+    "workout": [
+      {
+        "distance": "6.1 mi",
+        "pace": "6:52",
+        "photoUrl": "https://loremflickr.com/800/600/runner?lock=4&match=all",
+        "title": "Threshold Intervals",
+        "typeLabel": "▸ Track · 6×800",
+        "vertical": "120 ft"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/page.tsx"
+}

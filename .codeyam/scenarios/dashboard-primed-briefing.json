@@ -1,0 +1,79 @@
+{
+  "name": "Dashboard - Primed Briefing",
+  "id": "fcdee3c7-befe-4b22-aee1-87462973e309",
+  "url": "/",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "dailyBriefing": [
+      {
+        "coachDirective": "[ Directive ] Zone 2 · 45 min / ~4.5 mi / 64% of plan",
+        "coachMessage": "HRV has climbed three mornings running while sleep held steady. Hold intensity for *Thursday* and arrive fresh at the Ridge Trail Half.",
+        "coachSignature": "// local model · 07:02 · 0 cloud calls",
+        "date": "2026-07-06",
+        "dateLabel": "06 Jul · 07:02",
+        "elevation": "1,240 FT",
+        "headline": "You're cleared for a *quality* day.",
+        "readinessDelta": 4,
+        "readinessLabel": "Primed",
+        "readinessScore": 82,
+        "statusLine": "[ PRIMED ] · +4 VS 7-DAY AVERAGE",
+        "suggestedWorkout": "▶ Execute Zone 2 · 45 min",
+        "wind": "4 KT",
+        "windowLabel": "07–10"
+      }
+    ],
+    "vital": [
+      {
+        "delta": "▲6",
+        "label": "HRV",
+        "order": 1,
+        "positive": true,
+        "trackPct": 78,
+        "unit": "ms",
+        "value": "68"
+      },
+      {
+        "delta": null,
+        "label": "Resting HR",
+        "order": 2,
+        "positive": false,
+        "trackPct": 46,
+        "unit": "bpm",
+        "value": "48"
+      },
+      {
+        "delta": null,
+        "label": "Sleep",
+        "order": 3,
+        "positive": true,
+        "trackPct": 88,
+        "unit": "q88",
+        "value": "7:24"
+      },
+      {
+        "delta": null,
+        "label": "Steps",
+        "order": 4,
+        "positive": false,
+        "trackPct": 82,
+        "unit": "82%",
+        "value": "8,240"
+      }
+    ],
+    "workout": [
+      {
+        "distance": "8.2 mi",
+        "pace": "8:42",
+        "photoUrl": "https://loremflickr.com/800/600/trail?lock=5&match=all",
+        "title": "Ridgeline Trail Run",
+        "typeLabel": "▸ Ridgeline Trail · Z2",
+        "vertical": "1,240 ft"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/page.tsx"
+}

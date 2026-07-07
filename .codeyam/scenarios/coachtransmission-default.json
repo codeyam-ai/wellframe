@@ -1,0 +1,11 @@
+{
+  "name": "CoachTransmission - Default",
+  "id": "acde8562-8a1c-452d-a617-19a401d59306",
+  "url": "/isolated-components/CoachTransmission?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CoachTransmission",
+  "scenarioType": "component"
+}

@@ -1,0 +1,68 @@
+// Prisma 7 with SQLite via better-sqlite3 driver adapter.
+//
+// IMPORTANT: Use "prisma-client-js" (NOT "prisma-client").
+// The "prisma-client" generator requires a custom output path which
+// breaks Turbopack import resolution and seed script imports.
+// "prisma-client-js" outputs to node_modules/@prisma/client which
+// works everywhere with standard imports.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ──────────────────────────────────────────────
+// Wellframe — Dashboard "Daily Briefing Console"
+//
+// Three flat tables. Each scenario wipes + reseeds a single day's worth of
+// data; production starts empty (day-one onboarding state). The dashboard
+// reads the single most-recent DailyBriefing plus its Vitals and Workout.
+// ──────────────────────────────────────────────
+
+// The core "today" record driving the console. Most fields are nullable so
+// the empty / partial states render gracefully.
+model DailyBriefing {
+  id               Int      @id @default(autoincrement())
+  date             String   // ISO date of the reading, e.g. "2026-07-06"
+  dateLabel        String   // metabar stamp, e.g. "06 Jul · 07:02"
+  readinessScore   Int?     // 0-100 readiness dial value; null = no reading yet
+  readinessLabel   String?  // "Primed" | "Steady" | "Compromised"
+  readinessDelta   Int?     // points vs the 7-day average (may be negative)
+  headline         String?  // serif verdict, e.g. "You're cleared for a quality day."
+  statusLine       String?  // e.g. "PRIMED · +4 VS 7-DAY AVERAGE"
+  elevation        String?  // coordinates strip, e.g. "1,240 FT"
+  wind             String?  // e.g. "4 KT"
+  windowLabel      String?  // training window, e.g. "07–10"
+  suggestedWorkout String?  // primary CTA label, e.g. "Execute Zone 2 · 45 min"
+  coachMessage     String?  // coach transmission blockquote
+  coachDirective   String?  // e.g. "Zone 2 · 45 min / ~4.5 mi / 64% of plan"
+  coachSignature   String?  // e.g. "local model · 07:02 · 0 cloud calls"
+}
+
+// One overnight telemetry row (HRV, Resting HR, Sleep, Steps, ...). Flat, so
+// the partial-data scenario simply seeds fewer rows.
+model Vital {
+  id       Int      @id @default(autoincrement())
+  order    Int      @default(0)  // display order in the telemetry stack
+  label    String   // e.g. "HRV", "Resting HR", "Sleep", "Steps"
+  value    String   // formatted value, e.g. "68", "7:24", "8,240"
+  unit     String?  // e.g. "ms", "bpm"
+  delta    String?  // trend chip, e.g. "▲6"
+  trackPct Int      @default(0)      // 0-100 fill for the track bar
+  positive Boolean  @default(false)  // mint track (good) vs signal-blue track
+}
+
+// Yesterday's logged activity for the Field Log section. Absent (zero rows) in
+// the no-workout scenario.
+model Workout {
+  id        Int     @id @default(autoincrement())
+  title     String  // e.g. "Ridgeline Trail Run"
+  typeLabel String? // photo caption, e.g. "▸ Ridgeline Trail · Z2"
+  photoUrl  String? // documentary photo (forced grayscale in the UI)
+  distance  String? // e.g. "8.2 mi"
+  pace      String? // e.g. "8:42"
+  vertical  String? // e.g. "1,240 ft"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ReadinessHero - Primed",
+  "id": "0cb74099-7c3a-4418-b30b-d6314a4982ee",
+  "url": "/isolated-components/ReadinessHero?s=Primed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ReadinessHero",
+  "scenarioType": "component"
+}

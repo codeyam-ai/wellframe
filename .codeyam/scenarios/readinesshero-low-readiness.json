@@ -1,0 +1,11 @@
+{
+  "name": "ReadinessHero - Low Readiness",
+  "id": "0b11d2f1-f234-448b-ba37-a8bf20469992",
+  "url": "/isolated-components/ReadinessHero?s=LowReadiness",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ReadinessHero",
+  "scenarioType": "component"
+}

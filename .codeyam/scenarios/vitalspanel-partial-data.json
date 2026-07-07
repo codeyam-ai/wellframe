@@ -1,0 +1,11 @@
+{
+  "name": "VitalsPanel - Partial Data",
+  "id": "0c23f6d0-8369-46cb-9d6a-ce3e07eccb4d",
+  "url": "/isolated-components/VitalsPanel?s=PartialData",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "VitalsPanel",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Metabar - Awaiting Sync",
+  "id": "e7bd0b69-0028-4199-98fb-fad6cbb0eddc",
+  "url": "/isolated-components/Metabar?s=AwaitingSync",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Metabar",
+  "scenarioType": "component"
+}

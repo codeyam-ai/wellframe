@@ -1,0 +1,11 @@
+{
+  "name": "VitalsPanel - Default",
+  "id": "390299a0-5a7f-49fc-9041-f80ef84b3ba9",
+  "url": "/isolated-components/VitalsPanel?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "VitalsPanel",
+  "scenarioType": "component"
+}

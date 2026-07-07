@@ -1,0 +1,70 @@
+{
+  "name": "Dashboard - No Workout Yesterday",
+  "id": "d27888f4-82b4-4549-9048-88949cc65fd2",
+  "url": "/",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "dailyBriefing": [
+      {
+        "coachDirective": "[ Directive ] Tempo · 40 min / ~5 mi",
+        "coachMessage": "Yesterday's full rest lifted HRV nicely. *Green light* for a tempo effort today.",
+        "coachSignature": "// local model · 06:59 · 0 cloud calls",
+        "date": "2026-07-04",
+        "dateLabel": "04 Jul · 06:59",
+        "elevation": "1,240 FT",
+        "headline": "Fresh legs. A *rest day* paid off.",
+        "readinessDelta": 2,
+        "readinessLabel": "Primed",
+        "readinessScore": 79,
+        "statusLine": "[ PRIMED ] · +2 VS 7-DAY AVERAGE",
+        "suggestedWorkout": "▶ Tempo run · 40 min",
+        "wind": "3 KT",
+        "windowLabel": "06–09"
+      }
+    ],
+    "vital": [
+      {
+        "delta": "▲9",
+        "label": "HRV",
+        "order": 1,
+        "positive": true,
+        "trackPct": 84,
+        "unit": "ms",
+        "value": "72"
+      },
+      {
+        "delta": "▼2",
+        "label": "Resting HR",
+        "order": 2,
+        "positive": true,
+        "trackPct": 42,
+        "unit": "bpm",
+        "value": "46"
+      },
+      {
+        "delta": null,
+        "label": "Sleep",
+        "order": 3,
+        "positive": true,
+        "trackPct": 94,
+        "unit": "q91",
+        "value": "8:05"
+      },
+      {
+        "delta": null,
+        "label": "Steps",
+        "order": 4,
+        "positive": false,
+        "trackPct": 65,
+        "unit": "65%",
+        "value": "6,540"
+      }
+    ],
+    "workout": []
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/page.tsx"
+}

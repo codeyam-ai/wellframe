@@ -1,0 +1,143 @@
+<meta charset="utf-8">
+<title>Wellframe — Dashboard (Briefing Console)</title>
+<style>
+  :root{
+    --bg:#070809; --bg-2:#0A0C0E; --ink:#EDF0F3; --ink-mute:#8A929C; --ink-fade:#535A63;
+    --rule:rgba(237,240,243,.12); --rule-soft:rgba(237,240,243,.055);
+    --sig:#5B9DFF; --mint:#46E0A6;
+    --sans:'Manrope',ui-sans-serif,-apple-system,system-ui,"Segoe UI",sans-serif;
+    --serif:'New York','Iowan Old Style',Georgia,'Times New Roman',serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .brk{color:var(--ink-fade)}
+  .metabar{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:16px 44px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-mute);text-transform:uppercase;flex:none}
+  .metabar .b{color:var(--ink);letter-spacing:.28em;font-weight:600}
+  .metabar .b i{color:var(--sig);font-style:normal}
+  .metabar .c{text-align:center;letter-spacing:.1em}
+  .metabar .r{text-align:right;letter-spacing:.08em;display:flex;justify-content:flex-end;align-items:center;gap:14px}
+  .metabar .live{color:var(--mint);display:flex;align-items:center;gap:7px}
+  .metabar .live .d{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint)}
+  .deck{flex:1;display:grid;grid-template-columns:minmax(460px,46%) 1fr;min-height:0}
+  .secnum{font-family:var(--mono);font-size:11px;color:var(--sig);letter-spacing:.22em;margin-bottom:20px;text-transform:uppercase}
+  /* left instrument hero */
+  .hero{border-right:1px solid var(--rule);padding:34px 48px;display:flex;flex-direction:column;background:var(--bg-2)}
+  .hero .core{flex:1;display:flex;flex-direction:column;justify-content:center}
+  .hero .dialwrap{position:relative;width:100%;max-width:330px;aspect-ratio:1;margin:0 auto}
+  .hero .dialwrap .v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .hero .dialwrap .v b{font-size:116px;font-weight:500;letter-spacing:-.05em;line-height:1;color:var(--ink);text-shadow:0 0 44px rgba(91,157,255,.28)}
+  .hero .dialwrap .v .s{font-family:var(--mono);font-size:11px;letter-spacing:.46em;color:var(--sig);margin-top:12px;text-transform:uppercase}
+  .hero .coord{display:flex;justify-content:center;gap:34px;margin-top:20px;padding-bottom:28px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-fade)}
+  .hero .coord b{color:var(--ink-mute);font-size:12px}
+  .hero .foot{padding-top:28px}
+  .hero h1{font-family:var(--serif);font-size:34px;font-weight:500;letter-spacing:-.02em;line-height:1.14}
+  .hero h1 em{font-style:italic}
+  .hero .status{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-top:16px}
+  .hero .cta{margin-top:22px;display:flex;gap:14px}
+  .btn{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--rule);background:transparent;color:var(--ink);padding:13px 22px;cursor:pointer}
+  .btn.p{background:var(--sig);color:#04101f;border-color:var(--sig);font-weight:700}
+  /* right telemetry column */
+  .info{display:flex;flex-direction:column}
+  .block{padding:30px 44px;border-bottom:1px solid var(--rule)}
+  .block:last-child{border-bottom:none}
+  .tele .row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .tele .row:last-child{margin-bottom:0}
+  .tele .row .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-fade);width:104px;flex:none}
+  .tele .row .track{flex:1;height:3px;background:rgba(237,240,243,.08);position:relative;overflow:hidden}
+  .tele .row .track i{position:absolute;left:0;top:0;bottom:0;background:var(--sig)}
+  .tele .row .track.g i{background:var(--mint)}
+  .tele .row .v{font-family:var(--mono);font-size:16px;color:var(--ink);width:118px;text-align:right;flex:none;letter-spacing:-.01em}
+  .tele .row .v small{color:var(--ink-fade);font-size:11px}
+  .tele .row .v .up{color:var(--mint)}
+  .coach{flex:1;display:flex;flex-direction:column;justify-content:center}
+  .coach blockquote{font-family:var(--serif);font-size:23px;line-height:1.5;letter-spacing:-.01em;font-weight:500;max-width:34ch}
+  .coach blockquote em{font-style:italic}
+  .coach .meta{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-mute);text-transform:uppercase}
+  .coach .sig{margin-top:6px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-fade);text-transform:uppercase}
+  .field{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center}
+  .plate{position:relative}
+  .plate .img{width:100%;height:128px;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.1) brightness(.82) sepia(.25) hue-rotate(185deg) saturate(1.4)}
+  .photo-run{background-image:url('https://loremflickr.com/640/480/trail,running,mountain'),url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc2NDAnIGhlaWdodD0nNDgwJyB2aWV3Qm94PScwIDAgNjQwIDQ4MCc+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSdzJyB4MT0nMCcgeTE9JzAnIHgyPScwJyB5Mj0nMSc+PHN0b3Agb2Zmc2V0PScwJyBzdG9wLWNvbG9yPScjMjAyMzNBJy8+PHN0b3Agb2Zmc2V0PScwLjUnIHN0b3AtY29sb3I9JyMzQjMzNTcnLz48c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9JyM2QjRBNUMnLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0nNjQwJyBoZWlnaHQ9JzQ4MCcgZmlsbD0ndXJsKCNzKScvPjxjaXJjbGUgY3g9JzQ3MCcgY3k9JzE1OCcgcj0nNDAnIGZpbGw9JyNGM0M0QTAnIG9wYWNpdHk9JzAuNTUnLz48cGF0aCBkPSdNMCAzMDAgTDEyMCAyNTAgTDI0MCAyOTIgTDM2MCAyNDAgTDUwMCAzMDAgTDY0MCAyNjIgTDY0MCA0ODAgTDAgNDgwIFonIGZpbGw9JyMyRTJBNDQnLz48cGF0aCBkPSdNMCAzNjAgTDE2MCAzMjAgTDMyMCAzNjIgTDQ2MCAzMzAgTDY0MCAzNzIgTDY0MCA0ODAgTDAgNDgwIFonIGZpbGw9JyMyNDFGMzYnLz48cGF0aCBkPSdNMCA0ODAgTDY0MCA0ODAgTDY0MCA0MTggUTQyMCAzNzggMzAwIDQzMCBRMTgwIDQ3MiAwIDQyOCBaJyBmaWxsPScjMTcxNDI2Jy8+PHBhdGggZD0nTTI5NiA0ODAgUTMyMiA0MDIgMzYwIDM2MCBRMzk4IDMyMCA0MjAgMzAwJyBzdHJva2U9JyNDOUI2RDYnIHN0cm9rZS13aWR0aD0nMTQnIGZpbGw9J25vbmUnIG9wYWNpdHk9JzAuNicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJy8+PC9zdmc+');}
+  .plate .cap{position:absolute;bottom:0;left:0;right:0;padding:7px 10px;background:linear-gradient(transparent,rgba(7,8,9,.9));font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sig)}
+  .field h3{font-family:var(--serif);font-size:23px;font-weight:500;letter-spacing:-.02em;margin-bottom:16px}
+  .field .stats{display:flex;gap:30px}
+  .field .stats .s .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-fade)}
+  .field .stats .s .val{font-family:var(--mono);font-size:22px;color:var(--ink);margin-top:7px;letter-spacing:-.01em}
+</style>
+<div class="metabar">
+  <div class="b">WELL<i>FRAME</i></div>
+  <div class="c">Daily Briefing · Console</div>
+  <div class="r"><span>06 Jul · 07:02</span><span class="live"><span class="d"></span>LOCAL LINK</span></div>
+</div>
+
+<div class="deck">
+  <!-- left instrument hero -->
+  <section class="hero">
+    <div class="secnum">01 / Readiness</div>
+    <div class="core">
+    <div class="dialwrap">
+      <svg width="100%" height="100%" viewBox="0 0 400 400">
+        <circle cx="200" cy="200" r="176" fill="none" stroke="rgba(237,240,243,.05)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="146" fill="none" stroke="rgba(237,240,243,.035)" stroke-width="1"/>
+        <g stroke="rgba(237,240,243,.26)" stroke-width="1.5">
+          <line x1="200" y1="14" x2="200" y2="34"/><line x1="200" y1="366" x2="200" y2="386"/>
+          <line x1="14" y1="200" x2="34" y2="200"/><line x1="366" y1="200" x2="386" y2="200"/>
+        </g>
+        <g stroke="rgba(237,240,243,.13)" stroke-width="1">
+          <line x1="301" y1="50" x2="294" y2="62"/><line x1="351" y1="136" x2="339" y2="142"/>
+          <line x1="351" y1="264" x2="339" y2="258"/><line x1="301" y1="350" x2="294" y2="338"/>
+          <line x1="99" y1="350" x2="106" y2="338"/><line x1="49" y1="264" x2="61" y2="258"/>
+          <line x1="49" y1="136" x2="61" y2="142"/><line x1="99" y1="50" x2="106" y2="62"/>
+        </g>
+        <circle cx="200" cy="200" r="176" fill="none" stroke="var(--sig)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1105.8" stroke-dashoffset="199" transform="rotate(-90 200 200)"/>
+      </svg>
+      <div class="v"><b>82</b><span class="s">Primed</span></div>
+    </div>
+    <div class="coord"><span>ELEV <b>1,240 FT</b></span><span>WIND <b>4 KT</b></span><span>WINDOW <b>07–10</b></span></div>
+    <div class="foot">
+      <h1>You're cleared for a <em>quality</em> day.</h1>
+      <div class="status"><span class="brk">[ </span>PRIMED<span class="brk"> ]</span> &nbsp;·&nbsp; +4 VS 7-DAY AVERAGE</div>
+      <div class="cta"><button class="btn p">▶ Execute Zone 2 · 45 min</button><button class="btn">Query coach ⌘K</button></div>
+    </div>
+    </div>
+  </section>
+
+  <!-- right telemetry column -->
+  <section class="info">
+    <div class="block tele">
+      <div class="secnum">02 / Vitals · Overnight</div>
+      <div class="row"><span class="k">HRV</span><span class="track g"><i style="width:78%"></i></span><span class="v">68<small> ms</small> <span class="up">▲6</span></span></div>
+      <div class="row"><span class="k">Resting HR</span><span class="track"><i style="width:46%"></i></span><span class="v">48<small> bpm</small></span></div>
+      <div class="row"><span class="k">Sleep</span><span class="track g"><i style="width:88%"></i></span><span class="v">7:24 <small>q88</small></span></div>
+      <div class="row"><span class="k">Steps</span><span class="track"><i style="width:82%"></i></span><span class="v">8,240 <small>82%</small></span></div>
+    </div>
+
+    <div class="block coach">
+      <div class="secnum">03 / Coach · Transmission</div>
+      <blockquote>"HRV has climbed three mornings running while sleep held steady. Hold intensity for <em>Thursday</em> and arrive fresh at the Ridge Trail Half."</blockquote>
+      <div class="meta"><span class="brk">[ Directive ]</span> Zone 2 · 45 min &nbsp;/&nbsp; ~4.5 mi &nbsp;/&nbsp; 64% of plan</div>
+      <div class="sig">// local model · 07:02 · 0 cloud calls</div>
+    </div>
+
+    <div class="block">
+      <div class="secnum">04 / Field Log · Yesterday</div>
+      <div class="field">
+        <figure class="plate">
+          <div class="img photo-run"></div>
+          <figcaption class="cap">▸ Ridgeline Trail · Z2</figcaption>
+        </figure>
+        <div>
+          <h3>Ridgeline Trail Run</h3>
+          <div class="stats">
+            <div class="s"><div class="k">Distance</div><div class="val">8.2 mi</div></div>
+            <div class="s"><div class="k">Pace</div><div class="val">8:42</div></div>
+            <div class="s"><div class="k">Vertical</div><div class="val">1,240 ft</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

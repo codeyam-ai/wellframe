@@ -1,0 +1,11 @@
+{
+  "name": "EmptyBriefing - Default",
+  "id": "24acd8d6-c412-48b4-ad91-64555503646b",
+  "url": "/isolated-components/EmptyBriefing?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "EmptyBriefing",
+  "scenarioType": "component"
+}

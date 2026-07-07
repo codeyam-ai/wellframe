@@ -1,0 +1,11 @@
+{
+  "name": "Metabar - Default",
+  "id": "c7676d8e-8843-429d-a200-5b332e839070",
+  "url": "/isolated-components/Metabar?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Metabar",
+  "scenarioType": "component"
+}

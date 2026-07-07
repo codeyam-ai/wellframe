@@ -1,0 +1,344 @@
+{
+  "circumference › computes a custom-radius circumference": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "circumference › computes the default-radius circumference": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "clampPct › clamps a negative value to zero": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "clampPct › clamps an over-max value to one hundred": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "clampPct › preserves the zero and hundred boundaries": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "clampPct › returns an in-range value unchanged": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "clampPct › returns zero for NaN": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "emphasize › does not emit raw tags from an escaped span": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "emphasize › escapes angle brackets and ampersands": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "emphasize › handles the empty string": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "emphasize › passes through plain text": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "emphasize › wraps an asterisk span in em": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "emphasize › wraps multiple spans": {
+    "file": "components/dashboard/format.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "readinessDashOffset › clamps a negative score to full circumference": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "readinessDashOffset › clamps an over-max score to zero offset": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "readinessDashOffset › matches the reference offset near eighty-two": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "readinessDashOffset › returns full circumference for NaN": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "readinessDashOffset › returns the full circumference at a zero score": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  },
+  "readinessDashOffset › returns zero offset at a full score": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-07T14:39:16.020137694+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-07T13:40:51.387104421+00:00",
+        "kind": "full"
+      }
+    ]
+  }
+}

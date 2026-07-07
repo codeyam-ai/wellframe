@@ -1,0 +1,255 @@
+{
+  "$comment": "Per-developer settings (port, provider, proxy ports, startCommand, etc.) belong in editor.local.json. That file is gitignored and is deep-merged on top of this one at load time. See CLAUDE.md or run `codeyam-editor editor config-show` to inspect the effective config.",
+  "apps": [
+    {
+      "dir": ".",
+      "name": "Wellframe",
+      "port": 3000,
+      "startCommand": "npm run dev",
+      "type": "web"
+    }
+  ],
+  "audit": {
+    "allowedDocumentationOnlySlugs": [
+      "post-merge-drift-sweep"
+    ],
+    "branchBaseRef": "main",
+    "cargoCoverage": {
+      "enabled": true
+    },
+    "glossarySkip": [
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "_empty_mode_table",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "_kv_pairs_to_int_dict",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "_string_list",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "cli_command",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "load_step_metadata",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/_step_metadata.py",
+        "name": "resolve_mode_table",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "_preview_hint",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "_slug_label",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "git_add_paths_are_plans_only",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "main",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-pretool-hook.py",
+        "name": "staged_paths_are_plans_only",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "_terminal_signal_missing",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "detect_event",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "label_signals_pre_commit_warning",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "label_signals_user_feedback_phase",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "log_event",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "main",
+        "reason": "derive-generated"
+      },
+      {
+        "filePath": ".claude/hooks/editor-step-hook.py",
+        "name": "resolve_mode",
+        "reason": "derive-generated"
+      }
+    ],
+    "itemShape": {
+      "changeWithoutVerify": "note",
+      "compound": "warning",
+      "vague": "warning"
+    },
+    "scenarioFreshnessDays": 14,
+    "stepBudget": {
+      "maxChecklistItems": 6,
+      "maxLines": 80,
+      "severity": "warning"
+    },
+    "testNamingConventions": {}
+  },
+  "catalogAutoAdd": {
+    "allow": [],
+    "deny": []
+  },
+  "cleanup": {
+    "completedPlanRetention": 20,
+    "logCompress": true,
+    "logDeleteDays": 30,
+    "logRotateDays": 7,
+    "screenshotPruneOrphans": true,
+    "tmpDeleteHours": 24
+  },
+  "coverageThresholds": {
+    "global": {
+      "minLinePercent": 90.0
+    }
+  },
+  "database": null,
+  "defaultScreenSize": "Desktop",
+  "env": {},
+  "files": {
+    "eventLogMaxBytes": null,
+    "journalShardEntries": null,
+    "logKeepRotated": null,
+    "textLogMaxBytes": null
+  },
+  "formatters": [],
+  "git": {
+    "commitQueue": {
+      "enabled": true,
+      "heartbeatIntervalSec": 15,
+      "machineAliveHookTimeoutMs": 5000,
+      "maxHookPrunePerSweep": 10,
+      "maxProgressStallSec": 900,
+      "pollIntervalMs": 2000,
+      "serverHeartbeatIntervalSec": 60,
+      "waitTimeoutSec": 300
+    },
+    "planClaims": {
+      "enabled": true,
+      "fetchIntervalSec": 3
+    }
+  },
+  "hooks": {},
+  "port": 3000,
+  "projectDescription": "# Wellframe (Working Title)\n\n## Product Requirements Document (PRD)\n\n**Version:** 1.0\n**Platform:** Desktop (macOS first, Windows/Linux later) + lightweight iOS companion app\n**Tech Stack:** Tauri (preferred) or Electron + React + TypeScript\n\n---\n\n# Vision\n\nBuild the most beautiful, privacy-first AI wellness application available.\n\nUnlike existing health dashboards that lock users into ecosystems or require uploading personal data to the cloud, Wellframe is a local-first desktop application that gives users complete ownership of their health information while providing intelligent coaching powered by whichever AI model they choose.\n\nThe application should feel less like a medical record and more like having a thoughtful performance coach sitting beside you throughout the day.\n\nEverything should prioritize:\n\n* Privacy\n* Calmness\n* Simplicity\n* Beautiful design\n* User control\n* Long-term insights over short-term notifications\n\nThe application should feel inspired by companies like Vercel, Linear, Raycast, Arc, and Notion rather than traditional healthcare software.\n\n---\n\n# Design Principles\n\n## Local First\n\nThe user's data belongs to them.\n\nThe application should function without creating an account.\n\nNo backend should be required for the core experience.\n\nUsers should be able to:\n\n* Export everything\n* Delete everything\n* Inspect everything sent to AI\n* Choose their AI provider\n* Run entirely offline with local models if desired\n\n---\n\n## AI Is A Coach, Not A Chatbot\n\nThe AI should understand context.\n\nInstead of waiting for questions, it should proactively identify trends.\n\nExamples:\n\n\"I noticed your resting heart rate has increased for four days while your sleep has decreased.\"\n\n\"You've consistently run better after taking Wednesdays as recovery days.\"\n\n\"Your long runs appear to recover faster when protein intake exceeds 120g.\"\n\nThe coach should feel observant rather than verbose.\n\n---\n\n## Beautiful Software\n\nThe interface should feel like premium productivity software.\n\nGoals:\n\n* minimal\n* spacious\n* typography-first\n* fast\n* elegant\n* delightful animations\n* subtle motion\n* tasteful gradients\n* extremely polished\n\nNever feel clinical.\n\n---\n\n# Target Users\n\nPrimary:\n\n* runners\n* cyclists\n* climbers\n* lifters\n* hikers\n* busy professionals\n* founders\n* engineers\n* quantified-self enthusiasts\n\nSecondary:\n\n* casual fitness users\n* Apple Health users\n* Garmin users\n* Strava users\n* Oura users\n\n---\n\n# Core Value Proposition\n\nBring together all of your health data into one beautiful local dashboard with an AI coach that actually understands your long-term health.\n\n---\n\n# Core Features\n\n## Dashboard\n\nLanding page.\n\nContains:\n\nToday's readiness score\n\nSleep summary\n\nRecovery summary\n\nSteps\n\nActive minutes\n\nToday's workouts\n\nWeather\n\nCalendar integration (optional)\n\nUpcoming race goals\n\nSuggested workout\n\nCoach summary\n\nRecent trends\n\nThe dashboard should immediately answer:\n\n\"How am I doing today?\"\n\n---\n\n## Activity Timeline\n\nChronological timeline showing:\n\nRuns\n\nWalks\n\nBike rides\n\nStrength workouts\n\nYoga\n\nStretching\n\nRecovery\n\nJournal entries\n\nMood\n\nMeals\n\nBody weight\n\nPhotos\n\nNotes\n\nEverything should be filterable.\n\n---\n\n## Trends\n\nWeekly\n\nMonthly\n\nYearly\n\nExamples:\n\nAverage sleep\n\nHRV\n\nResting HR\n\nMileage\n\nVO2 Max\n\nTraining load\n\nConsistency\n\nStep averages\n\nSleep debt\n\nRecovery\n\nNutrition\n\nBody weight\n\nMood\n\nStress\n\nCustom charts.\n\n---\n\n## AI Coach\n\nThe centerpiece of the application.\n\nShould understand:\n\nGoals\n\nInjuries\n\nRecent workouts\n\nRecovery\n\nSleep\n\nStress\n\nHabits\n\nTravel\n\nWeather\n\nCalendar\n\nExamples:\n\n\"What should I do today?\"\n\n\"Am I overtraining?\"\n\n\"Why am I more tired lately?\"\n\n\"Prepare me for my trail race.\"\n\n\"What patterns are you seeing?\"\n\n\"How can I sleep better?\"\n\n\"Why did my pace suddenly improve?\"\n\nThe AI should use structured tools rather than relying entirely on prompt engineering.\n\n---\n\n## Daily Check-in\n\nMorning\n\nEnergy\n\nMood\n\nSleep quality\n\nSoreness\n\nStress\n\nMotivation\n\nEvening\n\nReflection\n\nWins\n\nChallenges\n\nNutrition\n\nRecovery\n\nNotes\n\nEverything becomes searchable.\n\n---\n\n## Goals\n\nExamples:\n\nRun 500 miles this year\n\nComplete marathon\n\nImprove VO2 Max\n\nSleep 8 hours\n\nWalk 10,000 steps\n\nStrength train 3x/week\n\nDrink more water\n\nMeditate daily\n\nCustom goals.\n\n---\n\n## Journal\n\nMarkdown editor.\n\nSupports:\n\nphotos\n\nvoice transcription\n\ntags\n\nAI summaries\n\ndaily prompts\n\nsearch\n\nlinked workouts\n\n---\n\n## Recovery Center\n\nCombines:\n\nSleep\n\nHRV\n\nRHR\n\nTraining Load\n\nStress\n\nFatigue\n\nMood\n\nSuggests:\n\nRecovery runs\n\nRest day\n\nMobility\n\nStretching\n\nWalks\n\nHydration\n\nNutrition\n\n---\n\n## Health Vault\n\nEvery piece of imported data.\n\nUser can:\n\nbrowse\n\nedit\n\ndelete\n\nexport\n\nmerge\n\ninspect\n\nNothing hidden.\n\n---\n\n## AI Prompt Inspector\n\nEvery AI request shows:\n\nContext included\n\nPrompt\n\nTool outputs\n\nResponse\n\nEstimated cost\n\nModel used\n\nPrivacy warnings\n\nAllows editing before sending.\n\n---\n\n# Integrations\n\n## Apple Health\n\nRequires iOS companion application.\n\nImports:\n\nSteps\n\nSleep\n\nHeart rate\n\nResting HR\n\nHRV\n\nVO2 Max\n\nWeight\n\nWorkouts\n\nEnergy\n\nFlights climbed\n\nWalking steadiness\n\nBlood oxygen\n\nRespiration\n\nMindfulness\n\nMobility metrics\n\nCycle tracking (optional)\n\n---\n\n## Strava\n\nOAuth.\n\nImport:\n\nActivities\n\nRoutes\n\nGear\n\nPhotos\n\nPRs\n\nSplits\n\nElevation\n\nSegments\n\n---\n\n## Garmin\n\nFuture.\n\n---\n\n## Oura\n\nFuture.\n\n---\n\n## WHOOP\n\nFuture.\n\n---\n\n## Polar\n\nFuture.\n\n---\n\n## Fitbit\n\nFuture.\n\n---\n\n## CSV Import\n\nAny spreadsheet.\n\n---\n\n# AI Providers\n\nPluggable architecture.\n\nSupports:\n\nOpenAI\n\nAnthropic Claude\n\nGoogle Gemini\n\nOllama\n\nLM Studio\n\nFuture providers via plugins.\n\nUsers bring their own API keys.\n\n---\n\n# Local AI\n\nSupport:\n\nOllama\n\nLM Studio\n\nFuture MCP-compatible local models\n\nNo cloud required.\n\n---\n\n# Architecture\n\nDesktop\n\nTauri\n\nReact\n\nTypeScript\n\nVite\n\nTanStack Router\n\nTanStack Query\n\nTailwind\n\nshadcn/ui\n\nMotion\n\nSQLite\n\nSQLCipher\n\nReact Hook Form\n\nZod\n\nReact Markdown\n\nChart.js or Observable Plot\n\n---\n\n# Storage\n\nEncrypted SQLite.\n\nTables include:\n\nactivities\n\nsleep\n\nnutrition\n\nbiometrics\n\nheart_rate\n\nhrv\n\ngoals\n\njournal\n\ncoach_sessions\n\nmood\n\nintegrations\n\nsettings\n\nweights\n\ninjuries\n\nattachments\n\nai_history\n\nEverything indexed.\n\n---\n\n# Coach Architecture\n\nContext Builder\n\n↓\n\nRelevant History Retrieval\n\n↓\n\nTool Execution\n\n↓\n\nPrompt Generation\n\n↓\n\nAI Provider\n\n↓\n\nStructured Output\n\n↓\n\nCoach UI\n\nTools include:\n\nAnalyze sleep\n\nAnalyze trends\n\nRetrieve workouts\n\nSummarize journal\n\nCompute training load\n\nEstimate fatigue\n\nRecommend recovery\n\nFind similar historical weeks\n\nGenerate plan\n\n---\n\n# Privacy Features\n\nLocal-first\n\nEncrypted database\n\nNo required account\n\nOffline mode\n\nPrompt inspector\n\nPer-provider permissions\n\nExport everything\n\nDelete everything\n\nNever send raw health data mode\n\nSummary-only AI mode\n\nPII redaction\n\n---\n\n# Themes\n\nLight\n\nDark\n\nHigh Contrast\n\nSystem\n\n---\n\n# Design Language\n\nInspired by:\n\nVercel\n\nLinear\n\nRaycast\n\nArc\n\nGeist\n\nNotion\n\nApple Human Interface Guidelines\n\nCharacteristics:\n\nLarge typography\n\nRounded cards\n\nThin borders\n\nSoft shadows\n\nElegant spacing\n\nMinimal color\n\nMotion with purpose\n\nExcellent empty states\n\nKeyboard-first interactions\n\nCommand palette\n\nBeautiful charts\n\nSubtle gradients\n\n---\n\n# Keyboard Shortcuts\n\n⌘K\n\nOpen command palette\n\n⌘J\n\nOpen journal\n\n⌘/\n\nAsk coach\n\n⌘1-8\n\nNavigate sections\n\nSpace\n\nQuick add\n\n---\n\n# Nice-to-Have Features\n\nWeather-aware coaching\n\nTravel mode\n\nTimezone adjustment\n\nMenstrual cycle insights\n\nNutrition logging\n\nRecipe recommendations\n\nApple Calendar integration\n\nGoogle Calendar integration\n\nHabit tracking\n\nMedication reminders\n\nHydration tracking\n\nMood visualization\n\nExport to Markdown\n\nWeekly PDF summaries\n\nHome screen widgets\n\nDesktop widgets\n\nMenu bar app\n\nApple Watch companion\n\n---\n\n# Future AI Features\n\nVoice conversations\n\nReal-time coaching\n\nMeeting-aware recommendations\n\nScreen-aware coaching\n\nDaily briefing\n\nWeekly review\n\nMonthly review\n\nTraining plan generation\n\nRace prediction\n\nRecovery forecasting\n\nHabit prediction\n\nLong-term health trend detection\n\nAnomaly detection\n\nPersonal knowledge graph\n\nMemory across years\n\nNatural-language analytics\n\n---\n\n# Stretch Vision\n\nWellframe becomes the operating system for personal health.\n\nInstead of dozens of disconnected health applications, wearable dashboards, and AI chats, users have one trusted place where every piece of health information lives, every trend is understandable, and every recommendation is personalized.\n\nThe application should become more valuable every day it is used, learning from years of health history while always keeping that history under the user's control.\n\nThe experience should feel like the intersection of Apple Health, Strava, Oura, Notion, and ChatGPT—reimagined as a beautiful, local-first desktop application built for people who care deeply about understanding themselves.\n",
+  "projectTitle": "Wellframe",
+  "provider": "claude",
+  "proxy": {
+    "controlPort": 14199,
+    "dbPort": 14101,
+    "httpPort": 14100,
+    "httpsPassthrough": [],
+    "httpsPreview": false
+  },
+  "runnerTimeout": {
+    "floorSeconds": 900,
+    "headroomSeconds": 90,
+    "mode": "auto"
+  },
+  "scenarios": {
+    "dir": ".codeyam/scenarios"
+  },
+  "screenSizes": {
+    "Desktop": {
+      "height": 900,
+      "width": 1440
+    },
+    "Laptop": {
+      "height": 800,
+      "width": 1280
+    },
+    "Mobile": {
+      "height": 844,
+      "width": 390
+    },
+    "Tablet": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  "server": {
+    "autoRestartOnStaleBinary": true,
+    "maxRssMb": 6144
+  },
+  "silenceHookStderr": false,
+  "startCommand": "npm run dev",
+  "staticChecks": [
+    {
+      "command": "npx tsc --noEmit",
+      "description": "TypeScript strict type-check",
+      "excludePatterns": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**"
+      ],
+      "filePatterns": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "name": "tsc"
+    }
+  ],
+  "testParallelism": {
+    "loadGuard": true
+  },
+  "testPartitions": [],
+  "testRunners": [
+    {
+      "changedCommand": "npx vitest run --changed --reporter=json",
+      "command": "npx vitest run --reporter=json",
+      "excludePatterns": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**"
+      ],
+      "name": "tests",
+      "outputFormat": "vitest-json",
+      "sourceFilePatterns": [
+        "**/*.{ts,tsx,js,jsx}"
+      ],
+      "targetedCommand": "npx vitest run -t \"{test_names}\" --reporter=json",
+      "testFilePatterns": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.test.js",
+        "**/*.test.jsx"
+      ]
+    }
+  ]
+}

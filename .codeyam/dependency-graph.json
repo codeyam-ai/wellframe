@@ -1,0 +1,645 @@
+{
+  "files": {
+    ".next/dev/types/routes.d.ts": {
+      "imports": [],
+      "importedBy": [
+        "next-env.d.ts"
+      ]
+    },
+    "next.config.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/dashboard/ReadinessHero.tsx": {
+      "imports": [
+        "components/dashboard/dial.ts",
+        "components/dashboard/format.ts"
+      ],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/ReadinessHero/page.tsx"
+      ]
+    },
+    "components/dashboard/Stat.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/FieldLog.tsx",
+        "app/isolated-components/Stat/page.tsx"
+      ]
+    },
+    "app/codeyam-isolate/layout.tsx": {
+      "imports": [],
+      "importedBy": []
+    },
+    ".claude/hooks/editor-step-hook.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/lib/dashboard.ts": {
+      "imports": [
+        "app/lib/prisma.ts"
+      ],
+      "importedBy": [
+        "app/page.tsx",
+        "app/api/dashboard/route.ts"
+      ]
+    },
+    "app/isolated-components/EmptyBriefing/page.tsx": {
+      "imports": [
+        "components/dashboard/EmptyBriefing.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/FieldLog.tsx": {
+      "imports": [
+        "components/dashboard/Stat.tsx"
+      ],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/FieldLog/page.tsx"
+      ]
+    },
+    "components/dashboard/Metabar.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/Metabar/page.tsx"
+      ]
+    },
+    "app/isolated-components/CoachTransmission/page.tsx": {
+      "imports": [
+        "components/dashboard/CoachTransmission.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Metabar/page.tsx": {
+      "imports": [
+        "components/dashboard/Metabar.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/find-last-session.mjs": {
+      "imports": [
+        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ReadinessHero/page.tsx": {
+      "imports": [
+        "components/dashboard/ReadinessHero.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/layout.tsx": {
+      "imports": [
+        "app/globals.css"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/VitalsPanel.tsx": {
+      "imports": [
+        "components/dashboard/format.ts"
+      ],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/VitalsPanel/page.tsx"
+      ]
+    },
+    "components/dashboard/CoachDock.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/CoachDock/page.tsx"
+      ]
+    },
+    "components/dashboard/CoachTransmission.tsx": {
+      "imports": [
+        "components/dashboard/format.ts"
+      ],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/CoachTransmission/page.tsx"
+      ]
+    },
+    "app/api/dashboard/route.ts": {
+      "imports": [
+        "app/lib/dashboard.ts"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/extract-session.mjs": {
+      "imports": [
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs"
+      ],
+      "importedBy": []
+    },
+    "ui/src/helpers/stepLabels.generated.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs": {
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/review-session/scripts/find-last-session.mjs"
+      ]
+    },
+    "app/isolated-components/FieldLog/page.tsx": {
+      "imports": [
+        "components/dashboard/FieldLog.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/layout.tsx": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/globals.css": {
+      "imports": [],
+      "importedBy": [
+        "app/layout.tsx"
+      ]
+    },
+    ".claude/hooks/editor-pretool-hook.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/isolated-components/VitalsPanel/page.tsx": {
+      "imports": [
+        "components/dashboard/VitalsPanel.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/page.tsx": {
+      "imports": [
+        "app/lib/dashboard.ts",
+        "components/dashboard/DashboardConsole.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/DashboardConsole.tsx": {
+      "imports": [
+        "components/dashboard/Metabar.tsx",
+        "components/dashboard/ReadinessHero.tsx",
+        "components/dashboard/VitalsPanel.tsx",
+        "components/dashboard/CoachTransmission.tsx",
+        "components/dashboard/FieldLog.tsx",
+        "components/dashboard/EmptyBriefing.tsx",
+        "components/dashboard/CoachDock.tsx"
+      ],
+      "importedBy": [
+        "app/page.tsx",
+        "app/isolated-components/DashboardConsole/page.tsx"
+      ]
+    },
+    "prisma/seed.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/lib/prisma.ts": {
+      "imports": [],
+      "importedBy": [
+        "app/lib/dashboard.ts"
+      ]
+    },
+    ".claude/skills/review-session/scripts/extract-session-helpers.mjs": {
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/review-session/scripts/extract-session.mjs"
+      ]
+    },
+    "prisma.config.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/isolated-components/DashboardConsole/page.tsx": {
+      "imports": [
+        "components/dashboard/DashboardConsole.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/hooks/_step_metadata.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/dashboard/dial.test.ts": {
+      "imports": [
+        "components/dashboard/dial.ts"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/format.test.ts": {
+      "imports": [
+        "components/dashboard/format.ts"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/format.ts": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/CoachTransmission.tsx",
+        "components/dashboard/VitalsPanel.tsx",
+        "components/dashboard/format.test.ts",
+        "components/dashboard/ReadinessHero.tsx"
+      ]
+    },
+    "eslint.config.mjs": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/dashboard/dial.ts": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/dial.test.ts",
+        "components/dashboard/ReadinessHero.tsx"
+      ]
+    },
+    "app/isolated-components/Stat/page.tsx": {
+      "imports": [
+        "components/dashboard/Stat.tsx"
+      ],
+      "importedBy": []
+    },
+    "next-env.d.ts": {
+      "imports": [
+        ".next/dev/types/routes.d.ts"
+      ],
+      "importedBy": []
+    },
+    "vitest.config.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/dashboard/EmptyBriefing.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/EmptyBriefing/page.tsx"
+      ]
+    },
+    "app/isolated-components/CoachDock/page.tsx": {
+      "imports": [
+        "components/dashboard/CoachDock.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/scenario/[slug]/page.tsx": {
+      "imports": [],
+      "importedBy": []
+    },
+    "postcss.config.mjs": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/api/__codeyam_revalidate/route.ts": {
+      "imports": [],
+      "importedBy": []
+    }
+  },
+  "entities": {
+    "app/isolated-components/VitalsPanel/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/VitalsPanel/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/VitalsPanel.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Metabar/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Metabar/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/Metabar.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/CoachTransmission.tsx::__file_root__": {
+      "filePath": "components/dashboard/CoachTransmission.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/format.ts::emphasize"
+      ],
+      "importedBy": [
+        "app/isolated-components/CoachTransmission/page.tsx::__file_root__"
+      ]
+    },
+    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath": {
+      "filePath": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
+      "name": "claudeProjectHashFromPath",
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__"
+      ]
+    },
+    "components/dashboard/Stat.tsx::__file_root__": {
+      "filePath": "components/dashboard/Stat.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/Stat/page.tsx::__file_root__"
+      ]
+    },
+    "app/lib/prisma.ts::__file_root__": {
+      "filePath": "app/lib/prisma.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/lib/dashboard.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/CoachDock/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CoachDock/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/CoachDock.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/lib/dashboard.ts::getDashboard": {
+      "filePath": "app/lib/dashboard.ts",
+      "name": "getDashboard",
+      "imports": [],
+      "importedBy": [
+        "app/api/dashboard/route.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/EmptyBriefing/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/EmptyBriefing/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/EmptyBriefing.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/dial.test.ts::__file_root__": {
+      "filePath": "components/dashboard/dial.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/dial.ts::__file_root__",
+        "components/dashboard/dial.ts::circumference",
+        "components/dashboard/dial.ts::readinessDashOffset"
+      ],
+      "importedBy": []
+    },
+    "app/lib/dashboard.ts::__file_root__": {
+      "filePath": "app/lib/dashboard.ts",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/prisma.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ReadinessHero/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ReadinessHero/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ReadinessHero.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/api/dashboard/route.ts::__file_root__": {
+      "filePath": "app/api/dashboard/route.ts",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/dashboard.ts::getDashboard"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/ReadinessHero.tsx::__file_root__": {
+      "filePath": "components/dashboard/ReadinessHero.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/dial.ts::circumference",
+        "components/dashboard/dial.ts::readinessDashOffset",
+        "components/dashboard/format.ts::emphasize"
+      ],
+      "importedBy": [
+        "app/isolated-components/ReadinessHero/page.tsx::__file_root__"
+      ]
+    },
+    "app/layout.tsx::__file_root__": {
+      "filePath": "app/layout.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "app/globals.css::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/VitalsPanel.tsx::VitalsPanel": {
+      "filePath": "components/dashboard/VitalsPanel.tsx",
+      "name": "VitalsPanel",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/Metabar.tsx::__file_root__": {
+      "filePath": "components/dashboard/Metabar.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/Metabar/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/VitalsPanel.tsx::__file_root__": {
+      "filePath": "components/dashboard/VitalsPanel.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/format.ts::clampPct"
+      ],
+      "importedBy": [
+        "app/isolated-components/VitalsPanel/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/FieldLog/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/FieldLog/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/FieldLog.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/FieldLog.tsx::FieldLog": {
+      "filePath": "components/dashboard/FieldLog.tsx",
+      "name": "FieldLog",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/format.test.ts::__file_root__": {
+      "filePath": "components/dashboard/format.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/format.ts::clampPct",
+        "components/dashboard/format.ts::emphasize"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/DashboardConsole.tsx::DashboardConsole": {
+      "filePath": "components/dashboard/DashboardConsole.tsx",
+      "name": "DashboardConsole",
+      "imports": [],
+      "importedBy": [
+        "app/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/CoachTransmission.tsx::CoachTransmission": {
+      "filePath": "components/dashboard/CoachTransmission.tsx",
+      "name": "CoachTransmission",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/format.ts::clampPct": {
+      "filePath": "components/dashboard/format.ts",
+      "name": "clampPct",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/format.test.ts::__file_root__"
+      ]
+    },
+    "app/page.tsx::__file_root__": {
+      "filePath": "app/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/dashboard.ts::getDashboard",
+        "components/dashboard/DashboardConsole.tsx::DashboardConsole"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__": {
+      "filePath": ".claude/skills/review-session/scripts/find-last-session.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/DashboardConsole.tsx::__file_root__": {
+      "filePath": "components/dashboard/DashboardConsole.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/Metabar.tsx::Metabar",
+        "components/dashboard/ReadinessHero.tsx::ReadinessHero",
+        "components/dashboard/VitalsPanel.tsx::VitalsPanel",
+        "components/dashboard/CoachTransmission.tsx::CoachTransmission",
+        "components/dashboard/FieldLog.tsx::FieldLog",
+        "components/dashboard/EmptyBriefing.tsx::EmptyBriefing",
+        "components/dashboard/CoachDock.tsx::CoachDock"
+      ],
+      "importedBy": [
+        "app/isolated-components/DashboardConsole/page.tsx::__file_root__"
+      ]
+    },
+    "app/globals.css::__file_root__": {
+      "filePath": "app/globals.css",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/layout.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/EmptyBriefing.tsx::EmptyBriefing": {
+      "filePath": "components/dashboard/EmptyBriefing.tsx",
+      "name": "EmptyBriefing",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/format.ts::emphasize": {
+      "filePath": "components/dashboard/format.ts",
+      "name": "emphasize",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/format.test.ts::__file_root__",
+        "components/dashboard/ReadinessHero.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/DashboardConsole/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/DashboardConsole/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/EmptyBriefing.tsx::__file_root__": {
+      "filePath": "components/dashboard/EmptyBriefing.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/EmptyBriefing/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/CoachTransmission/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CoachTransmission/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/CoachTransmission.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Stat/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Stat/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/Stat.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    ".next/dev/types/routes.d.ts::__file_root__": {
+      "filePath": ".next/dev/types/routes.d.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "next-env.d.ts::__file_root__"
+      ]
+    },
+    ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__": {
+      "filePath": ".claude/skills/review-session/scripts/extract-session.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormat",
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormatFromPath"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/Metabar.tsx::Metabar": {
+      "filePath": "components/dashboard/Metabar.tsx",
+      "name": "Metabar",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/CoachDock.tsx::__file_root__": {
+      "filePath": "components/dashboard/CoachDock.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/CoachDock/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/FieldLog.tsx::__file_root__": {
+      "filePath": "components/dashboard/FieldLog.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/Stat.tsx::Stat"
+      ],
+      "importedBy": [
+        "app/isolated-components/FieldLog/page.tsx::__file_root__"
+      ]
+    },
+    "next-env.d.ts::__file_root__": {
+      "filePath": "next-env.d.ts",
+      "name": "__file_root__",
+      "imports": [
+        ".next/dev/types/routes.d.ts::__file_root__"
+      ],
+      "importedBy": []
+    }
+  },
+  "lastUpdated": "2026-07-07T14:39:26Z"
+}

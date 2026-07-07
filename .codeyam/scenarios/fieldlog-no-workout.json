@@ -1,0 +1,11 @@
+{
+  "name": "FieldLog - No Workout",
+  "id": "4936c20f-f3b1-490e-9ed7-a5091a464bfb",
+  "url": "/isolated-components/FieldLog?s=NoWorkout",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "FieldLog",
+  "scenarioType": "component"
+}

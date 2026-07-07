@@ -1,0 +1,11 @@
+{
+  "name": "FieldLog - Default",
+  "id": "19ed3f8b-bbc3-41c3-a87e-dc904e92de46",
+  "url": "/isolated-components/FieldLog?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "FieldLog",
+  "scenarioType": "component"
+}

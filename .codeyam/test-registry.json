@@ -1,0 +1,176 @@
+{
+  "tests": [
+    {
+      "description": "honors a custom radius argument",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "circumference › computes a custom-radius circumference",
+      "line": 11,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "computes 2 pi r for the default dial radius",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "circumference › computes the default-radius circumference",
+      "line": 6,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "negative values clamp up to zero",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "clampPct › clamps a negative value to zero",
+      "line": 43,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "values above one hundred clamp down to one hundred",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "clampPct › clamps an over-max value to one hundred",
+      "line": 48,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "the range boundaries themselves are preserved",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "clampPct › preserves the zero and hundred boundaries",
+      "line": 58,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "values inside the range pass through unchanged",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "clampPct › returns an in-range value unchanged",
+      "line": 38,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "NaN degrades to zero rather than propagating",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "clampPct › returns zero for NaN",
+      "line": 53,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "escaping runs before emphasis so injected tags cannot survive as live markup",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "emphasize › does not emit raw tags from an escaped span",
+      "line": 26,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "escapes HTML-significant characters so seed content cannot inject markup",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "emphasize › escapes angle brackets and ampersands",
+      "line": 16,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "the empty string maps to the empty string",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "emphasize › handles the empty string",
+      "line": 31,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "leaves text with no asterisks unchanged",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "emphasize › passes through plain text",
+      "line": 11,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "wraps a single asterisk-delimited span in an em element",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "emphasize › wraps an asterisk span in em",
+      "line": 6,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "converts more than one emphasis span in a single string",
+      "file": "components/dashboard/format.test.ts",
+      "format": "vitest",
+      "key": "emphasize › wraps multiple spans",
+      "line": 21,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "negative scores clamp to the full circumference",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "readinessDashOffset › clamps a negative score to full circumference",
+      "line": 38,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "scores above one hundred clamp to a zero offset",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "readinessDashOffset › clamps an over-max score to zero offset",
+      "line": 33,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "the mockup score of eighty-two matches the reference offset",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "readinessDashOffset › matches the reference offset near eighty-two",
+      "line": 28,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "NaN degrades to the empty-ring offset",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "readinessDashOffset › returns full circumference for NaN",
+      "line": 43,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "a zero score leaves the whole ring undrawn",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "readinessDashOffset › returns the full circumference at a zero score",
+      "line": 23,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "a full score leaves no gap, so the offset is zero",
+      "file": "components/dashboard/dial.test.ts",
+      "format": "vitest",
+      "key": "readinessDashOffset › returns zero offset at a full score",
+      "line": 18,
+      "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    }
+  ],
+  "version": 2
+}

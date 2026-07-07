@@ -1,0 +1,8 @@
+{
+  "appFormats": [
+    "desktop"
+  ],
+  "designApproach": "chat",
+  "techStackId": "nextjs-prisma-sqlite",
+  "startingSurface": "dashboard"
+}

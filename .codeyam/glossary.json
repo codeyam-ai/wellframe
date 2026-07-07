@@ -1,0 +1,164 @@
+[
+  {
+    "description": "The ⌘K coach entry point rendered as a right-side slide-in panel; in this build it is a stub confirming the entry point works ahead of the full context-aware coach.",
+    "filePath": "components/dashboard/CoachDock.tsx",
+    "name": "CoachDock",
+    "scenarios": [
+      "coachdock-open"
+    ]
+  },
+  {
+    "description": "The coach's single observant note, its directive, and the local-model signature; renders a quiet empty label when there is no transmission yet.",
+    "filePath": "components/dashboard/CoachTransmission.tsx",
+    "name": "CoachTransmission",
+    "scenarios": [
+      "coachtransmission-default",
+      "coachtransmission-no-transmission"
+    ]
+  },
+  {
+    "description": "CodeYam-scaffolded layout guard for isolated-component preview routes; notFound in production.",
+    "filePath": "app/codeyam-isolate/layout.tsx",
+    "name": "CodeYamIsolateLayout",
+    "untestabilityReason": {
+      "justification": "CodeYam isolation-preview scaffold, not product code.",
+      "kind": "scaffold"
+    }
+  },
+  {
+    "description": "Client composer for the whole briefing console: renders the metabar plus the readiness hero, vitals, coach transmission, and field log when a briefing exists, or the day-one onboarding state when it does not; owns the coach-dock open state and the ⌘K shortcut.",
+    "filePath": "components/dashboard/DashboardConsole.tsx",
+    "name": "DashboardConsole",
+    "scenarios": [
+      "dashboardconsole-primed",
+      "dashboardconsole-coach-open",
+      "dashboardconsole-empty"
+    ]
+  },
+  {
+    "description": "Day-one onboarding state (production default, empty DB): the console frame with a muted dial, a serif prompt, and bracket-labeled connect-a-source options.",
+    "filePath": "components/dashboard/EmptyBriefing.tsx",
+    "name": "EmptyBriefing",
+    "scenarios": [
+      "emptybriefing-default"
+    ]
+  },
+  {
+    "description": "Yesterday's logged activity: grayscale photo plate plus title and distance/pace/vertical stats; shows its own empty label when nothing was logged.",
+    "filePath": "components/dashboard/FieldLog.tsx",
+    "name": "FieldLog",
+    "scenarios": [
+      "fieldlog-default",
+      "fieldlog-no-workout"
+    ]
+  },
+  {
+    "description": "Dashboard entry-point page (route /). Server component that loads the current briefing, vitals, and workout via getDashboard and renders the DashboardConsole; shows the day-one empty state when the DB is empty.",
+    "filePath": "app/page.tsx",
+    "name": "Home",
+    "scenarios": [
+      "dashboard-day-one-empty",
+      "dashboard-primed-briefing",
+      "dashboard-low-readiness",
+      "dashboard-partial-data",
+      "dashboard-no-workout-yesterday"
+    ]
+  },
+  {
+    "description": "Plinth three-zone metadata bar: WELLFRAME brand, the 'Daily Briefing · Console' subject, and a timestamp with the mint LOCAL LINK status dot that signals the local-first, no-cloud posture.",
+    "filePath": "components/dashboard/Metabar.tsx",
+    "name": "Metabar",
+    "scenarios": [
+      "metabar-default",
+      "metabar-awaiting-sync"
+    ]
+  },
+  {
+    "description": "Left instrument hero: the readiness dial (arc length derived from the score), the elevation/wind/window coordinates strip, the serif verdict headline, and the suggested-workout + query-coach actions.",
+    "filePath": "components/dashboard/ReadinessHero.tsx",
+    "name": "ReadinessHero",
+    "scenarios": [
+      "readinesshero-primed",
+      "readinesshero-low-readiness"
+    ]
+  },
+  {
+    "description": "Next.js root layout: sets the Manrope/JetBrains Mono font variables on html and forwards children.",
+    "filePath": "app/layout.tsx",
+    "name": "RootLayout",
+    "untestabilityReason": {
+      "justification": "Next.js framework root-layout shell that wires fonts and forwards children.",
+      "kind": "scaffold"
+    }
+  },
+  {
+    "description": "CodeYam-scaffolded route that reads a scenario file and redirects to its target URL; notFound in production.",
+    "filePath": "app/scenario/[slug]/page.tsx",
+    "name": "ScenarioRedirectPage",
+    "untestabilityReason": {
+      "justification": "CodeYam scenario-redirect scaffold, not product code.",
+      "kind": "scaffold"
+    }
+  },
+  {
+    "description": "Presentational label/value pair used inside the Field Log stats row.",
+    "filePath": "components/dashboard/Stat.tsx",
+    "name": "Stat",
+    "scenarios": [
+      "stat-default",
+      "stat-long-value"
+    ]
+  },
+  {
+    "description": "Overnight vitals telemetry: one row per metric with a label, a mint/blue track bar, and a formatted value with optional unit and trend chip; shows a quiet empty label when no readings exist.",
+    "filePath": "components/dashboard/VitalsPanel.tsx",
+    "name": "VitalsPanel",
+    "scenarios": [
+      "vitalspanel-default",
+      "vitalspanel-partial-data",
+      "vitalspanel-empty"
+    ]
+  },
+  {
+    "description": "Returns the arc length (2 pi r) of the readiness dial ring for a given radius, defaulting to the design's 176px ring; used for both the dash array and the dash offset.",
+    "filePath": "components/dashboard/dial.ts",
+    "name": "circumference",
+    "testFile": "components/dashboard/dial.test.ts"
+  },
+  {
+    "description": "Clamps a vitals track-fill percentage into the renderable 0-100 range so a stray seed value cannot overflow the bar; NaN degrades to 0.",
+    "filePath": "components/dashboard/format.ts",
+    "name": "clampPct",
+    "testFile": "components/dashboard/format.test.ts"
+  },
+  {
+    "description": "Escapes HTML in a briefing string and converts *word* spans into <em>word</em>, so a headline or coach message can italicize one phrase safely (escaping runs before emphasis so injected markup stays inert).",
+    "filePath": "components/dashboard/format.ts",
+    "name": "emphasize",
+    "testFile": "components/dashboard/format.test.ts"
+  },
+  {
+    "description": "Server data loader that reads the most-recent DailyBriefing plus its ordered Vitals and latest Workout via Prisma, returning the console's full payload (nulls/empties when the DB is empty, i.e. the day-one state).",
+    "filePath": "app/lib/dashboard.ts",
+    "name": "getDashboard",
+    "untestabilityReason": {
+      "justification": "Prisma/SQLite database read boundary; exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Prisma seed entrypoint (npm run db:seed). Intentionally a no-op in this project: production starts empty and each CodeYam scenario carries its own seed payload.",
+    "filePath": "prisma/seed.ts",
+    "name": "main",
+    "untestabilityReason": {
+      "justification": "Scaffolded Prisma seed script, no-op for production; scenario seeding goes through the CodeYam seed adapter.",
+      "kind": "scaffold"
+    }
+  },
+  {
+    "description": "Computes the SVG stroke-dashoffset that encodes a 0-100 readiness score on the dial ring (full ring at 100, empty at 0), clamping out-of-range or NaN scores so the arc is always valid.",
+    "filePath": "components/dashboard/dial.ts",
+    "name": "readinessDashOffset",
+    "testFile": "components/dashboard/dial.test.ts"
+  }
+]

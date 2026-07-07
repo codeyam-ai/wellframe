@@ -1,0 +1,935 @@
+{
+  "timestamp": "2026-07-07T14:31:03Z",
+  "title": "Dashboard Briefing Console",
+  "type": "feature",
+  "userRequest": "still no project yet...",
+  "description": "Built Wellframe's Dashboard as a Plinth deep-ink \"Daily Briefing Console\" at /: a readiness dial, overnight vitals telemetry, an observant single-message coach transmission, and yesterday's field log, plus a ⌘K coach-dock stub and the day-one onboarding empty state (production starts empty). Backed by Prisma/SQLite (DailyBriefing, Vital, Workout) with per-scenario seeds; extracted pure helpers (emphasize, clampPct, dial geometry) under unit test. Covered by 19 tests and 23 scenarios (18 component + 5 application: empty / primed / low-readiness / partial-data / no-workout).",
+  "modifiedFiles": [
+    {
+      "path": ".claude/hooks/__pycache__/_step_metadata.cpython-310.pyc",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/__pycache__/editor-step-hook.cpython-310.pyc",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/_step_metadata.py",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/claude-notify.sh",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/editor-pretool-hook.py",
+      "status": "added"
+    },
+    {
+      "path": ".claude/hooks/editor-step-hook.py",
+      "status": "added"
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-audit/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-audit/finalize-procedure.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-design/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-edit-plan/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-editor/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-explore/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-new-app/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-onboard/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-plan/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-prototype/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-see-app/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-see-recent-change/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-slice/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/extract-session-helpers.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/extract-session.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/review-session/scripts/find-last-session.mjs",
+      "status": "added"
+    },
+    {
+      "path": ".codex/config.toml",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/.last-reconcile.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/cache/step-metadata.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/capture.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/data-structure.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/active_tab.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_system.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/README.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/atlas.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/bureau-north.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/clean-dashboard.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/coder.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/console.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/editorial.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/ethereal.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/gardener.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/gummy.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/keylime.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/letters-to-sean.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/manifesto.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/marquee.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/minimalistic.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/mono-brutalist.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/n15.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/neo-brutalist.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/plinth.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/design_systems/space-odyssey.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/project_mockups/01-plinth-mockup.html",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/project_mockups/02-plinth-mockup.html",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/project_mockups/_depiction_dawn.b64",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/project_mockups/_depiction_dusk.b64",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/project_mockups/target.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/selected_mockup.html",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/design/selection.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/editor.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/first-build-session.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/package.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/runner-timing-history.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-handlers.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-interactivity.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-issues.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-metrics.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-mocks.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenario-playwright.js",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coachdock-open.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coachtransmission-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coachtransmission-no-transmission.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-day-one-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-low-readiness.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-no-workout-yesterday.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-partial-data.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-primed-briefing.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboardconsole-coach-open.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboardconsole-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboardconsole-primed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/emptybriefing-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/fieldlog-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/fieldlog-no-workout.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/metabar-awaiting-sync.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/metabar-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/readinesshero-low-readiness.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/readinesshero-primed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coachdock-open--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coachdock-open--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coachtransmission-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coachtransmission-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coachtransmission-no-transmission--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coachtransmission-no-transmission--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/emptybriefing-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/emptybriefing-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/fieldlog-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/fieldlog-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/fieldlog-no-workout--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/fieldlog-no-workout--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-awaiting-sync--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-awaiting-sync--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-low-readiness--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-low-readiness--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-primed--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-primed--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/stat-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/stat-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/stat-long-value--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/stat-long-value--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/vitalspanel-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/vitalspanel-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/vitalspanel-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/vitalspanel-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/vitalspanel-partial-data--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/vitalspanel-partial-data--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/stat-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/stat-long-value.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/vitalspanel-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/vitalspanel-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/vitalspanel-partial-data.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/seed-adapter.ts",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/setup-answers.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/stack.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/finalize-debt.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/last-advance.txt",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/provider-auth-verdict.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/scenario-taxonomy.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/session-results-snapshot.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/step-highwater.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-run-marker.json",
+      "status": "added"
+    },
+    {
+      "path": ".env",
+      "status": "added"
+    },
+    {
+      "path": ".gitattributes",
+      "status": "added"
+    },
+    {
+      "path": ".gitignore",
+      "status": "added"
+    },
+    {
+      "path": "AUTH_PATTERNS.md",
+      "status": "added"
+    },
+    {
+      "path": "AUTH_UPGRADE.md",
+      "status": "added"
+    },
+    {
+      "path": "DATABASE.md",
+      "status": "added"
+    },
+    {
+      "path": "FEATURE_PATTERNS.md",
+      "status": "added"
+    },
+    {
+      "path": "README.md",
+      "status": "added"
+    },
+    {
+      "path": "app/api/__codeyam_revalidate/route.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/api/dashboard/route.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/codeyam-isolate/layout.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/globals.css",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CoachDock/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CoachTransmission/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/DashboardConsole/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/EmptyBriefing/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/FieldLog/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/Metabar/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ReadinessHero/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/Stat/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/VitalsPanel/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/layout.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/layout.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/dashboard.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/prisma.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/scenario/[slug]/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/CoachDock.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/CoachTransmission.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/DashboardConsole.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/EmptyBriefing.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/FieldLog.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/Metabar.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ReadinessHero.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/Stat.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/VitalsPanel.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/dial.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/dial.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/format.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/format.ts",
+      "status": "added"
+    },
+    {
+      "path": "docker-compose.cloud.yml",
+      "status": "added"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "status": "added"
+    },
+    {
+      "path": "next.config.ts",
+      "status": "added"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "added"
+    },
+    {
+      "path": "package.json",
+      "status": "added"
+    },
+    {
+      "path": "postcss.config.mjs",
+      "status": "added"
+    },
+    {
+      "path": "prisma.config.ts",
+      "status": "added"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "status": "added"
+    },
+    {
+      "path": "prisma/seed.ts",
+      "status": "added"
+    },
+    {
+      "path": "tsconfig.json",
+      "status": "added"
+    },
+    {
+      "path": "ui/src/helpers/stepLabels.generated.ts",
+      "status": "added"
+    },
+    {
+      "path": "vitest.config.ts",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "CoachDock - Open",
+      "screenshotPath": "coachdock-open--desktop.png"
+    },
+    {
+      "name": "CoachTransmission - Default",
+      "screenshotPath": "coachtransmission-default--desktop.png"
+    },
+    {
+      "name": "CoachTransmission - No Transmission",
+      "screenshotPath": "coachtransmission-no-transmission--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Empty",
+      "screenshotPath": "dashboard-day-one-empty--desktop.png"
+    },
+    {
+      "name": "Dashboard - Low Readiness",
+      "screenshotPath": "dashboard-low-readiness--desktop.png"
+    },
+    {
+      "name": "Dashboard - No Workout Yesterday",
+      "screenshotPath": "dashboard-no-workout-yesterday--desktop.png"
+    },
+    {
+      "name": "Dashboard - Partial Data",
+      "screenshotPath": "dashboard-partial-data--desktop.png"
+    },
+    {
+      "name": "Dashboard - Primed Briefing",
+      "screenshotPath": "dashboard-primed-briefing--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Coach Open",
+      "screenshotPath": "dashboardconsole-coach-open--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Empty",
+      "screenshotPath": "dashboardconsole-empty--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Primed",
+      "screenshotPath": "dashboardconsole-primed--desktop.png"
+    },
+    {
+      "name": "EmptyBriefing - Default",
+      "screenshotPath": "emptybriefing-default--desktop.png"
+    },
+    {
+      "name": "FieldLog - Default",
+      "screenshotPath": "fieldlog-default--desktop.png"
+    },
+    {
+      "name": "FieldLog - No Workout",
+      "screenshotPath": "fieldlog-no-workout--desktop.png"
+    },
+    {
+      "name": "Metabar - Awaiting Sync",
+      "screenshotPath": "metabar-awaiting-sync--desktop.png"
+    },
+    {
+      "name": "Metabar - Default",
+      "screenshotPath": "metabar-default--desktop.png"
+    },
+    {
+      "name": "ReadinessHero - Low Readiness",
+      "screenshotPath": "readinesshero-low-readiness--desktop.png"
+    },
+    {
+      "name": "ReadinessHero - Primed",
+      "screenshotPath": "readinesshero-primed--desktop.png"
+    },
+    {
+      "name": "Stat - Default",
+      "screenshotPath": "stat-default--desktop.png"
+    },
+    {
+      "name": "Stat - Long Value",
+      "screenshotPath": "stat-long-value--desktop.png"
+    },
+    {
+      "name": "VitalsPanel - Default",
+      "screenshotPath": "vitalspanel-default--desktop.png"
+    },
+    {
+      "name": "VitalsPanel - Empty",
+      "screenshotPath": "vitalspanel-empty--desktop.png"
+    },
+    {
+      "name": "VitalsPanel - Partial Data",
+      "screenshotPath": "vitalspanel-partial-data--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 19,
+        "passed": 19
+      }
+    ]
+  }
+}

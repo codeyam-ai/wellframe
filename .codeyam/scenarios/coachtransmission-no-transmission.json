@@ -1,0 +1,11 @@
+{
+  "name": "CoachTransmission - No Transmission",
+  "id": "d9b0f6ef-5ab0-43a5-b9ff-59dc09354b74",
+  "url": "/isolated-components/CoachTransmission?s=NoTransmission",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CoachTransmission",
+  "scenarioType": "component"
+}

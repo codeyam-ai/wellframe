@@ -1,0 +1,11 @@
+{
+  "name": "DashboardConsole - Empty",
+  "id": "2397851a-8d46-4fbe-9f0c-f55dee53e5ef",
+  "url": "/isolated-components/DashboardConsole?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "DashboardConsole",
+  "scenarioType": "component"
+}

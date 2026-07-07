@@ -1,0 +1,34 @@
+{
+  "views": {
+    "Home": {
+      "empty": {
+        "status": "covered"
+      },
+      "single": {
+        "status": "n-a",
+        "reason": "dashboard shows one day's briefing, not a list; no single-vs-many item distinction"
+      },
+      "typical": {
+        "status": "covered"
+      },
+      "many": {
+        "status": "n-a",
+        "reason": "not a collection view; the briefing is one day, vitals are a fixed small set"
+      },
+      "loading": {
+        "status": "n-a",
+        "reason": "server-rendered (force-dynamic) page; no client loading skeleton in this build"
+      },
+      "edge": {
+        "status": "covered"
+      },
+      "error": {
+        "status": "n-a",
+        "reason": "read-only local SSR read; no error surface in this dashboard build"
+      },
+      "key-interaction": {
+        "status": "covered"
+      }
+    }
+  }
+}

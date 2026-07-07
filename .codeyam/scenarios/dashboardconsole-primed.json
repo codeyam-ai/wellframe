@@ -1,0 +1,11 @@
+{
+  "name": "DashboardConsole - Primed",
+  "id": "9f0bd505-7cf3-4cae-ad87-73fed322b472",
+  "url": "/isolated-components/DashboardConsole?s=Primed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "DashboardConsole",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Stat - Long Value",
+  "id": "c9281765-6695-4bca-9fc3-ae7e43b37708",
+  "url": "/isolated-components/Stat?s=LongValue",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Stat",
+  "scenarioType": "component"
+}

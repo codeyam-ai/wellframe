@@ -1,0 +1,56 @@
+[
+  {
+    "name": "DailyBriefing",
+    "description": "The single 'today' record that drives the Dashboard briefing console: readiness dial (score/label/delta), the coordinates strip (elevation/wind/window), the serif verdict headline and status line, the suggested-workout CTA, and the coach transmission (message/directive/signature). The dashboard reads the most-recent briefing; most fields are nullable so the empty and partial-data states render gracefully.",
+    "category": "datastore",
+    "order": 1,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "date", "type": "string", "required": true },
+      { "name": "dateLabel", "type": "string", "required": true },
+      { "name": "readinessScore", "type": "number", "required": false },
+      { "name": "readinessLabel", "type": "string", "required": false },
+      { "name": "readinessDelta", "type": "number", "required": false },
+      { "name": "headline", "type": "string", "required": false },
+      { "name": "statusLine", "type": "string", "required": false },
+      { "name": "elevation", "type": "string", "required": false },
+      { "name": "wind", "type": "string", "required": false },
+      { "name": "windowLabel", "type": "string", "required": false },
+      { "name": "suggestedWorkout", "type": "string", "required": false },
+      { "name": "coachMessage", "type": "string", "required": false },
+      { "name": "coachDirective", "type": "string", "required": false },
+      { "name": "coachSignature", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "Vital",
+    "description": "One overnight telemetry row shown in the Vitals section (HRV, Resting HR, Sleep, Steps, and future metrics). Flat and standalone so the partial-data scenario simply seeds fewer rows. Carries a display order, a formatted value + optional unit, an optional trend chip, a 0-100 track fill percentage, and a 'positive' flag that colors the track mint (good) versus signal-blue.",
+    "category": "datastore",
+    "order": 2,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "order", "type": "number", "required": true },
+      { "name": "label", "type": "string", "required": true },
+      { "name": "value", "type": "string", "required": true },
+      { "name": "unit", "type": "string", "required": false },
+      { "name": "delta", "type": "string", "required": false },
+      { "name": "trackPct", "type": "number", "required": true },
+      { "name": "positive", "type": "boolean", "required": true }
+    ]
+  },
+  {
+    "name": "Workout",
+    "description": "Yesterday's logged activity rendered in the Field Log section: title, photo caption, documentary photo URL (forced grayscale in the UI), and distance/pace/vertical stats. Zero rows in the no-workout-yesterday scenario, which triggers that section's own empty state.",
+    "category": "datastore",
+    "order": 3,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "title", "type": "string", "required": true },
+      { "name": "typeLabel", "type": "string", "required": false },
+      { "name": "photoUrl", "type": "string", "required": false },
+      { "name": "distance", "type": "string", "required": false },
+      { "name": "pace", "type": "string", "required": false },
+      { "name": "vertical", "type": "string", "required": false }
+    ]
+  }
+]

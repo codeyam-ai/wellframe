@@ -1,0 +1,11 @@
+{
+  "name": "Stat - Default",
+  "id": "4b791e19-78bb-4513-9132-1441e4d97cde",
+  "url": "/isolated-components/Stat?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Stat",
+  "scenarioType": "component"
+}
