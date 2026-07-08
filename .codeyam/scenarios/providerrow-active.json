@@ -1,0 +1,11 @@
+{
+  "name": "ProviderRow - Active",
+  "id": "24acdd25-24fb-454f-8663-54215db0debe",
+  "url": "/isolated-components/ProviderRow?s=Active",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderRow",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ProviderRow - Connected",
+  "id": "954b9982-febe-4de7-ab63-98b129f41828",
+  "url": "/isolated-components/ProviderRow?s=Connected",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderRow",
+  "scenarioType": "component"
+}

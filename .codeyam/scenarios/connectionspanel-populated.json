@@ -1,0 +1,11 @@
+{
+  "name": "ConnectionsPanel - Populated",
+  "id": "c657ae1a-ce03-4dd6-a70e-042251c33754",
+  "url": "/isolated-components/ConnectionsPanel?s=Populated",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ConnectionsPanel",
+  "scenarioType": "component"
+}

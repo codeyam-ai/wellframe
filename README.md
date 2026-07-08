@@ -51,3 +51,54 @@ npm run db:reset   # Reset database: drop, recreate, and re-seed
 | `npm run db:push`  | Apply Prisma schema changes                  |
 | `npm run db:seed`  | Seed the database                            |
 | `npm run db:reset` | Reset and re-seed the database               |
+
+<!-- codeyam:run-and-edit:start -->
+## Develop this project with codeyam-editor
+
+This project is built with [codeyam-editor](https://codeyam.com) — code and runnable data scenarios are authored side by side against a live preview.
+
+```bash
+# Launch the editor (split-screen terminal + live preview)
+codeyam-editor editor
+
+# Run the app
+npm run dev
+
+# Run the tests
+npx vitest run
+```
+<!-- codeyam:run-and-edit:end -->
+
+<!-- codeyam:scenario-gallery:start -->
+## Scenario gallery
+
+States captured as runnable scenarios with codeyam-editor:
+
+### Dashboard - Connections Setup
+
+<img src=".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png" alt="Dashboard - Connections Setup" width="280">
+
+### Dashboard - Day One Empty
+
+<img src=".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png" alt="Dashboard - Day One Empty" width="280">
+
+### Dashboard - Day One Setup
+
+<img src=".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png" alt="Dashboard - Day One Setup" width="280">
+
+### Dashboard - Low Readiness
+
+<img src=".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png" alt="Dashboard - Low Readiness" width="280">
+
+### Dashboard - No Workout Yesterday
+
+<img src=".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png" alt="Dashboard - No Workout Yesterday" width="280">
+
+### Dashboard - Partial Data
+
+<img src=".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png" alt="Dashboard - Partial Data" width="280">
+
+### Dashboard - Primed Briefing
+
+<img src=".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png" alt="Dashboard - Primed Briefing" width="280">
+<!-- codeyam:scenario-gallery:end -->

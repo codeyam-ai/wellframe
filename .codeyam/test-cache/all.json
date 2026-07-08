@@ -1,16 +1,80 @@
 {
   "schemaVersion": 4,
-  "version": 2,
+  "version": 6,
   "partition": "all",
-  "hash": "c66c50c99fb93b1d",
+  "hash": "bbcdc2aed20e4288",
   "runners": [
     {
       "name": "tests",
       "format": "vitest-json",
-      "output": "{\"numTotalTestSuites\":6,\"numPassedTestSuites\":6,\"numFailedTestSuites\":0,\"numPendingTestSuites\":0,\"numTotalTests\":19,\"numPassedTests\":19,\"numFailedTests\":0,\"numPendingTests\":0,\"numTodoTests\":0,\"snapshot\":{\"added\":0,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0,\"didUpdate\":false},\"startTime\":1783435154930,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes the default-radius circumference\",\"status\":\"passed\",\"title\":\"computes the default-radius circumference\",\"duration\":1.783292000000074,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes a custom-radius circumference\",\"status\":\"passed\",\"title\":\"computes a custom-radius circumference\",\"duration\":0.29486600000007,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns zero offset at a full score\",\"status\":\"passed\",\"title\":\"returns zero offset at a full score\",\"duration\":0.27089599999999336,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns the full circumference at a zero score\",\"status\":\"passed\",\"title\":\"returns the full circumference at a zero score\",\"duration\":0.16805599999997867,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset matches the reference offset near eighty-two\",\"status\":\"passed\",\"title\":\"matches the reference offset near eighty-two\",\"duration\":0.22904000000005453,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps an over-max score to zero offset\",\"status\":\"passed\",\"title\":\"clamps an over-max score to zero offset\",\"duration\":0.2672249999999394,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps a negative score to full circumference\",\"status\":\"passed\",\"title\":\"clamps a negative score to full circumference\",\"duration\":0.17782899999997426,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns full circumference for NaN\",\"status\":\"passed\",\"title\":\"returns full circumference for NaN\",\"duration\":0.12382900000000063,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783435155545,\"endTime\":1783435155549.2673,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/dial.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps an asterisk span in em\",\"status\":\"passed\",\"title\":\"wraps an asterisk span in em\",\"duration\":3.9660259999999425,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize passes through plain text\",\"status\":\"passed\",\"title\":\"passes through plain text\",\"duration\":0.62007600000004,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize escapes angle brackets and ampersands\",\"status\":\"passed\",\"title\":\"escapes angle brackets and ampersands\",\"duration\":0.2347459999999728,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps multiple spans\",\"status\":\"passed\",\"title\":\"wraps multiple spans\",\"duration\":0.1779470000000174,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize does not emit raw tags from an escaped span\",\"status\":\"passed\",\"title\":\"does not emit raw tags from an escaped span\",\"duration\":0.1758989999999585,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize handles the empty string\",\"status\":\"passed\",\"title\":\"handles the empty string\",\"duration\":0.18192899999996825,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns an in-range value unchanged\",\"status\":\"passed\",\"title\":\"returns an in-range value unchanged\",\"duration\":0.31343200000003435,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps a negative value to zero\",\"status\":\"passed\",\"title\":\"clamps a negative value to zero\",\"duration\":0.1499509999999873,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps an over-max value to one hundred\",\"status\":\"passed\",\"title\":\"clamps an over-max value to one hundred\",\"duration\":0.21603700000002846,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns zero for NaN\",\"status\":\"passed\",\"title\":\"returns zero for NaN\",\"duration\":0.2593609999998989,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct preserves the zero and hundred boundaries\",\"status\":\"passed\",\"title\":\"preserves the zero and hundred boundaries\",\"duration\":0.1740869999999859,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783435155533,\"endTime\":1783435155540.2593,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/format.test.ts\"}]}\n",
+      "output": "{\"numTotalTestSuites\":8,\"numPassedTestSuites\":8,\"numFailedTestSuites\":0,\"numPendingTestSuites\":0,\"numTotalTests\":27,\"numPassedTests\":27,\"numFailedTests\":0,\"numPendingTests\":0,\"numTodoTests\":0,\"snapshot\":{\"added\":0,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0,\"didUpdate\":false},\"startTime\":1783529120540,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh returns the same list reference when fresh is false\",\"status\":\"passed\",\"title\":\"returns the same list reference when fresh is false\",\"duration\":2.5147839999999633,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh clears connected on every provider when fresh is true\",\"status\":\"passed\",\"title\":\"clears connected on every provider when fresh is true\",\"duration\":0.644753000000037,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh strips detail on every provider when fresh is true\",\"status\":\"passed\",\"title\":\"strips detail on every provider when fresh is true\",\"duration\":0.40298700000005283,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh preserves id, name, and blurb when fresh is true\",\"status\":\"passed\",\"title\":\"preserves id, name, and blurb when fresh is true\",\"duration\":1.9437179999999898,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh does not mutate the original list when fresh is true\",\"status\":\"passed\",\"title\":\"does not mutate the original list when fresh is true\",\"duration\":0.8763219999999592,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh handles an empty list\",\"status\":\"passed\",\"title\":\"handles an empty list\",\"duration\":0.8919819999999845,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh resets the pre-connected Claude entry in the real AI config\",\"status\":\"passed\",\"title\":\"resets the pre-connected Claude entry in the real AI config\",\"duration\":1.7479529999999386,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh resets the pre-connected Apple Health entry in the real health config\",\"status\":\"passed\",\"title\":\"resets the pre-connected Apple Health entry in the real health config\",\"duration\":0.9577350000000706,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783529121375,\"endTime\":1783529121385.9578,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/connections.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes the default-radius circumference\",\"status\":\"passed\",\"title\":\"computes the default-radius circumference\",\"duration\":2.546118999999976,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes a custom-radius circumference\",\"status\":\"passed\",\"title\":\"computes a custom-radius circumference\",\"duration\":0.574854000000073,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns zero offset at a full score\",\"status\":\"passed\",\"title\":\"returns zero offset at a full score\",\"duration\":0.3965369999999666,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns the full circumference at a zero score\",\"status\":\"passed\",\"title\":\"returns the full circumference at a zero score\",\"duration\":0.2961930000000166,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset matches the reference offset near eighty-two\",\"status\":\"passed\",\"title\":\"matches the reference offset near eighty-two\",\"duration\":0.28500900000005913,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps an over-max score to zero offset\",\"status\":\"passed\",\"title\":\"clamps an over-max score to zero offset\",\"duration\":0.42317900000000463,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps a negative score to full circumference\",\"status\":\"passed\",\"title\":\"clamps a negative score to full circumference\",\"duration\":0.26038099999993847,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns full circumference for NaN\",\"status\":\"passed\",\"title\":\"returns full circumference for NaN\",\"duration\":0.23146799999994982,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783529121356,\"endTime\":1783529121366.2605,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/dial.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps an asterisk span in em\",\"status\":\"passed\",\"title\":\"wraps an asterisk span in em\",\"duration\":2.285026000000016,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize passes through plain text\",\"status\":\"passed\",\"title\":\"passes through plain text\",\"duration\":0.320233999999914,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize escapes angle brackets and ampersands\",\"status\":\"passed\",\"title\":\"escapes angle brackets and ampersands\",\"duration\":0.4905580000000782,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps multiple spans\",\"status\":\"passed\",\"title\":\"wraps multiple spans\",\"duration\":0.23674899999991794,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize does not emit raw tags from an escaped span\",\"status\":\"passed\",\"title\":\"does not emit raw tags from an escaped span\",\"duration\":0.5106369999999743,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize handles the empty string\",\"status\":\"passed\",\"title\":\"handles the empty string\",\"duration\":0.24917500000003656,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns an in-range value unchanged\",\"status\":\"passed\",\"title\":\"returns an in-range value unchanged\",\"duration\":0.21811300000001665,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps a negative value to zero\",\"status\":\"passed\",\"title\":\"clamps a negative value to zero\",\"duration\":0.24199699999996938,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps an over-max value to one hundred\",\"status\":\"passed\",\"title\":\"clamps an over-max value to one hundred\",\"duration\":0.4788780000000088,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns zero for NaN\",\"status\":\"passed\",\"title\":\"returns zero for NaN\",\"duration\":0.28548399999999674,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct preserves the zero and hundred boundaries\",\"status\":\"passed\",\"title\":\"preserves the zero and hundred boundaries\",\"duration\":0.20450199999993401,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783529121340,\"endTime\":1783529121347.2046,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/format.test.ts\"}]}\n",
       "invoked_command": "npx vitest run --reporter=json",
       "exit_code": 0,
       "tests": [
+        {
+          "key": "asFresh › returns the same list reference when fresh is false",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "asFresh › clears connected on every provider when fresh is true",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "asFresh › strips detail on every provider when fresh is true",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "asFresh › preserves id, name, and blurb when fresh is true",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "asFresh › does not mutate the original list when fresh is true",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "asFresh › handles an empty list",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "asFresh › resets the pre-connected Claude entry in the real AI config",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "asFresh › resets the pre-connected Apple Health entry in the real health config",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
         {
           "key": "circumference › computes the default-radius circumference",
           "status": "passed",

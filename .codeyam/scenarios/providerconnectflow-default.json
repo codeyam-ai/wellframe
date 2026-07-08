@@ -1,0 +1,11 @@
+{
+  "name": "ProviderConnectFlow - Default",
+  "id": "e2e9833a-0e51-43bc-ac47-522f2c5c0221",
+  "url": "/isolated-components/ProviderConnectFlow?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderConnectFlow",
+  "scenarioType": "component"
+}

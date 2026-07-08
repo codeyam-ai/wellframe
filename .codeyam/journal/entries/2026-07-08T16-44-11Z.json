@@ -1,0 +1,747 @@
+{
+  "timestamp": "2026-07-08T16:44:11Z",
+  "title": "Dashboard Design Pass + AI/Health Connections",
+  "type": "feature",
+  "userRequest": "# Dashboard Design Pass + AI/Health Connections\n\nPrototyped a design-system alignment pass across all three dashboard surfaces\n(primed/data, empty/onboarding, and a new Connections panel), plus a\ndiscoverable, non-technical setup flow for connecting an AI coach and health\ndata providers.\n\n## Design decisions\n\n- **Plinth + one signal color.** Pulled the \"deep-ink instrument\" dashboard back\n  toward the documented Plinth design system (`.codeyam/design/design_system.md`):\n  monochrome discipline, with a single signal accent (blue `--wf-sig`) reserved\n  for readiness (dial, score, `PRIMED` label), the `LOCAL LINK` status dot, and\n  the primary CTA. The mint accent was retired everywhere (vitals bars → solid\n  ink, field-log photo → true grayscale, section numerals → mute, field-log\n  caption → mute).\n- **Left-aligned, top-anchored.** Per the user's general (not universal)\n  left-align preference: the readiness hero and the onboarding both anchor to the\n  left edge and sit at the top of their column (removing the earlier\n  vertically-centered \"floating\" gap under the section numeral).\n- **Editorial serif kept.** Deliberately retained the New York serif for display\n  (verdict, coach transmission, step/provider titles) rather than swapping to\n  Manrope — it carries the product's character. Flagged as an easy future change\n  if strict Plinth is wanted.\n- **Dimensional buttons (deliberate departure).** At the user's request, buttons\n  got a tactile 3D treatment (gradient body, inset highlight, drop shadow,\n  hover-lift + press-down). This intentionally departs from Plinth's flat\n  hairline-only rule; scoped to `.wf-btn` / `.wf-btn.p` / `.wf-setup`.\n- **AI connect = both onboarding + settings.** First-run onboarding lives in the\n  empty state; an always-available settings-style Connections panel is reachable\n  from the metabar `⚙ SET UP` on the populated dashboard. Both routes open the\n  same panel.\n- **Non-technical connect flow.** No \"API key\" / \"endpoint\" language. Each AI\n  provider's Connect expands a friendly 3-step \"we open it in your browser, you\n  sign in, done\" flow. Providers: AI = Claude (local) / Gemini / OpenAI; Health =\n  Apple Health / Garmin / Oura / Whoop.\n- **Fresh vs. populated panel state.** The Connections panel takes a `fresh` prop\n  (`fresh={!briefing}`): on day-one everything shows `CONNECT`; on the populated\n  dashboard Claude shows `LOCAL · 0 CLOUD CALLS` and Apple Health `SYNCED`.\n\n## Files touched\n\nNew components:\n- `components/dashboard/InfoDisclosure.tsx` — reusable \"what does this mean?\"\n  expand/collapse (used to de-jargon \"Zone 2\").\n- `components/dashboard/ConnectionsPanel.tsx` — the AI + health-data setup dock,\n  with the per-provider Connect flow and the `fresh` day-one variant.\n\nModified:\n- `app/globals.css` — the bulk of the pass: monochrome/signal color discipline,\n  left-aligned + top-anchored hero, dimensional button styles, disclosure styles,\n  metabar `Set Up` affordance, Connections panel styles, and the rewritten\n  left-aligned numbered-step onboarding (replacing the old centered empty state).\n- `components/dashboard/DashboardConsole.tsx` — `setupOpen` state + `openSetup`,\n  renders `ConnectionsPanel` with `fresh={!briefing}`, `initialSetupOpen`, passes\n  `onOpenSetup` to `Metabar` and `EmptyBriefing`.\n- `components/dashboard/Metabar.tsx` — added the `⚙ Set Up` entry (`onOpenSetup`).\n- `components/dashboard/ReadinessHero.tsx` — added the Zone 2 `InfoDisclosure`\n  explainer beneath the action buttons.\n- `components/dashboard/EmptyBriefing.tsx` — rewritten as the left-aligned\n  two-step first-run onboarding (\"Connect your AI coach\" / \"Connect a health\n  source\") routing into the Connections panel.\n- `app/page.tsx` — `?setup=1` deep link (alongside existing `?coach=1`) →\n  `initialSetupOpen`.\n\n## Scenarios exercised\n\nNo new scenarios registered; the pass was verified against existing application\nscenarios:\n- `dashboard-primed-briefing` — data / populated view.\n- `dashboard-day-one-empty` — no-data / onboarding view.\n- Connections panel verified open via `/?setup=1` in both populated (connected\n  statuses) and fresh (all-disconnected) states.\n\nCandidate new scenarios for the Build phase: a component scenario for\n`ConnectionsPanel` (open, and fresh-open), a component scenario for\n`InfoDisclosure` (expanded), and an application scenario capturing the setup\npanel open state.\n\n## Follow-ups / open threads\n\n- Per-provider Connect currently ends at the friendly 3-step explainer; the real\n  integration (OAuth browser flow vs. paste-key vs. mobile QR) is unbuilt.\n- Serif → Manrope display swap remains available if stricter Plinth is desired.\n- The dimensional buttons are a conscious exception to Plinth's flat rule.",
+  "description": "Deconstructed the daily-briefing dashboard into single-responsibility components — the readiness hero split into ReadinessDial, CoordStrip, and ReadinessVerdict; the populated deck into BriefingDeck; and the day-one state into OnboardLead + OnboardStep. Shipped the AI/Health Connections setup panel (a slide-in dock grouping AI coaches — Claude, Gemini, OpenAI — and health sources — Apple Health, Garmin, Oura, Whoop — with a plain-language connect flow) plus an inline InfoDisclosure for de-jargoning the readiness directive. Extracted a testable connections module (asFresh, 8 unit tests) and captured component + app scenarios for every new state, including the panel open over both the populated and day-one dashboards.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/.last-reconcile.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/completed/dashboard-design-pass-and-connections.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/runner-timing-history.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/emptybriefing-default--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/emptybriefing-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-awaiting-sync--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-awaiting-sync--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-default--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-low-readiness--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-low-readiness--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-primed--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinesshero-primed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/last-advance.txt",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/provider-auth-verdict.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/session-results-snapshot.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/step-highwater.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-run-marker.json",
+      "status": "modified"
+    },
+    {
+      "path": "app/globals.css",
+      "status": "modified"
+    },
+    {
+      "path": "app/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/DashboardConsole.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/EmptyBriefing.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/Metabar.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/ReadinessHero.tsx",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/pending-build-launch",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/reconciliation-log.jsonl",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/briefingdeck-no-workout.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/briefingdeck-primed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/connectionsgroup-ai-coach.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/connectionsgroup-expanded-flow.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/connectionsgroup-health-data.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/connectionspanel-fresh-day-one.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/connectionspanel-populated.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coordstrip-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coordstrip-partial.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-connections-setup.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-day-one-setup.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/infodisclosure-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/onboardlead-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/onboardstep-primary.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/onboardstep-secondary.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerconnectflow-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerrow-active.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerrow-connected.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerrow-disconnected.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/readinessdial-compromised.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/readinessdial-no-data.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/readinessdial-primed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/readinessverdict-no-workout.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/readinessverdict-primed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/briefingdeck-no-workout--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/briefingdeck-no-workout--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/briefingdeck-primed--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/briefingdeck-primed--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-ai-coach--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-ai-coach--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-expanded-flow--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-expanded-flow--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-health-data--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-health-data--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-fresh-day-one--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-fresh-day-one--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-populated--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-populated--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coordstrip-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coordstrip-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coordstrip-partial--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/coordstrip-partial--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/infodisclosure-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/infodisclosure-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/onboardlead-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/onboardlead-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/onboardstep-primary--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/onboardstep-primary--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/onboardstep-secondary--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/onboardstep-secondary--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectflow-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectflow-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-active--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-active--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-connected--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-connected--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-disconnected--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-disconnected--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessdial-compromised--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessdial-compromised--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessdial-no-data--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessdial-no-data--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessdial-primed--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessdial-primed--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessverdict-no-workout--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessverdict-no-workout--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessverdict-primed--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/readinessverdict-primed--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/BriefingDeck/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ConnectionsGroup/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ConnectionsPanel/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CoordStrip/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/InfoDisclosure/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/OnboardLead/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/OnboardStep/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ProviderConnectFlow/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ProviderRow/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ReadinessDial/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ReadinessVerdict/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/BriefingDeck.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ConnectionsGroup.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ConnectionsPanel.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/CoordStrip.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/InfoDisclosure.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/OnboardLead.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/OnboardStep.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ProviderConnectFlow.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ProviderRow.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ReadinessDial.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ReadinessVerdict.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/connections.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/connections.ts",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "BriefingDeck - No Workout",
+      "screenshotPath": "briefingdeck-no-workout--desktop.png"
+    },
+    {
+      "name": "BriefingDeck - Primed",
+      "screenshotPath": "briefingdeck-primed--desktop.png"
+    },
+    {
+      "name": "ConnectionsGroup - AI Coach",
+      "screenshotPath": "connectionsgroup-ai-coach--desktop.png"
+    },
+    {
+      "name": "ConnectionsGroup - Expanded Flow",
+      "screenshotPath": "connectionsgroup-expanded-flow--desktop.png"
+    },
+    {
+      "name": "ConnectionsGroup - Health Data",
+      "screenshotPath": "connectionsgroup-health-data--desktop.png"
+    },
+    {
+      "name": "ConnectionsPanel - Fresh Day One",
+      "screenshotPath": "connectionspanel-fresh-day-one--desktop.png"
+    },
+    {
+      "name": "ConnectionsPanel - Populated",
+      "screenshotPath": "connectionspanel-populated--desktop.png"
+    },
+    {
+      "name": "CoordStrip - Default",
+      "screenshotPath": "coordstrip-default--desktop.png"
+    },
+    {
+      "name": "CoordStrip - Partial",
+      "screenshotPath": "coordstrip-partial--desktop.png"
+    },
+    {
+      "name": "Dashboard - Connections Setup",
+      "screenshotPath": "dashboard-connections-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Empty",
+      "screenshotPath": "dashboard-day-one-empty--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Setup",
+      "screenshotPath": "dashboard-day-one-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Low Readiness",
+      "screenshotPath": "dashboard-low-readiness--desktop.png"
+    },
+    {
+      "name": "Dashboard - No Workout Yesterday",
+      "screenshotPath": "dashboard-no-workout-yesterday--desktop.png"
+    },
+    {
+      "name": "Dashboard - Partial Data",
+      "screenshotPath": "dashboard-partial-data--desktop.png"
+    },
+    {
+      "name": "Dashboard - Primed Briefing",
+      "screenshotPath": "dashboard-primed-briefing--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Coach Open",
+      "screenshotPath": "dashboardconsole-coach-open--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Empty",
+      "screenshotPath": "dashboardconsole-empty--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Primed",
+      "screenshotPath": "dashboardconsole-primed--desktop.png"
+    },
+    {
+      "name": "EmptyBriefing - Default",
+      "screenshotPath": "emptybriefing-default--desktop.png"
+    },
+    {
+      "name": "InfoDisclosure - Default",
+      "screenshotPath": "infodisclosure-default--desktop.png"
+    },
+    {
+      "name": "Metabar - Awaiting Sync",
+      "screenshotPath": "metabar-awaiting-sync--desktop.png"
+    },
+    {
+      "name": "Metabar - Default",
+      "screenshotPath": "metabar-default--desktop.png"
+    },
+    {
+      "name": "OnboardLead - Default",
+      "screenshotPath": "onboardlead-default--desktop.png"
+    },
+    {
+      "name": "OnboardStep - Primary",
+      "screenshotPath": "onboardstep-primary--desktop.png"
+    },
+    {
+      "name": "OnboardStep - Secondary",
+      "screenshotPath": "onboardstep-secondary--desktop.png"
+    },
+    {
+      "name": "ProviderConnectFlow - Default",
+      "screenshotPath": "providerconnectflow-default--desktop.png"
+    },
+    {
+      "name": "ProviderRow - Active",
+      "screenshotPath": "providerrow-active--desktop.png"
+    },
+    {
+      "name": "ProviderRow - Connected",
+      "screenshotPath": "providerrow-connected--desktop.png"
+    },
+    {
+      "name": "ProviderRow - Disconnected",
+      "screenshotPath": "providerrow-disconnected--desktop.png"
+    },
+    {
+      "name": "ReadinessDial - Compromised",
+      "screenshotPath": "readinessdial-compromised--desktop.png"
+    },
+    {
+      "name": "ReadinessDial - No Data",
+      "screenshotPath": "readinessdial-no-data--desktop.png"
+    },
+    {
+      "name": "ReadinessDial - Primed",
+      "screenshotPath": "readinessdial-primed--desktop.png"
+    },
+    {
+      "name": "ReadinessHero - Low Readiness",
+      "screenshotPath": "readinesshero-low-readiness--desktop.png"
+    },
+    {
+      "name": "ReadinessHero - Primed",
+      "screenshotPath": "readinesshero-primed--desktop.png"
+    },
+    {
+      "name": "ReadinessVerdict - No Workout",
+      "screenshotPath": "readinessverdict-no-workout--desktop.png"
+    },
+    {
+      "name": "ReadinessVerdict - Primed",
+      "screenshotPath": "readinessverdict-primed--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 8,
+        "passed": 8
+      }
+    ]
+  }
+}

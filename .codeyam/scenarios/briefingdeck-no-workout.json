@@ -1,0 +1,11 @@
+{
+  "name": "BriefingDeck - No Workout",
+  "id": "0970510c-32c2-48b7-96c5-50ff502e381b",
+  "url": "/isolated-components/BriefingDeck?s=NoWorkout",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "BriefingDeck",
+  "scenarioType": "component"
+}

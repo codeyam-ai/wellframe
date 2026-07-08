@@ -1,0 +1,11 @@
+{
+  "name": "ReadinessVerdict - No Workout",
+  "id": "4976821d-13a7-4d44-aabf-aff8242e43c0",
+  "url": "/isolated-components/ReadinessVerdict?s=NoWorkout",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ReadinessVerdict",
+  "scenarioType": "component"
+}

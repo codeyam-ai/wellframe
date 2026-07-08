@@ -1,0 +1,8 @@
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › does not mutate the original list when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › strips detail on every provider when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › returns the same list reference when fresh is false`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › preserves id, name, and blurb when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › clears connected on every provider when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › resets the pre-connected Apple Health entry in the real health config`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › resets the pre-connected Claude entry in the real AI config`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › handles an empty list`: added from runner `tests` output"}

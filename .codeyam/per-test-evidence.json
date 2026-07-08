@@ -1,10 +1,164 @@
 {
-  "circumference › computes a custom-radius circumference": {
-    "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+  "asFresh › clears connected on every provider when fresh is true": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "asFresh › does not mutate the original list when fresh is true": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "asFresh › handles an empty list": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "asFresh › preserves id, name, and blurb when fresh is true": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "asFresh › resets the pre-connected Apple Health entry in the real health config": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "asFresh › resets the pre-connected Claude entry in the real AI config": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "asFresh › returns the same list reference when fresh is false": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "asFresh › strips detail on every provider when fresh is true": {
+    "file": "components/dashboard/connections.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:20:16.068044469+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "circumference › computes a custom-radius circumference": {
+    "file": "components/dashboard/dial.test.ts",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "full",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -19,10 +173,20 @@
   },
   "circumference › computes the default-radius circumference": {
     "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -37,10 +201,20 @@
   },
   "clampPct › clamps a negative value to zero": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -55,10 +229,20 @@
   },
   "clampPct › clamps an over-max value to one hundred": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -73,10 +257,20 @@
   },
   "clampPct › preserves the zero and hundred boundaries": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -91,10 +285,20 @@
   },
   "clampPct › returns an in-range value unchanged": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -109,10 +313,20 @@
   },
   "clampPct › returns zero for NaN": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -127,10 +341,20 @@
   },
   "emphasize › does not emit raw tags from an escaped span": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -145,10 +369,20 @@
   },
   "emphasize › escapes angle brackets and ampersands": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -163,10 +397,20 @@
   },
   "emphasize › handles the empty string": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -181,10 +425,20 @@
   },
   "emphasize › passes through plain text": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -199,10 +453,20 @@
   },
   "emphasize › wraps an asterisk span in em": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -217,10 +481,20 @@
   },
   "emphasize › wraps multiple spans": {
     "file": "components/dashboard/format.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -235,10 +509,20 @@
   },
   "readinessDashOffset › clamps a negative score to full circumference": {
     "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -253,10 +537,20 @@
   },
   "readinessDashOffset › clamps an over-max score to zero offset": {
     "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -271,10 +565,20 @@
   },
   "readinessDashOffset › matches the reference offset near eighty-two": {
     "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -289,10 +593,20 @@
   },
   "readinessDashOffset › returns full circumference for NaN": {
     "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -307,10 +621,20 @@
   },
   "readinessDashOffset › returns the full circumference at a zero score": {
     "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",
@@ -325,10 +649,20 @@
   },
   "readinessDashOffset › returns zero offset at a full score": {
     "file": "components/dashboard/dial.test.ts",
-    "lastRunAt": "2026-07-07T14:39:16.020137694+00:00",
+    "lastRunAt": "2026-07-08T16:45:21.917011028+00:00",
     "lastStatus": "pass",
     "lastRunKind": "full",
     "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:45:21.917011028+00:00",
+        "kind": "full"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-08T16:19:40.569280387+00:00",
+        "kind": "full"
+      },
       {
         "status": "pass",
         "at": "2026-07-07T14:39:16.020137694+00:00",

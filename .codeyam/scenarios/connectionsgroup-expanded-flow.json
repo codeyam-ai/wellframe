@@ -1,0 +1,11 @@
+{
+  "name": "ConnectionsGroup - Expanded Flow",
+  "id": "1b638c95-636d-4b0c-a9fb-e31e718acf88",
+  "url": "/isolated-components/ConnectionsGroup?s=Expanded",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ConnectionsGroup",
+  "scenarioType": "component"
+}

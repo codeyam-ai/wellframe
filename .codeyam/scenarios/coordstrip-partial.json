@@ -1,0 +1,11 @@
+{
+  "name": "CoordStrip - Partial",
+  "id": "a2a896c8-20ed-49bf-b9e5-eb8474f3431b",
+  "url": "/isolated-components/CoordStrip?s=Partial",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CoordStrip",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "InfoDisclosure - Default",
+  "id": "35934265-6c59-4737-813c-a7d02089f2d5",
+  "url": "/isolated-components/InfoDisclosure?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "InfoDisclosure",
+  "scenarioType": "component"
+}

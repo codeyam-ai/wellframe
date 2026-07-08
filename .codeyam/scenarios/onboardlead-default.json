@@ -1,0 +1,11 @@
+{
+  "name": "OnboardLead - Default",
+  "id": "ad33214c-d36d-4800-ae47-e8232993b6a0",
+  "url": "/isolated-components/OnboardLead?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "OnboardLead",
+  "scenarioType": "component"
+}

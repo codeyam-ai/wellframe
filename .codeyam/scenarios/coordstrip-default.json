@@ -1,0 +1,11 @@
+{
+  "name": "CoordStrip - Default",
+  "id": "8f8e6124-1dbb-43b9-a1b6-6c0d00265c8a",
+  "url": "/isolated-components/CoordStrip?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CoordStrip",
+  "scenarioType": "component"
+}

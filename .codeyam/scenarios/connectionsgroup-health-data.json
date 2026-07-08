@@ -1,0 +1,11 @@
+{
+  "name": "ConnectionsGroup - Health Data",
+  "id": "6755851d-698f-4aef-a8e9-c532fe12763f",
+  "url": "/isolated-components/ConnectionsGroup?s=HealthData",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ConnectionsGroup",
+  "scenarioType": "component"
+}

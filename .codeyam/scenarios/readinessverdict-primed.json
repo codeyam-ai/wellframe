@@ -1,0 +1,11 @@
+{
+  "name": "ReadinessVerdict - Primed",
+  "id": "a0c596af-006a-4a05-8adf-e7f7c8510553",
+  "url": "/isolated-components/ReadinessVerdict?s=Primed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ReadinessVerdict",
+  "scenarioType": "component"
+}

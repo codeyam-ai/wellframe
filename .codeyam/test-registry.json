@@ -1,6 +1,78 @@
 {
   "tests": [
     {
+      "description": "Fresh mode clears every connected flag to false.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › clears connected on every provider when fresh is true",
+      "line": 16,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Fresh mode does not mutate the input list.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › does not mutate the original list when fresh is true",
+      "line": 37,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Empty input yields an empty list in both modes.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › handles an empty list",
+      "line": 44,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Fresh mode preserves identifying fields (id, name, blurb).",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › preserves id, name, and blurb when fresh is true",
+      "line": 28,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The real health-source config also resets under fresh mode.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › resets the pre-connected Apple Health entry in the real health config",
+      "line": 59,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The real AI provider config has Claude pre-connected until made fresh.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › resets the pre-connected Claude entry in the real AI config",
+      "line": 50,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
+      "description": "When not fresh, the list is returned as-is (identity preserved).",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › returns the same list reference when fresh is false",
+      "line": 11,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Fresh mode strips the detail string so no stale status shows.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "asFresh › strips detail on every provider when fresh is true",
+      "line": 22,
+      "registeredAt": "2026-07-08T16:19:54Z",
+      "runner": "tests"
+    },
+    {
       "description": "honors a custom radius argument",
       "file": "components/dashboard/dial.test.ts",
       "format": "vitest",

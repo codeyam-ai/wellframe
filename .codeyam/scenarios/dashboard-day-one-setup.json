@@ -1,0 +1,16 @@
+{
+  "name": "Dashboard - Day One Setup",
+  "id": "d4217746-de6b-4b2b-8d60-9e93c2658f99",
+  "url": "/?setup=1",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "dailyBriefing": [],
+    "vital": [],
+    "workout": []
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/page.tsx"
+}

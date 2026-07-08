@@ -7,12 +7,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import type { DailyBriefing, Vital, Workout } from '@prisma/client';
 import { Metabar } from './Metabar';
-import { ReadinessHero } from './ReadinessHero';
-import { VitalsPanel } from './VitalsPanel';
-import { CoachTransmission } from './CoachTransmission';
-import { FieldLog } from './FieldLog';
+import { BriefingDeck } from './BriefingDeck';
 import { EmptyBriefing } from './EmptyBriefing';
 import { CoachDock } from './CoachDock';
+import { ConnectionsPanel } from './ConnectionsPanel';
 
 export interface DashboardConsoleProps {
   briefing: DailyBriefing | null;
@@ -21,6 +19,9 @@ export interface DashboardConsoleProps {
   // Open the coach dock on first render (e.g. ?coach=1 deep link, or a
   // scenario that captures the coach-open state).
   initialCoachOpen?: boolean;
+  // Open the Connections/Setup panel on first render (?setup=1 deep link, or a
+  // scenario that captures the setup-open state).
+  initialSetupOpen?: boolean;
 }
 
 export function DashboardConsole({
@@ -28,10 +29,15 @@ export function DashboardConsole({
   vitals,
   workout,
   initialCoachOpen = false,
+  initialSetupOpen = false,
 }: DashboardConsoleProps) {
   const [coachOpen, setCoachOpen] = useState(initialCoachOpen);
   const openCoach = useCallback(() => setCoachOpen(true), []);
   const closeCoach = useCallback(() => setCoachOpen(false), []);
+
+  const [setupOpen, setSetupOpen] = useState(initialSetupOpen);
+  const openSetup = useCallback(() => setSetupOpen(true), []);
+  const closeSetup = useCallback(() => setSetupOpen(false), []);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -50,20 +56,19 @@ export function DashboardConsole({
 
   return (
     <div className="wf">
-      <Metabar dateLabel={dateLabel} />
+      <Metabar dateLabel={dateLabel} onOpenSetup={openSetup} />
       {briefing ? (
-        <div className="wf-deck">
-          <ReadinessHero briefing={briefing} onQueryCoach={openCoach} />
-          <section className="wf-info">
-            <VitalsPanel vitals={vitals} />
-            <CoachTransmission briefing={briefing} />
-            <FieldLog workout={workout} />
-          </section>
-        </div>
+        <BriefingDeck
+          briefing={briefing}
+          vitals={vitals}
+          workout={workout}
+          onQueryCoach={openCoach}
+        />
       ) : (
-        <EmptyBriefing onQueryCoach={openCoach} />
+        <EmptyBriefing onQueryCoach={openCoach} onOpenSetup={openSetup} />
       )}
       <CoachDock open={coachOpen} onClose={closeCoach} />
+      <ConnectionsPanel open={setupOpen} onClose={closeSetup} fresh={!briefing} />
     </div>
   );
 }

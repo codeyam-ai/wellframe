@@ -1,0 +1,11 @@
+{
+  "name": "ReadinessDial - Primed",
+  "id": "dd3ca0ee-2474-443e-b6fd-45e8b6725bd8",
+  "url": "/isolated-components/ReadinessDial?s=Primed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ReadinessDial",
+  "scenarioType": "component"
+}

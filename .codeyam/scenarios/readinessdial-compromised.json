@@ -1,0 +1,11 @@
+{
+  "name": "ReadinessDial - Compromised",
+  "id": "b5a65016-d47b-42e4-a914-239e22a763c2",
+  "url": "/isolated-components/ReadinessDial?s=Compromised",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ReadinessDial",
+  "scenarioType": "component"
+}

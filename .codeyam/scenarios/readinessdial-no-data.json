@@ -1,0 +1,11 @@
+{
+  "name": "ReadinessDial - No Data",
+  "id": "bf6958ae-0091-4d49-af52-36cf46356b5f",
+  "url": "/isolated-components/ReadinessDial?s=NoData",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ReadinessDial",
+  "scenarioType": "component"
+}

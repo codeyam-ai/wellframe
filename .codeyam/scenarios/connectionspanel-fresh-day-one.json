@@ -1,0 +1,11 @@
+{
+  "name": "ConnectionsPanel - Fresh Day One",
+  "id": "bde13af4-fae3-4529-bcf7-ea35427af4d5",
+  "url": "/isolated-components/ConnectionsPanel?s=FreshDayOne",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ConnectionsPanel",
+  "scenarioType": "component"
+}

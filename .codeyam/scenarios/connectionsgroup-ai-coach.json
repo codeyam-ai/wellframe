@@ -1,0 +1,11 @@
+{
+  "name": "ConnectionsGroup - AI Coach",
+  "id": "75a8f4c8-9990-47f1-8b94-00b804096cc3",
+  "url": "/isolated-components/ConnectionsGroup?s=AICoach",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ConnectionsGroup",
+  "scenarioType": "component"
+}

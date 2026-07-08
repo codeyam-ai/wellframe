@@ -1,5 +1,14 @@
 [
   {
+    "description": "Populated dashboard deck: the readiness hero above the vitals, coach-transmission, and field-log info row. Pure layout composition driven by the console.",
+    "filePath": "components/dashboard/BriefingDeck.tsx",
+    "name": "BriefingDeck",
+    "scenarios": [
+      "briefingdeck-primed",
+      "briefingdeck-no-workout"
+    ]
+  },
+  {
     "description": "The ⌘K coach entry point rendered as a right-side slide-in panel; in this build it is a stub confirming the entry point works ahead of the full context-aware coach.",
     "filePath": "components/dashboard/CoachDock.tsx",
     "name": "CoachDock",
@@ -24,6 +33,34 @@
       "justification": "CodeYam isolation-preview scaffold, not product code.",
       "kind": "scaffold"
     }
+  },
+  {
+    "description": "A titled group of provider rows in the Connections panel; when interactive, a row toggles open the plain-language connect flow.",
+    "filePath": "components/dashboard/ConnectionsGroup.tsx",
+    "name": "ConnectionsGroup",
+    "scenarios": [
+      "connectionsgroup-ai-coach",
+      "connectionsgroup-expanded-flow",
+      "connectionsgroup-health-data"
+    ]
+  },
+  {
+    "description": "The Set Up surface: a slide-in dock with an AI-coach group and a health-data group, plus a day-one fresh mode that shows every provider as available.",
+    "filePath": "components/dashboard/ConnectionsPanel.tsx",
+    "name": "ConnectionsPanel",
+    "scenarios": [
+      "connectionspanel-populated",
+      "connectionspanel-fresh-day-one"
+    ]
+  },
+  {
+    "description": "The instrument coordinates strip under the dial; drops entries with no value and renders nothing when none remain.",
+    "filePath": "components/dashboard/CoordStrip.tsx",
+    "name": "CoordStrip",
+    "scenarios": [
+      "coordstrip-default",
+      "coordstrip-partial"
+    ]
   },
   {
     "description": "Client composer for the whole briefing console: renders the metabar plus the readiness hero, vitals, coach transmission, and field log when a briefing exists, or the day-one onboarding state when it does not; owns the coach-dock open state and the ⌘K shortcut.",
@@ -65,6 +102,14 @@
     ]
   },
   {
+    "description": "A quiet in-place expand-for-plain-language toggle: a mono bracket button revealing explanatory content below a hairline.",
+    "filePath": "components/dashboard/InfoDisclosure.tsx",
+    "name": "InfoDisclosure",
+    "scenarios": [
+      "infodisclosure-default"
+    ]
+  },
+  {
     "description": "Plinth three-zone metadata bar: WELLFRAME brand, the 'Daily Briefing · Console' subject, and a timestamp with the mint LOCAL LINK status dot that signals the local-first, no-cloud posture.",
     "filePath": "components/dashboard/Metabar.tsx",
     "name": "Metabar",
@@ -74,12 +119,66 @@
     ]
   },
   {
+    "description": "The lead block of the day-one onboarding state: the no-data placeholder dial, headline, and privacy-first intro copy.",
+    "filePath": "components/dashboard/OnboardLead.tsx",
+    "name": "OnboardLead",
+    "scenarios": [
+      "onboardlead-default"
+    ]
+  },
+  {
+    "description": "One numbered setup step in the onboarding state: index, title/body, and a Connect button routing into the Connections panel.",
+    "filePath": "components/dashboard/OnboardStep.tsx",
+    "name": "OnboardStep",
+    "scenarios": [
+      "onboardstep-primary",
+      "onboardstep-secondary"
+    ]
+  },
+  {
+    "description": "The expanded connect flow beneath an active provider row: three plain-language steps and one confirming action, no codes or keys.",
+    "filePath": "components/dashboard/ProviderConnectFlow.tsx",
+    "name": "ProviderConnectFlow",
+    "scenarios": [
+      "providerconnectflow-default"
+    ]
+  },
+  {
+    "description": "One provider line: name and blurb on the left, and either a connected status pill or a Connect/Cancel button on the right.",
+    "filePath": "components/dashboard/ProviderRow.tsx",
+    "name": "ProviderRow",
+    "scenarios": [
+      "providerrow-connected",
+      "providerrow-disconnected",
+      "providerrow-active"
+    ]
+  },
+  {
+    "description": "The readiness instrument dial: a tick-marked bezel with a score-derived arc and the centered numeric readout.",
+    "filePath": "components/dashboard/ReadinessDial.tsx",
+    "name": "ReadinessDial",
+    "scenarios": [
+      "readinessdial-primed",
+      "readinessdial-compromised",
+      "readinessdial-no-data"
+    ]
+  },
+  {
     "description": "Left instrument hero: the readiness dial (arc length derived from the score), the elevation/wind/window coordinates strip, the serif verdict headline, and the suggested-workout + query-coach actions.",
     "filePath": "components/dashboard/ReadinessHero.tsx",
     "name": "ReadinessHero",
     "scenarios": [
       "readinesshero-primed",
       "readinesshero-low-readiness"
+    ]
+  },
+  {
+    "description": "The serif verdict block under the dial: headline, status line, action buttons, and the what-does-this-mean disclosure for the suggested session.",
+    "filePath": "components/dashboard/ReadinessVerdict.tsx",
+    "name": "ReadinessVerdict",
+    "scenarios": [
+      "readinessverdict-primed",
+      "readinessverdict-no-workout"
     ]
   },
   {
@@ -118,6 +217,12 @@
       "vitalspanel-partial-data",
       "vitalspanel-empty"
     ]
+  },
+  {
+    "description": "Shapes a provider list for the day-one view: when fresh, clears every provider connected/detail so all read as available; otherwise returns the list unchanged.",
+    "filePath": "components/dashboard/connections.ts",
+    "name": "asFresh",
+    "testFile": "components/dashboard/connections.test.ts"
   },
   {
     "description": "Returns the arc length (2 pi r) of the readiness dial ring for a given radius, defaulting to the design's 176px ring; used for both the dash array and the dash offset.",

@@ -1,0 +1,11 @@
+{
+  "name": "BriefingDeck - Primed",
+  "id": "0d77ce28-479c-4746-b23b-dbf5dc49dae0",
+  "url": "/isolated-components/BriefingDeck?s=Primed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "BriefingDeck",
+  "scenarioType": "component"
+}

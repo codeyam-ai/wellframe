@@ -1,0 +1,11 @@
+{
+  "name": "ProviderRow - Disconnected",
+  "id": "fcf8cf9b-ca46-46de-9d31-c924fb72398e",
+  "url": "/isolated-components/ProviderRow?s=Disconnected",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderRow",
+  "scenarioType": "component"
+}

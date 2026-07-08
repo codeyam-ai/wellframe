@@ -1,0 +1,11 @@
+{
+  "name": "OnboardStep - Primary",
+  "id": "6f2ce4e6-051d-444e-a333-70717fe6cbec",
+  "url": "/isolated-components/OnboardStep?s=Primary",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "OnboardStep",
+  "scenarioType": "component"
+}
