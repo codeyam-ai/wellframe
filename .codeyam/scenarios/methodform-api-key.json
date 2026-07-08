@@ -1,0 +1,11 @@
+{
+  "name": "MethodForm - API Key",
+  "id": "44d6dc6e-0805-4ddb-9148-2f11540c6bdf",
+  "url": "/isolated-components/MethodForm?s=ApiKey",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MethodForm",
+  "scenarioType": "component"
+}

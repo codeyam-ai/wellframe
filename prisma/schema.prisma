@@ -66,3 +66,21 @@ model Workout {
   pace      String? // e.g. "8:42"
   vertical  String? // e.g. "1,240 ft"
 }
+
+// A persisted connection to an AI coach or health-data provider. Production
+// starts with ZERO rows (day-one: every provider shows "Connect"). Connecting a
+// provider writes a row here; the Connections panel and dashboard read these
+// rows to show real connected / synced / active state instead of hardcoded demo
+// statuses. The catalog of *available* providers stays static in
+// components/dashboard/connections.ts — this table records only what's connected.
+model ProviderConnection {
+  id            Int     @id @default(autoincrement())
+  providerId    String  @unique // one connection row per provider; "claude" | "gemini" | "openai" | "ollama" | "lmstudio" | "mcp-local" | "apple" | "garmin" | "oura" | "whoop"
+  kind          String  // "ai" | "health"
+  method        String  // "oauth" | "apiKey" | "localEndpoint" | "mcp"
+  status        String  // "connected" | "synced" | "error"
+  detail        String? // status line: "Local · 0 cloud calls", "Synced 07:02", "key ••••4f2a", or an error message
+  endpoint      String? // for localEndpoint / mcp methods
+  isActiveCoach Boolean @default(false) // only one AI connection is active at a time
+  connectedAt   String  // ISO timestamp, e.g. "2026-07-06T07:02:00Z"
+}

@@ -52,5 +52,22 @@
       { "name": "pace", "type": "string", "required": false },
       { "name": "vertical", "type": "string", "required": false }
     ]
+  },
+  {
+    "name": "ProviderConnection",
+    "description": "A persisted connection between Wellframe and an AI coach or health-data provider. Production starts with zero rows (day-one: everything shows 'Connect'); connecting a provider writes a row here and the panel/dashboard reflect real connected/synced state. Records which provider (providerId), whether it's an AI coach or health source (kind), how it was connected (method: browser sign-in / pasted API key / local endpoint / local MCP), the resulting status and status-line detail, an optional endpoint for local/MCP methods, whether an AI connection is the active coach (only one true at a time), and when it connected.",
+    "category": "datastore",
+    "order": 4,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "providerId", "type": "string", "required": true },
+      { "name": "kind", "type": "string", "required": true },
+      { "name": "method", "type": "string", "required": true },
+      { "name": "status", "type": "string", "required": true },
+      { "name": "detail", "type": "string", "required": false },
+      { "name": "endpoint", "type": "string", "required": false },
+      { "name": "isActiveCoach", "type": "boolean", "required": true },
+      { "name": "connectedAt", "type": "string", "required": true }
+    ]
   }
 ]

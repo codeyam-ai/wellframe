@@ -1,0 +1,11 @@
+{
+  "name": "MethodForm - Endpoint",
+  "id": "866829ec-d35f-4dbf-b18e-30fd630c1b1a",
+  "url": "/isolated-components/MethodForm?s=Endpoint",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MethodForm",
+  "scenarioType": "component"
+}

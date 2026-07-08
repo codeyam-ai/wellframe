@@ -1,0 +1,11 @@
+{
+  "name": "MethodChooser - Selected",
+  "id": "d2de2118-b860-4f1f-83eb-cd180b9a51d5",
+  "url": "/isolated-components/MethodChooser?s=Selected",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MethodChooser",
+  "scenarioType": "component"
+}

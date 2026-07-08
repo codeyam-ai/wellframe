@@ -1,6 +1,6 @@
 {
   "name": "Dashboard - Connections Setup",
-  "id": "51894e9a-3e28-469f-89d0-1db579f05679",
+  "id": "b8352a5a-f4fa-47ab-9053-8499854da39f",
   "url": "/?setup=1",
   "dimensions": [
     "Desktop"
@@ -23,6 +23,48 @@
         "suggestedWorkout": "▶ Execute Zone 2 · 45 min",
         "wind": "4 KT",
         "windowLabel": "07–10"
+      }
+    ],
+    "providerConnection": [
+      {
+        "connectedAt": "2026-07-06T07:02:00Z",
+        "detail": "MCP · local model",
+        "endpoint": "http://localhost:8080/mcp",
+        "isActiveCoach": true,
+        "kind": "ai",
+        "method": "mcp",
+        "providerId": "claude",
+        "status": "connected"
+      },
+      {
+        "connectedAt": "2026-07-05T18:20:00Z",
+        "detail": "Key ••••4f2a",
+        "endpoint": null,
+        "isActiveCoach": false,
+        "kind": "ai",
+        "method": "apiKey",
+        "providerId": "openai",
+        "status": "connected"
+      },
+      {
+        "connectedAt": "2026-07-06T07:02:00Z",
+        "detail": "Synced 07:02",
+        "endpoint": null,
+        "isActiveCoach": false,
+        "kind": "health",
+        "method": "oauth",
+        "providerId": "apple",
+        "status": "synced"
+      },
+      {
+        "connectedAt": "2026-07-06T06:47:00Z",
+        "detail": "Synced 06:47",
+        "endpoint": null,
+        "isActiveCoach": false,
+        "kind": "health",
+        "method": "apiKey",
+        "providerId": "oura",
+        "status": "synced"
       }
     ],
     "vital": [
@@ -67,7 +109,7 @@
       {
         "distance": "8.2 mi",
         "pace": "8:42",
-        "photoUrl": "https://loremflickr.com/800/600/trail?lock=5&match=all",
+        "photoUrl": "/images/trail.jpg",
         "title": "Ridgeline Trail Run",
         "typeLabel": "▸ Ridgeline Trail · Z2",
         "vertical": "1,240 ft"

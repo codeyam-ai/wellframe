@@ -1,0 +1,11 @@
+{
+  "name": "ConnectionsGroup - Connect Form",
+  "id": "fd959305-14a5-421d-9a21-c554dcb2d94f",
+  "url": "/isolated-components/ConnectionsGroup?s=ConnectForm",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ConnectionsGroup",
+  "scenarioType": "component"
+}

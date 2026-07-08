@@ -1,0 +1,11 @@
+{
+  "name": "ProviderStatusPill - Connected",
+  "id": "fc377442-3e7d-4039-b430-83ad2bfe6b92",
+  "url": "/isolated-components/ProviderStatusPill?s=Connected",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderStatusPill",
+  "scenarioType": "component"
+}

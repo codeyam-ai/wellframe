@@ -1,18 +1,18 @@
 {
   "schemaVersion": 4,
-  "version": 6,
+  "version": 11,
   "partition": "all",
-  "hash": "bbcdc2aed20e4288",
+  "hash": "8aa51e61308db313",
   "runners": [
     {
       "name": "tests",
       "format": "vitest-json",
-      "output": "{\"numTotalTestSuites\":8,\"numPassedTestSuites\":8,\"numFailedTestSuites\":0,\"numPendingTestSuites\":0,\"numTotalTests\":27,\"numPassedTests\":27,\"numFailedTests\":0,\"numPendingTests\":0,\"numTodoTests\":0,\"snapshot\":{\"added\":0,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0,\"didUpdate\":false},\"startTime\":1783529120540,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh returns the same list reference when fresh is false\",\"status\":\"passed\",\"title\":\"returns the same list reference when fresh is false\",\"duration\":2.5147839999999633,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh clears connected on every provider when fresh is true\",\"status\":\"passed\",\"title\":\"clears connected on every provider when fresh is true\",\"duration\":0.644753000000037,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh strips detail on every provider when fresh is true\",\"status\":\"passed\",\"title\":\"strips detail on every provider when fresh is true\",\"duration\":0.40298700000005283,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh preserves id, name, and blurb when fresh is true\",\"status\":\"passed\",\"title\":\"preserves id, name, and blurb when fresh is true\",\"duration\":1.9437179999999898,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh does not mutate the original list when fresh is true\",\"status\":\"passed\",\"title\":\"does not mutate the original list when fresh is true\",\"duration\":0.8763219999999592,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh handles an empty list\",\"status\":\"passed\",\"title\":\"handles an empty list\",\"duration\":0.8919819999999845,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh resets the pre-connected Claude entry in the real AI config\",\"status\":\"passed\",\"title\":\"resets the pre-connected Claude entry in the real AI config\",\"duration\":1.7479529999999386,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"asFresh\"],\"fullName\":\"asFresh resets the pre-connected Apple Health entry in the real health config\",\"status\":\"passed\",\"title\":\"resets the pre-connected Apple Health entry in the real health config\",\"duration\":0.9577350000000706,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783529121375,\"endTime\":1783529121385.9578,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/connections.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes the default-radius circumference\",\"status\":\"passed\",\"title\":\"computes the default-radius circumference\",\"duration\":2.546118999999976,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes a custom-radius circumference\",\"status\":\"passed\",\"title\":\"computes a custom-radius circumference\",\"duration\":0.574854000000073,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns zero offset at a full score\",\"status\":\"passed\",\"title\":\"returns zero offset at a full score\",\"duration\":0.3965369999999666,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns the full circumference at a zero score\",\"status\":\"passed\",\"title\":\"returns the full circumference at a zero score\",\"duration\":0.2961930000000166,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset matches the reference offset near eighty-two\",\"status\":\"passed\",\"title\":\"matches the reference offset near eighty-two\",\"duration\":0.28500900000005913,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps an over-max score to zero offset\",\"status\":\"passed\",\"title\":\"clamps an over-max score to zero offset\",\"duration\":0.42317900000000463,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps a negative score to full circumference\",\"status\":\"passed\",\"title\":\"clamps a negative score to full circumference\",\"duration\":0.26038099999993847,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns full circumference for NaN\",\"status\":\"passed\",\"title\":\"returns full circumference for NaN\",\"duration\":0.23146799999994982,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783529121356,\"endTime\":1783529121366.2605,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/dial.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps an asterisk span in em\",\"status\":\"passed\",\"title\":\"wraps an asterisk span in em\",\"duration\":2.285026000000016,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize passes through plain text\",\"status\":\"passed\",\"title\":\"passes through plain text\",\"duration\":0.320233999999914,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize escapes angle brackets and ampersands\",\"status\":\"passed\",\"title\":\"escapes angle brackets and ampersands\",\"duration\":0.4905580000000782,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps multiple spans\",\"status\":\"passed\",\"title\":\"wraps multiple spans\",\"duration\":0.23674899999991794,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize does not emit raw tags from an escaped span\",\"status\":\"passed\",\"title\":\"does not emit raw tags from an escaped span\",\"duration\":0.5106369999999743,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize handles the empty string\",\"status\":\"passed\",\"title\":\"handles the empty string\",\"duration\":0.24917500000003656,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns an in-range value unchanged\",\"status\":\"passed\",\"title\":\"returns an in-range value unchanged\",\"duration\":0.21811300000001665,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps a negative value to zero\",\"status\":\"passed\",\"title\":\"clamps a negative value to zero\",\"duration\":0.24199699999996938,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps an over-max value to one hundred\",\"status\":\"passed\",\"title\":\"clamps an over-max value to one hundred\",\"duration\":0.4788780000000088,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns zero for NaN\",\"status\":\"passed\",\"title\":\"returns zero for NaN\",\"duration\":0.28548399999999674,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct preserves the zero and hundred boundaries\",\"status\":\"passed\",\"title\":\"preserves the zero and hundred boundaries\",\"duration\":0.20450199999993401,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783529121340,\"endTime\":1783529121347.2046,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/format.test.ts\"}]}\n",
+      "output": "{\"numTotalTestSuites\":14,\"numPassedTestSuites\":14,\"numFailedTestSuites\":0,\"numPendingTestSuites\":0,\"numTotalTests\":49,\"numPassedTests\":49,\"numFailedTests\":0,\"numPendingTests\":0,\"numTodoTests\":0,\"snapshot\":{\"added\":0,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0,\"didUpdate\":false},\"startTime\":1783544770585,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput accepts a plausible API key\",\"status\":\"passed\",\"title\":\"accepts a plausible API key\",\"duration\":2.6009800000000496,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects an empty API key\",\"status\":\"passed\",\"title\":\"rejects an empty API key\",\"duration\":0.4701300000000401,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects a too-short API key\",\"status\":\"passed\",\"title\":\"rejects a too-short API key\",\"duration\":0.3356300000000374,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput accepts a URL endpoint for localEndpoint and mcp\",\"status\":\"passed\",\"title\":\"accepts a URL endpoint for localEndpoint and mcp\",\"duration\":0.6288759999999911,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput accepts a host:port endpoint\",\"status\":\"passed\",\"title\":\"accepts a host:port endpoint\",\"duration\":0.277150000000006,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects a non-address endpoint value\",\"status\":\"passed\",\"title\":\"rejects a non-address endpoint value\",\"duration\":0.3517949999999246,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects an empty endpoint\",\"status\":\"passed\",\"title\":\"rejects an empty endpoint\",\"duration\":0.28839400000003934,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput never rejects oauth regardless of value\",\"status\":\"passed\",\"title\":\"never rejects oauth regardless of value\",\"duration\":0.3225039999999808,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"maskKey\"],\"fullName\":\"maskKey masks all but the last four characters\",\"status\":\"passed\",\"title\":\"masks all but the last four characters\",\"duration\":0.9486779999999726,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"maskKey\"],\"fullName\":\"maskKey fully masks a key of four or fewer characters\",\"status\":\"passed\",\"title\":\"fully masks a key of four or fewer characters\",\"duration\":0.3677099999999882,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"maskKey\"],\"fullName\":\"maskKey trims whitespace before masking\",\"status\":\"passed\",\"title\":\"trims whitespace before masking\",\"duration\":0.22892299999989518,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog leaves providers without a row disconnected\",\"status\":\"passed\",\"title\":\"leaves providers without a row disconnected\",\"duration\":0.4892580000000635,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog marks a provider with a connected row as connected and active\",\"status\":\"passed\",\"title\":\"marks a provider with a connected row as connected and active\",\"duration\":0.36278200000003835,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog does not count an error row as connected\",\"status\":\"passed\",\"title\":\"does not count an error row as connected\",\"duration\":0.7005229999999756,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog preserves catalog order\",\"status\":\"passed\",\"title\":\"preserves catalog order\",\"duration\":1.5584569999999758,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"activeCoach\"],\"fullName\":\"activeCoach returns the active coach when one is set\",\"status\":\"passed\",\"title\":\"returns the active coach when one is set\",\"duration\":0.3741899999999987,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"activeCoach\"],\"fullName\":\"activeCoach returns null when no coach is active\",\"status\":\"passed\",\"title\":\"returns null when no coach is active\",\"duration\":0.1294470000000274,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"findProvider\"],\"fullName\":\"findProvider finds a known provider\",\"status\":\"passed\",\"title\":\"finds a known provider\",\"duration\":0.1510879999999588,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"findProvider\"],\"fullName\":\"findProvider returns undefined for an unknown id\",\"status\":\"passed\",\"title\":\"returns undefined for an unknown id\",\"duration\":0.15275599999995393,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"findProvider\"],\"fullName\":\"findProvider gives every AI provider at least one method\",\"status\":\"passed\",\"title\":\"gives every AI provider at least one method\",\"duration\":0.12479599999994662,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves an apiKey connect to a connected status with a masked-key detail\",\"status\":\"passed\",\"title\":\"resolves an apiKey connect to a connected status with a masked-key detail\",\"duration\":0.33415500000000975,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves a localEndpoint connect and keeps the endpoint\",\"status\":\"passed\",\"title\":\"resolves a localEndpoint connect and keeps the endpoint\",\"duration\":0.2717859999999064,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves an mcp connect with the MCP detail\",\"status\":\"passed\",\"title\":\"resolves an mcp connect with the MCP detail\",\"duration\":0.5441319999999905,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves a health oauth connect to synced\",\"status\":\"passed\",\"title\":\"resolves a health oauth connect to synced\",\"duration\":0.2996859999999515,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection fails an unreachable local endpoint\",\"status\":\"passed\",\"title\":\"fails an unreachable local endpoint\",\"duration\":0.343166999999994,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection rejects an unknown provider\",\"status\":\"passed\",\"title\":\"rejects an unknown provider\",\"duration\":0.23325799999997798,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection rejects an unsupported method for the provider\",\"status\":\"passed\",\"title\":\"rejects an unsupported method for the provider\",\"duration\":0.3246630000001005,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection rejects a too-short api key\",\"status\":\"passed\",\"title\":\"rejects a too-short api key\",\"duration\":3.708387000000016,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"toConnectionRow\"],\"fullName\":\"toConnectionRow narrows a raw row to a typed ConnectionRow\",\"status\":\"passed\",\"title\":\"narrows a raw row to a typed ConnectionRow\",\"duration\":0.46502399999997124,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"toConnectionRow\"],\"fullName\":\"toConnectionRow preserves null detail and endpoint\",\"status\":\"passed\",\"title\":\"preserves null detail and endpoint\",\"duration\":0.2846420000000762,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783544771457,\"endTime\":1783544771476.465,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/connections.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes the default-radius circumference\",\"status\":\"passed\",\"title\":\"computes the default-radius circumference\",\"duration\":1.9556800000000294,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes a custom-radius circumference\",\"status\":\"passed\",\"title\":\"computes a custom-radius circumference\",\"duration\":0.33690999999998894,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns zero offset at a full score\",\"status\":\"passed\",\"title\":\"returns zero offset at a full score\",\"duration\":0.5144390000000385,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns the full circumference at a zero score\",\"status\":\"passed\",\"title\":\"returns the full circumference at a zero score\",\"duration\":0.2023110000000088,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset matches the reference offset near eighty-two\",\"status\":\"passed\",\"title\":\"matches the reference offset near eighty-two\",\"duration\":0.28987900000004174,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps an over-max score to zero offset\",\"status\":\"passed\",\"title\":\"clamps an over-max score to zero offset\",\"duration\":0.3029709999999568,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps a negative score to full circumference\",\"status\":\"passed\",\"title\":\"clamps a negative score to full circumference\",\"duration\":0.16278599999998278,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns full circumference for NaN\",\"status\":\"passed\",\"title\":\"returns full circumference for NaN\",\"duration\":0.13266799999996692,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783544771462,\"endTime\":1783544771467.1628,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/dial.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps an asterisk span in em\",\"status\":\"passed\",\"title\":\"wraps an asterisk span in em\",\"duration\":2.748888999999963,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize passes through plain text\",\"status\":\"passed\",\"title\":\"passes through plain text\",\"duration\":1.1714980000000423,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize escapes angle brackets and ampersands\",\"status\":\"passed\",\"title\":\"escapes angle brackets and ampersands\",\"duration\":1.7008849999999711,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps multiple spans\",\"status\":\"passed\",\"title\":\"wraps multiple spans\",\"duration\":0.3461610000000519,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize does not emit raw tags from an escaped span\",\"status\":\"passed\",\"title\":\"does not emit raw tags from an escaped span\",\"duration\":0.6397040000000516,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize handles the empty string\",\"status\":\"passed\",\"title\":\"handles the empty string\",\"duration\":0.3118779999999788,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns an in-range value unchanged\",\"status\":\"passed\",\"title\":\"returns an in-range value unchanged\",\"duration\":0.3332699999999704,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps a negative value to zero\",\"status\":\"passed\",\"title\":\"clamps a negative value to zero\",\"duration\":1.6231900000000223,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps an over-max value to one hundred\",\"status\":\"passed\",\"title\":\"clamps an over-max value to one hundred\",\"duration\":0.3394909999999527,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns zero for NaN\",\"status\":\"passed\",\"title\":\"returns zero for NaN\",\"duration\":0.32979899999997997,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct preserves the zero and hundred boundaries\",\"status\":\"passed\",\"title\":\"preserves the zero and hundred boundaries\",\"duration\":0.16459400000007918,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783544771432,\"endTime\":1783544771442.3298,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/format.test.ts\"}]}\n",
       "invoked_command": "npx vitest run --reporter=json",
       "exit_code": 0,
       "tests": [
         {
-          "key": "asFresh › returns the same list reference when fresh is false",
+          "key": "validateConnectInput › accepts a plausible API key",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,
@@ -20,7 +20,7 @@
           "format": "vitest"
         },
         {
-          "key": "asFresh › clears connected on every provider when fresh is true",
+          "key": "validateConnectInput › rejects an empty API key",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,
@@ -28,7 +28,7 @@
           "format": "vitest"
         },
         {
-          "key": "asFresh › strips detail on every provider when fresh is true",
+          "key": "validateConnectInput › rejects a too-short API key",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,
@@ -36,7 +36,7 @@
           "format": "vitest"
         },
         {
-          "key": "asFresh › preserves id, name, and blurb when fresh is true",
+          "key": "validateConnectInput › accepts a URL endpoint for localEndpoint and mcp",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,
@@ -44,7 +44,7 @@
           "format": "vitest"
         },
         {
-          "key": "asFresh › does not mutate the original list when fresh is true",
+          "key": "validateConnectInput › accepts a host:port endpoint",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,
@@ -52,7 +52,7 @@
           "format": "vitest"
         },
         {
-          "key": "asFresh › handles an empty list",
+          "key": "validateConnectInput › rejects a non-address endpoint value",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,
@@ -60,7 +60,7 @@
           "format": "vitest"
         },
         {
-          "key": "asFresh › resets the pre-connected Claude entry in the real AI config",
+          "key": "validateConnectInput › rejects an empty endpoint",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,
@@ -68,7 +68,183 @@
           "format": "vitest"
         },
         {
-          "key": "asFresh › resets the pre-connected Apple Health entry in the real health config",
+          "key": "validateConnectInput › never rejects oauth regardless of value",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "maskKey › masks all but the last four characters",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "maskKey › fully masks a key of four or fewer characters",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "maskKey › trims whitespace before masking",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "mergeCatalog › leaves providers without a row disconnected",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "mergeCatalog › marks a provider with a connected row as connected and active",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "mergeCatalog › does not count an error row as connected",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "mergeCatalog › preserves catalog order",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "activeCoach › returns the active coach when one is set",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "activeCoach › returns null when no coach is active",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "findProvider › finds a known provider",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "findProvider › returns undefined for an unknown id",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "findProvider › gives every AI provider at least one method",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › resolves an apiKey connect to a connected status with a masked-key detail",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › resolves a localEndpoint connect and keeps the endpoint",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › resolves an mcp connect with the MCP detail",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › resolves a health oauth connect to synced",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › fails an unreachable local endpoint",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › rejects an unknown provider",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › rejects an unsupported method for the provider",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "resolveConnection › rejects a too-short api key",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "toConnectionRow › narrows a raw row to a typed ConnectionRow",
+          "status": "passed",
+          "file": "components/dashboard/connections.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "toConnectionRow › preserves null detail and endpoint",
           "status": "passed",
           "file": "components/dashboard/connections.test.ts",
           "line": null,

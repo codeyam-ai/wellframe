@@ -1,0 +1,11 @@
+{
+  "name": "MethodForm - Sign In",
+  "id": "770b2417-ebca-4244-a555-4fca5bd162c0",
+  "url": "/isolated-components/MethodForm?s=SignIn",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MethodForm",
+  "scenarioType": "component"
+}

@@ -1,43 +1,45 @@
 import { ConnectionsGroup as Component } from "../../../components/dashboard/ConnectionsGroup";
 import type { ComponentProps } from "react";
-import type { Provider } from "../../../components/dashboard/connections";
+import { AI_PROVIDERS, HEALTH_SOURCES, mergeCatalog } from "../../../components/dashboard/connections";
 
 type Props = ComponentProps<typeof Component>;
 
-const ai: Provider[] = [
-  { id: "claude", name: "Claude", blurb: "Anthropic. Runs privately on this machine. Nothing leaves it.", connected: true, detail: "Local · 0 cloud calls" },
-  { id: "gemini", name: "Gemini", blurb: "Google's model. Fast, good with plans." },
-  { id: "openai", name: "OpenAI", blurb: "ChatGPT models. Broad general knowledge." },
-];
-
-const health: Provider[] = [
-  { id: "apple", name: "Apple Health", blurb: "Sleep, heart rate, steps from your iPhone or Watch.", connected: true, detail: "Synced 07:02" },
-  { id: "garmin", name: "Garmin", blurb: "Runs, HRV, and recovery from your watch." },
-  { id: "oura", name: "Oura", blurb: "Overnight sleep and readiness from your ring." },
-  { id: "whoop", name: "Whoop", blurb: "Strain and recovery from your band." },
-];
+const aiConnected = mergeCatalog(AI_PROVIDERS, [
+  { providerId: "claude", kind: "ai", method: "mcp", status: "connected", detail: "MCP · local model", endpoint: "http://localhost:8080/mcp", isActiveCoach: true, connectedAt: "2026-07-06T07:02:00Z" },
+]);
+const aiFresh = mergeCatalog(AI_PROVIDERS, []);
+const healthSynced = mergeCatalog(HEALTH_SOURCES, [
+  { providerId: "apple", kind: "health", method: "oauth", status: "synced", detail: "Synced 07:02", endpoint: null, isActiveCoach: false, connectedAt: "2026-07-06T07:02:00Z" },
+]);
 
 const scenarios: Record<string, Props> = {
-  // Interactive AI group with Claude connected and the rest available.
+  // AI coach group, Claude connected via MCP and set active.
   AICoach: {
     title: "Your AI coach",
-    lead: "Your coach is powered by an AI model. Pick the one you trust. You can switch anytime.",
-    providers: ai,
-    interactive: true,
+    lead: "Your coach is powered by an AI model. Pick the one you trust and choose how to connect.",
+    views: aiConnected,
   },
-  // Same group with Gemini's row expanded to reveal the connect flow.
+  // Day-one AI group with a row expanded to show the method chooser (Claude
+  // supports two methods, so the chooser is shown).
   Expanded: {
     title: "Your AI coach",
-    lead: "Your coach is powered by an AI model. Pick the one you trust. You can switch anytime.",
-    providers: ai,
-    interactive: true,
-    activeId: "gemini",
+    lead: "Your coach is powered by an AI model. Pick the one you trust and choose how to connect.",
+    views: aiFresh,
+    expandedId: "claude",
   },
-  // Non-interactive health group: one synced source, three available.
+  // A single-method provider (Local MCP) auto-selects its method, so the
+  // endpoint form renders directly.
+  ConnectForm: {
+    title: "Your AI coach",
+    lead: "Your coach is powered by an AI model. Pick the one you trust and choose how to connect.",
+    views: aiFresh,
+    expandedId: "mcp-local",
+  },
+  // Health group with one synced source.
   HealthData: {
     title: "Health data",
     lead: "Wellframe reads your health data to build each briefing. It stays on this machine.",
-    providers: health,
+    views: healthSynced,
   },
 };
 

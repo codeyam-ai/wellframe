@@ -1,11 +1,13 @@
-import { ProviderConnectFlow as Component } from "../../../components/dashboard/ProviderConnectFlow";
+import { MethodChooser as Component } from "../../../components/dashboard/MethodChooser";
 import type { ComponentProps } from "react";
 
 type Props = ComponentProps<typeof Component>;
 
 const scenarios: Record<string, Props> = {
-  // The three-step, plain-language connect flow for a chosen provider.
-  Default: { name: "Gemini" },
+  // Two methods offered, none selected yet.
+  Default: { methods: ["oauth", "apiKey"], selected: null },
+  // A method selected (highlighted).
+  Selected: { methods: ["oauth", "apiKey"], selected: "apiKey" },
 };
 
 export default async function Page({

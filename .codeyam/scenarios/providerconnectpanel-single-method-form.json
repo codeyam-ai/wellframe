@@ -1,0 +1,11 @@
+{
+  "name": "ProviderConnectPanel - Single Method Form",
+  "id": "62e1e8b0-619e-49a1-a18a-edaf371f93e0",
+  "url": "/isolated-components/ProviderConnectPanel?s=SingleMethodForm",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderConnectPanel",
+  "scenarioType": "component"
+}

@@ -1,33 +1,36 @@
-// The "Set Up" surface, reachable from the metabar on the populated dashboard.
-// Two plain-language sections: the AI coach (Claude / Gemini / OpenAI) and
-// health-data sources. Deliberately non-technical — no "API key", no "endpoint".
-// Owns the dock chrome and the active-connect-flow state; each provider group
-// is a ConnectionsGroup.
+// The "Set Up" surface, reachable from the metabar and the day-one onboarding.
+// Two plain-language groups — AI coach and health data — each a ConnectionsGroup
+// backed by real, persisted connection state. Owns the "which row is expanded"
+// UI state; the connect/disconnect/set-active mutations arrive as Server Action
+// props from the DashboardConsole.
 'use client';
 
 import { useState } from 'react';
-import { AI_PROVIDERS, HEALTH_SOURCES, asFresh } from './connections';
+import type { ProviderView, ConnectMethod } from './connections';
+import type { ConnectResult } from '@/app/lib/connections.actions';
 import { ConnectionsGroup } from './ConnectionsGroup';
 
 export function ConnectionsPanel({
   open,
   onClose = () => {},
-  // Day-one: nothing is connected yet, so show every provider as available to
-  // connect rather than inheriting the populated demo's connected statuses.
-  fresh = false,
+  aiViews,
+  healthViews,
+  onConnect = async () => ({ ok: true }),
+  onDisconnect = () => {},
+  onSetActive = () => {},
 }: {
   open: boolean;
   onClose?: () => void;
-  fresh?: boolean;
+  aiViews: ProviderView[];
+  healthViews: ProviderView[];
+  onConnect?: (id: string, method: ConnectMethod, value: string) => Promise<ConnectResult>;
+  onDisconnect?: (id: string) => void;
+  onSetActive?: (id: string) => void;
 }) {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
   if (!open) return null;
 
-  const aiProviders = asFresh(AI_PROVIDERS, fresh);
-  const healthSources = asFresh(HEALTH_SOURCES, fresh);
-
-  const toggle = (id: string) => setActiveId((cur) => (cur === id ? null : id));
-  const clearActive = () => setActiveId(null);
+  const toggle = (id: string) => setExpandedId((cur) => (cur === id ? null : id));
 
   return (
     <div
@@ -48,17 +51,23 @@ export function ConnectionsPanel({
         <div className="wf-conn-scroll">
           <ConnectionsGroup
             title="Your AI coach"
-            lead="Your coach is powered by an AI model. Pick the one you trust. You can switch anytime."
-            providers={aiProviders}
-            interactive
-            activeId={activeId}
+            lead="Your coach is powered by an AI model. Pick the one you trust and choose how to connect — sign in, paste a key, or run it locally. You can switch anytime."
+            views={aiViews}
+            expandedId={expandedId}
             onToggle={toggle}
-            onContinue={clearActive}
+            onConnect={onConnect}
+            onDisconnect={onDisconnect}
+            onSetActive={onSetActive}
           />
           <ConnectionsGroup
             title="Health data"
             lead="Wellframe reads your health data to build each briefing. It stays on this machine."
-            providers={healthSources}
+            views={healthViews}
+            expandedId={expandedId}
+            onToggle={toggle}
+            onConnect={onConnect}
+            onDisconnect={onDisconnect}
+            onSetActive={onSetActive}
           />
         </div>
 

@@ -119,6 +119,26 @@
     ]
   },
   {
+    "description": "The connect-method options for a provider (browser sign-in vs paste key vs local endpoint), shown when a provider supports more than one; the selected option is highlighted.",
+    "filePath": "components/dashboard/MethodChooser.tsx",
+    "name": "MethodChooser",
+    "scenarios": [
+      "methodchooser-default",
+      "methodchooser-selected"
+    ]
+  },
+  {
+    "description": "The per-method connect form: a plain-language hint, an optional API-key/endpoint input, an inline error, and the submit button. Presentational; the parent owns state.",
+    "filePath": "components/dashboard/MethodForm.tsx",
+    "name": "MethodForm",
+    "scenarios": [
+      "methodform-api-key",
+      "methodform-endpoint",
+      "methodform-error",
+      "methodform-sign-in"
+    ]
+  },
+  {
     "description": "The lead block of the day-one onboarding state: the no-data placeholder dial, headline, and privacy-first intro copy.",
     "filePath": "components/dashboard/OnboardLead.tsx",
     "name": "OnboardLead",
@@ -136,11 +156,12 @@
     ]
   },
   {
-    "description": "The expanded connect flow beneath an active provider row: three plain-language steps and one confirming action, no codes or keys.",
-    "filePath": "components/dashboard/ProviderConnectFlow.tsx",
-    "name": "ProviderConnectFlow",
+    "description": "The expanded connect area beneath an available provider row; owns the connect state machine and composes MethodChooser (when there's a choice) with MethodForm.",
+    "filePath": "components/dashboard/ProviderConnectPanel.tsx",
+    "name": "ProviderConnectPanel",
     "scenarios": [
-      "providerconnectflow-default"
+      "providerconnectpanel-chooser",
+      "providerconnectpanel-single-method-form"
     ]
   },
   {
@@ -151,6 +172,16 @@
       "providerrow-connected",
       "providerrow-disconnected",
       "providerrow-active"
+    ]
+  },
+  {
+    "description": "The right-aligned connection status indicator on a provider row: signal dot + status-line detail when connected/synced, or a warning-colored label on error.",
+    "filePath": "components/dashboard/ProviderStatusPill.tsx",
+    "name": "ProviderStatusPill",
+    "scenarios": [
+      "providerstatuspill-connected",
+      "providerstatuspill-synced",
+      "providerstatuspill-error"
     ]
   },
   {
@@ -219,9 +250,9 @@
     ]
   },
   {
-    "description": "Shapes a provider list for the day-one view: when fresh, clears every provider connected/detail so all read as available; otherwise returns the list unchanged.",
+    "description": "Returns the active-coach view among merged provider views, or null when none is active.",
     "filePath": "components/dashboard/connections.ts",
-    "name": "asFresh",
+    "name": "activeCoach",
     "testFile": "components/dashboard/connections.test.ts"
   },
   {
@@ -237,10 +268,40 @@
     "testFile": "components/dashboard/format.test.ts"
   },
   {
+    "description": "Server Action: resolves a connect attempt (via resolveConnection) then upserts the ProviderConnection row and revalidates the dashboard. Returns ok or an inline error.",
+    "filePath": "app/lib/connections.actions.ts",
+    "name": "connectProvider",
+    "untestabilityReason": {
+      "justification": "Server Action performing Prisma upsert + revalidatePath; the pure decision logic is resolveConnection, which is unit-tested",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Server Action: deletes a provider's ProviderConnection row and revalidates the dashboard.",
+    "filePath": "app/lib/connections.actions.ts",
+    "name": "disconnectProvider",
+    "untestabilityReason": {
+      "justification": "Server Action performing a Prisma delete + revalidatePath; no branching logic to unit-test",
+      "kind": "platform-glue"
+    }
+  },
+  {
     "description": "Escapes HTML in a briefing string and converts *word* spans into <em>word</em>, so a headline or coach message can italicize one phrase safely (escaping runs before emphasis so injected markup stays inert).",
     "filePath": "components/dashboard/format.ts",
     "name": "emphasize",
     "testFile": "components/dashboard/format.test.ts"
+  },
+  {
+    "description": "Looks up a catalog provider by id across the combined AI + health provider list; undefined if unknown.",
+    "filePath": "components/dashboard/connections.ts",
+    "name": "findProvider",
+    "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Server-only read that loads all ProviderConnection rows via Prisma and maps each through the pure toConnectionRow helper to the client-safe ConnectionRow shape.",
+    "filePath": "app/lib/connections.server.ts",
+    "name": "getConnectionRows",
+    "testFile": "components/dashboard/connections.test.ts"
   },
   {
     "description": "Server data loader that reads the most-recent DailyBriefing plus its ordered Vitals and latest Workout via Prisma, returning the console's full payload (nulls/empties when the DB is empty, i.e. the day-one state).",
@@ -261,9 +322,48 @@
     }
   },
   {
+    "description": "Masks an API key for display, keeping only the last four characters (fully masked when four or fewer).",
+    "filePath": "components/dashboard/connections.ts",
+    "name": "maskKey",
+    "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Merges the static provider catalog with stored ConnectionRow[] into view-model rows (connected/active flags); an error-status row is surfaced but not counted as connected; catalog order is preserved.",
+    "filePath": "components/dashboard/connections.ts",
+    "name": "mergeCatalog",
+    "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
     "description": "Computes the SVG stroke-dashoffset that encodes a 0-100 readiness score on the dial ring (full ring at 100, empty at 0), clamping out-of-range or NaN scores so the arc is always valid.",
     "filePath": "components/dashboard/dial.ts",
     "name": "readinessDashOffset",
     "testFile": "components/dashboard/dial.test.ts"
+  },
+  {
+    "description": "Pure resolution of a connect attempt: validates provider/method/input then maps the method to the status and status-line detail to persist, or an error. The deterministic stand-in for the real handshake; no side effects.",
+    "filePath": "components/dashboard/connections.ts",
+    "name": "resolveConnection",
+    "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Server Action: makes one AI provider the sole active coach (clears others, sets this one) in a transaction, then revalidates the dashboard.",
+    "filePath": "app/lib/connections.actions.ts",
+    "name": "setActiveCoach",
+    "untestabilityReason": {
+      "justification": "Server Action performing a Prisma transaction + revalidatePath; the one-active-coach invariant is exercised via a persistence probe",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Pure mapper that narrows a raw ProviderConnection DB row's string columns to the typed ConnectionRow unions and drops the numeric id.",
+    "filePath": "components/dashboard/connections.ts",
+    "name": "toConnectionRow",
+    "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Validates the typed value for a connect method (non-empty/long-enough API key; URL or host:port for local/MCP endpoints), returning an error string or null. OAuth needs no input.",
+    "filePath": "components/dashboard/connections.ts",
+    "name": "validateConnectInput",
+    "testFile": "components/dashboard/connections.test.ts"
   }
 ]

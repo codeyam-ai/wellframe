@@ -875,3 +875,111 @@ body {
   font-size: 11px;
   color: var(--wf-ink);
 }
+
+/* connected-row actions cluster (status + set-active + disconnect) */
+.wf-conn-actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.wf-conn-status.err {
+  color: var(--wf-warn, #e0a046);
+}
+.wf-conn-link {
+  font-family: var(--wf-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wf-fade);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+.wf-conn-link:hover {
+  color: var(--wf-mute);
+}
+.wf-conn-coachtag {
+  margin-left: 12px;
+  font-family: var(--wf-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wf-sig);
+  vertical-align: middle;
+}
+.wf-conn-row.is-coach {
+  border-left: 2px solid var(--wf-sig);
+  margin-left: -18px;
+  padding-left: 16px;
+}
+
+/* method chooser + connect form */
+.wf-method-choose {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.wf-method-opt {
+  font-family: var(--wf-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wf-mute);
+  background: transparent;
+  border: 1px solid var(--wf-rule);
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+.wf-method-opt:hover {
+  color: var(--wf-ink);
+  border-color: var(--wf-rule-strong, rgba(237, 240, 243, 0.24));
+}
+.wf-method-opt.is-sel {
+  color: var(--wf-sig);
+  border-color: var(--wf-sig);
+}
+.wf-method-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.wf-method-hint {
+  color: var(--wf-mute);
+  font-size: 12.5px;
+  line-height: 1.55;
+  max-width: 44ch;
+}
+.wf-input {
+  font-family: var(--wf-mono);
+  font-size: 13px;
+  color: var(--wf-ink);
+  background: rgba(237, 240, 243, 0.04);
+  border: 1px solid var(--wf-rule);
+  padding: 12px 14px;
+  width: 100%;
+  max-width: 360px;
+  transition: border-color 160ms ease;
+}
+.wf-input::placeholder {
+  color: var(--wf-fade);
+}
+.wf-input:focus {
+  outline: none;
+  border-color: var(--wf-sig);
+}
+.wf-method-err {
+  color: var(--wf-warn, #e0a046);
+  font-size: 12.5px;
+  line-height: 1.5;
+  max-width: 44ch;
+}
+.wf-method-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 2px;
+}

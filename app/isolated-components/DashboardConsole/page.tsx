@@ -1,8 +1,18 @@
 import Component from "../../../components/dashboard/DashboardConsole";
 import type { ComponentProps } from "react";
 import type { DailyBriefing, Vital, Workout } from "@prisma/client";
+import { AI_PROVIDERS, HEALTH_SOURCES, mergeCatalog } from "../../../components/dashboard/connections";
 
 type Props = ComponentProps<typeof Component>;
+
+const aiViews = mergeCatalog(AI_PROVIDERS, [
+  { providerId: "claude", kind: "ai", method: "mcp", status: "connected", detail: "MCP · local model", endpoint: "http://localhost:8080/mcp", isActiveCoach: true, connectedAt: "2026-07-06T07:02:00Z" },
+]);
+const healthViews = mergeCatalog(HEALTH_SOURCES, [
+  { providerId: "apple", kind: "health", method: "oauth", status: "synced", detail: "Synced 07:02", endpoint: null, isActiveCoach: false, connectedAt: "2026-07-06T07:02:00Z" },
+]);
+const emptyAiViews = mergeCatalog(AI_PROVIDERS, []);
+const emptyHealthViews = mergeCatalog(HEALTH_SOURCES, []);
 
 const primed: DailyBriefing = {
   id: 1,
@@ -34,16 +44,16 @@ const workout: Workout = {
   id: 1,
   title: "Ridgeline Trail Run",
   typeLabel: "▸ Ridgeline Trail · Z2",
-  photoUrl: "https://loremflickr.com/800/600/trail?lock=5&match=all",
+  photoUrl: "/images/trail.jpg",
   distance: "8.2 mi",
   pace: "8:42",
   vertical: "1,240 ft",
 };
 
 const scenarios: Record<string, Props> = {
-  Primed: { briefing: primed, vitals, workout },
-  CoachOpen: { briefing: primed, vitals, workout, initialCoachOpen: true },
-  Empty: { briefing: null, vitals: [], workout: null },
+  Primed: { briefing: primed, vitals, workout, aiViews, healthViews },
+  CoachOpen: { briefing: primed, vitals, workout, aiViews, healthViews, initialCoachOpen: true },
+  Empty: { briefing: null, vitals: [], workout: null, aiViews: emptyAiViews, healthViews: emptyHealthViews },
 };
 
 export default async function Page({

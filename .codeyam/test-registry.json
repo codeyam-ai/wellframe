@@ -1,75 +1,21 @@
 {
   "tests": [
     {
-      "description": "Fresh mode clears every connected flag to false.",
+      "description": "Returns null when nothing is active.",
       "file": "components/dashboard/connections.test.ts",
       "format": "vitest",
-      "key": "asFresh › clears connected on every provider when fresh is true",
-      "line": 16,
-      "registeredAt": "2026-07-08T16:19:54Z",
+      "key": "activeCoach › returns null when no coach is active",
+      "line": 135,
+      "registeredAt": "2026-07-08T20:23:26Z",
       "runner": "tests"
     },
     {
-      "description": "Fresh mode does not mutate the input list.",
+      "description": "Returns the view whose row is the active coach.",
       "file": "components/dashboard/connections.test.ts",
       "format": "vitest",
-      "key": "asFresh › does not mutate the original list when fresh is true",
-      "line": 37,
-      "registeredAt": "2026-07-08T16:19:54Z",
-      "runner": "tests"
-    },
-    {
-      "description": "Empty input yields an empty list in both modes.",
-      "file": "components/dashboard/connections.test.ts",
-      "format": "vitest",
-      "key": "asFresh › handles an empty list",
-      "line": 44,
-      "registeredAt": "2026-07-08T16:19:54Z",
-      "runner": "tests"
-    },
-    {
-      "description": "Fresh mode preserves identifying fields (id, name, blurb).",
-      "file": "components/dashboard/connections.test.ts",
-      "format": "vitest",
-      "key": "asFresh › preserves id, name, and blurb when fresh is true",
-      "line": 28,
-      "registeredAt": "2026-07-08T16:19:54Z",
-      "runner": "tests"
-    },
-    {
-      "description": "The real health-source config also resets under fresh mode.",
-      "file": "components/dashboard/connections.test.ts",
-      "format": "vitest",
-      "key": "asFresh › resets the pre-connected Apple Health entry in the real health config",
-      "line": 59,
-      "registeredAt": "2026-07-08T16:19:54Z",
-      "runner": "tests"
-    },
-    {
-      "description": "The real AI provider config has Claude pre-connected until made fresh.",
-      "file": "components/dashboard/connections.test.ts",
-      "format": "vitest",
-      "key": "asFresh › resets the pre-connected Claude entry in the real AI config",
-      "line": 50,
-      "registeredAt": "2026-07-08T16:19:54Z",
-      "runner": "tests"
-    },
-    {
-      "description": "When not fresh, the list is returned as-is (identity preserved).",
-      "file": "components/dashboard/connections.test.ts",
-      "format": "vitest",
-      "key": "asFresh › returns the same list reference when fresh is false",
-      "line": 11,
-      "registeredAt": "2026-07-08T16:19:54Z",
-      "runner": "tests"
-    },
-    {
-      "description": "Fresh mode strips the detail string so no stale status shows.",
-      "file": "components/dashboard/connections.test.ts",
-      "format": "vitest",
-      "key": "asFresh › strips detail on every provider when fresh is true",
-      "line": 22,
-      "registeredAt": "2026-07-08T16:19:54Z",
+      "key": "activeCoach › returns the active coach when one is set",
+      "line": 127,
+      "registeredAt": "2026-07-08T20:23:26Z",
       "runner": "tests"
     },
     {
@@ -190,6 +136,96 @@
       "runner": "tests"
     },
     {
+      "description": "Looks up a real catalog provider by id.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "findProvider › finds a known provider",
+      "line": 142,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Every AI provider declares at least one connect method.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "findProvider › gives every AI provider at least one method",
+      "line": 152,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Returns undefined for an unknown id.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "findProvider › returns undefined for an unknown id",
+      "line": 147,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A very short key is fully masked.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "maskKey › fully masks a key of four or fewer characters",
+      "line": 66,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A normal key keeps only its last four characters.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "maskKey › masks all but the last four characters",
+      "line": 61,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Surrounding whitespace is trimmed before masking.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "maskKey › trims whitespace before masking",
+      "line": 72,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An error-status row surfaces the connection but is NOT counted as connected.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "mergeCatalog › does not count an error row as connected",
+      "line": 105,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A provider with no row is not connected and not active.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "mergeCatalog › leaves providers without a row disconnected",
+      "line": 87,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A provider with a connected row reflects connected + active state.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "mergeCatalog › marks a provider with a connected row as connected and active",
+      "line": 96,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Output order follows the catalog, not the rows.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "mergeCatalog › preserves catalog order",
+      "line": 115,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
       "description": "negative scores clamp to the full circumference",
       "file": "components/dashboard/dial.test.ts",
       "format": "vitest",
@@ -241,6 +277,168 @@
       "key": "readinessDashOffset › returns zero offset at a full score",
       "line": 18,
       "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "An unreachable local endpoint fails with a friendly error.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › fails an unreachable local endpoint",
+      "line": 183,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A too-short key is rejected via the shared validator.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › rejects a too-short api key",
+      "line": 202,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unknown provider is rejected.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › rejects an unknown provider",
+      "line": 190,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A method the provider does not support is rejected.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › rejects an unsupported method for the provider",
+      "line": 195,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A health provider connecting via oauth ends up synced, not connected.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › resolves a health oauth connect to synced",
+      "line": 177,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A local endpoint connects and records the endpoint.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › resolves a localEndpoint connect and keeps the endpoint",
+      "line": 165,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A pasted key on a cloud AI provider connects with a masked-key detail.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › resolves an apiKey connect to a connected status with a masked-key detail",
+      "line": 159,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An MCP endpoint connects with the MCP detail.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "resolveConnection › resolves an mcp connect with the MCP detail",
+      "line": 171,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Narrows a raw DB row's string columns to the typed ConnectionRow unions and drops the extra id, preserving the remaining fields.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "toConnectionRow › narrows a raw row to a typed ConnectionRow",
+      "line": 212,
+      "registeredAt": "2026-07-08T20:27:14.398599176+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Preserves null optional fields.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "toConnectionRow › preserves null detail and endpoint",
+      "line": 237,
+      "registeredAt": "2026-07-08T20:27:14.398599176+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A full URL endpoint passes for local + mcp methods.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › accepts a URL endpoint for localEndpoint and mcp",
+      "line": 32,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A host:port endpoint passes.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › accepts a host:port endpoint",
+      "line": 38,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A non-empty, reasonable-length API key passes.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › accepts a plausible API key",
+      "line": 17,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "OAuth needs no typed input, so any value is fine.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › never rejects oauth regardless of value",
+      "line": 53,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Garbage that is neither a URL nor host:port is rejected.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › rejects a non-address endpoint value",
+      "line": 43,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A too-short key is rejected as likely truncated.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › rejects a too-short API key",
+      "line": 27,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An empty key is rejected with a prompt to paste one.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › rejects an empty API key",
+      "line": 22,
+      "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An empty endpoint is rejected.",
+      "file": "components/dashboard/connections.test.ts",
+      "format": "vitest",
+      "key": "validateConnectInput › rejects an empty endpoint",
+      "line": 48,
+      "registeredAt": "2026-07-08T20:23:26Z",
       "runner": "tests"
     }
   ],

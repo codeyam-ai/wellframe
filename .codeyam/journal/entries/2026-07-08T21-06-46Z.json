@@ -1,0 +1,651 @@
+{
+  "timestamp": "2026-07-08T21:06:46Z",
+  "title": "Provider Connection Integration",
+  "type": "feature",
+  "userRequest": "# Provider Connection Integration\n\nTurn the stubbed 3-step \"Connect\" explainer into a **real, persisted** connection\nsystem for AI coaches and health sources — with a choice of connection methods per\nprovider, connection state saved to the database, and the ability to pick an active\ncoach.\n\n## Scope boundary (read this first)\n\nThis is the codeyam Next.js/Prisma/SQLite **web preview**, not the Tauri desktop\napp, and the production DB starts empty. So \"real\" means the **state machine,\npersistence, and UI are real** — the external network handshake (OAuth redirect,\nlive key check against Anthropic/Garmin, a real running Ollama/MCP server) is\n**simulated deterministically** in this environment. Per-scenario state lives in the\nDB and is read on every request (`force-dynamic`), so each scenario seeds its own\nconnection state — no launch-time-only config.\n\n## New data model\n\n`ProviderConnection` (Prisma, SQLite):\n\n- `id` — autoincrement\n- `providerId` — \"claude\" | \"gemini\" | \"openai\" | \"ollama\" | \"lmstudio\" | \"mcp-local\" | \"apple\" | \"garmin\" | \"oura\" | \"whoop\"\n- `kind` — \"ai\" | \"health\"\n- `method` — \"oauth\" | \"apiKey\" | \"localEndpoint\" | \"mcp\"\n- `status` — \"connected\" | \"synced\" | \"error\"\n- `detail` — status line (\"Local · 0 cloud calls\", \"Synced 07:02\", \"key ••••4f2a\", or an error message)\n- `endpoint` — nullable, for local/mcp\n- `isActiveCoach` — bool (only one AI row true at a time)\n- `connectedAt` — ISO timestamp\n\nThe **catalog of available providers stays static** (`connections.ts`); the DB stores\nwhich ones are connected and how. Day-one = zero rows = everything shows \"Connect\".\n\n## Provider catalog + methods (`connections.ts`, client-safe)\n\nEach provider declares the methods it supports; the method chooser shows only those:\n\n- **AI · cloud** — Claude, Gemini, OpenAI → **Browser sign-in** + **Paste API key**\n- **AI · local** — Ollama, LM Studio → **Local endpoint** (auto-detect + URL)\n- **AI · local MCP** — \"Local MCP server\" → **MCP endpoint** (connect an\n  MCP-compatible local model by endpoint; mocked handshake returns the served model)\n- **Health** — Apple Health → **companion sync**; Garmin / Oura / Whoop → **Browser\n  sign-in** + **Paste API key** (same real flow as AI, per request)\n\n## Pure helpers (co-located unit tests, like `format.ts` / `dial.ts`)\n\n- `validateConnectInput(method, value)` → `string | null` (non-empty key; URL/host for endpoint/mcp)\n- `mergeCatalog(catalog, connections)` → view-model rows (connected / active / status)\n- `maskKey(key)` → `\"••••4f2a\"`\n\nThe existing `asFresh` helper is **removed** (superseded by the DB merge) — tracked\ndeletion + glossary cleanup.\n\n## Server (the app's first write path)\n\n- `app/lib/connections.server.ts` — `getConnections()` read (server-only, imports prisma)\n- **Server actions** (`'use server'`): `connectProvider(providerId, method, value)`,\n  `disconnectProvider(providerId)`, `setActiveCoach(providerId)` — mocked handshake →\n  persist → `revalidatePath('/')`\n\n## UI\n\n- **ConnectionsPanel** takes the merged connection view-model as props (like it takes\n  the catalog today), so every state renders from seeded props.\n- Per-row **Connect** opens a **method chooser**; each method renders its mini-form\n  (API-key field / endpoint field / sign-in button), with **validating** and **error**\n  states.\n- Connected rows show a real status pill; **AI rows** get **\"Set as active\"** + an\n  active marker; every connected row can **Disconnect**.\n- `DashboardConsole` / `app/page.tsx` load `getConnections()`, pass it down, and wire\n  the server actions. The coach dock / coach signature reflect the active coach (light\n  touch).\n\n## Scenarios (prod empty; each seeds `ProviderConnection`)\n\n**Component** (ConnectionsPanel + new sub-components):\n- Day-one — nothing connected\n- Method chooser open\n- API-key entry\n- Validating (in-flight)\n- Error — invalid key / unreachable endpoint\n- One AI connected + active (Claude)\n- Local MCP connected\n- Multiple connected, one active — switch / disconnect\n- Health synced\n\n**Application** (`/`):\n- Connections populated — several connected, one active coach\n- Day-one setup — nothing connected\n\n## Files\n\n- **New**: `ProviderConnection` model; `app/lib/connections.server.ts` (+ actions);\n  method-chooser + per-method form components; connection view-model helpers + tests.\n- **Modified**: `connections.ts` (catalog + methods, remove `asFresh`),\n  `ConnectionsPanel`, `ConnectionsGroup`, `ProviderRow`, `ProviderConnectFlow`\n  (becomes the method chooser), `DashboardConsole`, `app/page.tsx`,\n  `prisma/schema.prisma`.\n\n## Follow-ups / deferred\n\n- Real OAuth redirect + live key validation + real Ollama/MCP ping (mocked here).\n- Secret-at-rest encryption (SQLCipher) is a desktop-app concern; preview stores keys\n  masked.",
+  "description": "Turned the stubbed 3-step Connect explainer into a real, persisted connection system for AI coaches and health sources. Introduced the app first database write path: a ProviderConnection model plus Server Actions (connectProvider / disconnectProvider / setActiveCoach) backed by a pure, unit-tested resolveConnection handshake. Each provider now offers a method chooser — browser sign-in, paste an API key, a local endpoint, or a Local MCP server — and connections persist so the panel shows real connected/synced state, a masked key, an active-coach marker (one active at a time), and disconnect. Deconstructed the UI into MethodChooser / MethodForm / ProviderStatusPill and pulled connection logic into tested helpers (resolveConnection, toConnectionRow, validateConnectInput, maskKey, mergeCatalog); removed the dead ProviderConnectFlow. External handshakes are deterministically mocked in this web preview; the state machine, persistence, and UI are real.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/.last-reconcile.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/data-structure.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/pending-build-launch",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/completed/provider-connection-integration.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/reconciliation-log.jsonl",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/runner-timing-history.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-connections-setup.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-low-readiness.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-partial-data.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/dashboard-primed-briefing.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/providerconnectflow-default.json",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-ai-coach--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-ai-coach--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-expanded-flow--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-expanded-flow--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-health-data--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-health-data--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-fresh-day-one--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-fresh-day-one--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-populated--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionspanel-populated--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectflow-default--desktop.png",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectflow-default--desktop.png.hash",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-active--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-active--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-connected--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-connected--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-disconnected--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-disconnected--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/last-advance.txt",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/provider-auth-verdict.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/session-results-snapshot.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/step-highwater.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-run-marker.json",
+      "status": "modified"
+    },
+    {
+      "path": "app/globals.css",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/BriefingDeck/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/ConnectionsGroup/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/ConnectionsPanel/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/DashboardConsole/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/FieldLog/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/ProviderConnectFlow/page.tsx",
+      "status": "deleted"
+    },
+    {
+      "path": "app/isolated-components/ProviderRow/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/ConnectionsGroup.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/ConnectionsPanel.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/DashboardConsole.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/ProviderConnectFlow.tsx",
+      "status": "deleted"
+    },
+    {
+      "path": "components/dashboard/ProviderRow.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/connections.test.ts",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/connections.ts",
+      "status": "modified"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/connectionsgroup-connect-form.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/methodchooser-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/methodchooser-selected.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/methodform-api-key.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/methodform-endpoint.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/methodform-error.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/methodform-sign-in.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerconnectpanel-chooser.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerconnectpanel-single-method-form.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerrow-error.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerstatuspill-connected.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerstatuspill-error.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/providerstatuspill-synced.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-connect-form--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/connectionsgroup-connect-form--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodchooser-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodchooser-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodchooser-selected--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodchooser-selected--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-api-key--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-api-key--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-endpoint--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-endpoint--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-error--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-error--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-sign-in--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/methodform-sign-in--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectpanel-chooser--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectpanel-chooser--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectpanel-single-method-form--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerconnectpanel-single-method-form--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-error--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerrow-error--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerstatuspill-connected--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerstatuspill-connected--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerstatuspill-error--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerstatuspill-error--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerstatuspill-synced--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/providerstatuspill-synced--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/MethodChooser/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/MethodForm/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ProviderConnectPanel/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/ProviderStatusPill/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/connections.actions.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/connections.server.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/MethodChooser.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/MethodForm.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ProviderConnectPanel.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/ProviderStatusPill.tsx",
+      "status": "added"
+    },
+    {
+      "path": "public/images/recovery.jpg",
+      "status": "added"
+    },
+    {
+      "path": "public/images/running.jpg",
+      "status": "added"
+    },
+    {
+      "path": "public/images/trail.jpg",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "ConnectionsGroup - AI Coach",
+      "screenshotPath": "connectionsgroup-ai-coach--desktop.png"
+    },
+    {
+      "name": "ConnectionsGroup - Connect Form",
+      "screenshotPath": "connectionsgroup-connect-form--desktop.png"
+    },
+    {
+      "name": "ConnectionsGroup - Expanded Flow",
+      "screenshotPath": "connectionsgroup-expanded-flow--desktop.png"
+    },
+    {
+      "name": "ConnectionsGroup - Health Data",
+      "screenshotPath": "connectionsgroup-health-data--desktop.png"
+    },
+    {
+      "name": "ConnectionsPanel - Fresh Day One",
+      "screenshotPath": "connectionspanel-fresh-day-one--desktop.png"
+    },
+    {
+      "name": "ConnectionsPanel - Populated",
+      "screenshotPath": "connectionspanel-populated--desktop.png"
+    },
+    {
+      "name": "Dashboard - Connections Setup",
+      "screenshotPath": "dashboard-connections-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Empty",
+      "screenshotPath": "dashboard-day-one-empty--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Setup",
+      "screenshotPath": "dashboard-day-one-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Low Readiness",
+      "screenshotPath": "dashboard-low-readiness--desktop.png"
+    },
+    {
+      "name": "Dashboard - No Workout Yesterday",
+      "screenshotPath": "dashboard-no-workout-yesterday--desktop.png"
+    },
+    {
+      "name": "Dashboard - Partial Data",
+      "screenshotPath": "dashboard-partial-data--desktop.png"
+    },
+    {
+      "name": "Dashboard - Primed Briefing",
+      "screenshotPath": "dashboard-primed-briefing--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Coach Open",
+      "screenshotPath": "dashboardconsole-coach-open--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Empty",
+      "screenshotPath": "dashboardconsole-empty--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Primed",
+      "screenshotPath": "dashboardconsole-primed--desktop.png"
+    },
+    {
+      "name": "MethodChooser - Default",
+      "screenshotPath": "methodchooser-default--desktop.png"
+    },
+    {
+      "name": "MethodChooser - Selected",
+      "screenshotPath": "methodchooser-selected--desktop.png"
+    },
+    {
+      "name": "MethodForm - API Key",
+      "screenshotPath": "methodform-api-key--desktop.png"
+    },
+    {
+      "name": "MethodForm - Endpoint",
+      "screenshotPath": "methodform-endpoint--desktop.png"
+    },
+    {
+      "name": "MethodForm - Error",
+      "screenshotPath": "methodform-error--desktop.png"
+    },
+    {
+      "name": "MethodForm - Sign In",
+      "screenshotPath": "methodform-sign-in--desktop.png"
+    },
+    {
+      "name": "ProviderConnectPanel - Chooser",
+      "screenshotPath": "providerconnectpanel-chooser--desktop.png"
+    },
+    {
+      "name": "ProviderConnectPanel - Single Method Form",
+      "screenshotPath": "providerconnectpanel-single-method-form--desktop.png"
+    },
+    {
+      "name": "ProviderRow - Active",
+      "screenshotPath": "providerrow-active--desktop.png"
+    },
+    {
+      "name": "ProviderRow - Connected",
+      "screenshotPath": "providerrow-connected--desktop.png"
+    },
+    {
+      "name": "ProviderRow - Disconnected",
+      "screenshotPath": "providerrow-disconnected--desktop.png"
+    },
+    {
+      "name": "ProviderRow - Error",
+      "screenshotPath": "providerrow-error--desktop.png"
+    },
+    {
+      "name": "ProviderStatusPill - Connected",
+      "screenshotPath": "providerstatuspill-connected--desktop.png"
+    },
+    {
+      "name": "ProviderStatusPill - Error",
+      "screenshotPath": "providerstatuspill-error--desktop.png"
+    },
+    {
+      "name": "ProviderStatusPill - Synced",
+      "screenshotPath": "providerstatuspill-synced--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 49,
+    "passed": 49,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 49,
+        "passed": 49
+      }
+    ]
+  }
+}

@@ -33,7 +33,7 @@ const run: Workout = {
   id: 1,
   title: "Ridgeline Trail Run",
   typeLabel: "▸ Ridgeline Trail · Z2",
-  photoUrl: "https://loremflickr.com/800/600/trail?lock=5&match=all",
+  photoUrl: "/images/trail.jpg",
   distance: "8.2 mi",
   pace: "8:42",
   vertical: "1,240 ft",

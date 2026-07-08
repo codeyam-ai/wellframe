@@ -1,0 +1,11 @@
+{
+  "name": "ProviderRow - Error",
+  "id": "b80e4397-b3d8-40e2-b609-5504fac2d7c3",
+  "url": "/isolated-components/ProviderRow?s=Error",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderRow",
+  "scenarioType": "component"
+}

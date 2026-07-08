@@ -6,3 +6,41 @@
 {"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › resets the pre-connected Apple Health entry in the real health config`: added from runner `tests` output"}
 {"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › resets the pre-connected Claude entry in the real AI config`: added from runner `tests` output"}
 {"timestamp":"2026-07-08T16:19:54Z","kind":"registry-add","message":"registry `asFresh › handles an empty list`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T19:27:06Z","kind":"deferred","message":"glossary `asFresh`: deferred — has plausible rename candidate(s)"}
+{"timestamp":"2026-07-08T19:27:19Z","kind":"glossary-delete","message":"glossary `asFresh` deleted: agent-decided"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › resolves an mcp connect with the MCP detail`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › resolves a health oauth connect to synced`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › rejects an unknown provider`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `maskKey › fully masks a key of four or fewer characters`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `findProvider › finds a known provider`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › resolves an apiKey connect to a connected status with a masked-key detail`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › rejects a too-short api key`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `maskKey › trims whitespace before masking`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › accepts a plausible API key`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `activeCoach › returns null when no coach is active`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › rejects a non-address endpoint value`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `mergeCatalog › leaves providers without a row disconnected`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `maskKey › masks all but the last four characters`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › resolves a localEndpoint connect and keeps the endpoint`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › rejects a too-short API key`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `mergeCatalog › marks a provider with a connected row as connected and active`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › rejects an empty endpoint`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › never rejects oauth regardless of value`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `mergeCatalog › preserves catalog order`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `mergeCatalog › does not count an error row as connected`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › fails an unreachable local endpoint`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › accepts a host:port endpoint`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › rejects an empty API key`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `findProvider › returns undefined for an unknown id`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `resolveConnection › rejects an unsupported method for the provider`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `findProvider › gives every AI provider at least one method`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `validateConnectInput › accepts a URL endpoint for localEndpoint and mcp`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:23:26Z","kind":"registry-add","message":"registry `activeCoach › returns the active coach when one is set`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › handles an empty list`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › clears connected on every provider when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › does not mutate the original list when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › resets the pre-connected Apple Health entry in the real health config`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › preserves id, name, and blurb when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › returns the same list reference when fresh is false`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › strips detail on every provider when fresh is true`: added from runner `tests` output"}
+{"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › resets the pre-connected Claude entry in the real AI config`: added from runner `tests` output"}

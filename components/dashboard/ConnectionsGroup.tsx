@@ -1,29 +1,32 @@
 // A titled group of provider rows in the Connections panel (e.g. "Your AI
-// coach" or "Health data"). When `interactive` is set, rows toggle open a
-// ProviderConnectFlow; otherwise the rows are static (health sources are
-// informational for now).
+// coach" or "Health data"). Each row can expand into a ProviderConnectPanel to
+// choose a connection method and connect. Connected rows show status + (AI)
+// active/disconnect controls.
 'use client';
 
-import type { Provider } from './connections';
+import type { ProviderView, ConnectMethod } from './connections';
+import type { ConnectResult } from '@/app/lib/connections.actions';
 import { ProviderRow } from './ProviderRow';
-import { ProviderConnectFlow } from './ProviderConnectFlow';
+import { ProviderConnectPanel } from './ProviderConnectPanel';
 
 export function ConnectionsGroup({
   title,
   lead,
-  providers,
-  interactive = false,
-  activeId = null,
+  views,
+  expandedId = null,
   onToggle = () => {},
-  onContinue = () => {},
+  onConnect = async () => ({ ok: true }),
+  onDisconnect = () => {},
+  onSetActive = () => {},
 }: {
   title: string;
   lead: string;
-  providers: Provider[];
-  interactive?: boolean;
-  activeId?: string | null;
+  views: ProviderView[];
+  expandedId?: string | null;
   onToggle?: (id: string) => void;
-  onContinue?: (id: string) => void;
+  onConnect?: (id: string, method: ConnectMethod, value: string) => Promise<ConnectResult>;
+  onDisconnect?: (id: string) => void;
+  onSetActive?: (id: string) => void;
 }) {
   return (
     <section className="wf-conn-group">
@@ -31,15 +34,17 @@ export function ConnectionsGroup({
         <span className="wf-secnum n">{title}</span>
         <p className="wf-conn-lead">{lead}</p>
       </div>
-      {providers.map((p) => (
-        <div key={p.id}>
+      {views.map((v) => (
+        <div key={v.id}>
           <ProviderRow
-            p={p}
-            onConnect={interactive ? onToggle : () => {}}
-            isActive={interactive && activeId === p.id}
+            view={v}
+            expanded={expandedId === v.id}
+            onToggle={onToggle}
+            onDisconnect={onDisconnect}
+            onSetActive={onSetActive}
           />
-          {interactive && activeId === p.id && (
-            <ProviderConnectFlow name={p.name} onContinue={() => onContinue(p.id)} />
+          {expandedId === v.id && !v.connected && (
+            <ProviderConnectPanel view={v} onConnect={onConnect} onCancel={() => onToggle(v.id)} />
           )}
         </div>
       ))}

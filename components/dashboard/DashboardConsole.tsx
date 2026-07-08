@@ -6,6 +6,8 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import type { DailyBriefing, Vital, Workout } from '@prisma/client';
+import type { ProviderView } from './connections';
+import { connectProvider, disconnectProvider, setActiveCoach } from '@/app/lib/connections.actions';
 import { Metabar } from './Metabar';
 import { BriefingDeck } from './BriefingDeck';
 import { EmptyBriefing } from './EmptyBriefing';
@@ -16,6 +18,9 @@ export interface DashboardConsoleProps {
   briefing: DailyBriefing | null;
   vitals: Vital[];
   workout: Workout | null;
+  // Merged catalog + connection state for the Connections panel.
+  aiViews: ProviderView[];
+  healthViews: ProviderView[];
   // Open the coach dock on first render (e.g. ?coach=1 deep link, or a
   // scenario that captures the coach-open state).
   initialCoachOpen?: boolean;
@@ -28,6 +33,8 @@ export function DashboardConsole({
   briefing,
   vitals,
   workout,
+  aiViews,
+  healthViews,
   initialCoachOpen = false,
   initialSetupOpen = false,
 }: DashboardConsoleProps) {
@@ -68,7 +75,15 @@ export function DashboardConsole({
         <EmptyBriefing onQueryCoach={openCoach} onOpenSetup={openSetup} />
       )}
       <CoachDock open={coachOpen} onClose={closeCoach} />
-      <ConnectionsPanel open={setupOpen} onClose={closeSetup} fresh={!briefing} />
+      <ConnectionsPanel
+        open={setupOpen}
+        onClose={closeSetup}
+        aiViews={aiViews}
+        healthViews={healthViews}
+        onConnect={connectProvider}
+        onDisconnect={disconnectProvider}
+        onSetActive={setActiveCoach}
+      />
     </div>
   );
 }

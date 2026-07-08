@@ -1,0 +1,11 @@
+{
+  "name": "ProviderConnectPanel - Chooser",
+  "id": "29913097-6dee-4f72-b667-613ccf74192c",
+  "url": "/isolated-components/ProviderConnectPanel?s=Chooser",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderConnectPanel",
+  "scenarioType": "component"
+}

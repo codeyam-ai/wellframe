@@ -1,0 +1,11 @@
+{
+  "name": "ProviderStatusPill - Error",
+  "id": "a6e85520-435e-4e4c-bc47-64b84d8cc746",
+  "url": "/isolated-components/ProviderStatusPill?s=Error",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderStatusPill",
+  "scenarioType": "component"
+}

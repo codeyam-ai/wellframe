@@ -1,0 +1,11 @@
+{
+  "name": "ProviderStatusPill - Synced",
+  "id": "668c4248-e3a8-4bae-9fd7-0e5eea669421",
+  "url": "/isolated-components/ProviderStatusPill?s=Synced",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "ProviderStatusPill",
+  "scenarioType": "component"
+}
