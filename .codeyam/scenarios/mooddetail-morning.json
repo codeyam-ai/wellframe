@@ -1,0 +1,11 @@
+{
+  "name": "MoodDetail - Morning",
+  "id": "4ba5de56-7eba-4356-81f6-7341adb0438f",
+  "url": "/isolated-components/MoodDetail?s=Morning",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MoodDetail",
+  "scenarioType": "component"
+}

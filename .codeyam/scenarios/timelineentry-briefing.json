@@ -1,0 +1,11 @@
+{
+  "name": "TimelineEntry - Briefing",
+  "id": "eae6811a-7837-4da8-a365-97b9f9bdd5ec",
+  "url": "/isolated-components/TimelineEntry?s=Briefing",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineEntry",
+  "scenarioType": "component"
+}

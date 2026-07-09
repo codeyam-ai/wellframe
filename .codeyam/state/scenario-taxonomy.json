@@ -29,6 +29,36 @@
       "key-interaction": {
         "status": "covered"
       }
+    },
+    "Timeline": {
+      "empty": {
+        "status": "covered"
+      },
+      "single": {
+        "status": "n-a",
+        "reason": "Day-grouped feed; the Sparse scenario is the minimal real state and the singular entry-count boundary is covered by the TimelineDay Single Entry component scenario."
+      },
+      "typical": {
+        "status": "covered"
+      },
+      "many": {
+        "status": "n-a",
+        "reason": "Chronological scroll with no pagination or truncation; Rich Week already exercises multi-day grouping and scrolling, so a higher-count overflow state adds no distinct visual treatment."
+      },
+      "loading": {
+        "status": "n-a",
+        "reason": "Server-rendered force-dynamic RSC; the page has no client-fetch loading skeleton."
+      },
+      "edge": {
+        "status": "covered"
+      },
+      "error": {
+        "status": "n-a",
+        "reason": "The feed has no error surface; a failed or empty DB read renders the day-one empty state, covered by Day One Empty."
+      },
+      "key-interaction": {
+        "status": "covered"
+      }
     }
   }
 }

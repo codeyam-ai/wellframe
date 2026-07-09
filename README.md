@@ -1,6 +1,6 @@
 # Wellframe
 
-A privacy-first, local-first AI wellness console. The Dashboard "Daily Briefing" answers "How am I doing today?" at a glance — a readiness dial, overnight vitals, an observant coach transmission, and yesterday's activity — all read from data on your own machine.
+A privacy-first, local-first AI wellness console. The Dashboard "Daily Briefing" answers "How am I doing today?" at a glance — a readiness dial, overnight vitals, an observant coach transmission, and yesterday's activity — all read from data on your own machine. The Activity Timeline answers "what have I been doing?" — a day-grouped, filterable feed of workouts, daily briefings, mood check-ins, and body-weight readings, each opening a dedicated detail view.
 
 ## Setup
 
@@ -101,4 +101,8 @@ States captured as runnable scenarios with codeyam-editor:
 ### Dashboard - Primed Briefing
 
 <img src=".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png" alt="Dashboard - Primed Briefing" width="280">
+
+### Entry Detail - Mood
+
+<img src=".codeyam/scenarios/screenshots/entry-detail-mood--desktop.png" alt="Entry Detail - Mood" width="280">
 <!-- codeyam:scenario-gallery:end -->

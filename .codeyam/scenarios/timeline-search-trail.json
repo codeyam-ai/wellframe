@@ -1,0 +1,49 @@
+{
+  "name": "Timeline - Search Trail",
+  "id": "959629a8-61bf-469a-a2c9-e0918e738079",
+  "url": "/timeline?q=trail",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "mood": [
+      {
+        "energy": 3,
+        "mood": "Satisfied",
+        "note": "Trail run took more out of me than expected, but a good kind of tired.",
+        "occurredAt": "2026-07-05T21:20:00Z",
+        "partOfDay": "evening",
+        "sleepQuality": null,
+        "soreness": 3,
+        "stress": 2
+      }
+    ],
+    "workout": [
+      {
+        "distance": "4.6 mi",
+        "duration": "41:48",
+        "kind": "run",
+        "occurredAt": "2026-07-06T07:14:00Z",
+        "pace": "9:05",
+        "photoUrl": "/images/running.jpg",
+        "title": "Zone 2 Base Run",
+        "typeLabel": "▸ River Path · Z2",
+        "vertical": "180 ft"
+      },
+      {
+        "distance": "8.2 mi",
+        "duration": "1:11:20",
+        "kind": "run",
+        "occurredAt": "2026-07-05T07:32:00Z",
+        "pace": "8:42",
+        "photoUrl": "/images/trail.jpg",
+        "title": "Ridgeline Trail Run",
+        "typeLabel": "▸ Ridgeline Trail · Z2",
+        "vertical": "1,240 ft"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/timeline/page.tsx"
+}

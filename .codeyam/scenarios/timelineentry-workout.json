@@ -1,0 +1,11 @@
+{
+  "name": "TimelineEntry - Workout",
+  "id": "0f4e8fed-7d87-4f28-8a81-1acc5d1312aa",
+  "url": "/isolated-components/TimelineEntry?s=Workout",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineEntry",
+  "scenarioType": "component"
+}

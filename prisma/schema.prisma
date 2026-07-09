@@ -55,16 +55,46 @@ model Vital {
   positive Boolean  @default(false)  // mint track (good) vs signal-blue track
 }
 
-// Yesterday's logged activity for the Field Log section. Absent (zero rows) in
-// the no-workout scenario.
+// A logged activity. On the Dashboard it feeds the Field Log (yesterday's
+// activity, read latest-by-id); on the Activity Timeline it is one dated entry
+// among many. Absent (zero rows) in the no-workout scenarios. The timeline
+// fields (occurredAt / duration / kind) are nullable so the existing dashboard
+// seeds — which omit them — stay valid.
 model Workout {
-  id        Int     @id @default(autoincrement())
-  title     String  // e.g. "Ridgeline Trail Run"
-  typeLabel String? // photo caption, e.g. "▸ Ridgeline Trail · Z2"
-  photoUrl  String? // documentary photo (forced grayscale in the UI)
-  distance  String? // e.g. "8.2 mi"
-  pace      String? // e.g. "8:42"
-  vertical  String? // e.g. "1,240 ft"
+  id         Int     @id @default(autoincrement())
+  title      String  // e.g. "Ridgeline Trail Run"
+  typeLabel  String? // photo caption, e.g. "▸ Ridgeline Trail · Z2"
+  photoUrl   String? // documentary photo (forced grayscale in the UI)
+  distance   String? // e.g. "8.2 mi"
+  pace       String? // e.g. "8:42"
+  vertical   String? // e.g. "1,240 ft"
+  duration   String? // e.g. "1:12:40"
+  occurredAt String? // ISO datetime for timeline placement, e.g. "2026-07-06T07:14:00Z"
+  kind       String? // "run" | "ride" | "strength" | "walk" | "yoga" — drives the timeline chips
+}
+
+// A daily check-in shown on the Activity Timeline: a subjective snapshot logged
+// morning or evening. Absent (zero rows) in scenarios without check-ins.
+model Mood {
+  id           Int     @id @default(autoincrement())
+  occurredAt   String  // ISO datetime
+  partOfDay    String  // "morning" | "evening"
+  energy       Int?    // 1-5 self-rating
+  mood         String? // short word, e.g. "Steady"
+  sleepQuality Int?    // 1-5
+  soreness     Int?    // 1-5
+  stress       Int?    // 1-5
+  note         String? // optional free-text reflection
+}
+
+// A body-weight reading shown on the Activity Timeline.
+model Weight {
+  id         Int     @id @default(autoincrement())
+  occurredAt String  // ISO datetime
+  value      String  // formatted value, e.g. "154.2"
+  unit       String  @default("lb")
+  delta      String? // trend chip, e.g. "▼0.4"
+  positive   Boolean @default(false) // mint (good) vs signal-blue track
 }
 
 // A persisted connection to an AI coach or health-data provider. Production

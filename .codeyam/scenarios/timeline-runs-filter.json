@@ -1,0 +1,80 @@
+{
+  "name": "Timeline - Runs Filter",
+  "id": "083430fe-4ffc-4a80-9350-2e2b93b728a8",
+  "url": "/timeline?type=run",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "mood": [
+      {
+        "energy": 4,
+        "mood": "Steady",
+        "note": "Legs feel fresh.",
+        "occurredAt": "2026-07-06T06:52:00Z",
+        "partOfDay": "morning",
+        "sleepQuality": 4,
+        "soreness": 2,
+        "stress": 2
+      }
+    ],
+    "weight": [
+      {
+        "delta": "▼0.4",
+        "occurredAt": "2026-07-06T06:40:00Z",
+        "positive": true,
+        "unit": "lb",
+        "value": "154.2"
+      }
+    ],
+    "workout": [
+      {
+        "distance": "4.6 mi",
+        "duration": "41:48",
+        "kind": "run",
+        "occurredAt": "2026-07-06T07:14:00Z",
+        "pace": "9:05",
+        "photoUrl": "/images/running.jpg",
+        "title": "Zone 2 Base Run",
+        "typeLabel": "▸ River Path · Z2",
+        "vertical": "180 ft"
+      },
+      {
+        "distance": "8.2 mi",
+        "duration": "1:11:20",
+        "kind": "run",
+        "occurredAt": "2026-07-05T07:32:00Z",
+        "pace": "8:42",
+        "photoUrl": "/images/trail.jpg",
+        "title": "Ridgeline Trail Run",
+        "typeLabel": "▸ Ridgeline Trail · Z2",
+        "vertical": "1,240 ft"
+      },
+      {
+        "distance": null,
+        "duration": "48:10",
+        "kind": "strength",
+        "occurredAt": "2026-07-04T17:05:00Z",
+        "pace": null,
+        "photoUrl": null,
+        "title": "Upper Body + Core",
+        "typeLabel": "▸ Home Rack · Strength",
+        "vertical": null
+      },
+      {
+        "distance": "31.4 mi",
+        "duration": "1:49:36",
+        "kind": "ride",
+        "occurredAt": "2026-07-02T08:10:00Z",
+        "pace": "17.2 mph",
+        "photoUrl": "/images/trail.jpg",
+        "title": "Foothills Long Ride",
+        "typeLabel": "▸ County Road 9 · Endurance",
+        "vertical": "2,180 ft"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/timeline/page.tsx"
+}

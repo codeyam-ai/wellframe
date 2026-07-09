@@ -1,0 +1,11 @@
+{
+  "name": "TimelineDay - Single Entry",
+  "id": "5ca18cf7-9a09-426b-a98d-0031334d30bf",
+  "url": "/isolated-components/TimelineDay?s=SingleEntry",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineDay",
+  "scenarioType": "component"
+}

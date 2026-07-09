@@ -1,0 +1,11 @@
+{
+  "name": "WeightDetail - Up",
+  "id": "149363e7-b1d4-41b2-b441-fe67777276fa",
+  "url": "/isolated-components/WeightDetail?s=Up",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "WeightDetail",
+  "scenarioType": "component"
+}

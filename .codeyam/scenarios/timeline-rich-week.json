@@ -1,0 +1,11 @@
+{
+  "name": "Timeline - Rich Week",
+  "id": "5ee5b4c1-ba49-4b2f-b062-5fe4631ed1d6",
+  "url": "/isolated-components/Timeline?s=RichWeek",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Timeline",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "DetailStat - Long Value",
+  "id": "1219858f-4bf8-4f58-a26f-bbbe4b6f409e",
+  "url": "/isolated-components/DetailStat?s=LongValue",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "DetailStat",
+  "scenarioType": "component"
+}

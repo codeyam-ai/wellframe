@@ -1,0 +1,38 @@
+{
+  "name": "Timeline - Sparse",
+  "id": "ff03d42e-b7b8-4d87-9909-765ff3953824",
+  "url": "/timeline",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "mood": [
+      {
+        "energy": 3,
+        "mood": "Even",
+        "note": "Quiet start, easing back into the week.",
+        "occurredAt": "2026-07-06T06:45:00Z",
+        "partOfDay": "morning",
+        "sleepQuality": 3,
+        "soreness": 2,
+        "stress": 2
+      }
+    ],
+    "workout": [
+      {
+        "distance": "3.1 mi",
+        "duration": "29:58",
+        "kind": "run",
+        "occurredAt": "2026-07-06T07:05:00Z",
+        "pace": "9:40",
+        "photoUrl": "/images/running.jpg",
+        "title": "Morning Shakeout",
+        "typeLabel": "▸ River Path · Easy",
+        "vertical": "90 ft"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/timeline/page.tsx"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "BriefingDetail - Default",
+  "id": "de139103-17b0-4f53-a1fd-2ba1b09972c5",
+  "url": "/isolated-components/BriefingDetail?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "BriefingDetail",
+  "scenarioType": "component"
+}

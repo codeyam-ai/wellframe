@@ -1,0 +1,25 @@
+{
+  "name": "Entry Detail - Mood",
+  "id": "ec8db769-c628-41d5-b833-9c7af44537cb",
+  "url": "/timeline/mood-1",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "mood": [
+      {
+        "energy": 4,
+        "mood": "Steady",
+        "note": "Woke before the alarm, legs feel fresh.",
+        "occurredAt": "2026-07-06T06:52:00Z",
+        "partOfDay": "morning",
+        "sleepQuality": 4,
+        "soreness": 2,
+        "stress": 2
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/timeline/[entryId]/page.tsx"
+}

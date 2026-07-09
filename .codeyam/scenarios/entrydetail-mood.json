@@ -1,0 +1,11 @@
+{
+  "name": "EntryDetail - Mood",
+  "id": "92f61814-a90b-4632-86e9-2cba5f9c7c23",
+  "url": "/isolated-components/EntryDetail?s=Mood",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "EntryDetail",
+  "scenarioType": "component"
+}

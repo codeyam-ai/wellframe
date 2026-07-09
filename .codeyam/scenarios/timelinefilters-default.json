@@ -1,0 +1,11 @@
+{
+  "name": "TimelineFilters - Default",
+  "id": "18c221f8-5d69-4d4f-8494-cba4102f1991",
+  "url": "/isolated-components/TimelineFilters?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineFilters",
+  "scenarioType": "component"
+}

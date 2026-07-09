@@ -1,6 +1,6 @@
 {
-  "feature": "provider-connection-integration",
-  "maxStep": 26,
-  "version": 590,
-  "updatedAt": "2026-07-08T21:11:00.591958789+00:00"
+  "feature": "activity-timeline",
+  "maxStep": 24,
+  "version": 475,
+  "updatedAt": "2026-07-09T15:12:12.464376859+00:00"
 }

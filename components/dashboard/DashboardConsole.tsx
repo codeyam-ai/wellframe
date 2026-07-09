@@ -63,7 +63,11 @@ export function DashboardConsole({
 
   return (
     <div className="wf">
-      <Metabar dateLabel={dateLabel} onOpenSetup={openSetup} />
+      <Metabar
+        dateLabel={dateLabel}
+        navLinks={[{ label: 'Timeline', href: '/timeline' }]}
+        onOpenSetup={openSetup}
+      />
       {briefing ? (
         <BriefingDeck
           briefing={briefing}

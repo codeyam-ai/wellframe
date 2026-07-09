@@ -44,3 +44,24 @@
 {"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › returns the same list reference when fresh is false`: added from runner `tests` output"}
 {"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › strips detail on every provider when fresh is true`: added from runner `tests` output"}
 {"timestamp":"2026-07-08T20:27:26Z","kind":"registry-add","message":"registry `asFresh › resets the pre-connected Claude entry in the real AI config`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `entryMatchesFilter › matches the query across title, summary, and accent case-insensitively`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `relativeDayLabel › labels older days with weekday + month + date`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `dayKey › takes the UTC calendar date from an ISO datetime`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `entryMatchesFilter › ANDs the type and query`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `deriveChips › derives chips from present kinds in CHIP_ORDER order`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `relativeDayLabel › never returns a negative-diff label for entries after the reference`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `timeLabel › extracts HH:MM`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `relativeDayLabel › labels the newest day Today`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `summary builders › joins present workout stats, skipping missing ones`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `groupByDay › groups entries into newest-first days with relative labels`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `parseEntryId › splits kind and numeric id`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `deriveChips › returns just the All chip for empty data`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `parseEntryId › rejects malformed ids`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `relativeDayLabel › labels the prior day Yesterday`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `entryMatchesFilter › filters by the entry filterKey`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `deriveChips › appends chips for unexpected kinds so nothing is unreachable`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `entryMatchesFilter › passes everything when type is empty or all`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `summary builders › appends the weight delta only when present`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `groupByDay › returns empty for no entries`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `summary builders › builds a mood summary from present fields`: added from runner `tests` output"}
+{"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `deriveChips › dedupes repeated kinds`: added from runner `tests` output"}

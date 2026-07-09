@@ -1,0 +1,11 @@
+{
+  "name": "WorkoutDetail - Default",
+  "id": "cd892994-604e-42f9-bdf0-b46e84db46e8",
+  "url": "/isolated-components/WorkoutDetail?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "WorkoutDetail",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "TimelineEntry - Weight",
+  "id": "0549a8dc-1a04-4750-9d7c-5aecd13b2815",
+  "url": "/isolated-components/TimelineEntry?s=Weight",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineEntry",
+  "scenarioType": "component"
+}

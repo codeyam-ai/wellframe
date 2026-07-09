@@ -40,7 +40,7 @@
   },
   {
     "name": "Workout",
-    "description": "Yesterday's logged activity rendered in the Field Log section: title, photo caption, documentary photo URL (forced grayscale in the UI), and distance/pace/vertical stats. Zero rows in the no-workout-yesterday scenario, which triggers that section's own empty state.",
+    "description": "A logged activity. On the Dashboard it feeds the Field Log (yesterday's activity); on the Activity Timeline it is one dated entry among others. Carries a title, photo caption, documentary photo URL (forced grayscale in the UI), and distance/pace/vertical/duration stats, plus an occurredAt timestamp for chronological placement and a kind ('run' | 'ride' | 'strength' | 'walk' | 'yoga' | ...) that drives the timeline's type-filter chips. Zero rows in the no-workout scenarios, which trigger the relevant empty state.",
     "category": "datastore",
     "order": 3,
     "fields": [
@@ -50,7 +50,41 @@
       { "name": "photoUrl", "type": "string", "required": false },
       { "name": "distance", "type": "string", "required": false },
       { "name": "pace", "type": "string", "required": false },
-      { "name": "vertical", "type": "string", "required": false }
+      { "name": "vertical", "type": "string", "required": false },
+      { "name": "duration", "type": "string", "required": false },
+      { "name": "occurredAt", "type": "string", "required": false },
+      { "name": "kind", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "Mood",
+    "description": "A daily check-in entry shown on the Activity Timeline: a subjective snapshot logged in the morning or evening. Carries an occurredAt timestamp, partOfDay ('morning' | 'evening'), 1-5 self-ratings for energy / sleep quality / soreness / stress, a short mood word (e.g. 'Steady'), and an optional free-text note. Feeds the timeline's 'Mood' filter chip and the check-in detail view.",
+    "category": "datastore",
+    "order": 5,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "occurredAt", "type": "string", "required": true },
+      { "name": "partOfDay", "type": "string", "required": true },
+      { "name": "energy", "type": "number", "required": false },
+      { "name": "mood", "type": "string", "required": false },
+      { "name": "sleepQuality", "type": "number", "required": false },
+      { "name": "soreness", "type": "number", "required": false },
+      { "name": "stress", "type": "number", "required": false },
+      { "name": "note", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "Weight",
+    "description": "A body-weight reading shown on the Activity Timeline. Carries an occurredAt timestamp, a formatted value and unit (default 'lb'), an optional trend delta chip (e.g. '▼0.4'), and a 'positive' flag that colors the trend mint (good) versus signal-blue. Feeds the timeline's 'Weight' filter chip and the weight detail view.",
+    "category": "datastore",
+    "order": 6,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "occurredAt", "type": "string", "required": true },
+      { "name": "value", "type": "string", "required": true },
+      { "name": "unit", "type": "string", "required": true },
+      { "name": "delta", "type": "string", "required": false },
+      { "name": "positive", "type": "boolean", "required": true }
     ]
   },
   {

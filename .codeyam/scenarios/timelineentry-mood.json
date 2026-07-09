@@ -1,0 +1,11 @@
+{
+  "name": "TimelineEntry - Mood",
+  "id": "ffe0744a-afb6-4b69-a19d-fadcf51480c2",
+  "url": "/isolated-components/TimelineEntry?s=Mood",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineEntry",
+  "scenarioType": "component"
+}

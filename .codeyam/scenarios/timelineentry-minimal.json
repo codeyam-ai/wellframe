@@ -1,0 +1,11 @@
+{
+  "name": "TimelineEntry - Minimal",
+  "id": "b444b96a-bf72-4828-ac53-484d16ffcbb3",
+  "url": "/isolated-components/TimelineEntry?s=Minimal",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineEntry",
+  "scenarioType": "component"
+}

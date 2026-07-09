@@ -1,0 +1,11 @@
+{
+  "name": "Timeline - Filtered Runs",
+  "id": "3f7d54f7-c936-4075-9ba1-d14acffb3a98",
+  "url": "/isolated-components/Timeline?s=FilteredRuns",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Timeline",
+  "scenarioType": "component"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Entry Detail - Workout",
+  "id": "8ffbdf5b-668b-4324-b283-5d4da574cd12",
+  "url": "/timeline/workout-1",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "workout": [
+      {
+        "distance": "4.6 mi",
+        "duration": "41:48",
+        "kind": "run",
+        "occurredAt": "2026-07-06T07:14:00Z",
+        "pace": "9:05",
+        "photoUrl": "/images/running.jpg",
+        "title": "Zone 2 Base Run",
+        "typeLabel": "▸ River Path · Z2",
+        "vertical": "180 ft"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/timeline/[entryId]/page.tsx"
+}

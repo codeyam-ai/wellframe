@@ -9,6 +9,14 @@
     ]
   },
   {
+    "description": "Daily-briefing entry detail: readiness label + score kicker, the serif verdict headline, status line, and the coach transmission with its signature.",
+    "filePath": "components/timeline/BriefingDetail.tsx",
+    "name": "BriefingDetail",
+    "scenarios": [
+      "briefingdetail-default"
+    ]
+  },
+  {
     "description": "The ⌘K coach entry point rendered as a right-side slide-in panel; in this build it is a stub confirming the entry point works ahead of the full context-aware coach.",
     "filePath": "components/dashboard/CoachDock.tsx",
     "name": "CoachDock",
@@ -73,11 +81,39 @@
     ]
   },
   {
+    "description": "A label/value pair in an entry detail's stat row (distance, pace, vertical, duration).",
+    "filePath": "components/timeline/DetailStat.tsx",
+    "name": "DetailStat",
+    "scenarios": [
+      "detailstat-default",
+      "detailstat-long-value"
+    ]
+  },
+  {
     "description": "Day-one onboarding state (production default, empty DB): the console frame with a muted dial, a serif prompt, and bracket-labeled connect-a-source options.",
     "filePath": "components/dashboard/EmptyBriefing.tsx",
     "name": "EmptyBriefing",
     "scenarios": [
       "emptybriefing-default"
+    ]
+  },
+  {
+    "description": "The detail surface for a single timeline entry: frames the metabar + section header + back link and dispatches to the per-kind detail component (workout / mood / weight / briefing).",
+    "filePath": "components/timeline/EntryDetail.tsx",
+    "name": "EntryDetail",
+    "scenarios": [
+      "entrydetail-workout",
+      "entrydetail-mood",
+      "entrydetail-briefing"
+    ]
+  },
+  {
+    "description": "Route for a single timeline entry's detail (/timeline/<kind>-<id>): server component that loads the row via getTimelineEntry and renders EntryDetail, or 404s on a malformed id or missing row.",
+    "filePath": "app/timeline/[entryId]/page.tsx",
+    "name": "EntryDetailPage",
+    "scenarios": [
+      "entry-detail-workout",
+      "entry-detail-mood"
     ]
   },
   {
@@ -139,6 +175,15 @@
     ]
   },
   {
+    "description": "Check-in entry detail: the morning/evening mood word plus its 1-5 self-ratings (energy, sleep, soreness, stress) and the optional reflection note.",
+    "filePath": "components/timeline/MoodDetail.tsx",
+    "name": "MoodDetail",
+    "scenarios": [
+      "mooddetail-morning",
+      "mooddetail-evening"
+    ]
+  },
+  {
     "description": "The lead block of the day-one onboarding state: the no-data placeholder dial, headline, and privacy-first intro copy.",
     "filePath": "components/dashboard/OnboardLead.tsx",
     "name": "OnboardLead",
@@ -182,6 +227,16 @@
       "providerstatuspill-connected",
       "providerstatuspill-synced",
       "providerstatuspill-error"
+    ]
+  },
+  {
+    "description": "A 1-5 self-rating from a check-in rendered as five ticks with the filled ones in signal ink; renders nothing when the value is absent.",
+    "filePath": "components/timeline/Rating.tsx",
+    "name": "Rating",
+    "scenarios": [
+      "rating-default",
+      "rating-low",
+      "rating-full"
     ]
   },
   {
@@ -240,6 +295,69 @@
     ]
   },
   {
+    "description": "The Activity Timeline surface (client): owns the active type chip + search query (seeded from the URL), derives the chip set from the data, filters the day groups, and renders the filters + days, with quiet empty and no-match states.",
+    "filePath": "components/timeline/Timeline.tsx",
+    "name": "Timeline",
+    "scenarios": [
+      "timeline-rich-week",
+      "timeline-filtered-runs",
+      "timeline-empty"
+    ]
+  },
+  {
+    "description": "A single day group: a serif date header with an entry-count bracket, followed by that day's TimelineEntry rows.",
+    "filePath": "components/timeline/TimelineDay.tsx",
+    "name": "TimelineDay",
+    "scenarios": [
+      "timelineday-default",
+      "timelineday-single-entry"
+    ]
+  },
+  {
+    "description": "The timeline's day-one empty state (the production default before any activity syncs): a numbered section and a short serif line, no illustration.",
+    "filePath": "components/timeline/TimelineEmpty.tsx",
+    "name": "TimelineEmpty",
+    "scenarios": [
+      "timelineempty-default"
+    ]
+  },
+  {
+    "description": "One timeline row, rendered by kind: a workout carries a grayscale photo plate, while briefing / mood / weight render compact rows with a colored rail dot. The whole row links to the entry's detail view.",
+    "filePath": "components/timeline/TimelineEntry.tsx",
+    "name": "TimelineEntry",
+    "scenarios": [
+      "timelineentry-workout",
+      "timelineentry-briefing",
+      "timelineentry-mood",
+      "timelineentry-weight",
+      "timelineentry-long-title",
+      "timelineentry-minimal"
+    ]
+  },
+  {
+    "description": "The timeline filter row: toggleable type chips plus a mono search box (controlled by the Timeline parent). The active chip flips to ink.",
+    "filePath": "components/timeline/TimelineFilters.tsx",
+    "name": "TimelineFilters",
+    "scenarios": [
+      "timelinefilters-default",
+      "timelinefilters-active-chip",
+      "timelinefilters-searching"
+    ]
+  },
+  {
+    "description": "Entry-point route for the Activity Timeline (/timeline): server component that loads the day-grouped feed via getTimeline and reads the initial type/search filter from the URL, then renders the Timeline surface. force-dynamic so it reflects the current per-scenario DB state.",
+    "filePath": "app/timeline/page.tsx",
+    "name": "TimelinePage",
+    "scenarios": [
+      "timeline-rich-week",
+      "timeline-day-one-empty",
+      "timeline-sparse",
+      "timeline-runs-filter",
+      "timeline-search-trail",
+      "timeline-edge-cases"
+    ]
+  },
+  {
     "description": "Overnight vitals telemetry: one row per metric with a label, a mint/blue track bar, and a formatted value with optional unit and trend chip; shows a quiet empty label when no readings exist.",
     "filePath": "components/dashboard/VitalsPanel.tsx",
     "name": "VitalsPanel",
@@ -250,10 +368,40 @@
     ]
   },
   {
+    "description": "Body-weight entry detail: the reading in large tabular type plus its trend delta (mint for a good move, signal-blue otherwise).",
+    "filePath": "components/timeline/WeightDetail.tsx",
+    "name": "WeightDetail",
+    "scenarios": [
+      "weightdetail-default",
+      "weightdetail-up"
+    ]
+  },
+  {
+    "description": "Workout entry detail: grayscale photo plate plus the full distance / pace / vertical / duration stat set, falling back to a one-line summary when a workout has no discrete stats.",
+    "filePath": "components/timeline/WorkoutDetail.tsx",
+    "name": "WorkoutDetail",
+    "scenarios": [
+      "workoutdetail-default",
+      "workoutdetail-no-photo"
+    ]
+  },
+  {
     "description": "Returns the active-coach view among merged provider views, or null when none is active.",
     "filePath": "components/dashboard/connections.ts",
     "name": "activeCoach",
     "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Resolves a daily briefing's timeline timestamp from its stored date: a bare YYYY-MM-DD is placed at 07:00 so it sorts among morning entries, a full ISO datetime passes through unchanged.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "briefingOccurredAt",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Pure normalizer for the Activity Timeline: maps the four raw source arrays (workouts, briefings, moods, weights) into TimelineEntry rows (skipping workouts with no occurredAt) and groups them into newest-first days. All shaping the server loader delegates lives here.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "buildTimeline",
+    "testFile": "components/timeline/timeline.test.ts"
   },
   {
     "description": "Returns the arc length (2 pi r) of the readiness dial ring for a given radius, defaulting to the design's 176px ring; used for both the dash array and the dash offset.",
@@ -277,6 +425,24 @@
     }
   },
   {
+    "description": "Returns the UTC calendar-date key (YYYY-MM-DD) of an ISO datetime, used to group timeline entries into days deterministically regardless of render timezone.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "dayKey",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Whole days between two YYYY-MM-DD date keys (a minus b), computed from the UTC calendar date; the internal basis for relativeDayLabel Today/Yesterday math.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "daysBetween",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Builds the timeline filter-chip set from the entry kinds actually present in the data: leads with an All chip, lists known kinds in CHIP_ORDER order, and appends any unexpected filterKey so nothing in the feed is unreachable by the filters.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "deriveChips",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
     "description": "Server Action: deletes a provider's ProviderConnection row and revalidates the dashboard.",
     "filePath": "app/lib/connections.actions.ts",
     "name": "disconnectProvider",
@@ -290,6 +456,12 @@
     "filePath": "components/dashboard/format.ts",
     "name": "emphasize",
     "testFile": "components/dashboard/format.test.ts"
+  },
+  {
+    "description": "Predicate driving the timeline's type chips and search box: an entry passes when the active type chip matches its filterKey (empty/'all' matches everything) AND the query substring-matches its title, summary, or accent case-insensitively.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "entryMatchesFilter",
+    "testFile": "components/timeline/timeline.test.ts"
   },
   {
     "description": "Looks up a catalog provider by id across the combined AI + health provider list; undefined if unknown.",
@@ -313,6 +485,29 @@
     }
   },
   {
+    "description": "Server loader for the Activity Timeline: reads the four sources (Workout, DailyBriefing, Mood, Weight) via Prisma and hands them to the pure buildTimeline for normalization + grouping. A thin boundary read; empty DB yields the day-one empty state.",
+    "filePath": "app/lib/timeline.ts",
+    "name": "getTimeline",
+    "untestabilityReason": {
+      "justification": "Thin Prisma/SQLite read boundary that delegates all in-process shaping to the unit-tested buildTimeline helper; the read itself is exercised via the timeline-rich-week app scenario.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Server loader for a single timeline entry detail: parses a composite entry id (via the unit-tested parseEntryId), reads the one Workout / Mood / Weight / DailyBriefing row via Prisma by kind, and returns it tagged with its ISO timestamp (via briefingOccurredAt for briefings); null on malformed id, unknown kind, missing row, or a workout lacking occurredAt.",
+    "filePath": "app/lib/timeline.ts",
+    "name": "getTimelineEntry",
+    "scenarios": [
+      "entry-detail-workout"
+    ]
+  },
+  {
+    "description": "Groups normalized timeline entries into newest-first days, each day's entries newest-first, attaching a relative day label keyed off the single newest entry across the set.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "groupByDay",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
     "description": "Prisma seed entrypoint (npm run db:seed). Intentionally a no-op in this project: production starts empty and each CodeYam scenario carries its own seed payload.",
     "filePath": "prisma/seed.ts",
     "name": "main",
@@ -334,10 +529,28 @@
     "testFile": "components/dashboard/connections.test.ts"
   },
   {
+    "description": "Builds a check-in's one-line summary from its present energy / mood word / note fields.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "moodSummary",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Parses a composite timeline entry id ('workout-3') into its kind and numeric db id for the detail route; returns null on a malformed id or unknown kind.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "parseEntryId",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
     "description": "Computes the SVG stroke-dashoffset that encodes a 0-100 readiness score on the dial ring (full ring at 100, empty at 0), clamping out-of-range or NaN scores so the arc is always valid.",
     "filePath": "components/dashboard/dial.ts",
     "name": "readinessDashOffset",
     "testFile": "components/dashboard/dial.test.ts"
+  },
+  {
+    "description": "Human day label for a timeline entry relative to the newest entry's day (Today / Yesterday / 'Wed Jul 2'), derived from the data's newest timestamp rather than the wall clock so seeded scenarios render stable labels.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "relativeDayLabel",
+    "testFile": "components/timeline/timeline.test.ts"
   },
   {
     "description": "Pure resolution of a connect attempt: validates provider/method/input then maps the method to the status and status-line detail to persist, or an error. The deterministic stand-in for the real handshake; no side effects.",
@@ -355,6 +568,12 @@
     }
   },
   {
+    "description": "Extracts the HH:MM mono time stamp from an ISO datetime for the timeline's left time gutter and the entry-detail metabar.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "timeLabel",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
     "description": "Pure mapper that narrows a raw ProviderConnection DB row's string columns to the typed ConnectionRow unions and drops the numeric id.",
     "filePath": "components/dashboard/connections.ts",
     "name": "toConnectionRow",
@@ -365,5 +584,17 @@
     "filePath": "components/dashboard/connections.ts",
     "name": "validateConnectInput",
     "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Builds a body-weight reading's one-line summary (value + unit), appending the trend delta only when present.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "weightSummary",
+    "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Builds a workout's one-line summary by joining its present distance / pace / vertical / duration stats with a middle dot, skipping missing fields.",
+    "filePath": "components/timeline/timeline.ts",
+    "name": "workoutSummary",
+    "testFile": "components/timeline/timeline.test.ts"
   }
 ]

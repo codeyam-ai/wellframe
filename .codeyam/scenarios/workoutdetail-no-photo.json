@@ -1,0 +1,11 @@
+{
+  "name": "WorkoutDetail - No Photo",
+  "id": "112eeadb-587d-41bd-9155-77a44b4ce35b",
+  "url": "/isolated-components/WorkoutDetail?s=NoPhoto",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "WorkoutDetail",
+  "scenarioType": "component"
+}

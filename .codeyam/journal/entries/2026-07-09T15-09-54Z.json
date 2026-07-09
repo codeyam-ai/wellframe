@@ -1,0 +1,963 @@
+{
+  "timestamp": "2026-07-09T15:09:54Z",
+  "title": "Activity Timeline",
+  "type": "feature",
+  "userRequest": "# Activity Timeline\n\nA chronological, **day-grouped** feed of everything the user has been doing —\nruns, rides, strength and other **workouts**, **daily briefings**, **mood\ncheck-ins**, and **body-weight** readings — with **type-filter chips + text\nsearch** at the top and a dedicated **detail view** when an entry is selected.\nIt answers \"what have I been doing?\" the way the dashboard answers \"how am I\ndoing today?\".\n\nVisual language: the same deep-ink **Plinth** system already scoped under `.wf`\nin `app/globals.css` (mono section numbers, serif headlines, signal-blue +\nmint accents, thin rules, grayscale photo plates). This is a new surface in the\nsame design world as the Briefing Console — it must read as the same product.\n\n## Scope boundary (read this first)\n\nThis is the codeyam Next.js / Prisma / SQLite **web preview**, not the Tauri\ndesktop app, and the production DB starts empty. Each scenario wipes + reseeds\nits own coherent slice of history; production day-one shows the empty state.\nNo external network calls — all data is local DB rows. Per-scenario state lives\nin the DB and is read on every request (`force-dynamic`), and the initial\nfilter/search state is read from the URL (`?type=`, `?q=`) so a scenario can\ncapture a filtered view.\n\n## New / changed data model (Prisma, SQLite)\n\nThe timeline is polymorphic over four sources. `DailyBriefing` already exists.\n`Workout` exists but has **no date** — a chronological feed needs one, so we add\n`occurredAt`. Two new models are added.\n\n- **`Workout`** — add `occurredAt String` (ISO datetime, e.g. `\"2026-07-06T07:14:00Z\"`)\n  and an optional `duration String?` (e.g. `\"1:12:40\"`). Existing fields\n  (`title`, `typeLabel`, `photoUrl`, `distance`, `pace`, `vertical`) stay. Add an\n  optional `kind String?` (e.g. `\"run\" | \"ride\" | \"strength\" | \"walk\" | \"yoga\"`)\n  to drive the type chips and the caption accent. **Note:** the dashboard's\n  `getDashboard()` reads the latest workout by `id`; adding nullable/defaulted\n  columns is backward-compatible and does not change that read.\n- **`Mood`** (new) — a daily check-in: `id`, `occurredAt String`, `partOfDay\n  String` (\"morning\" | \"evening\"), `energy Int?` (1–5), `mood String?`\n  (e.g. \"Steady\"), `sleepQuality Int?`, `soreness Int?`, `stress Int?`,\n  `note String?`.\n- **`Weight`** (new) — a body-weight reading: `id`, `occurredAt String`,\n  `value String` (e.g. `\"154.2\"`), `unit String` (default `\"lb\"`),\n  `delta String?` (trend chip, e.g. `\"▼0.4\"`), `positive Boolean` (mint vs\n  signal track).\n\n## Data loader — `app/lib/timeline.ts` (server)\n\nMirrors `app/lib/dashboard.ts`. Reads all four tables, normalizes each row into a\ncommon **`TimelineEntry`** view-model, sorts newest-first, and groups into days.\n\n```\ntype EntryKind = 'workout' | 'briefing' | 'mood' | 'weight';\ninterface TimelineEntry {\n  id: string;          // composite: `${kind}-${dbId}` (stable URL key)\n  kind: EntryKind;\n  occurredAt: string;  // ISO\n  title: string;       // \"Ridgeline Trail Run\" | \"Morning check-in\" | ...\n  summary: string;     // one-line: \"8.2 mi · 8:42 · 1,240 ft\" | \"Energy 4 · Steady\"\n  accent?: string;     // chip/caption label, e.g. \"Z2\", \"run\"\n  photoUrl?: string;\n}\ninterface TimelineDay { dateLabel: string; entries: TimelineEntry[]; }\nexport async function getTimeline(): Promise<TimelineDay[]>\n```\n\nGrouping key = calendar date of `occurredAt`; `dateLabel` renders \"Today\" /\n\"Yesterday\" / \"Mon Jul 6\" relative to the newest entry's date (deterministic —\nderived from the data, never `Date.now()`, so scenarios are stable).\n\n## Pure helpers (co-located unit tests, like `format.ts` / `dial.ts`)\n\nIn `components/timeline/timeline.ts` (client-safe, no Prisma):\n\n- `dayKey(iso)` → `\"2026-07-06\"` and `relativeDayLabel(iso, newestIso)` →\n  `\"Today\" | \"Yesterday\" | \"Mon Jul 6\"`.\n- `entryMatchesFilter(entry, { type, q })` → boolean — drives both the chips and\n  the search box (case-insensitive match over title + summary + accent).\n- `workoutSummary` / `moodSummary` / `weightSummary` — the one-line summary\n  builders (unit-tested against representative rows).\n- `parseEntryId(id)` → `{ kind, dbId }` for the detail route.\n\nCo-located `timeline.test.ts` covers grouping, relative labels, filter matching,\nand each summary builder.\n\n## Components (`components/timeline/`)\n\n- **`Timeline`** (client) — owns filter + search state (seeded from\n  `?type=`/`?q=`), renders `TimelineFilters` + the list of `TimelineDay`s, shows\n  the empty state when nothing matches / nothing exists.\n- **`TimelineFilters`** — the chip row (All · Runs · Rides · Strength · Briefings\n  · Mood · Weight) + a mono search input, Plinth-styled.\n- **`TimelineDay`** — a `.wf-secnum`-style date header + its entries.\n- **`TimelineEntry`** — one row, rendered by `kind` (workout gets a grayscale\n  photo plate + stats à la `FieldLog`; briefing/mood/weight get compact\n  instrument rows). Whole row links to the detail view.\n- **`EntryDetail`** — the detail surface: full stats for a workout (distance /\n  pace / vertical / duration + photo), or the check-in / weight / briefing\n  breakdown, plus a \"back to timeline\" affordance.\n- **`Metabar`** (reuse, extended) — add an optional `subject` prop (center label,\n  \"Activity · Timeline\") and make the WELLFRAME brand link to `/`. Dashboard\n  keeps its current \"Daily Briefing · Console\" subject.\n\n## Routes\n\n- **`app/timeline/page.tsx`** (url `/timeline`) — server component,\n  `force-dynamic`; `getTimeline()` → `<Timeline>`; reads `?type=` / `?q=` for\n  initial filter state.\n- **`app/timeline/[entryId]/page.tsx`** (url `/timeline/workout-1`) — server\n  component; `parseEntryId` → loads the one row → `<EntryDetail>`; `notFound()`\n  on a missing/unknown entry.\n- A link from the dashboard to the timeline (and the brand-home link back) so the\n  two surfaces are reachable — the app currently has no cross-page nav.\n\n## Scenarios (each carries its own seed; production stays empty)\n\n**Application scenarios (`/timeline`):**\n\n1. **Timeline — Day One Empty** — all tables empty → the calm empty state\n   (\"Your timeline is quiet — activity will appear here as it syncs\").\n2. **Timeline — Sparse** — a single day: one workout + one morning mood.\n3. **Timeline — Rich Week** — ~5 days spanning all four entry types; exercises\n   day grouping, chips, and the \"field log\" photo rows.\n4. **Timeline — Filtered to Runs** — the rich set with `?type=run` → only run\n   workouts show (captures the active-filter state).\n5. **Timeline — Search \"trail\"** — the rich set with `?q=trail` → search results.\n6. **Timeline — Edge Cases** — very long workout title (wrapping), a workout\n   missing optional fields (no distance/pace/photo), and a day with only a mood\n   entry.\n\n**Detail scenario (`/timeline/workout-<id>`):**\n\n7. **Entry Detail — Workout** — a single rich workout detail view.\n\n**Isolated-component scenarios** (hardcoded props, `/isolated-components/...`):\n`Timeline` (Rich / Empty / Filtered), `TimelineFilters` (Default / ActiveChip /\nSearching), `TimelineDay` (Default), `TimelineEntry` (Workout / Briefing / Mood /\nWeight / LongTitle / Minimal), `EntryDetail` (Workout / Mood).\n\n## Out of scope (future passes)\n\nPhotos/voice on entries, editing/deleting from the timeline, infinite scroll /\npagination, date-range picker, journal entries and meals as entry types (only the\nfour chosen types ship now).",
+  "description": "Added the Activity Timeline (/timeline): a day-grouped, filterable feed of workouts, daily briefings, mood check-ins, and body-weight readings, with type-filter chips + text search and a dedicated per-entry detail view (/timeline/[entryId]). Introduced Mood and Weight Prisma models plus an occurredAt date on Workout, a pure buildTimeline normalizer (unit-tested) behind a thin getTimeline/getTimelineEntry server loader, and a dashboard to-timeline nav link. Rendered entirely in the existing deep-ink Plinth design language; production starts empty (day-one state) with all data carried by scenarios.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/.last-reconcile.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/data-structure.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/completed/activity-timeline.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/reconciliation-log.jsonl",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/runner-timing-history.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-awaiting-sync--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/metabar-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/last-advance.txt",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/provider-auth-verdict.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/scenario-taxonomy.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/session-results-snapshot.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/step-highwater.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-run-marker.json",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "path": "app/globals.css",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/BriefingDeck/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/DashboardConsole/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/isolated-components/FieldLog/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/DashboardConsole.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/Metabar.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/briefingdetail-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/detailstat-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/detailstat-long-value.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/entry-detail-mood.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/entry-detail-workout.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/entrydetail-briefing.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/entrydetail-mood.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/entrydetail-workout.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/mooddetail-evening.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/mooddetail-morning.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/rating-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/rating-full.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/rating-low.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/briefingdetail-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/briefingdetail-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/detailstat-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/detailstat-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/detailstat-long-value--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/detailstat-long-value--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entry-detail-mood--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entry-detail-mood--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entry-detail-workout--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entry-detail-workout--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entrydetail-briefing--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entrydetail-briefing--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entrydetail-mood--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entrydetail-mood--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entrydetail-workout--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/entrydetail-workout--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/mooddetail-evening--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/mooddetail-evening--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/mooddetail-morning--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/mooddetail-morning--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/rating-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/rating-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/rating-full--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/rating-full--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/rating-low--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/rating-low--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-day-one-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-day-one-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-edge-cases--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-edge-cases--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-filtered-runs--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-filtered-runs--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-rich-week--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-rich-week--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-runs-filter--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-runs-filter--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-search-trail--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-search-trail--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-sparse--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-sparse--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineday-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineday-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineday-single-entry--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineday-single-entry--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineempty-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineempty-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-briefing--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-briefing--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-long-title--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-long-title--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-minimal--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-minimal--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-mood--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-mood--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-weight--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-weight--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-workout--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelineentry-workout--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelinefilters-active-chip--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelinefilters-active-chip--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelinefilters-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelinefilters-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelinefilters-searching--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timelinefilters-searching--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/weightdetail-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/weightdetail-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/weightdetail-up--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/weightdetail-up--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/workoutdetail-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/workoutdetail-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/workoutdetail-no-photo--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/workoutdetail-no-photo--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-day-one-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-edge-cases.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-filtered-runs.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-rich-week.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-runs-filter.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-search-trail.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timeline-sparse.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineday-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineday-single-entry.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineempty-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineentry-briefing.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineentry-long-title.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineentry-minimal.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineentry-mood.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineentry-weight.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelineentry-workout.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelinefilters-active-chip.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelinefilters-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/timelinefilters-searching.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/weightdetail-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/weightdetail-up.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/workoutdetail-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/workoutdetail-no-photo.json",
+      "status": "added"
+    },
+    {
+      "path": "app/api/timeline/route.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/BriefingDetail/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/DetailStat/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/EntryDetail/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/MoodDetail/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/Rating/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/Timeline/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TimelineDay/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TimelineEmpty/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TimelineEntry/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TimelineFilters/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/WeightDetail/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/WorkoutDetail/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/timeline.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/timeline/[entryId]/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/timeline/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/BriefingDetail.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/DetailStat.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/EntryDetail.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/MoodDetail.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/Rating.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/Timeline.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/TimelineDay.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/TimelineEmpty.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/TimelineEntry.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/TimelineFilters.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/WeightDetail.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/WorkoutDetail.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/timeline.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/timeline/timeline.ts",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "BriefingDetail - Default",
+      "screenshotPath": "briefingdetail-default--desktop.png"
+    },
+    {
+      "name": "Dashboard - Connections Setup",
+      "screenshotPath": "dashboard-connections-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Empty",
+      "screenshotPath": "dashboard-day-one-empty--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Setup",
+      "screenshotPath": "dashboard-day-one-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Low Readiness",
+      "screenshotPath": "dashboard-low-readiness--desktop.png"
+    },
+    {
+      "name": "Dashboard - No Workout Yesterday",
+      "screenshotPath": "dashboard-no-workout-yesterday--desktop.png"
+    },
+    {
+      "name": "Dashboard - Partial Data",
+      "screenshotPath": "dashboard-partial-data--desktop.png"
+    },
+    {
+      "name": "Dashboard - Primed Briefing",
+      "screenshotPath": "dashboard-primed-briefing--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Coach Open",
+      "screenshotPath": "dashboardconsole-coach-open--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Empty",
+      "screenshotPath": "dashboardconsole-empty--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Primed",
+      "screenshotPath": "dashboardconsole-primed--desktop.png"
+    },
+    {
+      "name": "DetailStat - Default",
+      "screenshotPath": "detailstat-default--desktop.png"
+    },
+    {
+      "name": "DetailStat - Long Value",
+      "screenshotPath": "detailstat-long-value--desktop.png"
+    },
+    {
+      "name": "Entry Detail - Mood",
+      "screenshotPath": "entry-detail-mood--desktop.png"
+    },
+    {
+      "name": "Entry Detail - Workout",
+      "screenshotPath": "entry-detail-workout--desktop.png"
+    },
+    {
+      "name": "EntryDetail - Briefing",
+      "screenshotPath": "entrydetail-briefing--desktop.png"
+    },
+    {
+      "name": "EntryDetail - Mood",
+      "screenshotPath": "entrydetail-mood--desktop.png"
+    },
+    {
+      "name": "EntryDetail - Workout",
+      "screenshotPath": "entrydetail-workout--desktop.png"
+    },
+    {
+      "name": "Metabar - Awaiting Sync",
+      "screenshotPath": "metabar-awaiting-sync--desktop.png"
+    },
+    {
+      "name": "Metabar - Default",
+      "screenshotPath": "metabar-default--desktop.png"
+    },
+    {
+      "name": "MoodDetail - Evening",
+      "screenshotPath": "mooddetail-evening--desktop.png"
+    },
+    {
+      "name": "MoodDetail - Morning",
+      "screenshotPath": "mooddetail-morning--desktop.png"
+    },
+    {
+      "name": "Rating - Default",
+      "screenshotPath": "rating-default--desktop.png"
+    },
+    {
+      "name": "Rating - Full",
+      "screenshotPath": "rating-full--desktop.png"
+    },
+    {
+      "name": "Rating - Low",
+      "screenshotPath": "rating-low--desktop.png"
+    },
+    {
+      "name": "Timeline - Day One Empty",
+      "screenshotPath": "timeline-day-one-empty--desktop.png"
+    },
+    {
+      "name": "Timeline - Edge Cases",
+      "screenshotPath": "timeline-edge-cases--desktop.png"
+    },
+    {
+      "name": "Timeline - Empty",
+      "screenshotPath": "timeline-empty--desktop.png"
+    },
+    {
+      "name": "Timeline - Filtered Runs",
+      "screenshotPath": "timeline-filtered-runs--desktop.png"
+    },
+    {
+      "name": "Timeline - Rich Week",
+      "screenshotPath": "timeline-rich-week--desktop.png"
+    },
+    {
+      "name": "Timeline - Runs Filter",
+      "screenshotPath": "timeline-runs-filter--desktop.png"
+    },
+    {
+      "name": "Timeline - Search Trail",
+      "screenshotPath": "timeline-search-trail--desktop.png"
+    },
+    {
+      "name": "Timeline - Sparse",
+      "screenshotPath": "timeline-sparse--desktop.png"
+    },
+    {
+      "name": "TimelineDay - Default",
+      "screenshotPath": "timelineday-default--desktop.png"
+    },
+    {
+      "name": "TimelineDay - Single Entry",
+      "screenshotPath": "timelineday-single-entry--desktop.png"
+    },
+    {
+      "name": "TimelineEmpty - Default",
+      "screenshotPath": "timelineempty-default--desktop.png"
+    },
+    {
+      "name": "TimelineEntry - Briefing",
+      "screenshotPath": "timelineentry-briefing--desktop.png"
+    },
+    {
+      "name": "TimelineEntry - Long Title",
+      "screenshotPath": "timelineentry-long-title--desktop.png"
+    },
+    {
+      "name": "TimelineEntry - Minimal",
+      "screenshotPath": "timelineentry-minimal--desktop.png"
+    },
+    {
+      "name": "TimelineEntry - Mood",
+      "screenshotPath": "timelineentry-mood--desktop.png"
+    },
+    {
+      "name": "TimelineEntry - Weight",
+      "screenshotPath": "timelineentry-weight--desktop.png"
+    },
+    {
+      "name": "TimelineEntry - Workout",
+      "screenshotPath": "timelineentry-workout--desktop.png"
+    },
+    {
+      "name": "TimelineFilters - Active Chip",
+      "screenshotPath": "timelinefilters-active-chip--desktop.png"
+    },
+    {
+      "name": "TimelineFilters - Default",
+      "screenshotPath": "timelinefilters-default--desktop.png"
+    },
+    {
+      "name": "TimelineFilters - Searching",
+      "screenshotPath": "timelinefilters-searching--desktop.png"
+    },
+    {
+      "name": "WeightDetail - Default",
+      "screenshotPath": "weightdetail-default--desktop.png"
+    },
+    {
+      "name": "WeightDetail - Up",
+      "screenshotPath": "weightdetail-up--desktop.png"
+    },
+    {
+      "name": "WorkoutDetail - Default",
+      "screenshotPath": "workoutdetail-default--desktop.png"
+    },
+    {
+      "name": "WorkoutDetail - No Photo",
+      "screenshotPath": "workoutdetail-no-photo--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 27,
+    "passed": 27,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 27,
+        "passed": 27
+      }
+    ]
+  }
+}

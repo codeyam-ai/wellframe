@@ -19,6 +19,60 @@
       "runner": "tests"
     },
     {
+      "description": "a bare date is placed at 07:00 so it sorts among morning entries",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "briefingOccurredAt › appends a morning time to a bare date",
+      "line": 186,
+      "registeredAt": "2026-07-09T14:32:48.948495222+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "a full ISO datetime is passed through unchanged",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "briefingOccurredAt › leaves a full datetime untouched",
+      "line": 190,
+      "registeredAt": "2026-07-09T14:32:48.948495222+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "entries across days land in newest-first day groups",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › groups entries into newest-first days",
+      "line": 246,
+      "registeredAt": "2026-07-09T14:32:48.948495222+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "each source kind is normalized with a composite id, filterKey, and summary",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › normalizes all four source kinds into grouped entries",
+      "line": 225,
+      "registeredAt": "2026-07-09T14:32:48.948495222+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "no rows yields no days (the production day-one state)",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › returns an empty array for empty sources",
+      "line": 210,
+      "registeredAt": "2026-07-09T14:32:48.948495222+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "a workout without occurredAt cannot be placed on the timeline and is skipped",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › skips workouts that have no occurredAt",
+      "line": 215,
+      "registeredAt": "2026-07-09T14:32:48.948495222+00:00",
+      "runner": "tests"
+    },
+    {
       "description": "honors a custom radius argument",
       "file": "components/dashboard/dial.test.ts",
       "format": "vitest",
@@ -82,6 +136,51 @@
       "runner": "tests"
     },
     {
+      "description": "takes the UTC calendar date (YYYY-MM-DD) from an ISO datetime",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "dayKey › takes the UTC calendar date from an ISO datetime",
+      "line": 33,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "an unknown filterKey still gets a chip (labeled by its key) so it is reachable",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "deriveChips › appends chips for unexpected kinds so nothing is unreachable",
+      "line": 177,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "a duplicate kind across entries produces a single chip",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "deriveChips › dedupes repeated kinds",
+      "line": 171,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "only kinds present in the data get chips, in canonical order",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "deriveChips › derives chips from present kinds in CHIP_ORDER order",
+      "line": 164,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "always leads with an All chip even when there is no data",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "deriveChips › returns just the All chip for empty data",
+      "line": 159,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
       "description": "escaping runs before emphasis so injected tags cannot survive as live markup",
       "file": "components/dashboard/format.test.ts",
       "format": "vitest",
@@ -136,6 +235,42 @@
       "runner": "tests"
     },
     {
+      "description": "the type chip and the query must both pass",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "entryMatchesFilter › ANDs the type and query",
+      "line": 104,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "a type chip matches only entries with that filterKey",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "entryMatchesFilter › filters by the entry filterKey",
+      "line": 92,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "the query matches title, summary, and accent case-insensitively",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "entryMatchesFilter › matches the query across title, summary, and accent case-insensitively",
+      "line": 97,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "an empty or 'all' type matches every entry",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "entryMatchesFilter › passes everything when type is empty or all",
+      "line": 87,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
       "description": "Looks up a real catalog provider by id.",
       "file": "components/dashboard/connections.test.ts",
       "format": "vitest",
@@ -160,6 +295,24 @@
       "key": "findProvider › returns undefined for an unknown id",
       "line": 147,
       "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "entries are grouped into newest-first days with relative labels",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "groupByDay › groups entries into newest-first days with relative labels",
+      "line": 72,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "no entries yields no day groups",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "groupByDay › returns empty for no entries",
+      "line": 68,
+      "registeredAt": "2026-07-09T14:26:38Z",
       "runner": "tests"
     },
     {
@@ -226,6 +379,24 @@
       "runner": "tests"
     },
     {
+      "description": "malformed ids (no kind, unknown kind, non-positive/non-numeric id) return null",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "parseEntryId › rejects malformed ids",
+      "line": 117,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "a well-formed id splits into kind and numeric db id",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "parseEntryId › splits kind and numeric id",
+      "line": 112,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
       "description": "negative scores clamp to the full circumference",
       "file": "components/dashboard/dial.test.ts",
       "format": "vitest",
@@ -277,6 +448,42 @@
       "key": "readinessDashOffset › returns zero offset at a full score",
       "line": 18,
       "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "older days read as weekday + month + date",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "relativeDayLabel › labels older days with weekday + month + date",
+      "line": 49,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "the newest day in the set reads as Today",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "relativeDayLabel › labels the newest day Today",
+      "line": 41,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "the day before the newest reads as Yesterday",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "relativeDayLabel › labels the prior day Yesterday",
+      "line": 45,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "an entry later on the newest day still reads Today, never a future label",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "relativeDayLabel › never returns a negative-diff label for entries after the reference",
+      "line": 53,
+      "registeredAt": "2026-07-09T14:26:38Z",
       "runner": "tests"
     },
     {
@@ -349,6 +556,42 @@
       "key": "resolveConnection › resolves an mcp connect with the MCP detail",
       "line": 171,
       "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "a weight summary appends the trend delta only when it is present",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "summary builders › appends the weight delta only when present",
+      "line": 141,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "a mood summary is built from the present energy / mood / note fields",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "summary builders › builds a mood summary from present fields",
+      "line": 135,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "a workout summary joins present stats with a middle dot, skipping missing ones",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "summary builders › joins present workout stats, skipping missing ones",
+      "line": 128,
+      "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "extracts the HH:MM portion of an ISO datetime",
+      "file": "components/timeline/timeline.test.ts",
+      "format": "vitest",
+      "key": "timeLabel › extracts HH:MM",
+      "line": 61,
+      "registeredAt": "2026-07-09T14:26:38Z",
       "runner": "tests"
     },
     {

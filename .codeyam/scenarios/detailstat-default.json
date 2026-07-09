@@ -1,0 +1,11 @@
+{
+  "name": "DetailStat - Default",
+  "id": "8d76d10f-706f-440c-b636-b9c76f9d2f6b",
+  "url": "/isolated-components/DetailStat?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "DetailStat",
+  "scenarioType": "component"
+}

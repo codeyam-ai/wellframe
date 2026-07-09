@@ -1,0 +1,49 @@
+{
+  "name": "Timeline - Edge Cases",
+  "id": "749876e2-d94e-450c-b4d1-b5b831f86c7c",
+  "url": "/timeline",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "mood": [
+      {
+        "energy": 2,
+        "mood": "Flat",
+        "note": "Restless night. Keeping today easy.",
+        "occurredAt": "2026-07-05T07:05:00Z",
+        "partOfDay": "morning",
+        "sleepQuality": 2,
+        "soreness": 4,
+        "stress": 3
+      }
+    ],
+    "workout": [
+      {
+        "distance": "12.8 mi",
+        "duration": "3:03:41",
+        "kind": "run",
+        "occurredAt": "2026-07-06T05:40:00Z",
+        "pace": "14:20",
+        "photoUrl": "/images/trail.jpg",
+        "title": "Sunrise Summit Push — Full Traverse of the North Ridge with the Alpine Club",
+        "typeLabel": "▸ North Ridge · Alpine",
+        "vertical": "4,320 ft"
+      },
+      {
+        "distance": null,
+        "duration": null,
+        "kind": "walk",
+        "occurredAt": "2026-07-06T18:10:00Z",
+        "pace": null,
+        "photoUrl": null,
+        "title": "Quick Loop",
+        "typeLabel": null,
+        "vertical": null
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/timeline/page.tsx"
+}

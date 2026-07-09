@@ -1,0 +1,17 @@
+{
+  "name": "Timeline - Day One Empty",
+  "id": "4e420d7b-4003-4536-b680-7b3547de0806",
+  "url": "/timeline",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "dailyBriefing": [],
+    "mood": [],
+    "weight": [],
+    "workout": []
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/timeline/page.tsx"
+}

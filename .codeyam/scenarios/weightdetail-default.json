@@ -1,0 +1,11 @@
+{
+  "name": "WeightDetail - Default",
+  "id": "7c369fc5-2d3b-4834-b318-53c8e67d5072",
+  "url": "/isolated-components/WeightDetail?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "WeightDetail",
+  "scenarioType": "component"
+}

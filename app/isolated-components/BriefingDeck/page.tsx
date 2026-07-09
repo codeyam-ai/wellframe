@@ -37,6 +37,9 @@ const run: Workout = {
   distance: "8.2 mi",
   pace: "8:42",
   vertical: "1,240 ft",
+  duration: "1:11:20",
+  occurredAt: "2026-07-05T07:32:00Z",
+  kind: "run",
 };
 
 const scenarios: Record<string, Props> = {

@@ -1,0 +1,11 @@
+{
+  "name": "Rating - Full",
+  "id": "4ea856b2-4f75-4957-a489-9f3952711320",
+  "url": "/isolated-components/Rating?s=Full",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Rating",
+  "scenarioType": "component"
+}

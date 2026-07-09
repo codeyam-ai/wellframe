@@ -1,0 +1,11 @@
+{
+  "name": "TimelineEntry - Long Title",
+  "id": "2cf332a3-8d9d-47d7-9eba-cbcbac1a0aca",
+  "url": "/isolated-components/TimelineEntry?s=LongTitle",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineEntry",
+  "scenarioType": "component"
+}

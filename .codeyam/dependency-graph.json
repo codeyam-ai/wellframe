@@ -1,59 +1,164 @@
 {
   "files": {
-    "components/dashboard/ConnectionsPanel.tsx": {
+    "app/isolated-components/CoachTransmission/page.tsx": {
       "imports": [
-        "components/dashboard/connections.ts",
-        "app/lib/connections.actions.ts",
-        "components/dashboard/ConnectionsGroup.tsx"
+        "components/dashboard/CoachTransmission.tsx"
+      ],
+      "importedBy": []
+    },
+    "next-env.d.ts": {
+      "imports": [
+        ".next/dev/types/routes.d.ts"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/InfoDisclosure/page.tsx": {
+      "imports": [
+        "components/dashboard/InfoDisclosure.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/BriefingDetail/page.tsx": {
+      "imports": [
+        "components/timeline/BriefingDetail.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/dial.ts": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ReadinessDial.tsx",
+        "components/dashboard/dial.test.ts"
+      ]
+    },
+    "components/dashboard/EmptyBriefing.tsx": {
+      "imports": [
+        "components/dashboard/OnboardLead.tsx",
+        "components/dashboard/OnboardStep.tsx"
       ],
       "importedBy": [
         "components/dashboard/DashboardConsole.tsx",
-        "app/isolated-components/ConnectionsPanel/page.tsx"
+        "app/isolated-components/EmptyBriefing/page.tsx"
       ]
     },
-    "components/dashboard/OnboardStep.tsx": {
+    "components/timeline/MoodDetail.tsx": {
+      "imports": [
+        "components/timeline/Rating.tsx"
+      ],
+      "importedBy": [
+        "components/timeline/EntryDetail.tsx",
+        "app/isolated-components/MoodDetail/page.tsx"
+      ]
+    },
+    "app/isolated-components/ReadinessHero/page.tsx": {
+      "imports": [
+        "components/dashboard/ReadinessHero.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/TimelineEntry/page.tsx": {
+      "imports": [
+        "components/timeline/TimelineEntry.tsx",
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/TimelineFilters.tsx": {
+      "imports": [
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": [
+        "components/timeline/Timeline.tsx",
+        "app/isolated-components/TimelineFilters/page.tsx"
+      ]
+    },
+    "components/dashboard/OnboardLead.tsx": {
       "imports": [],
       "importedBy": [
         "components/dashboard/EmptyBriefing.tsx",
-        "app/isolated-components/OnboardStep/page.tsx"
+        "app/isolated-components/OnboardLead/page.tsx"
       ]
     },
-    "components/dashboard/connections.test.ts": {
+    "components/timeline/timeline.ts": {
+      "imports": [],
+      "importedBy": [
+        "components/timeline/TimelineFilters.tsx",
+        "components/timeline/WorkoutDetail.tsx",
+        "components/timeline/EntryDetail.tsx",
+        "components/timeline/Timeline.tsx",
+        "components/timeline/TimelineEntry.tsx",
+        "components/timeline/TimelineDay.tsx",
+        "components/timeline/timeline.test.ts",
+        "app/timeline/[entryId]/page.tsx",
+        "app/lib/timeline.ts",
+        "app/isolated-components/Timeline/page.tsx",
+        "app/isolated-components/TimelineEntry/page.tsx",
+        "app/isolated-components/TimelineDay/page.tsx"
+      ]
+    },
+    "app/isolated-components/DashboardConsole/page.tsx": {
       "imports": [
+        "components/dashboard/DashboardConsole.tsx",
         "components/dashboard/connections.ts"
       ],
       "importedBy": []
     },
-    "components/dashboard/MethodChooser.tsx": {
-      "imports": [
-        "components/dashboard/connections.ts"
-      ],
+    "components/timeline/BriefingDetail.tsx": {
+      "imports": [],
       "importedBy": [
-        "components/dashboard/ProviderConnectPanel.tsx",
-        "app/isolated-components/MethodChooser/page.tsx"
+        "components/timeline/EntryDetail.tsx",
+        "app/isolated-components/BriefingDetail/page.tsx"
+      ]
+    },
+    "components/dashboard/Stat.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/FieldLog.tsx",
+        "app/isolated-components/Stat/page.tsx"
+      ]
+    },
+    "components/dashboard/ProviderConnectFlow.tsx": {
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/ProviderConnectFlow/page.tsx"
       ]
     },
     "app/api/__codeyam_revalidate/route.ts": {
       "imports": [],
       "importedBy": []
     },
-    "components/dashboard/ProviderStatusPill.tsx": {
+    "app/isolated-components/MethodChooser/page.tsx": {
+      "imports": [
+        "components/dashboard/MethodChooser.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs": {
       "imports": [],
       "importedBy": [
-        "components/dashboard/ProviderRow.tsx",
-        "app/isolated-components/ProviderStatusPill/page.tsx"
+        ".claude/skills/review-session/scripts/find-last-session.mjs"
       ]
     },
-    "app/isolated-components/ConnectionsGroup/page.tsx": {
+    "app/isolated-components/ProviderRow/page.tsx": {
       "imports": [
-        "components/dashboard/ConnectionsGroup.tsx",
+        "components/dashboard/ProviderRow.tsx",
         "components/dashboard/connections.ts"
       ],
       "importedBy": []
     },
-    "app/isolated-components/OnboardLead/page.tsx": {
+    ".claude/hooks/editor-pretool-hook.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/isolated-components/EntryDetail/page.tsx": {
       "imports": [
-        "components/dashboard/OnboardLead.tsx"
+        "components/timeline/EntryDetail.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Rating/page.tsx": {
+      "imports": [
+        "components/timeline/Rating.tsx"
       ],
       "importedBy": []
     },
@@ -63,87 +168,69 @@
       ],
       "importedBy": []
     },
-    "app/isolated-components/CoachDock/page.tsx": {
+    "app/isolated-components/WorkoutDetail/page.tsx": {
       "imports": [
-        "components/dashboard/CoachDock.tsx"
+        "components/timeline/WorkoutDetail.tsx"
       ],
       "importedBy": []
     },
-    "app/api/dashboard/route.ts": {
-      "imports": [
-        "app/lib/dashboard.ts"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/OnboardStep/page.tsx": {
-      "imports": [
-        "components/dashboard/OnboardStep.tsx"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/review-session/scripts/find-last-session.mjs": {
-      "imports": [
-        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/CoordStrip.tsx": {
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ReadinessHero.tsx",
-        "app/isolated-components/CoordStrip/page.tsx"
-      ]
-    },
-    "components/dashboard/VitalsPanel.tsx": {
-      "imports": [
-        "components/dashboard/format.ts"
-      ],
-      "importedBy": [
-        "components/dashboard/BriefingDeck.tsx",
-        "app/isolated-components/VitalsPanel/page.tsx"
-      ]
-    },
-    "prisma/seed.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    ".claude/hooks/editor-step-hook.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/isolated-components/Stat/page.tsx": {
+    "components/dashboard/FieldLog.tsx": {
       "imports": [
         "components/dashboard/Stat.tsx"
       ],
-      "importedBy": []
-    },
-    "vitest.config.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "ui/src/helpers/stepLabels.generated.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "components/dashboard/ProviderConnectFlow.tsx": {
-      "imports": [],
       "importedBy": [
-        "app/isolated-components/ProviderConnectFlow/page.tsx"
+        "components/dashboard/BriefingDeck.tsx",
+        "app/isolated-components/FieldLog/page.tsx"
       ]
     },
-    "app/isolated-components/ProviderConnectPanel/page.tsx": {
+    ".claude/skills/review-session/scripts/extract-session.mjs": {
       "imports": [
-        "components/dashboard/ProviderConnectPanel.tsx",
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/connections.test.ts": {
+      "imports": [
         "components/dashboard/connections.ts"
       ],
       "importedBy": []
     },
-    "components/dashboard/CoachDock.tsx": {
+    "postcss.config.mjs": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/dashboard/OnboardStep.tsx": {
       "imports": [],
       "importedBy": [
-        "components/dashboard/DashboardConsole.tsx",
-        "app/isolated-components/CoachDock/page.tsx"
+        "components/dashboard/EmptyBriefing.tsx",
+        "app/isolated-components/OnboardStep/page.tsx"
       ]
+    },
+    "app/globals.css": {
+      "imports": [],
+      "importedBy": [
+        "app/layout.tsx"
+      ]
+    },
+    "app/isolated-components/ReadinessDial/page.tsx": {
+      "imports": [
+        "components/dashboard/ReadinessDial.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/codeyam-isolate/layout.tsx": {
+      "imports": [],
+      "importedBy": []
+    },
+    ".next/dev/types/routes.d.ts": {
+      "imports": [],
+      "importedBy": [
+        "next-env.d.ts"
+      ]
+    },
+    "next.config.ts": {
+      "imports": [],
+      "importedBy": []
     },
     "components/dashboard/CoachTransmission.tsx": {
       "imports": [
@@ -152,15 +239,6 @@
       "importedBy": [
         "components/dashboard/BriefingDeck.tsx",
         "app/isolated-components/CoachTransmission/page.tsx"
-      ]
-    },
-    "components/dashboard/ReadinessDial.tsx": {
-      "imports": [
-        "components/dashboard/dial.ts"
-      ],
-      "importedBy": [
-        "components/dashboard/ReadinessHero.tsx",
-        "app/isolated-components/ReadinessDial/page.tsx"
       ]
     },
     "components/dashboard/format.ts": {
@@ -172,97 +250,109 @@
         "components/dashboard/format.test.ts"
       ]
     },
-    "components/dashboard/ReadinessHero.tsx": {
+    "app/isolated-components/TimelineDay/page.tsx": {
       "imports": [
-        "components/dashboard/ReadinessDial.tsx",
-        "components/dashboard/CoordStrip.tsx",
-        "components/dashboard/ReadinessVerdict.tsx"
-      ],
-      "importedBy": [
-        "components/dashboard/BriefingDeck.tsx",
-        "app/isolated-components/ReadinessHero/page.tsx"
-      ]
-    },
-    "app/isolated-components/Metabar/page.tsx": {
-      "imports": [
-        "components/dashboard/Metabar.tsx"
+        "components/timeline/TimelineDay.tsx",
+        "components/timeline/timeline.ts"
       ],
       "importedBy": []
     },
-    ".claude/hooks/_step_metadata.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/isolated-components/ReadinessHero/page.tsx": {
+    "app/isolated-components/VitalsPanel/page.tsx": {
       "imports": [
-        "components/dashboard/ReadinessHero.tsx"
+        "components/dashboard/VitalsPanel.tsx"
       ],
       "importedBy": []
     },
-    "app/isolated-components/ReadinessDial/page.tsx": {
-      "imports": [
-        "components/dashboard/ReadinessDial.tsx"
-      ],
-      "importedBy": []
-    },
-    ".next/dev/types/routes.d.ts": {
+    "components/dashboard/CoordStrip.tsx": {
       "imports": [],
       "importedBy": [
-        "next-env.d.ts"
+        "components/dashboard/ReadinessHero.tsx",
+        "app/isolated-components/CoordStrip/page.tsx"
       ]
     },
-    "app/scenario/[slug]/page.tsx": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/lib/dashboard.ts": {
+    "components/dashboard/ConnectionsPanel.tsx": {
       "imports": [
-        "app/lib/prisma.ts"
+        "components/dashboard/connections.ts",
+        "app/lib/connections.actions.ts",
+        "components/dashboard/ConnectionsGroup.tsx"
       ],
       "importedBy": [
-        "app/page.tsx",
-        "app/api/dashboard/route.ts"
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/ConnectionsPanel/page.tsx"
       ]
     },
-    "app/isolated-components/MethodForm/page.tsx": {
+    "app/lib/connections.server.ts": {
       "imports": [
-        "components/dashboard/MethodForm.tsx",
+        "app/lib/prisma.ts",
+        "components/dashboard/connections.ts"
+      ],
+      "importedBy": [
+        "app/page.tsx"
+      ]
+    },
+    "app/timeline/[entryId]/page.tsx": {
+      "imports": [
+        "app/lib/timeline.ts",
+        "components/timeline/timeline.ts",
+        "components/timeline/EntryDetail.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/layout.tsx": {
+      "imports": [
+        "app/globals.css"
+      ],
+      "importedBy": []
+    },
+    "app/api/dashboard/route.ts": {
+      "imports": [
+        "app/lib/dashboard.ts"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ConnectionsPanel/page.tsx": {
+      "imports": [
+        "components/dashboard/ConnectionsPanel.tsx",
         "components/dashboard/connections.ts"
       ],
       "importedBy": []
     },
-    "app/isolated-components/BriefingDeck/page.tsx": {
+    "app/isolated-components/Stat/page.tsx": {
       "imports": [
-        "components/dashboard/BriefingDeck.tsx"
+        "components/dashboard/Stat.tsx"
       ],
       "importedBy": []
     },
-    "components/dashboard/Metabar.tsx": {
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/DashboardConsole.tsx",
-        "app/isolated-components/Metabar/page.tsx"
-      ]
-    },
-    "app/isolated-components/CoordStrip/page.tsx": {
+    "components/dashboard/format.test.ts": {
       "imports": [
-        "components/dashboard/CoordStrip.tsx"
+        "components/dashboard/format.ts"
       ],
       "importedBy": []
     },
-    ".claude/skills/review-session/scripts/extract-session-helpers.mjs": {
+    "app/isolated-components/FieldLog/page.tsx": {
+      "imports": [
+        "components/dashboard/FieldLog.tsx"
+      ],
+      "importedBy": []
+    },
+    "vitest.config.ts": {
       "imports": [],
+      "importedBy": []
+    },
+    "components/dashboard/VitalsPanel.tsx": {
+      "imports": [
+        "components/dashboard/format.ts"
+      ],
       "importedBy": [
-        ".claude/skills/review-session/scripts/extract-session.mjs"
+        "components/dashboard/BriefingDeck.tsx",
+        "app/isolated-components/VitalsPanel/page.tsx"
       ]
     },
-    "app/lib/prisma.ts": {
-      "imports": [],
-      "importedBy": [
-        "app/lib/connections.actions.ts",
-        "app/lib/connections.server.ts",
-        "app/lib/dashboard.ts"
-      ]
+    "app/isolated-components/OnboardLead/page.tsx": {
+      "imports": [
+        "components/dashboard/OnboardLead.tsx"
+      ],
+      "importedBy": []
     },
     "components/dashboard/BriefingDeck.tsx": {
       "imports": [
@@ -276,74 +366,205 @@
         "app/isolated-components/BriefingDeck/page.tsx"
       ]
     },
-    "app/isolated-components/ProviderConnectFlow/page.tsx": {
-      "imports": [
-        "components/dashboard/ProviderConnectFlow.tsx"
-      ],
-      "importedBy": []
+    "components/timeline/TimelineEmpty.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/timeline/Timeline.tsx",
+        "app/isolated-components/TimelineEmpty/page.tsx"
+      ]
     },
-    "app/codeyam-isolate/layout.tsx": {
+    "eslint.config.mjs": {
       "imports": [],
       "importedBy": []
     },
-    "app/isolated-components/DashboardConsole/page.tsx": {
+    "app/isolated-components/TimelineEmpty/page.tsx": {
       "imports": [
+        "components/timeline/TimelineEmpty.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/TimelineDay.tsx": {
+      "imports": [
+        "components/timeline/TimelineEntry.tsx",
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": [
+        "components/timeline/Timeline.tsx",
+        "app/isolated-components/TimelineDay/page.tsx"
+      ]
+    },
+    "components/dashboard/ReadinessHero.tsx": {
+      "imports": [
+        "components/dashboard/ReadinessDial.tsx",
+        "components/dashboard/CoordStrip.tsx",
+        "components/dashboard/ReadinessVerdict.tsx"
+      ],
+      "importedBy": [
+        "components/dashboard/BriefingDeck.tsx",
+        "app/isolated-components/ReadinessHero/page.tsx"
+      ]
+    },
+    "app/lib/dashboard.ts": {
+      "imports": [
+        "app/lib/prisma.ts"
+      ],
+      "importedBy": [
+        "app/page.tsx",
+        "app/api/dashboard/route.ts"
+      ]
+    },
+    "components/timeline/EntryDetail.tsx": {
+      "imports": [
+        "components/dashboard/Metabar.tsx",
+        "components/timeline/timeline.ts",
+        "components/timeline/WorkoutDetail.tsx",
+        "components/timeline/MoodDetail.tsx",
+        "components/timeline/WeightDetail.tsx",
+        "components/timeline/BriefingDetail.tsx"
+      ],
+      "importedBy": [
+        "app/timeline/[entryId]/page.tsx",
+        "app/isolated-components/EntryDetail/page.tsx"
+      ]
+    },
+    "app/isolated-components/layout.tsx": {
+      "imports": [],
+      "importedBy": []
+    },
+    "components/timeline/Timeline.tsx": {
+      "imports": [
+        "components/dashboard/Metabar.tsx",
+        "components/timeline/TimelineFilters.tsx",
+        "components/timeline/TimelineDay.tsx",
+        "components/timeline/TimelineEmpty.tsx",
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": [
+        "app/timeline/page.tsx",
+        "app/isolated-components/Timeline/page.tsx"
+      ]
+    },
+    "app/lib/connections.actions.ts": {
+      "imports": [
+        "app/lib/prisma.ts",
+        "components/dashboard/connections.ts"
+      ],
+      "importedBy": [
+        "components/dashboard/ProviderConnectPanel.tsx",
         "components/dashboard/DashboardConsole.tsx",
+        "components/dashboard/ConnectionsGroup.tsx",
+        "components/dashboard/ConnectionsPanel.tsx"
+      ]
+    },
+    "components/timeline/Rating.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/timeline/MoodDetail.tsx",
+        "app/isolated-components/Rating/page.tsx"
+      ]
+    },
+    "components/dashboard/Metabar.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "components/timeline/EntryDetail.tsx",
+        "components/timeline/Timeline.tsx",
+        "app/isolated-components/Metabar/page.tsx"
+      ]
+    },
+    "components/dashboard/ReadinessVerdict.tsx": {
+      "imports": [
+        "components/dashboard/format.ts",
+        "components/dashboard/InfoDisclosure.tsx"
+      ],
+      "importedBy": [
+        "components/dashboard/ReadinessHero.tsx",
+        "app/isolated-components/ReadinessVerdict/page.tsx"
+      ]
+    },
+    "components/dashboard/InfoDisclosure.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ReadinessVerdict.tsx",
+        "app/isolated-components/InfoDisclosure/page.tsx"
+      ]
+    },
+    "components/dashboard/ProviderRow.tsx": {
+      "imports": [
+        "components/dashboard/connections.ts",
+        "components/dashboard/ProviderStatusPill.tsx"
+      ],
+      "importedBy": [
+        "components/dashboard/ConnectionsGroup.tsx",
+        "app/isolated-components/ProviderRow/page.tsx"
+      ]
+    },
+    "prisma.config.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/isolated-components/MoodDetail/page.tsx": {
+      "imports": [
+        "components/timeline/MoodDetail.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/dial.test.ts": {
+      "imports": [
+        "components/dashboard/dial.ts"
+      ],
+      "importedBy": []
+    },
+    "prisma/seed.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/isolated-components/ProviderConnectPanel/page.tsx": {
+      "imports": [
+        "components/dashboard/ProviderConnectPanel.tsx",
         "components/dashboard/connections.ts"
       ],
       "importedBy": []
     },
-    "components/dashboard/ProviderConnectPanel.tsx": {
+    "app/isolated-components/CoachDock/page.tsx": {
       "imports": [
-        "components/dashboard/connections.ts",
-        "app/lib/connections.actions.ts",
-        "components/dashboard/MethodChooser.tsx",
-        "components/dashboard/MethodForm.tsx"
+        "components/dashboard/CoachDock.tsx"
       ],
-      "importedBy": [
-        "components/dashboard/ConnectionsGroup.tsx",
-        "app/isolated-components/ProviderConnectPanel/page.tsx"
-      ]
-    },
-    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/find-last-session.mjs"
-      ]
-    },
-    "components/dashboard/Stat.tsx": {
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/FieldLog.tsx",
-        "app/isolated-components/Stat/page.tsx"
-      ]
-    },
-    "components/dashboard/OnboardLead.tsx": {
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/EmptyBriefing.tsx",
-        "app/isolated-components/OnboardLead/page.tsx"
-      ]
-    },
-    "components/dashboard/EmptyBriefing.tsx": {
-      "imports": [
-        "components/dashboard/OnboardLead.tsx",
-        "components/dashboard/OnboardStep.tsx"
-      ],
-      "importedBy": [
-        "components/dashboard/DashboardConsole.tsx",
-        "app/isolated-components/EmptyBriefing/page.tsx"
-      ]
-    },
-    "app/globals.css": {
-      "imports": [],
-      "importedBy": [
-        "app/layout.tsx"
-      ]
-    },
-    "next.config.ts": {
-      "imports": [],
       "importedBy": []
+    },
+    "app/api/timeline/route.ts": {
+      "imports": [
+        "app/lib/timeline.ts"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/MethodForm/page.tsx": {
+      "imports": [
+        "components/dashboard/MethodForm.tsx",
+        "components/dashboard/connections.ts"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Metabar/page.tsx": {
+      "imports": [
+        "components/dashboard/Metabar.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/page.tsx": {
+      "imports": [
+        "app/lib/dashboard.ts",
+        "app/lib/connections.server.ts",
+        "components/dashboard/connections.ts",
+        "components/dashboard/DashboardConsole.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/extract-session-helpers.mjs": {
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/review-session/scripts/extract-session.mjs"
+      ]
     },
     "components/dashboard/DashboardConsole.tsx": {
       "imports": [
@@ -360,66 +581,12 @@
         "app/isolated-components/DashboardConsole/page.tsx"
       ]
     },
-    "prisma.config.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/isolated-components/FieldLog/page.tsx": {
+    "app/isolated-components/ConnectionsGroup/page.tsx": {
       "imports": [
-        "components/dashboard/FieldLog.tsx"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/format.test.ts": {
-      "imports": [
-        "components/dashboard/format.ts"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/CoachTransmission/page.tsx": {
-      "imports": [
-        "components/dashboard/CoachTransmission.tsx"
-      ],
-      "importedBy": []
-    },
-    "next-env.d.ts": {
-      "imports": [
-        ".next/dev/types/routes.d.ts"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/dial.test.ts": {
-      "imports": [
-        "components/dashboard/dial.ts"
-      ],
-      "importedBy": []
-    },
-    ".claude/hooks/editor-pretool-hook.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/isolated-components/ConnectionsPanel/page.tsx": {
-      "imports": [
-        "components/dashboard/ConnectionsPanel.tsx",
+        "components/dashboard/ConnectionsGroup.tsx",
         "components/dashboard/connections.ts"
       ],
       "importedBy": []
-    },
-    "app/isolated-components/VitalsPanel/page.tsx": {
-      "imports": [
-        "components/dashboard/VitalsPanel.tsx"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/ProviderRow.tsx": {
-      "imports": [
-        "components/dashboard/connections.ts",
-        "components/dashboard/ProviderStatusPill.tsx"
-      ],
-      "importedBy": [
-        "components/dashboard/ConnectionsGroup.tsx",
-        "app/isolated-components/ProviderRow/page.tsx"
-      ]
     },
     "components/dashboard/ConnectionsGroup.tsx": {
       "imports": [
@@ -431,6 +598,141 @@
       "importedBy": [
         "components/dashboard/ConnectionsPanel.tsx",
         "app/isolated-components/ConnectionsGroup/page.tsx"
+      ]
+    },
+    "app/isolated-components/TimelineFilters/page.tsx": {
+      "imports": [
+        "components/timeline/TimelineFilters.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/timeline.test.ts": {
+      "imports": [
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ProviderConnectFlow/page.tsx": {
+      "imports": [
+        "components/dashboard/ProviderConnectFlow.tsx"
+      ],
+      "importedBy": []
+    },
+    "ui/src/helpers/stepLabels.generated.ts": {
+      "imports": [],
+      "importedBy": []
+    },
+    ".claude/skills/review-session/scripts/find-last-session.mjs": {
+      "imports": [
+        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/BriefingDeck/page.tsx": {
+      "imports": [
+        "components/dashboard/BriefingDeck.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ReadinessVerdict/page.tsx": {
+      "imports": [
+        "components/dashboard/ReadinessVerdict.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/CoachDock.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx",
+        "app/isolated-components/CoachDock/page.tsx"
+      ]
+    },
+    "components/timeline/DetailStat.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/timeline/WorkoutDetail.tsx",
+        "app/isolated-components/DetailStat/page.tsx"
+      ]
+    },
+    "app/isolated-components/WeightDetail/page.tsx": {
+      "imports": [
+        "components/timeline/WeightDetail.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/TimelineEntry.tsx": {
+      "imports": [
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": [
+        "components/timeline/TimelineDay.tsx",
+        "app/isolated-components/TimelineEntry/page.tsx"
+      ]
+    },
+    "app/isolated-components/DetailStat/page.tsx": {
+      "imports": [
+        "components/timeline/DetailStat.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/MethodChooser.tsx": {
+      "imports": [
+        "components/dashboard/connections.ts"
+      ],
+      "importedBy": [
+        "components/dashboard/ProviderConnectPanel.tsx",
+        "app/isolated-components/MethodChooser/page.tsx"
+      ]
+    },
+    "app/isolated-components/Timeline/page.tsx": {
+      "imports": [
+        "components/timeline/Timeline.tsx",
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/ReadinessDial.tsx": {
+      "imports": [
+        "components/dashboard/dial.ts"
+      ],
+      "importedBy": [
+        "components/dashboard/ReadinessHero.tsx",
+        "app/isolated-components/ReadinessDial/page.tsx"
+      ]
+    },
+    "app/scenario/[slug]/page.tsx": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/timeline/page.tsx": {
+      "imports": [
+        "app/lib/timeline.ts",
+        "components/timeline/Timeline.tsx"
+      ],
+      "importedBy": []
+    },
+    ".claude/hooks/_step_metadata.py": {
+      "imports": [],
+      "importedBy": []
+    },
+    "app/lib/timeline.ts": {
+      "imports": [
+        "app/lib/prisma.ts",
+        "components/timeline/timeline.ts"
+      ],
+      "importedBy": [
+        "app/timeline/page.tsx",
+        "app/timeline/[entryId]/page.tsx",
+        "app/api/timeline/route.ts"
+      ]
+    },
+    "app/lib/prisma.ts": {
+      "imports": [],
+      "importedBy": [
+        "app/lib/connections.actions.ts",
+        "app/lib/connections.server.ts",
+        "app/lib/timeline.ts",
+        "app/lib/dashboard.ts"
       ]
     },
     "components/dashboard/connections.ts": {
@@ -455,52 +757,31 @@
         "app/isolated-components/ProviderConnectPanel/page.tsx"
       ]
     },
-    "app/isolated-components/ProviderStatusPill/page.tsx": {
-      "imports": [
-        "components/dashboard/ProviderStatusPill.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/layout.tsx": {
-      "imports": [],
-      "importedBy": []
-    },
-    "postcss.config.mjs": {
-      "imports": [],
-      "importedBy": []
-    },
-    ".claude/skills/review-session/scripts/extract-session.mjs": {
-      "imports": [
-        ".claude/skills/review-session/scripts/extract-session-helpers.mjs"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/dial.ts": {
+    "components/dashboard/ProviderStatusPill.tsx": {
       "imports": [],
       "importedBy": [
-        "components/dashboard/ReadinessDial.tsx",
-        "components/dashboard/dial.test.ts"
-      ]
-    },
-    "app/isolated-components/ProviderRow/page.tsx": {
-      "imports": [
         "components/dashboard/ProviderRow.tsx",
-        "components/dashboard/connections.ts"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/InfoDisclosure.tsx": {
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ReadinessVerdict.tsx",
-        "app/isolated-components/InfoDisclosure/page.tsx"
+        "app/isolated-components/ProviderStatusPill/page.tsx"
       ]
     },
-    "app/layout.tsx": {
+    "components/dashboard/ProviderConnectPanel.tsx": {
       "imports": [
-        "app/globals.css"
+        "components/dashboard/connections.ts",
+        "app/lib/connections.actions.ts",
+        "components/dashboard/MethodChooser.tsx",
+        "components/dashboard/MethodForm.tsx"
       ],
-      "importedBy": []
+      "importedBy": [
+        "components/dashboard/ConnectionsGroup.tsx",
+        "app/isolated-components/ProviderConnectPanel/page.tsx"
+      ]
+    },
+    "components/timeline/WeightDetail.tsx": {
+      "imports": [],
+      "importedBy": [
+        "components/timeline/EntryDetail.tsx",
+        "app/isolated-components/WeightDetail/page.tsx"
+      ]
     },
     "components/dashboard/MethodForm.tsx": {
       "imports": [
@@ -511,92 +792,770 @@
         "app/isolated-components/MethodForm/page.tsx"
       ]
     },
-    "app/isolated-components/MethodChooser/page.tsx": {
-      "imports": [
-        "components/dashboard/MethodChooser.tsx"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/FieldLog.tsx": {
-      "imports": [
-        "components/dashboard/Stat.tsx"
-      ],
-      "importedBy": [
-        "components/dashboard/BriefingDeck.tsx",
-        "app/isolated-components/FieldLog/page.tsx"
-      ]
-    },
-    "app/isolated-components/ReadinessVerdict/page.tsx": {
-      "imports": [
-        "components/dashboard/ReadinessVerdict.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/lib/connections.actions.ts": {
-      "imports": [
-        "app/lib/prisma.ts",
-        "components/dashboard/connections.ts"
-      ],
-      "importedBy": [
-        "components/dashboard/ProviderConnectPanel.tsx",
-        "components/dashboard/DashboardConsole.tsx",
-        "components/dashboard/ConnectionsGroup.tsx",
-        "components/dashboard/ConnectionsPanel.tsx"
-      ]
-    },
-    "app/isolated-components/InfoDisclosure/page.tsx": {
-      "imports": [
-        "components/dashboard/InfoDisclosure.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/page.tsx": {
-      "imports": [
-        "app/lib/dashboard.ts",
-        "app/lib/connections.server.ts",
-        "components/dashboard/connections.ts",
-        "components/dashboard/DashboardConsole.tsx"
-      ],
-      "importedBy": []
-    },
-    "eslint.config.mjs": {
+    ".claude/hooks/editor-step-hook.py": {
       "imports": [],
       "importedBy": []
     },
-    "app/lib/connections.server.ts": {
+    "app/isolated-components/CoordStrip/page.tsx": {
       "imports": [
-        "app/lib/prisma.ts",
-        "components/dashboard/connections.ts"
+        "components/dashboard/CoordStrip.tsx"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/OnboardStep/page.tsx": {
+      "imports": [
+        "components/dashboard/OnboardStep.tsx"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/WorkoutDetail.tsx": {
+      "imports": [
+        "components/timeline/DetailStat.tsx",
+        "components/timeline/timeline.ts"
       ],
       "importedBy": [
-        "app/page.tsx"
+        "components/timeline/EntryDetail.tsx",
+        "app/isolated-components/WorkoutDetail/page.tsx"
       ]
     },
-    "components/dashboard/ReadinessVerdict.tsx": {
+    "app/isolated-components/ProviderStatusPill/page.tsx": {
       "imports": [
-        "components/dashboard/format.ts",
-        "components/dashboard/InfoDisclosure.tsx"
+        "components/dashboard/ProviderStatusPill.tsx"
       ],
-      "importedBy": [
-        "components/dashboard/ReadinessHero.tsx",
-        "app/isolated-components/ReadinessVerdict/page.tsx"
-      ]
+      "importedBy": []
     }
   },
   "entities": {
-    "components/dashboard/ProviderConnectFlow.tsx::ProviderConnectFlow": {
-      "filePath": "components/dashboard/ProviderConnectFlow.tsx",
-      "name": "ProviderConnectFlow",
-      "imports": [],
+    "components/dashboard/CoachTransmission.tsx::__file_root__": {
+      "filePath": "components/dashboard/CoachTransmission.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/format.ts::emphasize"
+      ],
+      "importedBy": [
+        "app/isolated-components/CoachTransmission/page.tsx::__file_root__"
+      ]
+    },
+    ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__": {
+      "filePath": ".claude/skills/review-session/scripts/find-last-session.mjs",
+      "name": "__file_root__",
+      "imports": [
+        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath"
+      ],
       "importedBy": []
     },
-    "components/dashboard/ProviderRow.tsx::ProviderRow": {
-      "filePath": "components/dashboard/ProviderRow.tsx",
-      "name": "ProviderRow",
+    "app/timeline/page.tsx::__file_root__": {
+      "filePath": "app/timeline/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/timeline.ts::getTimeline",
+        "components/timeline/Timeline.tsx::Timeline"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/WeightDetail/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/WeightDetail/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/WeightDetail.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/DashboardConsole.tsx::__file_root__": {
+      "filePath": "components/dashboard/DashboardConsole.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/connections.ts::ProviderView",
+        "app/lib/connections.actions.ts::connectProvider",
+        "app/lib/connections.actions.ts::disconnectProvider",
+        "app/lib/connections.actions.ts::setActiveCoach",
+        "components/dashboard/Metabar.tsx::Metabar",
+        "components/dashboard/BriefingDeck.tsx::BriefingDeck",
+        "components/dashboard/EmptyBriefing.tsx::EmptyBriefing",
+        "components/dashboard/CoachDock.tsx::CoachDock",
+        "components/dashboard/ConnectionsPanel.tsx::ConnectionsPanel"
+      ],
+      "importedBy": [
+        "app/isolated-components/DashboardConsole/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/Timeline/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Timeline/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/Timeline.tsx::__file_root__",
+        "components/timeline/timeline.ts::TimelineDay",
+        "components/timeline/timeline.ts::TimelineEntry"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/Timeline.tsx::Timeline": {
+      "filePath": "components/timeline/Timeline.tsx",
+      "name": "Timeline",
       "imports": [],
       "importedBy": [
-        "components/dashboard/ConnectionsGroup.tsx::__file_root__"
+        "app/timeline/page.tsx::__file_root__"
       ]
+    },
+    "app/isolated-components/DetailStat/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/DetailStat/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/DetailStat.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ConnectionsPanel/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ConnectionsPanel.tsx::__file_root__",
+        "components/dashboard/connections.ts::__file_root__",
+        "components/dashboard/connections.ts::mergeCatalog"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/MethodForm.tsx::__file_root__": {
+      "filePath": "components/dashboard/MethodForm.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/connections.ts::ConnectMethod",
+        "components/dashboard/connections.ts::MethodMeta"
+      ],
+      "importedBy": [
+        "app/isolated-components/MethodForm/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/ProviderConnectFlow.tsx::__file_root__": {
+      "filePath": "components/dashboard/ProviderConnectFlow.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/ProviderConnectFlow/page.tsx::__file_root__"
+      ]
+    },
+    ".next/dev/types/routes.d.ts::__file_root__": {
+      "filePath": ".next/dev/types/routes.d.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "next-env.d.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/CoachTransmission/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CoachTransmission/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/CoachTransmission.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/InfoDisclosure/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/InfoDisclosure/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/InfoDisclosure.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/timeline/[entryId]/page.tsx::__file_root__": {
+      "filePath": "app/timeline/[entryId]/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/timeline.ts::getTimelineEntry",
+        "components/timeline/timeline.ts::timeLabel",
+        "components/timeline/EntryDetail.tsx::EntryDetail"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/BriefingDetail/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/BriefingDetail/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/BriefingDetail.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/ReadinessVerdict.tsx::__file_root__": {
+      "filePath": "components/dashboard/ReadinessVerdict.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/format.ts::emphasize",
+        "components/dashboard/InfoDisclosure.tsx::InfoDisclosure"
+      ],
+      "importedBy": [
+        "app/isolated-components/ReadinessVerdict/page.tsx::__file_root__"
+      ]
+    },
+    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath": {
+      "filePath": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
+      "name": "claudeProjectHashFromPath",
+      "imports": [],
+      "importedBy": [
+        ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__"
+      ]
+    },
+    "components/timeline/TimelineEntry.tsx::TimelineEntry": {
+      "filePath": "components/timeline/TimelineEntry.tsx",
+      "name": "TimelineEntry",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/TimelineDay.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/TimelineEntry/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/TimelineEntry/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/TimelineEntry.tsx::__file_root__",
+        "components/timeline/timeline.ts::TimelineEntry"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/TimelineFilters.tsx::__file_root__": {
+      "filePath": "components/timeline/TimelineFilters.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/timeline.ts::FilterChip"
+      ],
+      "importedBy": [
+        "app/isolated-components/TimelineFilters/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/FieldLog/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/FieldLog/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/FieldLog.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/WorkoutDetail.tsx::__file_root__": {
+      "filePath": "components/timeline/WorkoutDetail.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/DetailStat.tsx::DetailStat",
+        "components/timeline/timeline.ts::workoutSummary"
+      ],
+      "importedBy": [
+        "app/isolated-components/WorkoutDetail/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/ConnectionsGroup.tsx::__file_root__": {
+      "filePath": "components/dashboard/ConnectionsGroup.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/connections.ts::ConnectMethod",
+        "components/dashboard/connections.ts::ProviderView",
+        "app/lib/connections.actions.ts::ConnectResult",
+        "components/dashboard/ProviderRow.tsx::ProviderRow",
+        "components/dashboard/ProviderConnectPanel.tsx::ProviderConnectPanel"
+      ],
+      "importedBy": [
+        "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/TimelineDay/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/TimelineDay/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/TimelineDay.tsx::__file_root__",
+        "components/timeline/timeline.ts::TimelineDay",
+        "components/timeline/timeline.ts::TimelineEntry"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/timeline.ts::parseEntryId": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "parseEntryId",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__",
+        "app/lib/timeline.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/connections.ts::__file_root__": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ProviderConnectPanel.tsx::__file_root__",
+        "components/dashboard/MethodChooser.tsx::__file_root__",
+        "components/dashboard/connections.test.ts::__file_root__",
+        "app/page.tsx::__file_root__",
+        "app/isolated-components/MethodForm/page.tsx::__file_root__",
+        "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__",
+        "app/isolated-components/DashboardConsole/page.tsx::__file_root__",
+        "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__",
+        "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/dial.test.ts::__file_root__": {
+      "filePath": "components/dashboard/dial.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/dial.ts::__file_root__",
+        "components/dashboard/dial.ts::circumference",
+        "components/dashboard/dial.ts::readinessDashOffset"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/connections.ts::toConnectionRow": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "toConnectionRow",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/connections.test.ts::__file_root__",
+        "app/lib/connections.server.ts::__file_root__"
+      ]
+    },
+    "components/timeline/Timeline.tsx::__file_root__": {
+      "filePath": "components/timeline/Timeline.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/Metabar.tsx::Metabar",
+        "components/timeline/TimelineFilters.tsx::TimelineFilters",
+        "components/timeline/TimelineDay.tsx::TimelineDay",
+        "components/timeline/TimelineEmpty.tsx::TimelineEmpty",
+        "components/timeline/timeline.ts::__file_root__",
+        "components/timeline/timeline.ts::deriveChips",
+        "components/timeline/timeline.ts::entryMatchesFilter"
+      ],
+      "importedBy": [
+        "app/isolated-components/Timeline/page.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/EntryDetail.tsx::EntryDetail": {
+      "filePath": "components/timeline/EntryDetail.tsx",
+      "name": "EntryDetail",
+      "imports": [],
+      "importedBy": [
+        "app/timeline/[entryId]/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/ReadinessVerdict/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ReadinessVerdict/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ReadinessVerdict.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/ConnectionsPanel.tsx::__file_root__": {
+      "filePath": "components/dashboard/ConnectionsPanel.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/connections.ts::ConnectMethod",
+        "components/dashboard/connections.ts::ProviderView",
+        "app/lib/connections.actions.ts::ConnectResult",
+        "components/dashboard/ConnectionsGroup.tsx::ConnectionsGroup"
+      ],
+      "importedBy": [
+        "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/Stat.tsx::__file_root__": {
+      "filePath": "components/dashboard/Stat.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/Stat/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/MethodChooser.tsx::__file_root__": {
+      "filePath": "components/dashboard/MethodChooser.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/connections.ts::ConnectMethod",
+        "components/dashboard/connections.ts::__file_root__"
+      ],
+      "importedBy": [
+        "app/isolated-components/MethodChooser/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/connections.ts::CatalogProvider": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "CatalogProvider",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/connections.test.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/InfoDisclosure.tsx::__file_root__": {
+      "filePath": "components/dashboard/InfoDisclosure.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/InfoDisclosure/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/EmptyBriefing.tsx::EmptyBriefing": {
+      "filePath": "components/dashboard/EmptyBriefing.tsx",
+      "name": "EmptyBriefing",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
+      ]
+    },
+    "app/api/dashboard/route.ts::__file_root__": {
+      "filePath": "app/api/dashboard/route.ts",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/dashboard.ts::getDashboard"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/Rating/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Rating/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/Rating.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/VitalsPanel.tsx::__file_root__": {
+      "filePath": "components/dashboard/VitalsPanel.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/format.ts::clampPct"
+      ],
+      "importedBy": [
+        "app/isolated-components/VitalsPanel/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/connections.ts::resolveConnection": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "resolveConnection",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/connections.test.ts::__file_root__",
+        "app/lib/connections.actions.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/Metabar.tsx::Metabar": {
+      "filePath": "components/dashboard/Metabar.tsx",
+      "name": "Metabar",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__",
+        "components/timeline/EntryDetail.tsx::__file_root__",
+        "components/timeline/Timeline.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/connections.ts::activeCoach": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "activeCoach",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/connections.test.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/connections.ts::mergeCatalog": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "mergeCatalog",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/connections.test.ts::__file_root__",
+        "app/page.tsx::__file_root__",
+        "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__",
+        "app/isolated-components/DashboardConsole/page.tsx::__file_root__",
+        "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__",
+        "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/TimelineEntry.tsx::__file_root__": {
+      "filePath": "components/timeline/TimelineEntry.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/timeline.ts::__file_root__",
+        "components/timeline/timeline.ts::timeLabel"
+      ],
+      "importedBy": [
+        "app/isolated-components/TimelineEntry/page.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/BriefingDetail.tsx::__file_root__": {
+      "filePath": "components/timeline/BriefingDetail.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/BriefingDetail/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/ProviderStatusPill.tsx::__file_root__": {
+      "filePath": "components/dashboard/ProviderStatusPill.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/ProviderStatusPill/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/format.ts::emphasize": {
+      "filePath": "components/dashboard/format.ts",
+      "name": "emphasize",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/format.test.ts::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::groupByDay": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "groupByDay",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__"
+      ]
+    },
+    "app/layout.tsx::__file_root__": {
+      "filePath": "app/layout.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "app/globals.css::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/ReadinessHero.tsx::__file_root__": {
+      "filePath": "components/dashboard/ReadinessHero.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ReadinessDial.tsx::ReadinessDial",
+        "components/dashboard/CoordStrip.tsx::CoordStrip",
+        "components/dashboard/ReadinessVerdict.tsx::ReadinessVerdict"
+      ],
+      "importedBy": [
+        "app/isolated-components/ReadinessHero/page.tsx::__file_root__"
+      ]
+    },
+    "app/lib/prisma.ts::__file_root__": {
+      "filePath": "app/lib/prisma.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/lib/dashboard.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/MethodForm.tsx::MethodForm": {
+      "filePath": "components/dashboard/MethodForm.tsx",
+      "name": "MethodForm",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ProviderConnectPanel.tsx::__file_root__"
+      ]
+    },
+    "app/lib/connections.server.ts::__file_root__": {
+      "filePath": "app/lib/connections.server.ts",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/prisma.ts::__file_root__",
+        "components/dashboard/connections.ts::ConnectionRow",
+        "components/dashboard/connections.ts::toConnectionRow"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/timeline.ts::buildTimeline": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "buildTimeline",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__",
+        "app/lib/timeline.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/DashboardConsole/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/DashboardConsole/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/DashboardConsole.tsx::__file_root__",
+        "components/dashboard/connections.ts::__file_root__",
+        "components/dashboard/connections.ts::mergeCatalog"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/CoordStrip.tsx::__file_root__": {
+      "filePath": "components/dashboard/CoordStrip.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/CoordStrip/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/DashboardConsole.tsx::DashboardConsole": {
+      "filePath": "components/dashboard/DashboardConsole.tsx",
+      "name": "DashboardConsole",
+      "imports": [],
+      "importedBy": [
+        "app/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/ProviderConnectFlow/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ProviderConnectFlow/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ProviderConnectFlow.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/connections.test.ts::__file_root__": {
+      "filePath": "components/dashboard/connections.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/connections.ts::CatalogProvider",
+        "components/dashboard/connections.ts::ConnectionRow",
+        "components/dashboard/connections.ts::__file_root__",
+        "components/dashboard/connections.ts::activeCoach",
+        "components/dashboard/connections.ts::findProvider",
+        "components/dashboard/connections.ts::maskKey",
+        "components/dashboard/connections.ts::mergeCatalog",
+        "components/dashboard/connections.ts::resolveConnection",
+        "components/dashboard/connections.ts::toConnectionRow",
+        "components/dashboard/connections.ts::validateConnectInput"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/TimelineEmpty/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/TimelineEmpty/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/TimelineEmpty.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ProviderConnectPanel/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ProviderConnectPanel.tsx::__file_root__",
+        "components/dashboard/connections.ts::__file_root__",
+        "components/dashboard/connections.ts::mergeCatalog"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ReadinessHero/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ReadinessHero/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ReadinessHero.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/ReadinessDial/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ReadinessDial/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ReadinessDial.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/connections.ts::findProvider": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "findProvider",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/connections.test.ts::__file_root__",
+        "app/lib/connections.actions.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/FieldLog.tsx::__file_root__": {
+      "filePath": "components/dashboard/FieldLog.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/Stat.tsx::Stat"
+      ],
+      "importedBy": [
+        "app/isolated-components/FieldLog/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ConnectionsGroup/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/ConnectionsGroup.tsx::__file_root__",
+        "components/dashboard/connections.ts::__file_root__",
+        "components/dashboard/connections.ts::mergeCatalog"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/ProviderStatusPill.tsx::ProviderStatusPill": {
+      "filePath": "components/dashboard/ProviderStatusPill.tsx",
+      "name": "ProviderStatusPill",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ProviderRow.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/CoordStrip.tsx::CoordStrip": {
+      "filePath": "components/dashboard/CoordStrip.tsx",
+      "name": "CoordStrip",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ReadinessHero.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.test.ts::__file_root__": {
+      "filePath": "components/timeline/timeline.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/timeline.ts::TimelineDay",
+        "components/timeline/timeline.ts::TimelineEntry",
+        "components/timeline/timeline.ts::briefingOccurredAt",
+        "components/timeline/timeline.ts::buildTimeline",
+        "components/timeline/timeline.ts::dayKey",
+        "components/timeline/timeline.ts::deriveChips",
+        "components/timeline/timeline.ts::entryMatchesFilter",
+        "components/timeline/timeline.ts::groupByDay",
+        "components/timeline/timeline.ts::moodSummary",
+        "components/timeline/timeline.ts::parseEntryId",
+        "components/timeline/timeline.ts::relativeDayLabel",
+        "components/timeline/timeline.ts::timeLabel",
+        "components/timeline/timeline.ts::weightSummary",
+        "components/timeline/timeline.ts::workoutSummary"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/OnboardLead.tsx::__file_root__": {
+      "filePath": "components/dashboard/OnboardLead.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/OnboardLead/page.tsx::__file_root__"
+      ]
+    },
+    "app/lib/dashboard.ts::__file_root__": {
+      "filePath": "app/lib/dashboard.ts",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/prisma.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/connections.ts::ConnectionRow": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "ConnectionRow",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/connections.test.ts::__file_root__",
+        "app/lib/connections.server.ts::__file_root__"
+      ]
+    },
+    "components/timeline/DetailStat.tsx::__file_root__": {
+      "filePath": "components/timeline/DetailStat.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/DetailStat/page.tsx::__file_root__"
+      ]
+    },
+    "app/page.tsx::__file_root__": {
+      "filePath": "app/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/dashboard.ts::getDashboard",
+        "app/lib/connections.server.ts::getConnectionRows",
+        "components/dashboard/connections.ts::__file_root__",
+        "components/dashboard/connections.ts::mergeCatalog",
+        "components/dashboard/DashboardConsole.tsx::DashboardConsole"
+      ],
+      "importedBy": []
     },
     "app/isolated-components/ProviderStatusPill/page.tsx::__file_root__": {
       "filePath": "app/isolated-components/ProviderStatusPill/page.tsx",
@@ -615,126 +1574,13 @@
       ],
       "importedBy": []
     },
-    "components/dashboard/connections.ts::activeCoach": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "activeCoach",
+    "components/timeline/timeline.ts::dayKey": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "dayKey",
       "imports": [],
       "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__"
+        "components/timeline/timeline.test.ts::__file_root__"
       ]
-    },
-    "app/isolated-components/VitalsPanel/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/VitalsPanel/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/VitalsPanel.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/page.tsx::__file_root__": {
-      "filePath": "app/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "app/lib/dashboard.ts::getDashboard",
-        "app/lib/connections.server.ts::getConnectionRows",
-        "components/dashboard/connections.ts::__file_root__",
-        "components/dashboard/connections.ts::mergeCatalog",
-        "components/dashboard/DashboardConsole.tsx::DashboardConsole"
-      ],
-      "importedBy": []
-    },
-    "app/api/dashboard/route.ts::__file_root__": {
-      "filePath": "app/api/dashboard/route.ts",
-      "name": "__file_root__",
-      "imports": [
-        "app/lib/dashboard.ts::getDashboard"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/OnboardStep/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/OnboardStep/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/OnboardStep.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/ConnectionsGroup.tsx::ConnectionsGroup": {
-      "filePath": "components/dashboard/ConnectionsGroup.tsx",
-      "name": "ConnectionsGroup",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ConnectionsPanel.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/InfoDisclosure/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/InfoDisclosure/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/InfoDisclosure.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/connections.ts::resolveConnection": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "resolveConnection",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__",
-        "app/lib/connections.actions.ts::__file_root__"
-      ]
-    },
-    "components/dashboard/format.ts::clampPct": {
-      "filePath": "components/dashboard/format.ts",
-      "name": "clampPct",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/format.test.ts::__file_root__"
-      ]
-    },
-    "components/dashboard/ProviderConnectPanel.tsx::ProviderConnectPanel": {
-      "filePath": "components/dashboard/ProviderConnectPanel.tsx",
-      "name": "ProviderConnectPanel",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ConnectionsGroup.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/BriefingDeck.tsx::BriefingDeck": {
-      "filePath": "components/dashboard/BriefingDeck.tsx",
-      "name": "BriefingDeck",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/DashboardConsole.tsx::__file_root__"
-      ]
-    },
-    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath": {
-      "filePath": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
-      "name": "claudeProjectHashFromPath",
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__"
-      ]
-    },
-    "components/dashboard/EmptyBriefing.tsx::__file_root__": {
-      "filePath": "components/dashboard/EmptyBriefing.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/OnboardLead.tsx::OnboardLead",
-        "components/dashboard/OnboardStep.tsx::OnboardStep",
-        "components/dashboard/OnboardStep.tsx::OnboardStepData"
-      ],
-      "importedBy": [
-        "app/isolated-components/EmptyBriefing/page.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/CoordStrip/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/CoordStrip/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/CoordStrip.tsx::__file_root__"
-      ],
-      "importedBy": []
     },
     "app/isolated-components/Stat/page.tsx::__file_root__": {
       "filePath": "app/isolated-components/Stat/page.tsx",
@@ -752,15 +1598,193 @@
         "app/isolated-components/Metabar/page.tsx::__file_root__"
       ]
     },
-    "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ConnectionsGroup/page.tsx",
+    "app/isolated-components/ProviderRow/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/ProviderRow/page.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/dashboard/ConnectionsGroup.tsx::__file_root__",
-        "components/dashboard/connections.ts::__file_root__",
-        "components/dashboard/connections.ts::mergeCatalog"
+        "components/dashboard/ProviderRow.tsx::__file_root__",
+        "components/dashboard/connections.ts::ProviderView"
       ],
       "importedBy": []
+    },
+    "components/timeline/timeline.ts::relativeDayLabel": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "relativeDayLabel",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::entryMatchesFilter": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "entryMatchesFilter",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/Timeline.tsx::__file_root__",
+        "components/timeline/timeline.test.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/connections.ts::ConnectMethod": {
+      "filePath": "components/dashboard/connections.ts",
+      "name": "ConnectMethod",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ProviderConnectPanel.tsx::__file_root__",
+        "components/dashboard/MethodChooser.tsx::__file_root__",
+        "components/dashboard/ConnectionsGroup.tsx::__file_root__",
+        "components/dashboard/ConnectionsPanel.tsx::__file_root__",
+        "app/lib/connections.actions.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/CoachDock/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CoachDock/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/CoachDock.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/VitalsPanel/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/VitalsPanel/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/VitalsPanel.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/timeline.ts::timeLabel": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "timeLabel",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/TimelineEntry.tsx::__file_root__",
+        "components/timeline/timeline.test.ts::__file_root__",
+        "app/timeline/[entryId]/page.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/WorkoutDetail.tsx::WorkoutDetail": {
+      "filePath": "components/timeline/WorkoutDetail.tsx",
+      "name": "WorkoutDetail",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/EntryDetail.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::TimelineEntry": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "TimelineEntry",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__",
+        "app/isolated-components/Timeline/page.tsx::__file_root__",
+        "app/isolated-components/TimelineEntry/page.tsx::__file_root__",
+        "app/isolated-components/TimelineDay/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/ConnectionsGroup.tsx::ConnectionsGroup": {
+      "filePath": "components/dashboard/ConnectionsGroup.tsx",
+      "name": "ConnectionsGroup",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ConnectionsPanel.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/EmptyBriefing.tsx::__file_root__": {
+      "filePath": "components/dashboard/EmptyBriefing.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/OnboardLead.tsx::OnboardLead",
+        "components/dashboard/OnboardStep.tsx::OnboardStep",
+        "components/dashboard/OnboardStep.tsx::OnboardStepData"
+      ],
+      "importedBy": [
+        "app/isolated-components/EmptyBriefing/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/EmptyBriefing/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/EmptyBriefing/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/EmptyBriefing.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/WorkoutDetail/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/WorkoutDetail/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/WorkoutDetail.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/TimelineEmpty.tsx::TimelineEmpty": {
+      "filePath": "components/timeline/TimelineEmpty.tsx",
+      "name": "TimelineEmpty",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/Timeline.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/ReadinessVerdict.tsx::ReadinessVerdict": {
+      "filePath": "components/dashboard/ReadinessVerdict.tsx",
+      "name": "ReadinessVerdict",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ReadinessHero.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/Rating.tsx::Rating": {
+      "filePath": "components/timeline/Rating.tsx",
+      "name": "Rating",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/MoodDetail.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/EntryDetail/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/EntryDetail/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/EntryDetail.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/BriefingDeck/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/BriefingDeck/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/BriefingDeck.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/lib/timeline.ts::__file_root__": {
+      "filePath": "app/lib/timeline.ts",
+      "name": "__file_root__",
+      "imports": [
+        "app/lib/prisma.ts::__file_root__",
+        "components/timeline/timeline.ts::DetailData",
+        "components/timeline/timeline.ts::TimelineDay",
+        "components/timeline/timeline.ts::briefingOccurredAt",
+        "components/timeline/timeline.ts::buildTimeline",
+        "components/timeline/timeline.ts::parseEntryId"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/ProviderConnectFlow.tsx::ProviderConnectFlow": {
+      "filePath": "components/dashboard/ProviderConnectFlow.tsx",
+      "name": "ProviderConnectFlow",
+      "imports": [],
+      "importedBy": []
+    },
+    "components/timeline/MoodDetail.tsx::__file_root__": {
+      "filePath": "components/timeline/MoodDetail.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/Rating.tsx::Rating"
+      ],
+      "importedBy": [
+        "app/isolated-components/MoodDetail/page.tsx::__file_root__"
+      ]
     },
     "next-env.d.ts::__file_root__": {
       "filePath": "next-env.d.ts",
@@ -770,52 +1794,132 @@
       ],
       "importedBy": []
     },
-    "components/dashboard/FieldLog.tsx::__file_root__": {
-      "filePath": "components/dashboard/FieldLog.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/Stat.tsx::Stat"
-      ],
-      "importedBy": [
-        "app/isolated-components/FieldLog/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/ConnectionsPanel.tsx::__file_root__": {
-      "filePath": "components/dashboard/ConnectionsPanel.tsx",
+    "components/dashboard/ProviderConnectPanel.tsx::__file_root__": {
+      "filePath": "components/dashboard/ProviderConnectPanel.tsx",
       "name": "__file_root__",
       "imports": [
         "components/dashboard/connections.ts::ConnectMethod",
         "components/dashboard/connections.ts::ProviderView",
+        "components/dashboard/connections.ts::__file_root__",
+        "components/dashboard/connections.ts::validateConnectInput",
         "app/lib/connections.actions.ts::ConnectResult",
-        "components/dashboard/ConnectionsGroup.tsx::ConnectionsGroup"
+        "components/dashboard/MethodChooser.tsx::MethodChooser",
+        "components/dashboard/MethodForm.tsx::MethodForm"
       ],
       "importedBy": [
-        "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__"
+        "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__"
       ]
     },
-    "app/lib/prisma.ts::__file_root__": {
-      "filePath": "app/lib/prisma.ts",
+    "components/timeline/WeightDetail.tsx::__file_root__": {
+      "filePath": "components/timeline/WeightDetail.tsx",
       "name": "__file_root__",
       "imports": [],
       "importedBy": [
-        "app/lib/dashboard.ts::__file_root__"
+        "app/isolated-components/WeightDetail/page.tsx::__file_root__"
       ]
     },
-    "app/isolated-components/ProviderConnectFlow/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ProviderConnectFlow/page.tsx",
+    "components/dashboard/ProviderRow.tsx::__file_root__": {
+      "filePath": "components/dashboard/ProviderRow.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/dashboard/ProviderConnectFlow.tsx::__file_root__"
+        "components/dashboard/connections.ts::ProviderView",
+        "components/dashboard/ProviderStatusPill.tsx::ProviderStatusPill"
+      ],
+      "importedBy": [
+        "app/isolated-components/ProviderRow/page.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/TimelineEmpty.tsx::__file_root__": {
+      "filePath": "components/timeline/TimelineEmpty.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/TimelineEmpty/page.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/Rating.tsx::__file_root__": {
+      "filePath": "components/timeline/Rating.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/Rating/page.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/ProviderRow.tsx::ProviderRow": {
+      "filePath": "components/dashboard/ProviderRow.tsx",
+      "name": "ProviderRow",
+      "imports": [],
+      "importedBy": [
+        "components/dashboard/ConnectionsGroup.tsx::__file_root__"
+      ]
+    },
+    "app/lib/timeline.ts::getTimeline": {
+      "filePath": "app/lib/timeline.ts",
+      "name": "getTimeline",
+      "imports": [],
+      "importedBy": [
+        "app/api/timeline/route.ts::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::deriveChips": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "deriveChips",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/Timeline.tsx::__file_root__",
+        "components/timeline/timeline.test.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/ReadinessDial.tsx::__file_root__": {
+      "filePath": "components/dashboard/ReadinessDial.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/dial.ts::circumference",
+        "components/dashboard/dial.ts::readinessDashOffset"
+      ],
+      "importedBy": [
+        "app/isolated-components/ReadinessDial/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/MoodDetail/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/MoodDetail/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/MoodDetail.tsx::__file_root__"
       ],
       "importedBy": []
     },
-    ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__": {
-      "filePath": ".claude/skills/review-session/scripts/find-last-session.mjs",
+    "app/api/timeline/route.ts::__file_root__": {
+      "filePath": "app/api/timeline/route.ts",
       "name": "__file_root__",
       "imports": [
-        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath"
+        "app/lib/timeline.ts::getTimeline"
       ],
       "importedBy": []
+    },
+    "app/isolated-components/TimelineFilters/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/TimelineFilters/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/timeline/TimelineFilters.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/timeline/timeline.ts::DetailData": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "DetailData",
+      "imports": [],
+      "importedBy": [
+        "app/lib/timeline.ts::__file_root__"
+      ]
+    },
+    "components/dashboard/CoachDock.tsx::__file_root__": {
+      "filePath": "components/dashboard/CoachDock.tsx",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "app/isolated-components/CoachDock/page.tsx::__file_root__"
+      ]
     },
     "app/globals.css::__file_root__": {
       "filePath": "app/globals.css",
@@ -837,13 +1941,79 @@
         "app/isolated-components/ProviderRow/page.tsx::__file_root__"
       ]
     },
-    "components/dashboard/InfoDisclosure.tsx::__file_root__": {
-      "filePath": "components/dashboard/InfoDisclosure.tsx",
+    "app/isolated-components/MethodChooser/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/MethodChooser/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/MethodChooser.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/MethodForm/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/MethodForm/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/MethodForm.tsx::__file_root__",
+        "components/dashboard/connections.ts::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "app/isolated-components/OnboardStep/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/OnboardStep/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/OnboardStep.tsx::__file_root__"
+      ],
+      "importedBy": []
+    },
+    "components/dashboard/OnboardStep.tsx::__file_root__": {
+      "filePath": "components/dashboard/OnboardStep.tsx",
       "name": "__file_root__",
       "imports": [],
       "importedBy": [
-        "app/isolated-components/InfoDisclosure/page.tsx::__file_root__"
+        "app/isolated-components/OnboardStep/page.tsx::__file_root__"
       ]
+    },
+    "app/lib/dashboard.ts::getDashboard": {
+      "filePath": "app/lib/dashboard.ts",
+      "name": "getDashboard",
+      "imports": [],
+      "importedBy": [
+        "app/api/dashboard/route.ts::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::moodSummary": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "moodSummary",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::workoutSummary": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "workoutSummary",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__"
+      ]
+    },
+    "components/timeline/TimelineFilters.tsx::TimelineFilters": {
+      "filePath": "components/timeline/TimelineFilters.tsx",
+      "name": "TimelineFilters",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/Timeline.tsx::__file_root__"
+      ]
+    },
+    "components/dashboard/format.test.ts::__file_root__": {
+      "filePath": "components/dashboard/format.test.ts",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/format.ts::clampPct",
+        "components/dashboard/format.ts::emphasize"
+      ],
+      "importedBy": []
     },
     "components/dashboard/BriefingDeck.tsx::__file_root__": {
       "filePath": "components/dashboard/BriefingDeck.tsx",
@@ -858,112 +2028,60 @@
         "app/isolated-components/BriefingDeck/page.tsx::__file_root__"
       ]
     },
-    "components/dashboard/connections.ts::maskKey": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "maskKey",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/ReadinessHero/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ReadinessHero/page.tsx",
+    "components/timeline/TimelineDay.tsx::__file_root__": {
+      "filePath": "components/timeline/TimelineDay.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/dashboard/ReadinessHero.tsx::__file_root__"
+        "components/timeline/TimelineEntry.tsx::TimelineEntry",
+        "components/timeline/timeline.ts::__file_root__"
+      ],
+      "importedBy": [
+        "app/isolated-components/TimelineDay/page.tsx::__file_root__"
+      ]
+    },
+    "app/isolated-components/Metabar/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/Metabar/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/Metabar.tsx::__file_root__"
       ],
       "importedBy": []
     },
-    "app/isolated-components/ReadinessVerdict/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ReadinessVerdict/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/ReadinessVerdict.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/ReadinessHero.tsx::__file_root__": {
-      "filePath": "components/dashboard/ReadinessHero.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/ReadinessDial.tsx::ReadinessDial",
-        "components/dashboard/CoordStrip.tsx::CoordStrip",
-        "components/dashboard/ReadinessVerdict.tsx::ReadinessVerdict"
-      ],
-      "importedBy": [
-        "app/isolated-components/ReadinessHero/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/OnboardStep.tsx::__file_root__": {
-      "filePath": "components/dashboard/OnboardStep.tsx",
-      "name": "__file_root__",
+    "components/dashboard/ProviderConnectPanel.tsx::ProviderConnectPanel": {
+      "filePath": "components/dashboard/ProviderConnectPanel.tsx",
+      "name": "ProviderConnectPanel",
       "imports": [],
       "importedBy": [
-        "app/isolated-components/OnboardStep/page.tsx::__file_root__"
+        "components/dashboard/ConnectionsGroup.tsx::__file_root__"
       ]
     },
-    "components/dashboard/ProviderStatusPill.tsx::ProviderStatusPill": {
-      "filePath": "components/dashboard/ProviderStatusPill.tsx",
-      "name": "ProviderStatusPill",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ProviderRow.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/ProviderRow/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ProviderRow/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/ProviderRow.tsx::__file_root__",
-        "components/dashboard/connections.ts::ProviderView"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/connections.ts::ConnectionRow": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "ConnectionRow",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__",
-        "app/lib/connections.server.ts::__file_root__"
-      ]
-    },
-    "components/dashboard/MethodForm.tsx::MethodForm": {
-      "filePath": "components/dashboard/MethodForm.tsx",
-      "name": "MethodForm",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ProviderConnectPanel.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/CoordStrip.tsx::__file_root__": {
-      "filePath": "components/dashboard/CoordStrip.tsx",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/isolated-components/CoordStrip/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/ProviderRow.tsx::__file_root__": {
-      "filePath": "components/dashboard/ProviderRow.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/connections.ts::ProviderView",
-        "components/dashboard/ProviderStatusPill.tsx::ProviderStatusPill"
-      ],
-      "importedBy": [
-        "app/isolated-components/ProviderRow/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/ReadinessDial.tsx::__file_root__": {
+    "components/dashboard/ReadinessDial.tsx::ReadinessDial": {
       "filePath": "components/dashboard/ReadinessDial.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/dial.ts::circumference",
-        "components/dashboard/dial.ts::readinessDashOffset"
-      ],
+      "name": "ReadinessDial",
+      "imports": [],
       "importedBy": [
-        "app/isolated-components/ReadinessDial/page.tsx::__file_root__"
+        "components/dashboard/ReadinessHero.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::__file_root__": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "__file_root__",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/Timeline.tsx::__file_root__",
+        "components/timeline/TimelineEntry.tsx::__file_root__",
+        "components/timeline/TimelineDay.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::TimelineDay": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "TimelineDay",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__",
+        "app/lib/timeline.ts::__file_root__",
+        "app/isolated-components/Timeline/page.tsx::__file_root__",
+        "app/isolated-components/TimelineDay/page.tsx::__file_root__"
       ]
     },
     "app/isolated-components/OnboardLead/page.tsx::__file_root__": {
@@ -974,127 +2092,52 @@
       ],
       "importedBy": []
     },
-    "components/dashboard/CoordStrip.tsx::CoordStrip": {
-      "filePath": "components/dashboard/CoordStrip.tsx",
-      "name": "CoordStrip",
+    "components/dashboard/format.ts::clampPct": {
+      "filePath": "components/dashboard/format.ts",
+      "name": "clampPct",
       "imports": [],
       "importedBy": [
-        "components/dashboard/ReadinessHero.tsx::__file_root__"
+        "components/dashboard/format.test.ts::__file_root__"
       ]
     },
-    "app/isolated-components/FieldLog/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/FieldLog/page.tsx",
+    "components/timeline/EntryDetail.tsx::__file_root__": {
+      "filePath": "components/timeline/EntryDetail.tsx",
       "name": "__file_root__",
       "imports": [
-        "components/dashboard/FieldLog.tsx::__file_root__"
+        "components/dashboard/Metabar.tsx::Metabar",
+        "components/timeline/timeline.ts::DetailData",
+        "components/timeline/WorkoutDetail.tsx::WorkoutDetail",
+        "components/timeline/MoodDetail.tsx::MoodDetail",
+        "components/timeline/WeightDetail.tsx::WeightDetail",
+        "components/timeline/BriefingDetail.tsx::BriefingDetail"
+      ],
+      "importedBy": [
+        "app/isolated-components/EntryDetail/page.tsx::__file_root__"
+      ]
+    },
+    "components/timeline/timeline.ts::briefingOccurredAt": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "briefingOccurredAt",
+      "imports": [],
+      "importedBy": [
+        "components/timeline/timeline.test.ts::__file_root__",
+        "app/lib/timeline.ts::__file_root__"
+      ]
+    },
+    "app/isolated-components/CoordStrip/page.tsx::__file_root__": {
+      "filePath": "app/isolated-components/CoordStrip/page.tsx",
+      "name": "__file_root__",
+      "imports": [
+        "components/dashboard/CoordStrip.tsx::__file_root__"
       ],
       "importedBy": []
     },
-    "app/isolated-components/MethodChooser/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/MethodChooser/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/MethodChooser.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/MethodChooser.tsx::__file_root__": {
-      "filePath": "components/dashboard/MethodChooser.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/connections.ts::ConnectMethod",
-        "components/dashboard/connections.ts::__file_root__"
-      ],
-      "importedBy": [
-        "app/isolated-components/MethodChooser/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/ReadinessVerdict.tsx::__file_root__": {
-      "filePath": "components/dashboard/ReadinessVerdict.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/format.ts::emphasize",
-        "components/dashboard/InfoDisclosure.tsx::InfoDisclosure"
-      ],
-      "importedBy": [
-        "app/isolated-components/ReadinessVerdict/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/connections.ts::CatalogProvider": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "CatalogProvider",
+    "components/dashboard/BriefingDeck.tsx::BriefingDeck": {
+      "filePath": "components/dashboard/BriefingDeck.tsx",
+      "name": "BriefingDeck",
       "imports": [],
       "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__"
-      ]
-    },
-    "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ProviderConnectPanel/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/ProviderConnectPanel.tsx::__file_root__",
-        "components/dashboard/connections.ts::__file_root__",
-        "components/dashboard/connections.ts::mergeCatalog"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/CoachDock.tsx::__file_root__": {
-      "filePath": "components/dashboard/CoachDock.tsx",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/isolated-components/CoachDock/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/ProviderConnectFlow.tsx::__file_root__": {
-      "filePath": "components/dashboard/ProviderConnectFlow.tsx",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/isolated-components/ProviderConnectFlow/page.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/MethodForm/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/MethodForm/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/MethodForm.tsx::__file_root__",
-        "components/dashboard/connections.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/CoachDock/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/CoachDock/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/CoachDock.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/ReadinessDial.tsx::ReadinessDial": {
-      "filePath": "components/dashboard/ReadinessDial.tsx",
-      "name": "ReadinessDial",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ReadinessHero.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/DashboardConsole/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/DashboardConsole/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/DashboardConsole.tsx::__file_root__",
-        "components/dashboard/connections.ts::__file_root__",
-        "components/dashboard/connections.ts::mergeCatalog"
-      ],
-      "importedBy": []
-    },
-    ".next/dev/types/routes.d.ts::__file_root__": {
-      "filePath": ".next/dev/types/routes.d.ts",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "next-env.d.ts::__file_root__"
+        "components/dashboard/DashboardConsole.tsx::__file_root__"
       ]
     },
     "app/lib/connections.actions.ts::__file_root__": {
@@ -1108,25 +2151,6 @@
       ],
       "importedBy": []
     },
-    "components/dashboard/format.test.ts::__file_root__": {
-      "filePath": "components/dashboard/format.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/format.ts::clampPct",
-        "components/dashboard/format.ts::emphasize"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/CoachTransmission.tsx::__file_root__": {
-      "filePath": "components/dashboard/CoachTransmission.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/format.ts::emphasize"
-      ],
-      "importedBy": [
-        "app/isolated-components/CoachTransmission/page.tsx::__file_root__"
-      ]
-    },
     "components/dashboard/connections.ts::validateConnectInput": {
       "filePath": "components/dashboard/connections.ts",
       "name": "validateConnectInput",
@@ -1136,309 +2160,22 @@
         "components/dashboard/connections.test.ts::__file_root__"
       ]
     },
-    "components/dashboard/connections.ts::mergeCatalog": {
+    "components/dashboard/connections.ts::maskKey": {
       "filePath": "components/dashboard/connections.ts",
-      "name": "mergeCatalog",
+      "name": "maskKey",
       "imports": [],
       "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__",
-        "app/page.tsx::__file_root__",
-        "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__",
-        "app/isolated-components/DashboardConsole/page.tsx::__file_root__",
-        "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__",
-        "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__"
+        "components/dashboard/connections.test.ts::__file_root__"
       ]
     },
-    "app/isolated-components/EmptyBriefing/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/EmptyBriefing/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/EmptyBriefing.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/ProviderStatusPill.tsx::__file_root__": {
-      "filePath": "components/dashboard/ProviderStatusPill.tsx",
-      "name": "__file_root__",
+    "components/timeline/timeline.ts::weightSummary": {
+      "filePath": "components/timeline/timeline.ts",
+      "name": "weightSummary",
       "imports": [],
       "importedBy": [
-        "app/isolated-components/ProviderStatusPill/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/connections.ts::__file_root__": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ProviderConnectPanel.tsx::__file_root__",
-        "components/dashboard/MethodChooser.tsx::__file_root__",
-        "components/dashboard/connections.test.ts::__file_root__",
-        "app/page.tsx::__file_root__",
-        "app/isolated-components/MethodForm/page.tsx::__file_root__",
-        "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__",
-        "app/isolated-components/DashboardConsole/page.tsx::__file_root__",
-        "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__",
-        "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/DashboardConsole.tsx::__file_root__": {
-      "filePath": "components/dashboard/DashboardConsole.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/connections.ts::ProviderView",
-        "app/lib/connections.actions.ts::connectProvider",
-        "app/lib/connections.actions.ts::disconnectProvider",
-        "app/lib/connections.actions.ts::setActiveCoach",
-        "components/dashboard/Metabar.tsx::Metabar",
-        "components/dashboard/BriefingDeck.tsx::BriefingDeck",
-        "components/dashboard/EmptyBriefing.tsx::EmptyBriefing",
-        "components/dashboard/CoachDock.tsx::CoachDock",
-        "components/dashboard/ConnectionsPanel.tsx::ConnectionsPanel"
-      ],
-      "importedBy": [
-        "app/isolated-components/DashboardConsole/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/OnboardLead.tsx::__file_root__": {
-      "filePath": "components/dashboard/OnboardLead.tsx",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/isolated-components/OnboardLead/page.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/BriefingDeck/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/BriefingDeck/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/BriefingDeck.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/MethodForm.tsx::__file_root__": {
-      "filePath": "components/dashboard/MethodForm.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/connections.ts::ConnectMethod",
-        "components/dashboard/connections.ts::MethodMeta"
-      ],
-      "importedBy": [
-        "app/isolated-components/MethodForm/page.tsx::__file_root__"
-      ]
-    },
-    "app/lib/dashboard.ts::__file_root__": {
-      "filePath": "app/lib/dashboard.ts",
-      "name": "__file_root__",
-      "imports": [
-        "app/lib/prisma.ts::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/DashboardConsole.tsx::DashboardConsole": {
-      "filePath": "components/dashboard/DashboardConsole.tsx",
-      "name": "DashboardConsole",
-      "imports": [],
-      "importedBy": [
-        "app/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/Metabar.tsx::Metabar": {
-      "filePath": "components/dashboard/Metabar.tsx",
-      "name": "Metabar",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/DashboardConsole.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/connections.ts::ConnectMethod": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "ConnectMethod",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ProviderConnectPanel.tsx::__file_root__",
-        "components/dashboard/MethodChooser.tsx::__file_root__",
-        "components/dashboard/ConnectionsGroup.tsx::__file_root__",
-        "components/dashboard/ConnectionsPanel.tsx::__file_root__",
-        "app/lib/connections.actions.ts::__file_root__"
-      ]
-    },
-    "app/lib/connections.server.ts::__file_root__": {
-      "filePath": "app/lib/connections.server.ts",
-      "name": "__file_root__",
-      "imports": [
-        "app/lib/prisma.ts::__file_root__",
-        "components/dashboard/connections.ts::ConnectionRow",
-        "components/dashboard/connections.ts::toConnectionRow"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/Metabar/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/Metabar/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/Metabar.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/isolated-components/ReadinessDial/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ReadinessDial/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/ReadinessDial.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/VitalsPanel.tsx::__file_root__": {
-      "filePath": "components/dashboard/VitalsPanel.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/format.ts::clampPct"
-      ],
-      "importedBy": [
-        "app/isolated-components/VitalsPanel/page.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/CoachTransmission/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/CoachTransmission/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/CoachTransmission.tsx::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/connections.ts::toConnectionRow": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "toConnectionRow",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__",
-        "app/lib/connections.server.ts::__file_root__"
-      ]
-    },
-    "components/dashboard/EmptyBriefing.tsx::EmptyBriefing": {
-      "filePath": "components/dashboard/EmptyBriefing.tsx",
-      "name": "EmptyBriefing",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/DashboardConsole.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/format.ts::emphasize": {
-      "filePath": "components/dashboard/format.ts",
-      "name": "emphasize",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/format.test.ts::__file_root__"
-      ]
-    },
-    "components/dashboard/ProviderConnectPanel.tsx::__file_root__": {
-      "filePath": "components/dashboard/ProviderConnectPanel.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/connections.ts::ConnectMethod",
-        "components/dashboard/connections.ts::ProviderView",
-        "components/dashboard/connections.ts::__file_root__",
-        "components/dashboard/connections.ts::validateConnectInput",
-        "app/lib/connections.actions.ts::ConnectResult",
-        "components/dashboard/MethodChooser.tsx::MethodChooser",
-        "components/dashboard/MethodForm.tsx::MethodForm"
-      ],
-      "importedBy": [
-        "app/isolated-components/ProviderConnectPanel/page.tsx::__file_root__"
-      ]
-    },
-    "app/isolated-components/ConnectionsPanel/page.tsx::__file_root__": {
-      "filePath": "app/isolated-components/ConnectionsPanel/page.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/ConnectionsPanel.tsx::__file_root__",
-        "components/dashboard/connections.ts::__file_root__",
-        "components/dashboard/connections.ts::mergeCatalog"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/connections.ts::findProvider": {
-      "filePath": "components/dashboard/connections.ts",
-      "name": "findProvider",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/connections.test.ts::__file_root__",
-        "app/lib/connections.actions.ts::__file_root__"
-      ]
-    },
-    "components/dashboard/dial.test.ts::__file_root__": {
-      "filePath": "components/dashboard/dial.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/dial.ts::__file_root__",
-        "components/dashboard/dial.ts::circumference",
-        "components/dashboard/dial.ts::readinessDashOffset"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/connections.test.ts::__file_root__": {
-      "filePath": "components/dashboard/connections.test.ts",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/connections.ts::CatalogProvider",
-        "components/dashboard/connections.ts::ConnectionRow",
-        "components/dashboard/connections.ts::__file_root__",
-        "components/dashboard/connections.ts::activeCoach",
-        "components/dashboard/connections.ts::findProvider",
-        "components/dashboard/connections.ts::maskKey",
-        "components/dashboard/connections.ts::mergeCatalog",
-        "components/dashboard/connections.ts::resolveConnection",
-        "components/dashboard/connections.ts::toConnectionRow",
-        "components/dashboard/connections.ts::validateConnectInput"
-      ],
-      "importedBy": []
-    },
-    "components/dashboard/ReadinessVerdict.tsx::ReadinessVerdict": {
-      "filePath": "components/dashboard/ReadinessVerdict.tsx",
-      "name": "ReadinessVerdict",
-      "imports": [],
-      "importedBy": [
-        "components/dashboard/ReadinessHero.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/ConnectionsGroup.tsx::__file_root__": {
-      "filePath": "components/dashboard/ConnectionsGroup.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "components/dashboard/connections.ts::ConnectMethod",
-        "components/dashboard/connections.ts::ProviderView",
-        "app/lib/connections.actions.ts::ConnectResult",
-        "components/dashboard/ProviderRow.tsx::ProviderRow",
-        "components/dashboard/ProviderConnectPanel.tsx::ProviderConnectPanel"
-      ],
-      "importedBy": [
-        "app/isolated-components/ConnectionsGroup/page.tsx::__file_root__"
-      ]
-    },
-    "components/dashboard/Stat.tsx::__file_root__": {
-      "filePath": "components/dashboard/Stat.tsx",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        "app/isolated-components/Stat/page.tsx::__file_root__"
-      ]
-    },
-    "app/layout.tsx::__file_root__": {
-      "filePath": "app/layout.tsx",
-      "name": "__file_root__",
-      "imports": [
-        "app/globals.css::__file_root__"
-      ],
-      "importedBy": []
-    },
-    "app/lib/dashboard.ts::getDashboard": {
-      "filePath": "app/lib/dashboard.ts",
-      "name": "getDashboard",
-      "imports": [],
-      "importedBy": [
-        "app/api/dashboard/route.ts::__file_root__"
+        "components/timeline/timeline.test.ts::__file_root__"
       ]
     }
   },
-  "lastUpdated": "2026-07-08T21:07:55Z"
+  "lastUpdated": "2026-07-09T15:11:20Z"
 }

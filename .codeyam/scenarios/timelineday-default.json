@@ -1,0 +1,11 @@
+{
+  "name": "TimelineDay - Default",
+  "id": "7aea8139-a63c-43a0-8865-050ae2b61b80",
+  "url": "/isolated-components/TimelineDay?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineDay",
+  "scenarioType": "component"
+}

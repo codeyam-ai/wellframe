@@ -1,0 +1,11 @@
+{
+  "name": "TimelineEmpty - Default",
+  "id": "d44e73d4-b44e-411e-a58b-3485c4d3b411",
+  "url": "/isolated-components/TimelineEmpty?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineEmpty",
+  "scenarioType": "component"
+}

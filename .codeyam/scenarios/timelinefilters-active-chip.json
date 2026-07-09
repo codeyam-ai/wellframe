@@ -1,0 +1,11 @@
+{
+  "name": "TimelineFilters - Active Chip",
+  "id": "efed87b5-8099-4214-9cef-ea27384d9a2f",
+  "url": "/isolated-components/TimelineFilters?s=ActiveChip",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineFilters",
+  "scenarioType": "component"
+}

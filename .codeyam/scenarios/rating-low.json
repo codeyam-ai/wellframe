@@ -1,0 +1,11 @@
+{
+  "name": "Rating - Low",
+  "id": "33ce4fa2-593a-4a59-ad0c-08e885bdb0ed",
+  "url": "/isolated-components/Rating?s=Low",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "Rating",
+  "scenarioType": "component"
+}

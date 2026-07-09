@@ -1,0 +1,11 @@
+{
+  "name": "TimelineFilters - Searching",
+  "id": "3e534789-9d0b-4601-a93c-8c0707a5fbbf",
+  "url": "/isolated-components/TimelineFilters?s=Searching",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineFilters",
+  "scenarioType": "component"
+}

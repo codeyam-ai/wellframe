@@ -1,0 +1,11 @@
+{
+  "name": "EntryDetail - Briefing",
+  "id": "16ef18e8-83c7-4612-8396-33e07f2b943c",
+  "url": "/isolated-components/EntryDetail?s=Briefing",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "EntryDetail",
+  "scenarioType": "component"
+}
