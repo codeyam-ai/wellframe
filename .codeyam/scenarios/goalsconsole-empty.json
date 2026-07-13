@@ -1,0 +1,11 @@
+{
+  "name": "GoalsConsole - Empty",
+  "id": "d01a0081-1f2d-44ef-8e16-c0daf4d32330",
+  "url": "/isolated-components/GoalsConsole?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoalsConsole",
+  "scenarioType": "component"
+}

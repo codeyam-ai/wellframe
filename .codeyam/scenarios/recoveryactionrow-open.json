@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryActionRow - Open",
+  "id": "22afb27a-382b-44c8-9b56-1a6141e0dca5",
+  "url": "/isolated-components/RecoveryActionRow?s=Open",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryActionRow",
+  "scenarioType": "component"
+}

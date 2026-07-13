@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryConsole - Empty",
+  "id": "fc35d8ad-badf-474d-b621-3efff9bf3941",
+  "url": "/isolated-components/RecoveryConsole?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryConsole",
+  "scenarioType": "component"
+}

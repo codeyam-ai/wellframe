@@ -1,0 +1,11 @@
+{
+  "name": "GoalRing - Partial",
+  "id": "8baf9c36-df0f-49fb-abdf-a2f286f0af4b",
+  "url": "/isolated-components/GoalRing?s=Partial",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoalRing",
+  "scenarioType": "component"
+}

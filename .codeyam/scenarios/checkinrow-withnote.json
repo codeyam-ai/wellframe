@@ -1,0 +1,11 @@
+{
+  "name": "CheckinRow - WithNote",
+  "id": "0fec2ca3-3aa3-4005-bdb2-018757b6c8ac",
+  "url": "/isolated-components/CheckinRow?s=WithNote",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CheckinRow",
+  "scenarioType": "component"
+}

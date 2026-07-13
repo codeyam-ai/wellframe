@@ -1,0 +1,11 @@
+{
+  "name": "TrendChart - Declining",
+  "id": "8eee04f4-19c8-47a1-91c6-c2cdd00657bd",
+  "url": "/isolated-components/TrendChart?s=Declining",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TrendChart",
+  "scenarioType": "component"
+}

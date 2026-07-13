@@ -2,6 +2,8 @@
 
 A privacy-first, local-first AI wellness console. The Dashboard "Daily Briefing" answers "How am I doing today?" at a glance — a readiness dial, overnight vitals, an observant coach transmission, and yesterday's activity — all read from data on your own machine. The Activity Timeline answers "what have I been doing?" — a day-grouped, filterable feed of workouts, daily briefings, mood check-ins, and body-weight readings, each opening a dedicated detail view.
 
+Four more consoles round out the picture, all in the same deep-ink language and reachable from the top nav: **Trends** charts sleep, HRV, resting heart rate, mileage, and training load across weekly / monthly / yearly ranges; the **Recovery Center** reads those signals into a single recovery score with expandable contributing factors and suggested recovery moves; **Goals** tracks objectives (mileage, races, sleep, strength cadence) as progress rings and lets you create new ones; and the **Daily Check-in** captures a morning or evening snapshot — energy, mood, sleep, soreness, stress, and a reflection — that also lands on the Timeline. Every surface starts empty on day one and fills in as data arrives.
+
 ## Setup
 
 Run the setup script to install dependencies, initialize the database, and seed it with demo data:
@@ -74,6 +76,14 @@ npx vitest run
 
 States captured as runnable scenarios with codeyam-editor:
 
+### Check-in - Day One
+
+<img src=".codeyam/scenarios/screenshots/check-in-day-one--desktop.png" alt="Check-in - Day One" width="280">
+
+### Check-in - Logging
+
+<img src=".codeyam/scenarios/screenshots/check-in-logging--desktop.png" alt="Check-in - Logging" width="280">
+
 ### Dashboard - Connections Setup
 
 <img src=".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png" alt="Dashboard - Connections Setup" width="280">
@@ -97,12 +107,4 @@ States captured as runnable scenarios with codeyam-editor:
 ### Dashboard - Partial Data
 
 <img src=".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png" alt="Dashboard - Partial Data" width="280">
-
-### Dashboard - Primed Briefing
-
-<img src=".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png" alt="Dashboard - Primed Briefing" width="280">
-
-### Entry Detail - Mood
-
-<img src=".codeyam/scenarios/screenshots/entry-detail-mood--desktop.png" alt="Entry Detail - Mood" width="280">
 <!-- codeyam:scenario-gallery:end -->

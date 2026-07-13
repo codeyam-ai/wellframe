@@ -1,0 +1,11 @@
+{
+  "name": "CheckinEmpty - Default",
+  "id": "be288088-f8a6-484a-ad13-8f01b5ae4e6f",
+  "url": "/isolated-components/CheckinEmpty?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CheckinEmpty",
+  "scenarioType": "component"
+}

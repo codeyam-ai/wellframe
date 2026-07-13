@@ -1,6 +1,33 @@
 {
   "tests": [
     {
+      "description": "An empty kind falls back to the generic 'Action' label.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "actionKindLabel › falls back to Action for an empty kind",
+      "line": 43,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Known action kinds map to their human labels.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "actionKindLabel › maps known kinds",
+      "line": 33,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unknown kind is title-cased as a fallback.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "actionKindLabel › title-cases an unknown kind",
+      "line": 39,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
       "description": "Returns null when nothing is active.",
       "file": "components/dashboard/connections.test.ts",
       "format": "vitest",
@@ -34,6 +61,69 @@
       "key": "briefingOccurredAt › leaves a full datetime untouched",
       "line": 190,
       "registeredAt": "2026-07-09T14:32:48.948495222+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The area path is the line path closed back down to the baseline.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "buildChartGeometry › closes the area path back to the baseline",
+      "line": 84,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Larger values render higher on the canvas (a smaller y, since y is inverted).",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "buildChartGeometry › draws higher values higher on the canvas, smaller y",
+      "line": 78,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Every y coordinate stays inside the padded box (peaks never clip).",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "buildChartGeometry › keeps all y coordinates inside the padded box",
+      "line": 62,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A single value plots at the horizontal centre of the box.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "buildChartGeometry › places a single point at the horizontal centre",
+      "line": 45,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A flat series plots on the vertical centre without dividing by zero.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "buildChartGeometry › plots a flat series on the vertical centre without dividing by zero",
+      "line": 71,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "No values yields an empty geometry with no NaN coordinates.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "buildChartGeometry › returns an empty geometry for no values, no NaN coords",
+      "line": 37,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Multiple points spread evenly across the inner (padded) width.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "buildChartGeometry › spreads points evenly across the inner width",
+      "line": 55,
+      "registeredAt": "2026-07-13T14:14:15Z",
       "runner": "tests"
     },
     {
@@ -133,6 +223,33 @@
       "key": "clampPct › returns zero for NaN",
       "line": 53,
       "registeredAt": "2026-07-07T13:40:51.387104421+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Values above 5 clamp to 5 and fractionals round.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "clampRating › clamps high values to 5 and rounds",
+      "line": 33,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Valid 1-5 ratings (numeric or string) pass through.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "clampRating › passes valid 1-5 ratings through",
+      "line": 28,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Missing, blank, or sub-1 values read as not rated (null).",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "clampRating › treats missing / blank / sub-1 as not rated",
+      "line": 38,
+      "registeredAt": "2026-07-13T14:14:15Z",
       "runner": "tests"
     },
     {
@@ -271,6 +388,24 @@
       "runner": "tests"
     },
     {
+      "description": "Counts how many factors are 'strong' out of the total.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "factorTally › counts strong factors out of the total",
+      "line": 50,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An empty factor set tallies to zero of zero.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "factorTally › handles an empty set",
+      "line": 60,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
       "description": "Looks up a real catalog provider by id.",
       "file": "components/dashboard/connections.test.ts",
       "format": "vitest",
@@ -298,6 +433,60 @@
       "runner": "tests"
     },
     {
+      "description": "Fractional values keep one decimal place.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "formatProgress › keeps one decimal for fractional values",
+      "line": 89,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The unit is omitted when not supplied.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "formatProgress › omits the unit when not given",
+      "line": 93,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Whole numbers render without a decimal point.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "formatProgress › renders whole numbers without decimals",
+      "line": 85,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Below the target the goal is active.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "goalStatus › is active before the target",
+      "line": 40,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A bad (non-positive) target reads as active.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "goalStatus › is active for a bad target",
+      "line": 49,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "At or beyond the target the goal is complete.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "goalStatus › is complete at or beyond the target",
+      "line": 44,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
       "description": "entries are grouped into newest-first days with relative labels",
       "file": "components/timeline/timeline.test.ts",
       "format": "vitest",
@@ -313,6 +502,33 @@
       "key": "groupByDay › returns empty for no entries",
       "line": 68,
       "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An out-of-range or NaN hour falls back to morning.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "inferPartOfDay › falls back to morning for an out-of-range hour",
+      "line": 19,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Before noon is morning; noon onward is evening.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "inferPartOfDay › is morning before noon, evening after",
+      "line": 12,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Only 'strong' counts as positive (mint); steady and strained do not.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "isPositiveState › is true only for strong",
+      "line": 24,
+      "registeredAt": "2026-07-13T14:14:15Z",
       "runner": "tests"
     },
     {
@@ -379,6 +595,24 @@
       "runner": "tests"
     },
     {
+      "description": "Each known range narrows to itself.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "normalizeRange › accepts each known range",
+      "line": 24,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Unknown / null / undefined all default to the weekly range.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "normalizeRange › defaults unknown / null / undefined to weekly",
+      "line": 28,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
       "description": "malformed ids (no kind, unknown kind, non-positive/non-numeric id) return null",
       "file": "components/timeline/timeline.test.ts",
       "format": "vitest",
@@ -394,6 +628,78 @@
       "key": "parseEntryId › splits kind and numeric id",
       "line": 112,
       "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Progress beyond the target clamps to 100%.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "progressPct › clamps over-shot progress to 100",
+      "line": 19,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A normal current/target yields the expected percentage.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "progressPct › computes a normal fraction",
+      "line": 15,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Zero current is 0% at the start.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "progressPct › is 0 at the start",
+      "line": 33,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "NaN or infinite inputs degrade to 0.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "progressPct › returns 0 for NaN / infinite inputs",
+      "line": 28,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A non-positive target degrades to 0 rather than dividing by zero.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "progressPct › returns 0 for a non-positive target instead of dividing by zero",
+      "line": 23,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Known range keys map to their title-case labels.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "rangeLabel › maps known range keys to titles",
+      "line": 11,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unrecognized range key is returned unchanged.",
+      "file": "components/trends/trends.test.ts",
+      "format": "vitest",
+      "key": "rangeLabel › passes through an unknown key unchanged",
+      "line": 17,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Each 1-5 value maps to a word; null renders as an em dash.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "ratingLabel › maps values to words",
+      "line": 48,
+      "registeredAt": "2026-07-13T14:14:15Z",
       "runner": "tests"
     },
     {
@@ -487,6 +793,24 @@
       "runner": "tests"
     },
     {
+      "description": "An over-shot goal reports 0 remaining, never negative.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "remaining › never goes negative on an over-shot goal",
+      "line": 60,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Reports how much is left to reach the target.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "remaining › reports the gap to target",
+      "line": 56,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
       "description": "An unreachable local endpoint fails with a friendly error.",
       "file": "components/dashboard/connections.test.ts",
       "format": "vitest",
@@ -559,6 +883,51 @@
       "runner": "tests"
     },
     {
+      "description": "Ring circumference is 2πr.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "ring geometry › circumference matches 2πr",
+      "line": 67,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Out-of-range percentages clamp to the [0, 100] dash range.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "ring geometry › clamps out-of-range percentages",
+      "line": 77,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Dash offset is the full circumference at 0% and zero at 100%.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "ring geometry › offset is full circumference at 0% and 0 at 100%",
+      "line": 71,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Known factor states map to their title-case labels.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "stateLabel › maps known states",
+      "line": 11,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unrecognized state string is returned unchanged.",
+      "file": "components/recovery/recovery.test.ts",
+      "format": "vitest",
+      "key": "stateLabel › passes an unknown state through",
+      "line": 17,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
       "description": "a weight summary appends the trend delta only when it is present",
       "file": "components/timeline/timeline.test.ts",
       "format": "vitest",
@@ -610,6 +979,51 @@
       "key": "toConnectionRow › preserves null detail and endpoint",
       "line": 237,
       "registeredAt": "2026-07-08T20:27:14.398599176+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A morning check-in with ratings is accepted, text trimmed, ratings coerced.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "validateCheckinInput › accepts a morning check-in with ratings",
+      "line": 59,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A submission carrying only a mood word is accepted.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "validateCheckinInput › accepts a submission carrying only a mood word",
+      "line": 103,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A missing or unparseable timestamp is rejected.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "validateCheckinInput › rejects a missing / bad timestamp",
+      "line": 87,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A submission with no ratings and no mood word is rejected.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "validateCheckinInput › rejects an all-blank submission",
+      "line": 97,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unrecognized part of day is rejected.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "validateCheckinInput › rejects an invalid part of day",
+      "line": 80,
+      "registeredAt": "2026-07-13T14:14:15Z",
       "runner": "tests"
     },
     {
@@ -682,6 +1096,87 @@
       "key": "validateConnectInput › rejects an empty endpoint",
       "line": 48,
       "registeredAt": "2026-07-08T20:23:26Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A well-formed draft is accepted with text trimmed and numbers coerced.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "validateGoalInput › accepts a well-formed draft and trims text",
+      "line": 100,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unknown category defaults to 'habit' and a blank metric to 'Progress'.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "validateGoalInput › defaults an unknown category to habit and metric to Progress",
+      "line": 131,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A negative current value is floored to 0.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "validateGoalInput › floors a negative current to 0",
+      "line": 140,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A zero, negative, or non-numeric target is rejected.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "validateGoalInput › rejects a non-positive or non-numeric target",
+      "line": 125,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An empty (whitespace-only) title is rejected.",
+      "file": "components/goals/goals.test.ts",
+      "format": "vitest",
+      "key": "validateGoalInput › rejects an empty title",
+      "line": 120,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Only the rated fields count toward the average.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "wellbeingScore › averages only the present fields",
+      "line": 129,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Soreness and stress are inverted so high values pull the score down.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "wellbeingScore › inverts soreness and stress so high values pull the score down",
+      "line": 124,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "With nothing rated the score is null.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "wellbeingScore › returns null when nothing is rated",
+      "line": 115,
+      "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An all-good day (high energy/sleep, low soreness/stress) scores at the top.",
+      "file": "components/checkin/checkin.test.ts",
+      "format": "vitest",
+      "key": "wellbeingScore › scores an all-5 positive / all-1 negative day near the top",
+      "line": 119,
+      "registeredAt": "2026-07-13T14:14:15Z",
       "runner": "tests"
     }
   ],

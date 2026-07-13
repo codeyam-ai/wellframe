@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryActionRow - Collapsed",
+  "id": "6d0d79dd-ab7b-4438-bcc4-bf300a6f08e2",
+  "url": "/isolated-components/RecoveryActionRow?s=Collapsed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryActionRow",
+  "scenarioType": "component"
+}

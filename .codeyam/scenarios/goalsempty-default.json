@@ -1,0 +1,11 @@
+{
+  "name": "GoalsEmpty - Default",
+  "id": "cba98b4e-1c3a-439e-b289-83f7d2ea2081",
+  "url": "/isolated-components/GoalsEmpty?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoalsEmpty",
+  "scenarioType": "component"
+}

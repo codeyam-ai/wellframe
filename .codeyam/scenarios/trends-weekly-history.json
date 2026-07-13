@@ -1,0 +1,229 @@
+{
+  "name": "Trends - Weekly History",
+  "id": "38c447f8-a2d4-4ff2-b245-d3faac4e515d",
+  "url": "/trends",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "trendMetric": [
+      {
+        "delta": "▲ 0.4",
+        "label": "Sleep",
+        "latest": "7:18",
+        "metricKey": "sleep",
+        "order": 0,
+        "positive": true,
+        "range": "weekly",
+        "summary": "Up 4 of the last 6 nights. Best stretch in three weeks.",
+        "unit": "hrs"
+      },
+      {
+        "delta": "▲ 5",
+        "label": "HRV",
+        "latest": "64",
+        "metricKey": "hrv",
+        "order": 1,
+        "positive": true,
+        "range": "weekly",
+        "summary": "Climbing steadily as load eased mid-week.",
+        "unit": "ms"
+      },
+      {
+        "delta": "▲ 2",
+        "label": "Resting HR",
+        "latest": "49",
+        "metricKey": "rhr",
+        "order": 2,
+        "positive": false,
+        "range": "weekly",
+        "summary": "Slightly elevated. Watch for accumulating fatigue.",
+        "unit": "bpm"
+      },
+      {
+        "delta": "▼ 4.1",
+        "label": "Mileage",
+        "latest": "31.4",
+        "metricKey": "mileage",
+        "order": 3,
+        "positive": false,
+        "range": "weekly",
+        "summary": "A planned down week after the ridge block.",
+        "unit": "mi"
+      }
+    ],
+    "trendPoint": [
+      {
+        "bucketLabel": "Mon",
+        "metricId": 1,
+        "order": 0,
+        "value": 6.6
+      },
+      {
+        "bucketLabel": "Tue",
+        "metricId": 1,
+        "order": 1,
+        "value": 7.1
+      },
+      {
+        "bucketLabel": "Wed",
+        "metricId": 1,
+        "order": 2,
+        "value": 6.9
+      },
+      {
+        "bucketLabel": "Thu",
+        "metricId": 1,
+        "order": 3,
+        "value": 7.4
+      },
+      {
+        "bucketLabel": "Fri",
+        "metricId": 1,
+        "order": 4,
+        "value": 7.0
+      },
+      {
+        "bucketLabel": "Sat",
+        "metricId": 1,
+        "order": 5,
+        "value": 7.6
+      },
+      {
+        "bucketLabel": "Sun",
+        "metricId": 1,
+        "order": 6,
+        "value": 7.3
+      },
+      {
+        "bucketLabel": "Mon",
+        "metricId": 2,
+        "order": 0,
+        "value": 58
+      },
+      {
+        "bucketLabel": "Tue",
+        "metricId": 2,
+        "order": 1,
+        "value": 55
+      },
+      {
+        "bucketLabel": "Wed",
+        "metricId": 2,
+        "order": 2,
+        "value": 60
+      },
+      {
+        "bucketLabel": "Thu",
+        "metricId": 2,
+        "order": 3,
+        "value": 62
+      },
+      {
+        "bucketLabel": "Fri",
+        "metricId": 2,
+        "order": 4,
+        "value": 59
+      },
+      {
+        "bucketLabel": "Sat",
+        "metricId": 2,
+        "order": 5,
+        "value": 66
+      },
+      {
+        "bucketLabel": "Sun",
+        "metricId": 2,
+        "order": 6,
+        "value": 64
+      },
+      {
+        "bucketLabel": "Mon",
+        "metricId": 3,
+        "order": 0,
+        "value": 47
+      },
+      {
+        "bucketLabel": "Tue",
+        "metricId": 3,
+        "order": 1,
+        "value": 46
+      },
+      {
+        "bucketLabel": "Wed",
+        "metricId": 3,
+        "order": 2,
+        "value": 48
+      },
+      {
+        "bucketLabel": "Thu",
+        "metricId": 3,
+        "order": 3,
+        "value": 47
+      },
+      {
+        "bucketLabel": "Fri",
+        "metricId": 3,
+        "order": 4,
+        "value": 49
+      },
+      {
+        "bucketLabel": "Sat",
+        "metricId": 3,
+        "order": 5,
+        "value": 48
+      },
+      {
+        "bucketLabel": "Sun",
+        "metricId": 3,
+        "order": 6,
+        "value": 49
+      },
+      {
+        "bucketLabel": "Mon",
+        "metricId": 4,
+        "order": 0,
+        "value": 3.1
+      },
+      {
+        "bucketLabel": "Tue",
+        "metricId": 4,
+        "order": 1,
+        "value": 6.2
+      },
+      {
+        "bucketLabel": "Wed",
+        "metricId": 4,
+        "order": 2,
+        "value": 0
+      },
+      {
+        "bucketLabel": "Thu",
+        "metricId": 4,
+        "order": 3,
+        "value": 8.4
+      },
+      {
+        "bucketLabel": "Fri",
+        "metricId": 4,
+        "order": 4,
+        "value": 4.0
+      },
+      {
+        "bucketLabel": "Sat",
+        "metricId": 4,
+        "order": 5,
+        "value": 9.7
+      },
+      {
+        "bucketLabel": "Sun",
+        "metricId": 4,
+        "order": 6,
+        "value": 0
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/trends/page.tsx"
+}

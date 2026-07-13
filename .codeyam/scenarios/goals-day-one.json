@@ -1,0 +1,12 @@
+{
+  "name": "Goals - Day One",
+  "id": "05ec320b-919f-4fb2-b41d-9adbe100639d",
+  "url": "/goals",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/goals/page.tsx"
+}

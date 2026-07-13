@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryEmpty - Default",
+  "id": "70446ebc-ebdb-4968-bd0c-48f048120e63",
+  "url": "/isolated-components/RecoveryEmpty?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryEmpty",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryFactorRow - Strained",
+  "id": "0fcdfd31-e594-4794-b7ab-673efddaee06",
+  "url": "/isolated-components/RecoveryFactorRow?s=Strained",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryFactorRow",
+  "scenarioType": "component"
+}

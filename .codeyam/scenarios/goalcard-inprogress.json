@@ -1,0 +1,11 @@
+{
+  "name": "GoalCard - InProgress",
+  "id": "81c6e1e5-2e55-47b2-9222-a38437a953e5",
+  "url": "/isolated-components/GoalCard?s=InProgress",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoalCard",
+  "scenarioType": "component"
+}

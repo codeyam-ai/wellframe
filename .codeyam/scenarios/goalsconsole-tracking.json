@@ -1,0 +1,11 @@
+{
+  "name": "GoalsConsole - Tracking",
+  "id": "741d2d7f-0283-41fe-9e60-8db1b3754740",
+  "url": "/isolated-components/GoalsConsole?s=Tracking",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoalsConsole",
+  "scenarioType": "component"
+}

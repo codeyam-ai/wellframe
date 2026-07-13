@@ -1,0 +1,11 @@
+{
+  "name": "CheckinConsole - Logging",
+  "id": "aadc38a7-9cae-45b8-80e2-9bf5bca49956",
+  "url": "/isolated-components/CheckinConsole?s=Logging",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CheckinConsole",
+  "scenarioType": "component"
+}

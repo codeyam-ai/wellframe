@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryFactorRow - StrongOpen",
+  "id": "37e54c24-185c-478d-ac0b-305ab99cefdb",
+  "url": "/isolated-components/RecoveryFactorRow?s=StrongOpen",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryFactorRow",
+  "scenarioType": "component"
+}

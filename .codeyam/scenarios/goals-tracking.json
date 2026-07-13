@@ -1,0 +1,80 @@
+{
+  "name": "Goals - Tracking",
+  "id": "0ab12b37-f1b0-4755-b45b-c859ce821cdc",
+  "url": "/goals",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "goal": [
+      {
+        "cadence": "This year",
+        "category": "distance",
+        "createdAt": "2026-01-01T08:00:00Z",
+        "current": 1284,
+        "dueLabel": "Dec 31",
+        "metric": "Miles",
+        "note": null,
+        "order": 0,
+        "target": 1800,
+        "title": "Run 1,800 miles this year",
+        "unit": "mi"
+      },
+      {
+        "cadence": "Jul 18",
+        "category": "race",
+        "createdAt": "2026-04-12T08:00:00Z",
+        "current": 0,
+        "dueLabel": "6 days left",
+        "metric": "Race",
+        "note": null,
+        "order": 1,
+        "target": 1,
+        "title": "Break 1:45 at the Ridge Trail Half",
+        "unit": null
+      },
+      {
+        "cadence": "This month",
+        "category": "sleep",
+        "createdAt": "2026-07-01T08:00:00Z",
+        "current": 19,
+        "dueLabel": "Jul 31",
+        "metric": "Nights ≥ 8h",
+        "note": null,
+        "order": 2,
+        "target": 30,
+        "title": "Average 8 hours of sleep",
+        "unit": "nights"
+      },
+      {
+        "cadence": "This month",
+        "category": "strength",
+        "createdAt": "2026-07-01T08:00:00Z",
+        "current": 8,
+        "dueLabel": "Jul 31",
+        "metric": "Sessions",
+        "note": null,
+        "order": 3,
+        "target": 12,
+        "title": "Strength train 3× a week",
+        "unit": "sessions"
+      },
+      {
+        "cadence": "This month",
+        "category": "habit",
+        "createdAt": "2026-06-11T08:00:00Z",
+        "current": 30,
+        "dueLabel": "Complete",
+        "metric": "Day streak",
+        "note": null,
+        "order": 4,
+        "target": 30,
+        "title": "Meditate daily",
+        "unit": "days"
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/goals/page.tsx"
+}

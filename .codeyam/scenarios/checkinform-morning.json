@@ -1,0 +1,11 @@
+{
+  "name": "CheckinForm - Morning",
+  "id": "3e3e97d7-46cd-4360-9f4c-735114963139",
+  "url": "/isolated-components/CheckinForm?s=Morning",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CheckinForm",
+  "scenarioType": "component"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "GoalComposer - Open",
+  "id": "45e3a668-3994-4ff2-8833-b93d32ec371e",
+  "url": "/isolated-components/GoalComposer?s=Open",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoalComposer",
+  "scenarioType": "component"
+}

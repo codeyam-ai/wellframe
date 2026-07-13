@@ -1,0 +1,120 @@
+{
+  "name": "Recovery - Recovering",
+  "id": "26f2f0dd-9bee-44ae-9424-cc934c868f4f",
+  "url": "/recovery",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "recoveryAction": [
+      {
+        "detail": "Strictly conversational, under 140.",
+        "durationLabel": "30-40 min",
+        "kind": "run",
+        "order": 0,
+        "recoveryId": 1,
+        "title": "Easy recovery run"
+      },
+      {
+        "detail": "Calves, quads, hip flexors while warm.",
+        "durationLabel": "12 min",
+        "kind": "mobility",
+        "order": 1,
+        "recoveryId": 1,
+        "title": "Lower-body mobility"
+      },
+      {
+        "detail": "Most fluids before mid-afternoon.",
+        "durationLabel": "All day",
+        "kind": "hydration",
+        "order": 2,
+        "recoveryId": 1,
+        "title": "Front-load hydration"
+      },
+      {
+        "detail": "Anchor 30-40g early.",
+        "durationLabel": "This morning",
+        "kind": "nutrition",
+        "order": 3,
+        "recoveryId": 1,
+        "title": "Protein at breakfast"
+      }
+    ],
+    "recoveryFactor": [
+      {
+        "detail": "Solid deep-sleep block.",
+        "label": "Sleep",
+        "order": 0,
+        "positive": true,
+        "recoveryId": 1,
+        "state": "strong",
+        "trackPct": 84,
+        "value": "7:18"
+      },
+      {
+        "detail": "At your 30-day baseline.",
+        "label": "HRV",
+        "order": 1,
+        "positive": false,
+        "recoveryId": 1,
+        "state": "steady",
+        "trackPct": 62,
+        "value": "64 ms"
+      },
+      {
+        "detail": "Two beats above your morning floor.",
+        "label": "Resting HR",
+        "order": 2,
+        "positive": false,
+        "recoveryId": 1,
+        "state": "strained",
+        "trackPct": 40,
+        "value": "49 bpm"
+      },
+      {
+        "detail": "Dropping below chronic, as wanted mid-taper.",
+        "label": "Training Load",
+        "order": 3,
+        "positive": false,
+        "recoveryId": 1,
+        "state": "steady",
+        "trackPct": 58,
+        "value": "312"
+      },
+      {
+        "detail": "Quads and calves still reporting.",
+        "label": "Soreness",
+        "order": 4,
+        "positive": false,
+        "recoveryId": 1,
+        "state": "strained",
+        "trackPct": 45,
+        "value": "Moderate"
+      },
+      {
+        "detail": "Life stress is quiet this week.",
+        "label": "Stress",
+        "order": 5,
+        "positive": true,
+        "recoveryId": 1,
+        "state": "strong",
+        "trackPct": 78,
+        "value": "Low"
+      }
+    ],
+    "recoveryRead": [
+      {
+        "date": "2026-07-07",
+        "dateLabel": "07 Jul · 07:04",
+        "headline": "Your system is still catching up. Keep it easy.",
+        "label": "Recovering",
+        "score": 68,
+        "statusLine": "RECOVERING · -6 VS 7-DAY AVERAGE",
+        "summary": "Sleep and HRV are holding, but resting heart rate and lingering soreness say the ridge block has not fully cleared."
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/recovery/page.tsx"
+}

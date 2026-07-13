@@ -1,4 +1,58 @@
 {
+  "actionKindLabel › falls back to Action for an empty kind": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "actionKindLabel › maps known kinds": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "actionKindLabel › title-cases an unknown kind": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
   "activeCoach › returns null when no coach is active": {
     "file": "components/dashboard/connections.test.ts",
     "lastRunAt": "2026-07-09T14:32:39.652435629+00:00",
@@ -98,6 +152,132 @@
         "status": "pass",
         "at": "2026-07-09T14:32:48.948495222+00:00",
         "kind": "full"
+      }
+    ]
+  },
+  "buildChartGeometry › closes the area path back to the baseline": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "buildChartGeometry › draws higher values higher on the canvas, smaller y": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "buildChartGeometry › keeps all y coordinates inside the padded box": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "buildChartGeometry › places a single point at the horizontal centre": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "buildChartGeometry › plots a flat series on the vertical centre without dividing by zero": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "buildChartGeometry › returns an empty geometry for no values, no NaN coords": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "buildChartGeometry › spreads points evenly across the inner width": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
       }
     ]
   },
@@ -471,6 +651,60 @@
         "status": "pass",
         "at": "2026-07-07T13:40:51.387104421+00:00",
         "kind": "full"
+      }
+    ]
+  },
+  "clampRating › clamps high values to 5 and rounds": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "clampRating › passes valid 1-5 ratings through": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "clampRating › treats missing / blank / sub-1 as not rated": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
       }
     ]
   },
@@ -939,6 +1173,42 @@
       }
     ]
   },
+  "factorTally › counts strong factors out of the total": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "factorTally › handles an empty set": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
   "findProvider › finds a known provider": {
     "file": "components/dashboard/connections.test.ts",
     "lastRunAt": "2026-07-09T14:32:39.652435629+00:00",
@@ -1038,6 +1308,114 @@
       }
     ]
   },
+  "formatProgress › keeps one decimal for fractional values": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "formatProgress › omits the unit when not given": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "formatProgress › renders whole numbers without decimals": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "goalStatus › is active before the target": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "goalStatus › is active for a bad target": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "goalStatus › is complete at or beyond the target": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
   "groupByDay › groups entries into newest-first days with relative labels": {
     "file": "components/timeline/timeline.test.ts",
     "lastRunAt": "2026-07-09T15:08:58.321581615+00:00",
@@ -1080,6 +1458,60 @@
       {
         "status": "pass",
         "at": "2026-07-09T14:31:56.547787166+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "inferPartOfDay › falls back to morning for an out-of-range hour": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "inferPartOfDay › is morning before noon, evening after": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "isPositiveState › is true only for strong": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
         "kind": "changed"
       }
     ]
@@ -1315,6 +1747,42 @@
       }
     ]
   },
+  "normalizeRange › accepts each known range": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "normalizeRange › defaults unknown / null / undefined to weekly": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
   "parseEntryId › rejects malformed ids": {
     "file": "components/timeline/timeline.test.ts",
     "lastRunAt": "2026-07-09T15:08:58.321581615+00:00",
@@ -1357,6 +1825,150 @@
       {
         "status": "pass",
         "at": "2026-07-09T14:31:56.547787166+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "progressPct › clamps over-shot progress to 100": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "progressPct › computes a normal fraction": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "progressPct › is 0 at the start": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "progressPct › returns 0 for NaN / infinite inputs": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "progressPct › returns 0 for a non-positive target instead of dividing by zero": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "rangeLabel › maps known range keys to titles": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "rangeLabel › passes through an unknown key unchanged": {
+    "file": "components/trends/trends.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "ratingLabel › maps values to words": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
         "kind": "changed"
       }
     ]
@@ -1711,6 +2323,42 @@
       }
     ]
   },
+  "remaining › never goes negative on an over-shot goal": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "remaining › reports the gap to target": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
   "resolveConnection › fails an unreachable local endpoint": {
     "file": "components/dashboard/connections.test.ts",
     "lastRunAt": "2026-07-09T14:32:39.652435629+00:00",
@@ -1975,6 +2623,96 @@
       }
     ]
   },
+  "ring geometry › circumference matches 2πr": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "ring geometry › clamps out-of-range percentages": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "ring geometry › offset is full circumference at 0% and 0 at 100%": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "stateLabel › maps known states": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "stateLabel › passes an unknown state through": {
+    "file": "components/recovery/recovery.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
   "summary builders › appends the weight delta only when present": {
     "file": "components/timeline/timeline.test.ts",
     "lastRunAt": "2026-07-09T15:08:58.321581615+00:00",
@@ -2130,6 +2868,96 @@
         "status": "pass",
         "at": "2026-07-08T20:27:14.398599176+00:00",
         "kind": "full"
+      }
+    ]
+  },
+  "validateCheckinInput › accepts a morning check-in with ratings": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateCheckinInput › accepts a submission carrying only a mood word": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateCheckinInput › rejects a missing / bad timestamp": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateCheckinInput › rejects an all-blank submission": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateCheckinInput › rejects an invalid part of day": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
       }
     ]
   },
@@ -2393,6 +3221,168 @@
       {
         "status": "pass",
         "at": "2026-07-08T20:27:04.990213955+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateGoalInput › accepts a well-formed draft and trims text": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateGoalInput › defaults an unknown category to habit and metric to Progress": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateGoalInput › floors a negative current to 0": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateGoalInput › rejects a non-positive or non-numeric target": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "validateGoalInput › rejects an empty title": {
+    "file": "components/goals/goals.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "wellbeingScore › averages only the present fields": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "wellbeingScore › inverts soreness and stress so high values pull the score down": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "wellbeingScore › returns null when nothing is rated": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
+        "kind": "changed"
+      }
+    ]
+  },
+  "wellbeingScore › scores an all-5 positive / all-1 negative day near the top": {
+    "file": "components/checkin/checkin.test.ts",
+    "lastRunAt": "2026-07-13T18:57:41.864166941+00:00",
+    "lastStatus": "pass",
+    "lastRunKind": "changed",
+    "recentStatuses": [
+      {
+        "status": "pass",
+        "at": "2026-07-13T18:57:41.864166941+00:00",
+        "kind": "changed"
+      },
+      {
+        "status": "pass",
+        "at": "2026-07-13T14:58:39.433749098+00:00",
         "kind": "changed"
       }
     ]

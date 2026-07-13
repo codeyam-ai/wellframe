@@ -1,0 +1,45 @@
+{
+  "name": "Check-in - Logging",
+  "id": "6baf86af-319c-484f-ac93-6ae7803c46c6",
+  "url": "/checkin",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "mood": [
+      {
+        "energy": 3,
+        "mood": "Foggy",
+        "note": "Legs still heavy from the weekend. Coffee first, then an easy shakeout.",
+        "occurredAt": "2026-07-07T07:02:00Z",
+        "partOfDay": "morning",
+        "sleepQuality": 4,
+        "soreness": 2,
+        "stress": 2
+      },
+      {
+        "energy": 4,
+        "mood": "Content",
+        "note": "Long run in the books. Descent chewed up the quads but the climb felt strong.",
+        "occurredAt": "2026-07-06T21:14:00Z",
+        "partOfDay": "evening",
+        "sleepQuality": null,
+        "soreness": 3,
+        "stress": 2
+      },
+      {
+        "energy": 4,
+        "mood": "Ready",
+        "note": "Big one today. Slept well, weather's cool.",
+        "occurredAt": "2026-07-06T06:58:00Z",
+        "partOfDay": "morning",
+        "sleepQuality": 4,
+        "soreness": 1,
+        "stress": 1
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/checkin/page.tsx"
+}

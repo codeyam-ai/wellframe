@@ -1,0 +1,12 @@
+{
+  "name": "Trends - Day One",
+  "id": "f4e1f97c-0cfb-461d-97b3-92d471085886",
+  "url": "/trends",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/trends/page.tsx"
+}

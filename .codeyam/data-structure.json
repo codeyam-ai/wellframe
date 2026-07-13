@@ -88,6 +88,105 @@
     ]
   },
   {
+    "name": "TrendMetric",
+    "description": "One trend chart: a single metric (sleep, HRV, resting HR, mileage, training load, VO2 Max, body weight) for one range (weekly / monthly / yearly). Carries a display order within its range, a stable metricKey, human label + optional unit, the formatted latest value, an optional trend delta chip and a 'positive' flag (mint = improving vs signal-blue), a one-line summary read, and an ordered set of TrendPoints. The Trends page loads every metric and the range switcher re-scopes which charts render. Zero rows in production → the day-one 'no history yet' state.",
+    "category": "datastore",
+    "order": 7,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "order", "type": "number", "required": true },
+      { "name": "metricKey", "type": "string", "required": true },
+      { "name": "label", "type": "string", "required": true },
+      { "name": "unit", "type": "string", "required": false },
+      { "name": "range", "type": "string", "required": true },
+      { "name": "latest", "type": "string", "required": true },
+      { "name": "delta", "type": "string", "required": false },
+      { "name": "positive", "type": "boolean", "required": true },
+      { "name": "summary", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "TrendPoint",
+    "description": "One dated sample within a TrendMetric chart. Flat and ordered (left-to-right) so a sparse scenario simply seeds fewer points. Carries the parent metricId, a display order, an x-axis bucketLabel (e.g. 'Mon', 'Wk 3', 'Mar'), and the numeric value used to plot the line.",
+    "category": "datastore",
+    "order": 8,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "metricId", "type": "number", "required": true },
+      { "name": "order", "type": "number", "required": true },
+      { "name": "bucketLabel", "type": "string", "required": true },
+      { "name": "value", "type": "number", "required": true }
+    ]
+  },
+  {
+    "name": "RecoveryRead",
+    "description": "The single 'recovery read' that drives the Recovery Center, combining sleep / HRV / RHR / training load / stress / fatigue into one score. Carries the ISO date + metabar dateLabel, a 0-100 score (nullable → day-one empty state) and label ('Recovering' | 'Ready' | 'Strained'), a serif verdict headline, a status line, a longer summary, and ordered sets of contributing RecoveryFactors and suggested RecoveryActions. The page reads the most-recent read.",
+    "category": "datastore",
+    "order": 9,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "date", "type": "string", "required": true },
+      { "name": "dateLabel", "type": "string", "required": true },
+      { "name": "score", "type": "number", "required": false },
+      { "name": "label", "type": "string", "required": false },
+      { "name": "headline", "type": "string", "required": false },
+      { "name": "statusLine", "type": "string", "required": false },
+      { "name": "summary", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "RecoveryFactor",
+    "description": "One contributing signal in a RecoveryRead (Sleep, HRV, Resting HR, Training Load, Soreness, Stress). Carries the parent recoveryId, display order, label, formatted value, a state ('strong' | 'steady' | 'strained'), a 0-100 track fill, a 'positive' flag, and a plain-language detail revealed when the factor row is expanded (the page's primary interaction).",
+    "category": "datastore",
+    "order": 10,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "recoveryId", "type": "number", "required": true },
+      { "name": "order", "type": "number", "required": true },
+      { "name": "label", "type": "string", "required": true },
+      { "name": "value", "type": "string", "required": true },
+      { "name": "state", "type": "string", "required": true },
+      { "name": "trackPct", "type": "number", "required": true },
+      { "name": "positive", "type": "boolean", "required": true },
+      { "name": "detail", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "RecoveryAction",
+    "description": "One suggested recovery action in a RecoveryRead (recovery run, rest day, mobility, hydration, walk, nutrition). Carries the parent recoveryId, display order, title, kind (drives the label), an optional durationLabel, and a detail revealed when the action row is expanded.",
+    "category": "datastore",
+    "order": 11,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "recoveryId", "type": "number", "required": true },
+      { "name": "order", "type": "number", "required": true },
+      { "name": "title", "type": "string", "required": true },
+      { "name": "kind", "type": "string", "required": true },
+      { "name": "durationLabel", "type": "string", "required": false },
+      { "name": "detail", "type": "string", "required": false }
+    ]
+  },
+  {
+    "name": "Goal",
+    "description": "A tracked objective on the Goals page (run 1,800 miles, break 1:45 at a race, average 8h sleep, strength train 3×/week). Carries a display order, title, category ('distance' | 'race' | 'sleep' | 'strength' | 'habit' | 'recovery'), the measured metric name, a numeric target and current progress, an optional unit, a cadence + dueLabel, an optional note, and a createdAt timestamp. A progress ring encodes current/target; reaching target flips the goal to complete. Creating a goal (the page's primary interaction) writes a row here. Zero rows in production → the day-one 'set your first goal' empty state.",
+    "category": "datastore",
+    "order": 12,
+    "fields": [
+      { "name": "id", "type": "number", "isId": true, "required": true },
+      { "name": "order", "type": "number", "required": true },
+      { "name": "title", "type": "string", "required": true },
+      { "name": "category", "type": "string", "required": true },
+      { "name": "metric", "type": "string", "required": true },
+      { "name": "target", "type": "number", "required": true },
+      { "name": "current", "type": "number", "required": true },
+      { "name": "unit", "type": "string", "required": false },
+      { "name": "cadence", "type": "string", "required": false },
+      { "name": "dueLabel", "type": "string", "required": false },
+      { "name": "note", "type": "string", "required": false },
+      { "name": "createdAt", "type": "string", "required": true }
+    ]
+  },
+  {
     "name": "ProviderConnection",
     "description": "A persisted connection between Wellframe and an AI coach or health-data provider. Production starts with zero rows (day-one: everything shows 'Connect'); connecting a provider writes a row here and the panel/dashboard reflect real connected/synced state. Records which provider (providerId), whether it's an AI coach or health source (kind), how it was connected (method: browser sign-in / pasted API key / local endpoint / local MCP), the resulting status and status-line detail, an optional endpoint for local/MCP methods, whether an AI connection is the active coach (only one true at a time), and when it connected.",
     "category": "datastore",

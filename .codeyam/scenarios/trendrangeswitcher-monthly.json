@@ -1,0 +1,11 @@
+{
+  "name": "TrendRangeSwitcher - Monthly",
+  "id": "5f089b95-c724-4b55-992d-243d967d93ec",
+  "url": "/isolated-components/TrendRangeSwitcher?s=Monthly",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TrendRangeSwitcher",
+  "scenarioType": "component"
+}

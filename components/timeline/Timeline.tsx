@@ -8,6 +8,7 @@
 
 import { useMemo, useState } from 'react';
 import { Metabar } from '@/components/dashboard/Metabar';
+import { WF_NAV_LINKS } from '@/components/dashboard/nav';
 import { TimelineFilters } from './TimelineFilters';
 import { TimelineDay } from './TimelineDay';
 import { TimelineEmpty } from './TimelineEmpty';
@@ -45,7 +46,11 @@ export function Timeline({
 
   return (
     <div className="wf">
-      <Metabar dateLabel={dateLabel} subject="Activity · Timeline" />
+      <Metabar
+        dateLabel={dateLabel}
+        subject="Activity · Timeline"
+        navLinks={WF_NAV_LINKS.filter((l) => l.href !== '/timeline')}
+      />
 
       {isEmpty ? (
         <TimelineEmpty />

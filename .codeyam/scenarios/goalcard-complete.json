@@ -1,0 +1,11 @@
+{
+  "name": "GoalCard - Complete",
+  "id": "51ff6111-a08c-4e29-892a-411da83be72f",
+  "url": "/isolated-components/GoalCard?s=Complete",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoalCard",
+  "scenarioType": "component"
+}

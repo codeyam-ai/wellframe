@@ -65,3 +65,58 @@
 {"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `groupByDay › returns empty for no entries`: added from runner `tests` output"}
 {"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `summary builders › builds a mood summary from present fields`: added from runner `tests` output"}
 {"timestamp":"2026-07-09T14:26:38Z","kind":"registry-add","message":"registry `deriveChips › dedupes repeated kinds`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `progressPct › is 0 at the start`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `normalizeRange › accepts each known range`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `actionKindLabel › maps known kinds`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `wellbeingScore › averages only the present fields`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `goalStatus › is active before the target`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `ring geometry › circumference matches 2πr`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `ratingLabel › maps values to words`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `actionKindLabel › falls back to Action for an empty kind`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `buildChartGeometry › draws higher values higher on the canvas, smaller y`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `ring geometry › offset is full circumference at 0% and 0 at 100%`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `wellbeingScore › returns null when nothing is rated`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateCheckinInput › rejects a missing / bad timestamp`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `inferPartOfDay › falls back to morning for an out-of-range hour`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateCheckinInput › accepts a submission carrying only a mood word`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `factorTally › handles an empty set`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateGoalInput › rejects a non-positive or non-numeric target`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `normalizeRange › defaults unknown / null / undefined to weekly`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `wellbeingScore › inverts soreness and stress so high values pull the score down`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `buildChartGeometry › returns an empty geometry for no values, no NaN coords`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `rangeLabel › passes through an unknown key unchanged`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `clampRating › treats missing / blank / sub-1 as not rated`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `goalStatus › is complete at or beyond the target`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `factorTally › counts strong factors out of the total`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateCheckinInput › rejects an invalid part of day`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `buildChartGeometry › keeps all y coordinates inside the padded box`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `buildChartGeometry › places a single point at the horizontal centre`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `progressPct › returns 0 for NaN / infinite inputs`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `ring geometry › clamps out-of-range percentages`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `buildChartGeometry › closes the area path back to the baseline`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `formatProgress › keeps one decimal for fractional values`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `stateLabel › maps known states`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `remaining › never goes negative on an over-shot goal`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `clampRating › clamps high values to 5 and rounds`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateCheckinInput › accepts a morning check-in with ratings`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `progressPct › clamps over-shot progress to 100`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `inferPartOfDay › is morning before noon, evening after`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateGoalInput › rejects an empty title`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `progressPct › computes a normal fraction`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateGoalInput › defaults an unknown category to habit and metric to Progress`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `buildChartGeometry › spreads points evenly across the inner width`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `goalStatus › is active for a bad target`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateCheckinInput › rejects an all-blank submission`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `actionKindLabel › title-cases an unknown kind`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `clampRating › passes valid 1-5 ratings through`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `rangeLabel › maps known range keys to titles`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `buildChartGeometry › plots a flat series on the vertical centre without dividing by zero`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `wellbeingScore › scores an all-5 positive / all-1 negative day near the top`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `formatProgress › omits the unit when not given`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateGoalInput › accepts a well-formed draft and trims text`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `isPositiveState › is true only for strong`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `stateLabel › passes an unknown state through`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `progressPct › returns 0 for a non-positive target instead of dividing by zero`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `validateGoalInput › floors a negative current to 0`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `formatProgress › renders whole numbers without decimals`: added from runner `tests` output"}
+{"timestamp":"2026-07-13T14:14:15Z","kind":"registry-add","message":"registry `remaining › reports the gap to target`: added from runner `tests` output"}

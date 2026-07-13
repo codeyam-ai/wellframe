@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryHero - Recovering",
+  "id": "fbdc502f-0357-4a8d-8bb9-2a75f1acb333",
+  "url": "/isolated-components/RecoveryHero?s=Recovering",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryHero",
+  "scenarioType": "component"
+}

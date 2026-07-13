@@ -1,0 +1,11 @@
+{
+  "name": "RatingScale - Rated",
+  "id": "fe9a922d-b5a9-4439-a20b-aa690c43e709",
+  "url": "/isolated-components/RatingScale?s=Rated",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RatingScale",
+  "scenarioType": "component"
+}

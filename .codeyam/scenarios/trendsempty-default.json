@@ -1,0 +1,11 @@
+{
+  "name": "TrendsEmpty - Default",
+  "id": "d0676e96-df93-4f6d-b608-2cd7bdd021f2",
+  "url": "/isolated-components/TrendsEmpty?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TrendsEmpty",
+  "scenarioType": "component"
+}

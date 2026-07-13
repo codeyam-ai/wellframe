@@ -1,0 +1,11 @@
+{
+  "name": "TrendsConsole - Empty",
+  "id": "cda40b0e-b08f-44ff-80eb-bb4d05239286",
+  "url": "/isolated-components/TrendsConsole?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TrendsConsole",
+  "scenarioType": "component"
+}

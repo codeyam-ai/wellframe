@@ -9,6 +9,7 @@ import type { DailyBriefing, Vital, Workout } from '@prisma/client';
 import type { ProviderView } from './connections';
 import { connectProvider, disconnectProvider, setActiveCoach } from '@/app/lib/connections.actions';
 import { Metabar } from './Metabar';
+import { WF_NAV_LINKS } from './nav';
 import { BriefingDeck } from './BriefingDeck';
 import { EmptyBriefing } from './EmptyBriefing';
 import { CoachDock } from './CoachDock';
@@ -65,7 +66,7 @@ export function DashboardConsole({
     <div className="wf">
       <Metabar
         dateLabel={dateLabel}
-        navLinks={[{ label: 'Timeline', href: '/timeline' }]}
+        navLinks={WF_NAV_LINKS}
         onOpenSetup={openSetup}
       />
       {briefing ? (

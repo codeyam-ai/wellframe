@@ -1,0 +1,1219 @@
+{
+  "timestamp": "2026-07-13T18:58:31Z",
+  "title": "Trends, Recovery, Goals & Daily Check-in",
+  "type": "feature",
+  "userRequest": "Project context: # Wellframe (Working Title)\n\n## Product Requirements Document (PRD)\n\n**Version:** 1.0\n**Platform:** Desktop (macOS first, Windows/Linux later) + lightweight iOS companion app\n**Tech Stack:** Tauri (preferred) or Electron + React + TypeScript\n\n---\n\n# Vision\n\nBuild the most beautiful, privacy-first AI wellness application available.\n\nUnlike existing health dashboards that lock users into ecosystems or require uploading personal data to the cloud, Wellframe is a local-first desktop application that gives users complete ownership of their health information while providing intelligent coaching powered by whichever AI model they choose.\n\nThe application should feel less like a medical record and more like having a thoughtful performance coach sitting beside you throughout the day.\n\nEverything should prioritize:\n\n* Privacy\n* Calmness\n* Simplicity\n* Beautiful design\n* User control\n* Long-term insights over short-term notifications\n\nThe application should feel inspired by companies like Vercel, Linear, Raycast, Arc, and Notion rather than traditional healthcare software.\n\n---\n\n# Design Principles\n\n## Local First\n\nThe user's data belongs to them.\n\nThe application should function without creating an account.\n\nNo backend should be required for the core experience.\n\nUsers should be able to:\n\n* Export everything\n* Delete everything\n* Inspect everything sent to AI\n* Choose their AI provider\n* Run entirely offline with local models if desired\n\n---\n\n## AI Is A Coach, Not A Chatbot\n\nThe AI should understand context.\n\nInstead of waiting for questions, it should proactively identify trends.\n\nExamples:\n\n\"I noticed your resting heart rate has increased for four days while your sleep has decreased.\"\n\n\"You've consistently run better after taking Wednesdays as recovery days.\"\n\n\"Your long runs appear to recover faster when protein intake exceeds 120g.\"\n\nThe coach should feel observant rather than verbose.\n\n---\n\n## Beautiful Software\n\nThe interface should feel like premium productivity software.\n\nGoals:\n\n* minimal\n* spacious\n* typography-first\n* fast\n* elegant\n* delightful animations\n* subtle motion\n* tasteful gradients\n* extremely polished\n\nNever feel clinical.\n\n---\n\n# Target Users\n\nPrimary:\n\n* runners\n* cyclists\n* climbers\n* lifters\n* hikers\n* busy professionals\n* founders\n* engineers\n* quantified-self enthusiasts\n\nSecondary:\n\n* casual fitness users\n* Apple Health users\n* Garmin users\n* Strava users\n* Oura users\n\n---\n\n# Core Value Proposition\n\nBring together all of your health data into one beautiful local dashboard with an AI coach that actually understands your long-term health.\n\n---\n\n# Core Features\n\n## Dashboard\n\nLanding page.\n\nContains:\n\nToday's readiness score\n\nSleep summary\n\nRecovery summary\n\nSteps\n\nActive minutes\n\nToday's workouts\n\nWeather\n\nCalendar integration (optional)\n\nUpcoming race goals\n\nSuggested workout\n\nCoach summary\n\nRecent trends\n\nThe dashboard should immediately answer:\n\n\"How am I doing today?\"\n\n---\n\n## Activity Timeline\n\nChronological timeline showing:\n\nRuns\n\nWalks\n\nBike rides\n\nStrength workouts\n\nYoga\n\nStretching\n\nRecovery\n\nJournal entries\n\nMood\n\nMeals\n\nBody weight\n\nPhotos\n\nNotes\n\nEverything should be filterable.\n\n---\n\n## Trends\n\nWeekly\n\nMonthly\n\nYearly\n\nExamples:\n\nAverage sleep\n\nHRV\n\nResting HR\n\nMileage\n\nVO2 Max\n\nTraining load\n\nConsistency\n\nStep averages\n\nSleep debt\n\nRecovery\n\nNutrition\n\nBody weight\n\nMood\n\nStress\n\nCustom charts.\n\n---\n\n## AI Coach\n\nThe centerpiece of the application.\n\nShould understand:\n\nGoals\n\nInjuries\n\nRecent workouts\n\nRecovery\n\nSleep\n\nStress\n\nHabits\n\nTravel\n\nWeather\n\nCalendar\n\nExamples:\n\n\"What should I do today?\"\n\n\"Am I overtraining?\"\n\n\"Why am I more tired lately?\"\n\n\"Prepare me for my trail race.\"\n\n\"What patterns are you seeing?\"\n\n\"How can I sleep better?\"\n\n\"Why did my pace suddenly improve?\"\n\nThe AI should use structured tools rather than relying entirely on prompt engineering.\n\n---\n\n## Daily Check-in\n\nMorning\n\nEnergy\n\nMood\n\nSleep quality\n\nSoreness\n\nStress\n\nMotivation\n\nEvening\n\nReflection\n\nWins\n\nChallenges\n\nNutrition\n\nRecovery\n\nNotes\n\nEverything becomes searchable.\n\n---\n\n## Goals\n\nExamples:\n\nRun 500 miles this year\n\nComplete marathon\n\nImprove VO2 Max\n\nSleep 8 hours\n\nWalk 10,000 steps\n\nStrength train 3x/week\n\nDrink more water\n\nMeditate daily\n\nCustom goals.\n\n---\n\n## Journal\n\nMarkdown editor.\n\nSupports:\n\nphotos\n\nvoice transcription\n\ntags\n\nAI summaries\n\ndaily prompts\n\nsearch\n\nlinked workouts\n\n---\n\n## Recovery Center\n\nCombines:\n\nSleep\n\nHRV\n\nRHR\n\nTraining Load\n\nStress\n\nFatigue\n\nMood\n\nSuggests:\n\nRecovery runs\n\nRest day\n\nMobility\n\nStretching\n\nWalks\n\nHydration\n\nNutrition\n\n---\n\n## Health Vault\n\nEvery piece of imported data.\n\nUser can:\n\nbrowse\n\nedit\n\ndelete\n\nexport\n\nmerge\n\ninspect\n\nNothing hidden.\n\n---\n\n## AI Prompt Inspector\n\nEvery AI request shows:\n\nContext included\n\nPrompt\n\nTool outputs\n\nResponse\n\nEstimated cost\n\nModel used\n\nPrivacy warnings\n\nAllows editing before sending.\n\n---\n\n# Integrations\n\n## Apple Health\n\nRequires iOS companion application.\n\nImports:\n\nSteps\n\nSleep\n\nHeart rate\n\nResting HR\n\nHRV\n\nVO2 Max\n\nWeight\n\nWorkouts\n\nEnergy\n\nFlights climbed\n\nWalking steadiness\n\nBlood oxygen\n\nRespiration\n\nMindfulness\n\nMobility metrics\n\nCycle tracking (optional)\n\n---\n\n## Strava\n\nOAuth.\n\nImport:\n\nActivities\n\nRoutes\n\nGear\n\nPhotos\n\nPRs\n\nSplits\n\nElevation\n\nSegments\n\n---\n\n## Garmin\n\nFuture.\n\n---\n\n## Oura\n\nFuture.\n\n---\n\n## WHOOP\n\nFuture.\n\n---\n\n## Polar\n\nFuture.\n\n---\n\n## Fitbit\n\nFuture.\n\n---\n\n## CSV Import\n\nAny spreadsheet.\n\n---\n\n# AI Providers\n\nPluggable architecture.\n\nSupports:\n\nOpenAI\n\nAnthropic Claude\n\nGoogle Gemini\n\nOllama\n\nLM Studio\n\nFuture providers via plugins.\n\nUsers bring their own API keys.\n\n---\n\n# Local AI\n\nSupport:\n\nOllama\n\nLM Studio\n\nFuture MCP-compatible local models\n\nNo cloud required.\n\n---\n\n# Architecture\n\nDesktop\n\nTauri\n\nReact\n\nTypeScript\n\nVite\n\nTanStack Router\n\nTanStack Query\n\nTailwind\n\nshadcn/ui\n\nMotion\n\nSQLite\n\nSQLCipher\n\nReact Hook Form\n\nZod\n\nReact Markdown\n\nChart.js or Observable Plot\n\n---\n\n# Storage\n\nEncrypted SQLite.\n\nTables include:\n\nactivities\n\nsleep\n\nnutrition\n\nbiometrics\n\nheart_rate\n\nhrv\n\ngoals\n\njournal\n\ncoach_sessions\n\nmood\n\nintegrations\n\nsettings\n\nweights\n\ninjuries\n\nattachments\n\nai_history\n\nEverything indexed.\n\n---\n\n# Coach Architecture\n\nContext Builder\n\n↓\n\nRelevant History Retrieval\n\n↓\n\nTool Execution\n\n↓\n\nPrompt Generation\n\n↓\n\nAI Provider\n\n↓\n\nStructured Output\n\n↓\n\nCoach UI\n\nTools include:\n\nAnalyze sleep\n\nAnalyze trends\n\nRetrieve workouts\n\nSummarize journal\n\nCompute training load\n\nEstimate fatigue\n\nRecommend recovery\n\nFind similar historical weeks\n\nGenerate plan\n\n---\n\n# Privacy Features\n\nLocal-first\n\nEncrypted database\n\nNo required account\n\nOffline mode\n\nPrompt inspector\n\nPer-provider permissions\n\nExport everything\n\nDelete everything\n\nNever send raw health data mode\n\nSummary-only AI mode\n\nPII redaction\n\n---\n\n# Themes\n\nLight\n\nDark\n\nHigh Contrast\n\nSystem\n\n---\n\n# Design Language\n\nInspired by:\n\nVercel\n\nLinear\n\nRaycast\n\nArc\n\nGeist\n\nNotion\n\nApple Human Interface Guidelines\n\nCharacteristics:\n\nLarge typography\n\nRounded cards\n\nThin borders\n\nSoft shadows\n\nElegant spacing\n\nMinimal color\n\nMotion with purpose\n\nExcellent empty states\n\nKeyboard-first interactions\n\nCommand palette\n\nBeautiful charts\n\nSubtle gradients\n\n---\n\n# Keyboard Shortcuts\n\n⌘K\n\nOpen command palette\n\n⌘J\n\nOpen journal\n\n⌘/\n\nAsk coach\n\n⌘1-8\n\nNavigate sections\n\nSpace\n\nQuick add\n\n---\n\n# Nice-to-Have Features\n\nWeather-aware coaching\n\nTravel mode\n\nTimezone adjustment\n\nMenstrual cycle insights\n\nNutrition logging\n\nRecipe recommendations\n\nApple Calendar integration\n\nGoogle Calendar integration\n\nHabit tracking\n\nMedication reminders\n\nHydration tracking\n\nMood visualization\n\nExport to Markdown\n\nWeekly PDF summaries\n\nHome screen widgets\n\nDesktop widgets\n\nMenu bar app\n\nApple Watch companion\n\n---\n\n# Future AI Features\n\nVoice conversations\n\nReal-time coaching\n\nMeeting-aware recommendations\n\nScreen-aware coaching\n\nDaily briefing\n\nWeekly review\n\nMonthly review\n\nTraining plan generation\n\nRace prediction\n\nRecovery forecasting\n\nHabit prediction\n\nLong-term health trend detection\n\nAnomaly detection\n\nPersonal knowledge graph\n\nMemory across years\n\nNatural-language analytics\n\n---\n\n# Stretch Vision\n\nWellframe becomes the operating system for personal health.\n\nInstead of dozens of disconnected health applications, wearable dashboards, and AI chats, users have one trusted place where every piece of health information lives, every trend is understandable, and every recommendation is personalized.\n\nThe application should become more valuable every day it is used, learning from years of health history while always keeping that history under the user's control.\n\nThe experience should feel like the intersection of Apple Health, Strava, Oura, Notion, and ChatGPT—reimagined as a beautiful, local-first desktop application built for people who care deeply about understanding themselves.",
+  "description": "Added four new consoles to Wellframe, cross-linked from every surface metabar nav: Trends (/trends) charts sleep, HRV, resting HR, mileage, training load, VO2 Max and body weight across weekly/monthly/yearly ranges with a range switcher; the Recovery Center (/recovery) reads those signals into a single recovery score with expandable contributing factors and suggested actions; Goals (/goals) tracks objectives as progress rings and creates new goals via a slide-in composer; and the Daily Check-in (/checkin) captures a morning/evening snapshot (energy, mood, sleep, soreness, stress, reflection) that also lands on the Activity Timeline. Six new flat data models (no FK relations, matching the existing schema so scenario seeding stays order-independent), four loaders, two server actions, and four pure-logic modules with 55 unit tests. Every surface has a real day-one empty state; production starts blank.",
+  "modifiedFiles": [
+    {
+      "path": ".claude/hooks/__pycache__/_step_metadata.cpython-310.pyc",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/hooks/__pycache__/editor-step-hook.cpython-310.pyc",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/.last-reconcile.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/cache/step-metadata.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/data-structure.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/reconciliation-log.jsonl",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-connections-setup--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-day-one-setup--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-low-readiness--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-no-workout-yesterday--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-partial-data--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboard-primed-briefing--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-coach-open--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/dashboardconsole-primed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-day-one-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-day-one-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-edge-cases--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-edge-cases--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-empty--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-filtered-runs--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-filtered-runs--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-rich-week--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-rich-week--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-runs-filter--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-runs-filter--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-search-trail--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-search-trail--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-sparse--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/timeline-sparse--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/last-advance.txt",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/provider-auth-verdict.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/session-results-snapshot.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/step-highwater.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-run-marker.json",
+      "status": "modified"
+    },
+    {
+      "path": ".gitignore",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "path": "app/globals.css",
+      "status": "modified"
+    },
+    {
+      "path": "components/dashboard/DashboardConsole.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "components/timeline/Timeline.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "docker-compose.cloud.yml",
+      "status": "modified"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "modified"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "status": "modified"
+    },
+    {
+      "path": "ui/src/helpers/stepLabels.generated.ts",
+      "status": "modified"
+    },
+    {
+      "path": ".claude/skills/codeyam-review-pr/SKILL.md",
+      "status": "added"
+    },
+    {
+      "path": ".claude/skills/codeyam-review-pr/review-procedure.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/check-in-day-one.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/check-in-logging.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/checkinconsole-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/checkinconsole-logging.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/checkinempty-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/checkinform-evening.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/checkinform-morning.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/checkinrow-minimal.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/checkinrow-withnote.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalcard-complete.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalcard-inprogress.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalcomposer-open.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalring-complete.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalring-partial.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goals-day-one.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goals-tracking.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalsconsole-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalsconsole-tracking.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/goalsempty-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/ratingscale-rated.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/ratingscale-unrated.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recovery-day-one.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recovery-recovering.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryactionrow-collapsed.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryactionrow-open.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryconsole-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryconsole-recovering.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryempty-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryfactorrow-strained.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryfactorrow-strongopen.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/recoveryhero-recovering.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/check-in-day-one--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/check-in-day-one--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/check-in-logging--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/check-in-logging--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinconsole-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinconsole-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinconsole-logging--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinconsole-logging--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinempty-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinempty-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinform-evening--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinform-evening--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinform-morning--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinform-morning--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinrow-minimal--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinrow-minimal--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinrow-withnote--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/checkinrow-withnote--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalcard-complete--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalcard-complete--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalcard-inprogress--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalcard-inprogress--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalcomposer-open--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalcomposer-open--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalring-complete--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalring-complete--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalring-partial--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalring-partial--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goals-day-one--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goals-day-one--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goals-tracking--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goals-tracking--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalsconsole-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalsconsole-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalsconsole-tracking--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalsconsole-tracking--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalsempty-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/goalsempty-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/ratingscale-rated--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/ratingscale-rated--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/ratingscale-unrated--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/ratingscale-unrated--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recovery-day-one--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recovery-day-one--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recovery-recovering--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recovery-recovering--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryactionrow-collapsed--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryactionrow-collapsed--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryactionrow-open--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryactionrow-open--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryconsole-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryconsole-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryconsole-recovering--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryconsole-recovering--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryempty-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryempty-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryfactorrow-strained--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryfactorrow-strained--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryfactorrow-strongopen--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryfactorrow-strongopen--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryhero-recovering--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/recoveryhero-recovering--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendchart-declining--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendchart-declining--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendchart-rising--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendchart-rising--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendrangeswitcher-monthly--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendrangeswitcher-monthly--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendrangeswitcher-weekly--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendrangeswitcher-weekly--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trends-day-one--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trends-day-one--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trends-weekly-history--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trends-weekly-history--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendsconsole-empty--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendsconsole-empty--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendsconsole-weekly--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendsconsole-weekly--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendsempty-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/trendsempty-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trendchart-declining.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trendchart-rising.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trendrangeswitcher-monthly.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trendrangeswitcher-weekly.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trends-day-one.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trends-weekly-history.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trendsconsole-empty.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trendsconsole-weekly.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/trendsempty-default.json",
+      "status": "added"
+    },
+    {
+      "path": "app/checkin/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/goals/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CheckinConsole/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CheckinEmpty/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CheckinForm/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/CheckinRow/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/GoalCard/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/GoalComposer/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/GoalRing/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/GoalsConsole/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/GoalsEmpty/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/RatingScale/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/RecoveryActionRow/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/RecoveryConsole/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/RecoveryEmpty/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/RecoveryFactorRow/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/RecoveryHero/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TrendChart/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TrendRangeSwitcher/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TrendsConsole/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/isolated-components/TrendsEmpty/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/checkin.actions.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/checkin.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/goals.actions.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/goals.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/recovery.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/trends.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/recovery/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/trends/page.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/checkin/CheckinConsole.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/checkin/CheckinEmpty.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/checkin/CheckinForm.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/checkin/CheckinRow.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/checkin/RatingScale.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/checkin/checkin.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/checkin/checkin.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/dashboard/nav.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/goals/GoalCard.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/goals/GoalComposer.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/goals/GoalRing.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/goals/GoalsConsole.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/goals/GoalsEmpty.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/goals/goals.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/goals/goals.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/recovery/RecoveryActionRow.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/recovery/RecoveryConsole.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/recovery/RecoveryEmpty.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/recovery/RecoveryFactorRow.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/recovery/RecoveryHero.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/recovery/recovery.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/recovery/recovery.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/trends/TrendChart.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/trends/TrendRangeSwitcher.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/trends/TrendsConsole.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/trends/TrendsEmpty.tsx",
+      "status": "added"
+    },
+    {
+      "path": "components/trends/trends.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "components/trends/trends.ts",
+      "status": "added"
+    },
+    {
+      "path": "core",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Check-in - Day One",
+      "screenshotPath": "check-in-day-one--desktop.png"
+    },
+    {
+      "name": "Check-in - Logging",
+      "screenshotPath": "check-in-logging--desktop.png"
+    },
+    {
+      "name": "CheckinConsole - Empty",
+      "screenshotPath": "checkinconsole-empty--desktop.png"
+    },
+    {
+      "name": "CheckinConsole - Logging",
+      "screenshotPath": "checkinconsole-logging--desktop.png"
+    },
+    {
+      "name": "CheckinEmpty - Default",
+      "screenshotPath": "checkinempty-default--desktop.png"
+    },
+    {
+      "name": "CheckinForm - Evening",
+      "screenshotPath": "checkinform-evening--desktop.png"
+    },
+    {
+      "name": "CheckinForm - Morning",
+      "screenshotPath": "checkinform-morning--desktop.png"
+    },
+    {
+      "name": "CheckinRow - Minimal",
+      "screenshotPath": "checkinrow-minimal--desktop.png"
+    },
+    {
+      "name": "CheckinRow - WithNote",
+      "screenshotPath": "checkinrow-withnote--desktop.png"
+    },
+    {
+      "name": "Dashboard - Connections Setup",
+      "screenshotPath": "dashboard-connections-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Empty",
+      "screenshotPath": "dashboard-day-one-empty--desktop.png"
+    },
+    {
+      "name": "Dashboard - Day One Setup",
+      "screenshotPath": "dashboard-day-one-setup--desktop.png"
+    },
+    {
+      "name": "Dashboard - Low Readiness",
+      "screenshotPath": "dashboard-low-readiness--desktop.png"
+    },
+    {
+      "name": "Dashboard - No Workout Yesterday",
+      "screenshotPath": "dashboard-no-workout-yesterday--desktop.png"
+    },
+    {
+      "name": "Dashboard - Partial Data",
+      "screenshotPath": "dashboard-partial-data--desktop.png"
+    },
+    {
+      "name": "Dashboard - Primed Briefing",
+      "screenshotPath": "dashboard-primed-briefing--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Coach Open",
+      "screenshotPath": "dashboardconsole-coach-open--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Empty",
+      "screenshotPath": "dashboardconsole-empty--desktop.png"
+    },
+    {
+      "name": "DashboardConsole - Primed",
+      "screenshotPath": "dashboardconsole-primed--desktop.png"
+    },
+    {
+      "name": "GoalCard - Complete",
+      "screenshotPath": "goalcard-complete--desktop.png"
+    },
+    {
+      "name": "GoalCard - InProgress",
+      "screenshotPath": "goalcard-inprogress--desktop.png"
+    },
+    {
+      "name": "GoalComposer - Open",
+      "screenshotPath": "goalcomposer-open--desktop.png"
+    },
+    {
+      "name": "GoalRing - Complete",
+      "screenshotPath": "goalring-complete--desktop.png"
+    },
+    {
+      "name": "GoalRing - Partial",
+      "screenshotPath": "goalring-partial--desktop.png"
+    },
+    {
+      "name": "Goals - Day One",
+      "screenshotPath": "goals-day-one--desktop.png"
+    },
+    {
+      "name": "Goals - Tracking",
+      "screenshotPath": "goals-tracking--desktop.png"
+    },
+    {
+      "name": "GoalsConsole - Empty",
+      "screenshotPath": "goalsconsole-empty--desktop.png"
+    },
+    {
+      "name": "GoalsConsole - Tracking",
+      "screenshotPath": "goalsconsole-tracking--desktop.png"
+    },
+    {
+      "name": "GoalsEmpty - Default",
+      "screenshotPath": "goalsempty-default--desktop.png"
+    },
+    {
+      "name": "RatingScale - Rated",
+      "screenshotPath": "ratingscale-rated--desktop.png"
+    },
+    {
+      "name": "RatingScale - Unrated",
+      "screenshotPath": "ratingscale-unrated--desktop.png"
+    },
+    {
+      "name": "Recovery - Day One",
+      "screenshotPath": "recovery-day-one--desktop.png"
+    },
+    {
+      "name": "Recovery - Recovering",
+      "screenshotPath": "recovery-recovering--desktop.png"
+    },
+    {
+      "name": "RecoveryActionRow - Collapsed",
+      "screenshotPath": "recoveryactionrow-collapsed--desktop.png"
+    },
+    {
+      "name": "RecoveryActionRow - Open",
+      "screenshotPath": "recoveryactionrow-open--desktop.png"
+    },
+    {
+      "name": "RecoveryConsole - Empty",
+      "screenshotPath": "recoveryconsole-empty--desktop.png"
+    },
+    {
+      "name": "RecoveryConsole - Recovering",
+      "screenshotPath": "recoveryconsole-recovering--desktop.png"
+    },
+    {
+      "name": "RecoveryEmpty - Default",
+      "screenshotPath": "recoveryempty-default--desktop.png"
+    },
+    {
+      "name": "RecoveryFactorRow - Strained",
+      "screenshotPath": "recoveryfactorrow-strained--desktop.png"
+    },
+    {
+      "name": "RecoveryFactorRow - StrongOpen",
+      "screenshotPath": "recoveryfactorrow-strongopen--desktop.png"
+    },
+    {
+      "name": "RecoveryHero - Recovering",
+      "screenshotPath": "recoveryhero-recovering--desktop.png"
+    },
+    {
+      "name": "Timeline - Day One Empty",
+      "screenshotPath": "timeline-day-one-empty--desktop.png"
+    },
+    {
+      "name": "Timeline - Edge Cases",
+      "screenshotPath": "timeline-edge-cases--desktop.png"
+    },
+    {
+      "name": "Timeline - Empty",
+      "screenshotPath": "timeline-empty--desktop.png"
+    },
+    {
+      "name": "Timeline - Filtered Runs",
+      "screenshotPath": "timeline-filtered-runs--desktop.png"
+    },
+    {
+      "name": "Timeline - Rich Week",
+      "screenshotPath": "timeline-rich-week--desktop.png"
+    },
+    {
+      "name": "Timeline - Runs Filter",
+      "screenshotPath": "timeline-runs-filter--desktop.png"
+    },
+    {
+      "name": "Timeline - Search Trail",
+      "screenshotPath": "timeline-search-trail--desktop.png"
+    },
+    {
+      "name": "Timeline - Sparse",
+      "screenshotPath": "timeline-sparse--desktop.png"
+    },
+    {
+      "name": "TrendChart - Declining",
+      "screenshotPath": "trendchart-declining--desktop.png"
+    },
+    {
+      "name": "TrendChart - Rising",
+      "screenshotPath": "trendchart-rising--desktop.png"
+    },
+    {
+      "name": "TrendRangeSwitcher - Monthly",
+      "screenshotPath": "trendrangeswitcher-monthly--desktop.png"
+    },
+    {
+      "name": "TrendRangeSwitcher - Weekly",
+      "screenshotPath": "trendrangeswitcher-weekly--desktop.png"
+    },
+    {
+      "name": "Trends - Day One",
+      "screenshotPath": "trends-day-one--desktop.png"
+    },
+    {
+      "name": "Trends - Weekly History",
+      "screenshotPath": "trends-weekly-history--desktop.png"
+    },
+    {
+      "name": "TrendsConsole - Empty",
+      "screenshotPath": "trendsconsole-empty--desktop.png"
+    },
+    {
+      "name": "TrendsConsole - Weekly",
+      "screenshotPath": "trendsconsole-weekly--desktop.png"
+    },
+    {
+      "name": "TrendsEmpty - Default",
+      "screenshotPath": "trendsempty-default--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 55,
+    "passed": 55,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 55,
+        "passed": 55
+      }
+    ]
+  }
+}

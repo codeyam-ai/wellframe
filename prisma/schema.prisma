@@ -97,6 +97,106 @@ model Weight {
   positive   Boolean @default(false) // mint (good) vs signal-blue track
 }
 
+// ──────────────────────────────────────────────
+// Trends — one chart per (metric × range). Each TrendMetric row is a single
+// chart: its label/unit/summary plus an ordered set of TrendPoints. The Trends
+// page loads every metric and the range switcher (Weekly / Monthly / Yearly)
+// re-scopes which metrics render. Production starts empty → the page shows the
+// day-one "no history yet" state.
+// NOTE: models here are intentionally FLAT — a child carries its parent's id as
+// a plain Int column with NO Prisma `@relation`, matching the rest of this
+// schema. This keeps scenario seeding order-independent: with no FK constraint
+// the seed adapter can insert child rows before parent rows. The loaders stitch
+// children onto parents in JS (a `where: { metricId: { in } }` query), so
+// `include` is not needed.
+model TrendMetric {
+  id        Int     @id @default(autoincrement())
+  order     Int     @default(0) // display order within a range
+  metricKey String  // stable key, e.g. "sleep" | "hrv" | "rhr" | "mileage"
+  label     String  // "Sleep", "HRV", "Resting HR", "Mileage"
+  unit      String? // "hrs", "ms", "bpm", "mi"
+  range     String  // "weekly" | "monthly" | "yearly"
+  latest    String  // formatted latest value, e.g. "7:18"
+  delta     String? // trend chip, e.g. "▲ 0.4"
+  positive  Boolean @default(false) // mint (improving) vs signal-blue
+  summary   String? // one-line read, e.g. "Trending up 4 of 6 weeks"
+}
+
+// One dated sample within a TrendMetric chart. Flat + ordered so a sparse
+// scenario simply seeds fewer points. `metricId` is a plain column (no FK).
+model TrendPoint {
+  id          Int    @id @default(autoincrement())
+  metricId    Int    // parent TrendMetric.id (plain column, no FK constraint)
+  order       Int    @default(0) // left-to-right position
+  bucketLabel String // x-axis label, e.g. "Mon", "Wk 3", "Mar"
+  value       Float  // numeric value used to plot the line
+}
+
+// ──────────────────────────────────────────────
+// Recovery Center — the single "recovery read" (like DailyBriefing), combining
+// sleep / HRV / RHR / load / stress / fatigue into one score, plus contributing
+// factors and suggested actions. Production starts empty → day-one empty state.
+// Flat like the rest of this schema — RecoveryFactor / RecoveryAction carry a
+// plain `recoveryId` column (no FK constraint), so scenario seeding is
+// order-independent and the loader stitches children in JS.
+model RecoveryRead {
+  id         Int     @id @default(autoincrement())
+  date       String  // ISO date of the read
+  dateLabel  String  // metabar stamp, e.g. "07 Jul · 07:04"
+  score      Int?    // 0-100 recovery score; null = no read yet
+  label      String? // "Recovering" | "Ready" | "Strained"
+  headline   String? // serif verdict, e.g. "Your system is still catching up."
+  statusLine String? // e.g. "RECOVERING · -6 VS 7-DAY AVERAGE"
+  summary    String? // longer read shown under the score
+}
+
+// One contributing signal in the recovery read (Sleep, HRV, RHR, Load, Stress,
+// Fatigue). Drillable: `detail` is revealed when the factor is expanded.
+// `recoveryId` is a plain column (no FK constraint).
+model RecoveryFactor {
+  id         Int     @id @default(autoincrement())
+  recoveryId Int     // parent RecoveryRead.id (plain column, no FK constraint)
+  order      Int     @default(0)
+  label      String  // "Sleep", "HRV", "Resting HR", "Training Load", "Stress"
+  value      String  // formatted value, e.g. "6:41", "54 ms"
+  state      String  // "strong" | "steady" | "strained"
+  trackPct   Int     @default(0) // 0-100 fill for the track bar
+  positive   Boolean @default(false)
+  detail     String? // plain-language read revealed on expand
+}
+
+// One suggested recovery action (recovery run, rest day, mobility, hydration).
+// Expandable: `detail` is revealed when the action is opened. `recoveryId` is a
+// plain column (no FK constraint).
+model RecoveryAction {
+  id            Int     @id @default(autoincrement())
+  recoveryId    Int     // parent RecoveryRead.id (plain column, no FK constraint)
+  order         Int     @default(0)
+  title         String  // "Easy recovery run", "Full rest day"
+  kind          String  // "run" | "rest" | "mobility" | "hydration" | "walk" | "nutrition"
+  durationLabel String? // "30-40 min", "All day"
+  detail        String? // why this is suggested, revealed on expand
+}
+
+// ──────────────────────────────────────────────
+// Goals — a tracked objective with a numeric target and current progress.
+// Production starts empty → day-one "set your first goal" empty state. Creating
+// a goal (the page's primary interaction) writes a row here.
+model Goal {
+  id        Int     @id @default(autoincrement())
+  order     Int     @default(0)
+  title     String  // "Run 500 miles this year"
+  category  String  // "distance" | "race" | "sleep" | "strength" | "habit" | "recovery"
+  metric    String  // what's measured, e.g. "Miles", "Nights ≥ 8h", "Sessions"
+  target    Float   // target value
+  current   Float   @default(0) // progress toward target
+  unit      String? // "mi", "nights", "sessions"
+  cadence   String? // "This year", "This month", "Weekly"
+  dueLabel  String? // "Dec 31", "6 weeks left"
+  note      String? // optional context
+  createdAt String  // ISO timestamp
+}
+
 // A persisted connection to an AI coach or health-data provider. Production
 // starts with ZERO rows (day-one: every provider shows "Connect"). Connecting a
 // provider writes a row here; the Connections panel and dashboard read these

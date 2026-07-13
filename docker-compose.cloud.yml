@@ -1,6 +1,6 @@
 # Template for the per-VM cloud compose file. Rendered by
 # scripts/gcp-project-bootstrap.sh into the (gitignored) docker-compose.cloud.yml
-# at provision time, substituting codeyam-editor-codeyam-editor-2 (the GCE instance name),
+# at provision time, substituting codeyam-editor-codeyam-editor-1 (the GCE instance name),
 # 3000 (the app dev-server port from editor.json), and
 # 12930m (the memory limit computed from the VM's total RAM).
 # EDIT THIS TEMPLATE, not
@@ -52,7 +52,7 @@ services:
     # same answer as $CODEYAM_MACHINE below. The env var is the
     # canonical source; this is belt-and-suspenders for code paths
     # that bypass it.
-    hostname: codeyam-editor-codeyam-editor-2
+    hostname: codeyam-editor-codeyam-editor-1
     # Inject tini as PID 1 so reparented zombies get reaped. Without
     # this flag the editor binary runs as PID 1 and any subprocess
     # whose parent exits before it (broker -> claude PTY child,
@@ -105,11 +105,18 @@ services:
       - cargo-target:/codeyam-build-target
     environment:
       - CHOKIDAR_USEPOLLING=true
+      # Admin-mode toggle gating the Home-tab Setup door. Read at launch by the
+      # editor-server process (handlers.rs::admin_enabled, strict literal "1").
+      # gcp-project-bootstrap.sh sed-substitutes this at provision time from the
+      # value cloud:up forwards (CODEYAM_ADMIN=1 or --admin); the empty default
+      # renders `- CODEYAM_ADMIN=` = strict non-admin, so a normal launch — and a
+      # re-provision without the flag — hides Setup.
+      - CODEYAM_ADMIN=
       - CODEYAM_BIND_HOST=0.0.0.0
       # Unique per-VM machine identity for branch-queue meta.machine,
       # plan-claim host_machine, audit attribution, and session logs.
       # Consumed by codeyam_types::machine::current_machine().
-      - CODEYAM_MACHINE=codeyam-editor-codeyam-editor-2
+      - CODEYAM_MACHINE=codeyam-editor-codeyam-editor-1
       # Git author identity for the in-container build agent. The entrypoint
       # runs `git config --global user.{name,email}` from these; without them
       # plan_claim_refs::create_claim's `git commit-tree` exits with "Author

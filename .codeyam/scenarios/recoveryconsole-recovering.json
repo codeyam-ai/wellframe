@@ -1,0 +1,11 @@
+{
+  "name": "RecoveryConsole - Recovering",
+  "id": "1d1e0740-4c66-4d9a-b5c8-4366272abaad",
+  "url": "/isolated-components/RecoveryConsole?s=Recovering",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RecoveryConsole",
+  "scenarioType": "component"
+}

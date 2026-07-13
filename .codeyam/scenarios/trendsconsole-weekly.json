@@ -1,0 +1,11 @@
+{
+  "name": "TrendsConsole - Weekly",
+  "id": "89b6839a-d6b8-4a9b-b8b2-c8d9f6679728",
+  "url": "/isolated-components/TrendsConsole?s=Weekly",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TrendsConsole",
+  "scenarioType": "component"
+}

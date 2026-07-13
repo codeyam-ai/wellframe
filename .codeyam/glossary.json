@@ -17,6 +17,50 @@
     ]
   },
   {
+    "description": "The Daily Check-in surface: a morning/evening check-in form that writes a Mood row (also read by the Activity Timeline) above the trailing check-in history.",
+    "filePath": "components/checkin/CheckinConsole.tsx",
+    "name": "CheckinConsole",
+    "scenarios": [
+      "checkinconsole-logging",
+      "checkinconsole-empty"
+    ]
+  },
+  {
+    "description": "Quiet empty state for the recent-check-ins history: a mono bracket label plus a line of plain-language copy, shown under the form on day one.",
+    "filePath": "components/checkin/CheckinEmpty.tsx",
+    "name": "CheckinEmpty",
+    "scenarios": [
+      "checkinempty-default"
+    ]
+  },
+  {
+    "description": "The daily check-in form: a morning/evening toggle, a mood word, four 1-5 rating scales, and a reflection note; submitting is the surface's primary interaction (submitCheckin action).",
+    "filePath": "components/checkin/CheckinForm.tsx",
+    "name": "CheckinForm",
+    "scenarios": [
+      "checkinform-morning",
+      "checkinform-evening"
+    ]
+  },
+  {
+    "description": "The /checkin route: server component that loads recent Mood rows and renders the CheckinConsole, defaulting the part of day from the URL or the current time. force-dynamic so a new check-in shows immediately.",
+    "filePath": "app/checkin/page.tsx",
+    "name": "CheckinPage",
+    "scenarios": [
+      "check-in-logging",
+      "check-in-day-one"
+    ]
+  },
+  {
+    "description": "One entry in the recent-check-ins history: date + part of day on the left, and the mood word, a rolled-up wellbeing score, and the note on the right.",
+    "filePath": "components/checkin/CheckinRow.tsx",
+    "name": "CheckinRow",
+    "scenarios": [
+      "checkinrow-withnote",
+      "checkinrow-minimal"
+    ]
+  },
+  {
     "description": "The ⌘K coach entry point rendered as a right-side slide-in panel; in this build it is a stub confirming the entry point works ahead of the full context-aware coach.",
     "filePath": "components/dashboard/CoachDock.tsx",
     "name": "CoachDock",
@@ -123,6 +167,58 @@
     "scenarios": [
       "fieldlog-default",
       "fieldlog-no-workout"
+    ]
+  },
+  {
+    "description": "One goal as a hairline-bordered row: progress ring, title + metric + progress read, and cadence/due; a completed goal shows a mint ring and a Complete badge.",
+    "filePath": "components/goals/GoalCard.tsx",
+    "name": "GoalCard",
+    "scenarios": [
+      "goalcard-inprogress",
+      "goalcard-complete"
+    ]
+  },
+  {
+    "description": "The create-a-goal composer: a slide-in panel with the new-goal form (title, category, metric, target/current/unit, cadence); submitting calls the createGoal action.",
+    "filePath": "components/goals/GoalComposer.tsx",
+    "name": "GoalComposer",
+    "scenarios": [
+      "goalcomposer-open"
+    ]
+  },
+  {
+    "description": "A goal progress ring: hairline track plus a stroked arc encoding completion, with the whole-number percentage centred; mint when complete, signal-blue while in progress.",
+    "filePath": "components/goals/GoalRing.tsx",
+    "name": "GoalRing",
+    "scenarios": [
+      "goalring-partial",
+      "goalring-complete"
+    ]
+  },
+  {
+    "description": "The Goals surface: lists tracked goals as progress cards and opens a slide-in composer to create a new goal (the primary interaction). Shows an empty state that opens straight into the composer on day one.",
+    "filePath": "components/goals/GoalsConsole.tsx",
+    "name": "GoalsConsole",
+    "scenarios": [
+      "goalsconsole-tracking",
+      "goalsconsole-empty"
+    ]
+  },
+  {
+    "description": "Day-one empty state for the Goals surface: serif verdict and the primary + New goal call to action that opens the composer.",
+    "filePath": "components/goals/GoalsEmpty.tsx",
+    "name": "GoalsEmpty",
+    "scenarios": [
+      "goalsempty-default"
+    ]
+  },
+  {
+    "description": "The /goals route: server component that loads every Goal and renders the GoalsConsole, reading the composer-open state (?new=1) from the URL. force-dynamic so a newly created goal shows immediately.",
+    "filePath": "app/goals/page.tsx",
+    "name": "GoalsPage",
+    "scenarios": [
+      "goals-tracking",
+      "goals-day-one"
     ]
   },
   {
@@ -240,6 +336,15 @@
     ]
   },
   {
+    "description": "One 1-5 rating row in the check-in form: a label, five toggle ticks, and the word for the current value; reused for energy, sleep, soreness, and stress.",
+    "filePath": "components/checkin/RatingScale.tsx",
+    "name": "RatingScale",
+    "scenarios": [
+      "ratingscale-rated",
+      "ratingscale-unrated"
+    ]
+  },
+  {
     "description": "The readiness instrument dial: a tick-marked bezel with a score-derived arc and the centered numeric readout.",
     "filePath": "components/dashboard/ReadinessDial.tsx",
     "name": "ReadinessDial",
@@ -265,6 +370,58 @@
     "scenarios": [
       "readinessverdict-primed",
       "readinessverdict-no-workout"
+    ]
+  },
+  {
+    "description": "One suggested-recovery-action row in the Recovery Center: kind, title, and optional duration; expands to reveal why it's suggested.",
+    "filePath": "components/recovery/RecoveryActionRow.tsx",
+    "name": "RecoveryActionRow",
+    "scenarios": [
+      "recoveryactionrow-open",
+      "recoveryactionrow-collapsed"
+    ]
+  },
+  {
+    "description": "The Recovery Center surface: a recovery-score instrument on the left, contributing factors and suggested actions on the right, each row expandable to reveal a plain-language read (the primary interaction). Shows the empty state on day one.",
+    "filePath": "components/recovery/RecoveryConsole.tsx",
+    "name": "RecoveryConsole",
+    "scenarios": [
+      "recoveryconsole-recovering",
+      "recoveryconsole-empty"
+    ]
+  },
+  {
+    "description": "Day-one empty state for the Recovery Center: serif verdict and the connect-a-source / see-trends entry paths.",
+    "filePath": "components/recovery/RecoveryEmpty.tsx",
+    "name": "RecoveryEmpty",
+    "scenarios": [
+      "recoveryempty-default"
+    ]
+  },
+  {
+    "description": "One contributing-signal row in the Recovery Center: label, track bar, formatted value, and state (strong/steady/strained); expands to reveal a plain-language read.",
+    "filePath": "components/recovery/RecoveryFactorRow.tsx",
+    "name": "RecoveryFactorRow",
+    "scenarios": [
+      "recoveryfactorrow-strongopen",
+      "recoveryfactorrow-strained"
+    ]
+  },
+  {
+    "description": "The left instrument panel of the Recovery Center: the recovery-score dial (reusing the readiness-dial geometry), score + label, a signals-strong coordinates strip, and the serif verdict + summary.",
+    "filePath": "components/recovery/RecoveryHero.tsx",
+    "name": "RecoveryHero",
+    "scenarios": [
+      "recoveryhero-recovering"
+    ]
+  },
+  {
+    "description": "The /recovery route: server component that loads the most-recent RecoveryRead with its factors and actions and renders the RecoveryConsole, reading which factor/action row is expanded from the URL. force-dynamic.",
+    "filePath": "app/recovery/page.tsx",
+    "name": "RecoveryPage",
+    "scenarios": [
+      "recovery-recovering",
+      "recovery-day-one"
     ]
   },
   {
@@ -358,6 +515,50 @@
     ]
   },
   {
+    "description": "A single trend chart: a soft-filled sparkline over a hairline baseline, with the metric label, latest value + delta, x-axis bucket labels, and a one-line read. Geometry from the pure trends helpers; mint line when improving, signal-blue when declining.",
+    "filePath": "components/trends/TrendChart.tsx",
+    "name": "TrendChart",
+    "scenarios": [
+      "trendchart-rising",
+      "trendchart-declining"
+    ]
+  },
+  {
+    "description": "The Weekly/Monthly/Yearly switcher for the Trends surface (the primary interaction); disables ranges with no data so the user never lands on a blank view.",
+    "filePath": "components/trends/TrendRangeSwitcher.tsx",
+    "name": "TrendRangeSwitcher",
+    "scenarios": [
+      "trendrangeswitcher-weekly",
+      "trendrangeswitcher-monthly"
+    ]
+  },
+  {
+    "description": "The Trends surface: loads every metric chart and a Weekly/Monthly/Yearly range switcher that re-scopes which charts render (the primary interaction). Shows the day-one empty state when there is no history.",
+    "filePath": "components/trends/TrendsConsole.tsx",
+    "name": "TrendsConsole",
+    "scenarios": [
+      "trendsconsole-weekly",
+      "trendsconsole-empty"
+    ]
+  },
+  {
+    "description": "Day-one empty state for the Trends surface: serif verdict, plain-language copy, and the connect-a-source / view-timeline entry paths.",
+    "filePath": "components/trends/TrendsEmpty.tsx",
+    "name": "TrendsEmpty",
+    "scenarios": [
+      "trendsempty-default"
+    ]
+  },
+  {
+    "description": "The /trends route: server component that loads every TrendMetric with its points and renders the TrendsConsole, reading the initial range from the URL. force-dynamic so it reflects the current per-scenario DB state.",
+    "filePath": "app/trends/page.tsx",
+    "name": "TrendsPage",
+    "scenarios": [
+      "trends-weekly-history",
+      "trends-day-one"
+    ]
+  },
+  {
     "description": "Overnight vitals telemetry: one row per metric with a label, a mint/blue track bar, and a formatted value with optional unit and trend chip; shows a quiet empty label when no readings exist.",
     "filePath": "components/dashboard/VitalsPanel.tsx",
     "name": "VitalsPanel",
@@ -386,6 +587,12 @@
     ]
   },
   {
+    "description": "Human label for a suggested-recovery-action kind (run/rest/mobility/hydration/walk/nutrition); title-cases an unknown kind, falls back to 'Action' for empty.",
+    "filePath": "components/recovery/recovery.ts",
+    "name": "actionKindLabel",
+    "testFile": "components/recovery/recovery.test.ts"
+  },
+  {
     "description": "Returns the active-coach view among merged provider views, or null when none is active.",
     "filePath": "components/dashboard/connections.ts",
     "name": "activeCoach",
@@ -396,6 +603,12 @@
     "filePath": "components/timeline/timeline.ts",
     "name": "briefingOccurredAt",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Maps an ordered list of numeric values to SVG line + area path geometry inside a padded box, handling empty, single-point, and flat series without NaN coordinates.",
+    "filePath": "components/trends/trends.ts",
+    "name": "buildChartGeometry",
+    "testFile": "components/trends/trends.test.ts"
   },
   {
     "description": "Pure normalizer for the Activity Timeline: maps the four raw source arrays (workouts, briefings, moods, weights) into TimelineEntry rows (skipping workouts with no occurredAt) and groups them into newest-first days. All shaping the server loader delegates lives here.",
@@ -416,11 +629,26 @@
     "testFile": "components/dashboard/format.test.ts"
   },
   {
+    "description": "Clamps a raw 1-5 self-rating to an integer in [1,5]; missing/blank/sub-1 becomes null (not rated), high values clamp to 5.",
+    "filePath": "components/checkin/checkin.ts",
+    "name": "clampRating",
+    "testFile": "components/checkin/checkin.test.ts"
+  },
+  {
     "description": "Server Action: resolves a connect attempt (via resolveConnection) then upserts the ProviderConnection row and revalidates the dashboard. Returns ok or an inline error.",
     "filePath": "app/lib/connections.actions.ts",
     "name": "connectProvider",
     "untestabilityReason": {
       "justification": "Server Action performing Prisma upsert + revalidatePath; the pure decision logic is resolveConnection, which is unit-tested",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Server Action: validates a new-goal submission (via validateGoalInput), creates the Goal row at the end of the list, and revalidates /goals. The pure decision logic is validateGoalInput, which is unit-tested.",
+    "filePath": "app/lib/goals.actions.ts",
+    "name": "createGoal",
+    "untestabilityReason": {
+      "justification": "Server Action performing Prisma create + revalidatePath; decision logic is validateGoalInput, unit-tested.",
       "kind": "platform-glue"
     }
   },
@@ -464,10 +692,40 @@
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Tallies how many of a recovery read's contributing factors are 'strong' out of the total, for the coordinates strip.",
+    "filePath": "components/recovery/recovery.ts",
+    "name": "factorTally",
+    "testFile": "components/recovery/recovery.test.ts"
+  },
+  {
     "description": "Looks up a catalog provider by id across the combined AI + health provider list; undefined if unknown.",
     "filePath": "components/dashboard/connections.ts",
     "name": "findProvider",
     "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Human progress label 'current / target unit', trimming trailing .0 for whole numbers and keeping one decimal for fractional values.",
+    "filePath": "components/goals/goals.ts",
+    "name": "formatProgress",
+    "testFile": "components/goals/goals.test.ts"
+  },
+  {
+    "description": "Presentational helper: formats a goal's remaining amount (rounded, optional unit) for the GoalCard 'to go' label.",
+    "filePath": "components/goals/GoalCard.tsx",
+    "name": "formatRemaining",
+    "untestabilityReason": {
+      "justification": "One-line display formatter with no branching beyond the shared tidy pattern; visually covered by the GoalCard component scenarios.",
+      "kind": "trivial-wrapper"
+    }
+  },
+  {
+    "description": "Server data loader: reads recent Mood rows (most recent first) via Prisma for the check-in history; empty in production so the Check-in page shows day-one.",
+    "filePath": "app/lib/checkin.ts",
+    "name": "getCheckins",
+    "untestabilityReason": {
+      "justification": "Prisma/SQLite read boundary; exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
   },
   {
     "description": "Server-only read that loads all ProviderConnection rows via Prisma and maps each through the pure toConnectionRow helper to the client-safe ConnectionRow shape.",
@@ -481,6 +739,24 @@
     "name": "getDashboard",
     "untestabilityReason": {
       "justification": "Prisma/SQLite database read boundary; exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Server data loader: reads every Goal in display order via Prisma; empty in production so the Goals page shows the day-one empty state.",
+    "filePath": "app/lib/goals.ts",
+    "name": "getGoals",
+    "untestabilityReason": {
+      "justification": "Prisma/SQLite read boundary; exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Server data loader: reads the most-recent RecoveryRead with its ordered factors and actions via Prisma; null in production so the Recovery Center shows day-one.",
+    "filePath": "app/lib/recovery.ts",
+    "name": "getRecovery",
+    "untestabilityReason": {
+      "justification": "Prisma/SQLite read boundary; exercised via app scenarios rather than a unit test.",
       "kind": "platform-glue"
     }
   },
@@ -502,10 +778,37 @@
     ]
   },
   {
+    "description": "Server data loader: reads every TrendMetric (one chart per metric×range) with its ordered TrendPoints via Prisma; empty in production so the Trends page shows day-one.",
+    "filePath": "app/lib/trends.ts",
+    "name": "getTrends",
+    "untestabilityReason": {
+      "justification": "Prisma/SQLite read boundary; exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Classifies a goal as 'complete' (current >= target) or 'active'; a bad target reads as active.",
+    "filePath": "components/goals/goals.ts",
+    "name": "goalStatus",
+    "testFile": "components/goals/goals.test.ts"
+  },
+  {
     "description": "Groups normalized timeline entries into newest-first days, each day's entries newest-first, attaching a relative day label keyed off the single newest entry across the set.",
     "filePath": "components/timeline/timeline.ts",
     "name": "groupByDay",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Infers morning (before noon) vs evening (noon on) from an hour; falls back to morning for an out-of-range hour.",
+    "filePath": "components/checkin/checkin.ts",
+    "name": "inferPartOfDay",
+    "testFile": "components/checkin/checkin.test.ts"
+  },
+  {
+    "description": "True only when a recovery factor is 'strong' (mint), so the eye lands on steady/strained signals that hold recovery back.",
+    "filePath": "components/recovery/recovery.ts",
+    "name": "isPositiveState",
+    "testFile": "components/recovery/recovery.test.ts"
   },
   {
     "description": "Prisma seed entrypoint (npm run db:seed). Intentionally a no-op in this project: production starts empty and each CodeYam scenario carries its own seed payload.",
@@ -535,10 +838,34 @@
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Narrows an arbitrary string to a known TrendRange, defaulting to 'weekly' so a stray ?range= value never leaves the switcher blank.",
+    "filePath": "components/trends/trends.ts",
+    "name": "normalizeRange",
+    "testFile": "components/trends/trends.test.ts"
+  },
+  {
     "description": "Parses a composite timeline entry id ('workout-3') into its kind and numeric db id for the detail route; returns null on a malformed id or unknown kind.",
     "filePath": "components/timeline/timeline.ts",
     "name": "parseEntryId",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Fraction complete of a goal (current/target) clamped to 0-100; degrades to 0 for a non-positive target or NaN/infinite inputs.",
+    "filePath": "components/goals/goals.ts",
+    "name": "progressPct",
+    "testFile": "components/goals/goals.test.ts"
+  },
+  {
+    "description": "Maps a trend range key (weekly/monthly/yearly) to its human title; passes unknown keys through unchanged.",
+    "filePath": "components/trends/trends.ts",
+    "name": "rangeLabel",
+    "testFile": "components/trends/trends.test.ts"
+  },
+  {
+    "description": "Word for a 1-5 check-in rating (Very low … Excellent); null renders as an em dash.",
+    "filePath": "components/checkin/checkin.ts",
+    "name": "ratingLabel",
+    "testFile": "components/checkin/checkin.test.ts"
   },
   {
     "description": "Computes the SVG stroke-dashoffset that encodes a 0-100 readiness score on the dial ring (full ring at 100, empty at 0), clamping out-of-range or NaN scores so the arc is always valid.",
@@ -553,10 +880,34 @@
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Amount of a goal still to go (target - current), never negative for an over-shot goal.",
+    "filePath": "components/goals/goals.ts",
+    "name": "remaining",
+    "testFile": "components/goals/goals.test.ts"
+  },
+  {
     "description": "Pure resolution of a connect attempt: validates provider/method/input then maps the method to the status and status-line detail to persist, or an error. The deterministic stand-in for the real handshake; no side effects.",
     "filePath": "components/dashboard/connections.ts",
     "name": "resolveConnection",
     "testFile": "components/dashboard/connections.test.ts"
+  },
+  {
+    "description": "Circumference (2πr) of a goal progress ring for a given radius.",
+    "filePath": "components/goals/goals.ts",
+    "name": "ringCircumference",
+    "testFile": "components/goals/goals.test.ts"
+  },
+  {
+    "description": "stroke-dashoffset for a goal ring at a completion percentage: full ring at 100, empty at 0, clamped so a stray value can't produce a negative or overlong dash.",
+    "filePath": "components/goals/goals.ts",
+    "name": "ringDashOffset",
+    "testFile": "components/goals/goals.test.ts"
+  },
+  {
+    "description": "Internal helper: rounds a number to 2 decimal places for stable SVG path coordinates in buildChartGeometry.",
+    "filePath": "components/trends/trends.ts",
+    "name": "round",
+    "testFile": "components/trends/trends.test.ts"
   },
   {
     "description": "Server Action: makes one AI provider the sole active coach (clears others, sets this one) in a transaction, then revalidates the dashboard.",
@@ -566,6 +917,27 @@
       "justification": "Server Action performing a Prisma transaction + revalidatePath; the one-active-coach invariant is exercised via a persistence probe",
       "kind": "platform-glue"
     }
+  },
+  {
+    "description": "Human label for a recovery-factor state (strong/steady/strained); unknown states pass through.",
+    "filePath": "components/recovery/recovery.ts",
+    "name": "stateLabel",
+    "testFile": "components/recovery/recovery.test.ts"
+  },
+  {
+    "description": "Server Action: validates a check-in (via validateCheckinInput), writes a Mood row (also read by the Activity Timeline), and revalidates /checkin and /timeline. The pure decision logic is validateCheckinInput, which is unit-tested.",
+    "filePath": "app/lib/checkin.actions.ts",
+    "name": "submitCheckin",
+    "untestabilityReason": {
+      "justification": "Server Action performing Prisma create + revalidatePath; decision logic is validateCheckinInput, unit-tested.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Internal helper: rounds to one decimal and trims a trailing .0 so whole numbers render without decimals in formatProgress.",
+    "filePath": "components/goals/goals.ts",
+    "name": "tidy",
+    "testFile": "components/goals/goals.test.ts"
   },
   {
     "description": "Extracts the HH:MM mono time stamp from an ISO datetime for the timeline's left time gutter and the entry-detail metabar.",
@@ -580,16 +952,34 @@
     "testFile": "components/dashboard/connections.test.ts"
   },
   {
+    "description": "Validates + normalizes a check-in submission: requires a valid part of day, a valid ISO timestamp, and at least one signal (a rating or mood word); clamps ratings. Shared by the form and the submitCheckin action.",
+    "filePath": "components/checkin/checkin.ts",
+    "name": "validateCheckinInput",
+    "testFile": "components/checkin/checkin.test.ts"
+  },
+  {
     "description": "Validates the typed value for a connect method (non-empty/long-enough API key; URL or host:port for local/MCP endpoints), returning an error string or null. OAuth needs no input.",
     "filePath": "components/dashboard/connections.ts",
     "name": "validateConnectInput",
     "testFile": "components/dashboard/connections.test.ts"
   },
   {
+    "description": "Validates + normalizes a new-goal form submission: trims text, defaults an unknown category to 'habit', coerces numerics, rejects an empty title or non-positive target. Shared by the composer and the createGoal action.",
+    "filePath": "components/goals/goals.ts",
+    "name": "validateGoalInput",
+    "testFile": "components/goals/goals.test.ts"
+  },
+  {
     "description": "Builds a body-weight reading's one-line summary (value + unit), appending the trend delta only when present.",
     "filePath": "components/timeline/timeline.ts",
     "name": "weightSummary",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Rolls present check-in ratings into a single 0-100 wellbeing read, inverting soreness and stress so low values read as high wellbeing; null when nothing is rated.",
+    "filePath": "components/checkin/checkin.ts",
+    "name": "wellbeingScore",
+    "testFile": "components/checkin/checkin.test.ts"
   },
   {
     "description": "Builds a workout's one-line summary by joining its present distance / pace / vertical / duration stats with a middle dot, skipping missing fields.",

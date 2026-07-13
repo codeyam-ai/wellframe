@@ -1,0 +1,11 @@
+{
+  "name": "TrendRangeSwitcher - Weekly",
+  "id": "e0abdbb4-cf22-4836-84d5-c9ed166b7352",
+  "url": "/isolated-components/TrendRangeSwitcher?s=Weekly",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TrendRangeSwitcher",
+  "scenarioType": "component"
+}

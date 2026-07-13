@@ -1,0 +1,12 @@
+{
+  "name": "Recovery - Day One",
+  "id": "7ef99a4c-f857-46af-95ed-63ea12aa1773",
+  "url": "/recovery",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/recovery/page.tsx"
+}

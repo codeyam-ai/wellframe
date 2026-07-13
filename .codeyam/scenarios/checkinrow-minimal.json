@@ -1,0 +1,11 @@
+{
+  "name": "CheckinRow - Minimal",
+  "id": "1db7b04e-b0d5-49e8-ba93-326bffd6690a",
+  "url": "/isolated-components/CheckinRow?s=Minimal",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "CheckinRow",
+  "scenarioType": "component"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Check-in - Day One",
+  "id": "36328c32-0a41-4f2f-a087-1f83b6813655",
+  "url": "/checkin",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {},
+  "scenarioType": "application",
+  "pageFilePath": "app/checkin/page.tsx"
+}
