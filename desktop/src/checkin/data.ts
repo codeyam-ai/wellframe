@@ -5,8 +5,14 @@
 // → the day-one state with an open form.
 
 import type { CheckinData, Mood } from './models';
-import { inferPartOfDay, PARTS_OF_DAY, type PartOfDay } from './checkin';
+import { inferPartOfDay, PARTS_OF_DAY, type PartOfDay, type CheckinDraft } from './checkin';
 import { FIXTURES, type ScenarioName } from './fixtures';
+
+// Under Tauri the write path persists to SQLite; in the browser preview there's
+// no backend, so a submit is a local no-op (the form resets, nothing persists).
+function isTauri(): boolean {
+  return typeof window !== 'undefined' && '__TAURI_INTERNALS__' in window;
+}
 
 async function fromNative(): Promise<CheckinData | null> {
   try {
@@ -36,4 +42,18 @@ function fromFixture(): CheckinData {
 
 export async function loadCheckin(): Promise<CheckinData> {
   return (await fromNative()) ?? fromFixture();
+}
+
+// Persist a validated check-in (writes a Mood row, which the Timeline also
+// reads). Emits `wf:data-changed` on success so the current console re-reads.
+export async function submitCheckin(draft: CheckinDraft): Promise<{ ok: boolean; error?: string }> {
+  if (!isTauri()) return { ok: true }; // browser preview: no persistence
+  try {
+    const { invoke } = await import('@tauri-apps/api/core');
+    await invoke('submit_checkin', { input: draft });
+    window.dispatchEvent(new Event('wf:data-changed'));
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: String(e) };
+  }
 }

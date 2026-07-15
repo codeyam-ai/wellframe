@@ -1,5 +1,5 @@
-use rusqlite::{Connection, OptionalExtension};
-use serde::Serialize;
+use rusqlite::{params, Connection, OptionalExtension};
+use serde::{Deserialize, Serialize};
 use tauri::Manager;
 
 /// Native runtime details surfaced to the frontend so the shell can prove the
@@ -594,6 +594,91 @@ fn get_checkin(app: tauri::AppHandle) -> Result<Vec<Mood>, String> {
     read_moods(&conn).map_err(|e| e.to_string())
 }
 
+// ── Write commands ──────────────────────────────────────────────────────────
+// Validation lives in the ported TS helpers (validateGoalInput /
+// validateCheckinInput) so the form and the write path share one source of
+// truth; these commands persist an already-validated draft. The insert bodies
+// take &Connection so they're unit-testable off an in-memory DB.
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct NewGoal {
+    title: String,
+    category: String,
+    metric: String,
+    target: f64,
+    current: f64,
+    unit: Option<String>,
+    cadence: Option<String>,
+    created_at: String,
+}
+
+fn insert_goal(conn: &Connection, input: &NewGoal) -> rusqlite::Result<()> {
+    // New goals sort to the end of the list; dueLabel mirrors cadence (as the
+    // web action did).
+    let count: i64 = conn.query_row("SELECT COUNT(*) FROM goal", [], |r| r.get(0))?;
+    conn.execute(
+        "INSERT INTO goal (ord, title, category, metric, target, current, unit, cadence, due_label, created_at) \
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)",
+        params![
+            count,
+            input.title,
+            input.category,
+            input.metric,
+            input.target,
+            input.current,
+            input.unit,
+            input.cadence,
+            input.cadence,
+            input.created_at
+        ],
+    )?;
+    Ok(())
+}
+
+#[tauri::command]
+fn create_goal(app: tauri::AppHandle, input: NewGoal) -> Result<(), String> {
+    let conn = open_db(&app).map_err(|e| e.to_string())?;
+    insert_goal(&conn, &input).map_err(|e| e.to_string())
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct NewCheckin {
+    occurred_at: String,
+    part_of_day: String,
+    energy: Option<i64>,
+    mood: Option<String>,
+    sleep_quality: Option<i64>,
+    soreness: Option<i64>,
+    stress: Option<i64>,
+    note: Option<String>,
+}
+
+fn insert_mood(conn: &Connection, input: &NewCheckin) -> rusqlite::Result<()> {
+    conn.execute(
+        "INSERT INTO mood (occurred_at, part_of_day, energy, mood, sleep_quality, soreness, stress, note) \
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)",
+        params![
+            input.occurred_at,
+            input.part_of_day,
+            input.energy,
+            input.mood,
+            input.sleep_quality,
+            input.soreness,
+            input.stress,
+            input.note
+        ],
+    )?;
+    Ok(())
+}
+
+#[tauri::command]
+fn submit_checkin(app: tauri::AppHandle, input: NewCheckin) -> Result<(), String> {
+    let conn = open_db(&app).map_err(|e| e.to_string())?;
+    insert_mood(&conn, &input).map_err(|e| e.to_string())
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -604,7 +689,9 @@ pub fn run() {
             get_trends,
             get_recovery,
             get_goals,
-            get_checkin
+            get_checkin,
+            create_goal,
+            submit_checkin
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
@@ -680,6 +767,70 @@ mod tests {
         assert_eq!(factors.len(), 1);
         assert_eq!(factors[0].label, "Sleep");
         assert_eq!(actions[0].kind, "run");
+    }
+
+    #[test]
+    fn create_goal_persists_and_appends() {
+        let conn = mem();
+        insert_goal(
+            &conn,
+            &NewGoal {
+                title: "Run 500 mi".into(),
+                category: "distance".into(),
+                metric: "Miles".into(),
+                target: 500.0,
+                current: 0.0,
+                unit: Some("mi".into()),
+                cadence: Some("This year".into()),
+                created_at: "2026-07-15T00:00:00Z".into(),
+            },
+        )
+        .unwrap();
+        insert_goal(
+            &conn,
+            &NewGoal {
+                title: "Sleep 8h".into(),
+                category: "sleep".into(),
+                metric: "Nights".into(),
+                target: 20.0,
+                current: 0.0,
+                unit: None,
+                cadence: None,
+                created_at: "2026-07-15T00:00:00Z".into(),
+            },
+        )
+        .unwrap();
+        let goals = read_goals(&conn).unwrap();
+        assert_eq!(goals.len(), 2);
+        assert_eq!(goals[0].order, 0); // first goal appends at ord 0
+        assert_eq!(goals[1].order, 1); // second appends after it
+        assert_eq!(goals[0].due_label.as_deref(), Some("This year")); // dueLabel = cadence
+        assert_eq!(goals[1].unit, None);
+    }
+
+    #[test]
+    fn submit_checkin_persists_readable_row() {
+        let conn = mem();
+        insert_mood(
+            &conn,
+            &NewCheckin {
+                occurred_at: "2026-07-15T07:00:00Z".into(),
+                part_of_day: "morning".into(),
+                energy: Some(4),
+                mood: Some("Steady".into()),
+                sleep_quality: Some(3),
+                soreness: None,
+                stress: Some(2),
+                note: Some("Legs fresh".into()),
+            },
+        )
+        .unwrap();
+        let moods = read_moods(&conn).unwrap();
+        assert_eq!(moods.len(), 1);
+        assert_eq!(moods[0].energy, Some(4));
+        assert_eq!(moods[0].part_of_day, "morning");
+        assert_eq!(moods[0].soreness, None);
+        assert_eq!(moods[0].mood.as_deref(), Some("Steady"));
     }
 
     #[test]

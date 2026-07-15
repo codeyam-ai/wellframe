@@ -55,6 +55,16 @@ export default function App() {
     };
   }, [path]);
 
+  // A successful write (create goal, submit check-in) fires `wf:data-changed`;
+  // re-read the current console so the new row appears immediately.
+  useEffect(() => {
+    function reload() {
+      ROUTES[currentPath()].load().then((d) => setData(d));
+    }
+    window.addEventListener('wf:data-changed', reload);
+    return () => window.removeEventListener('wf:data-changed', reload);
+  }, []);
+
   // Client-side navigation: intercept internal anchor clicks + back/forward.
   useEffect(() => {
     function onClick(e: MouseEvent) {

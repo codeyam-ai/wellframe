@@ -9,9 +9,11 @@ import { RatingScale } from './RatingScale';
 import {
   PARTS_OF_DAY,
   RATING_FIELDS,
+  validateCheckinInput,
   type PartOfDay,
   type RatingField,
 } from './checkin';
+import { submitCheckin } from './data';
 
 const RATING_LABELS: Record<RatingField, string> = {
   energy: 'Energy',
@@ -47,14 +49,25 @@ export function CheckinForm({
     setRatings((r) => ({ ...r, [field]: r[field] === value ? null : value }));
   }
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
+    const validated = validateCheckinInput({
+      partOfDay,
+      occurredAt: new Date().toISOString(),
+      energy: ratings.energy,
+      mood,
+      sleepQuality: ratings.sleepQuality,
+      soreness: ratings.soreness,
+      stress: ratings.stress,
+      note,
+    });
+    if (!validated.ok) {
+      setError(validated.error);
+      return;
+    }
     setPending(true);
-    // deferred: becomes a Tauri command (`submit_checkin`) that writes the Mood
-    // row and refreshes the history. Until then the submit is an inert local
-    // no-op — the field state above stays fully interactive.
-    const res: { ok: boolean; error?: string } = { ok: true };
+    const res = await submitCheckin(validated.value);
     setPending(false);
     if (!res.ok) {
       setError(res.error ?? 'Could not log the check-in.');

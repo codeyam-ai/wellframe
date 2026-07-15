@@ -11,10 +11,16 @@ reference for the UI being ported across.
 
 ## Status
 
-- ✅ **Shell skeleton** — native window, React↔Rust IPC bridge (`app_info`), builds
-  and bundles end-to-end. A Linux `.deb` is produced by `npm run tauri:build`.
-- ⬜ Dashboard port + local SQLite (via Rust commands / SQLCipher)
-- ⬜ Timeline · Trends · Recovery · Goals · Check-in
+- ✅ **Shell skeleton** — native window, React↔Rust IPC bridge, builds + bundles
+  end-to-end (a Linux `.deb` is produced by `npm run tauri:build`).
+- ✅ **All six consoles** — Dashboard, Timeline, Trends, Recovery, Goals, Check-in,
+  with a client-side router. UI ported from the Next.js app.
+- ✅ **Native data layer** — `get_*` Rust commands read local SQLite; the TS layer
+  derives each console's view shape. Browser preview uses `?s=<Scenario>` fixtures.
+- ✅ **Write paths** — `create_goal` + `submit_checkin` Tauri commands persist to
+  SQLite (validated by the shared TS helpers; no-op in the browser preview).
+- ⬜ CoachDock (⌘K) + provider Connections
+- ⬜ SQLCipher encryption on the database
 - ⬜ AI coach provider layer (bring-your-own-key)
 - ⬜ MCP server → `.mcpb` bundle
 - ⬜ Signing / notarization + installers

@@ -1,16 +1,12 @@
 // The create-a-goal composer: a slide-in panel with the new-goal form (title,
 // category, metric, target/current/unit, cadence). Submitting is the Goals
-// surface's primary interaction. Owns the form's pending / error state; on
-// submit it would persist a new goal, then notify the parent to close and
-// refresh.
-//
-// The create write path is deferred in this port: the web app called a Next
-// server action (createGoal). Here onSubmit is an inert no-op — the form
-// renders and its fields stay interactive, but nothing is persisted yet. When
-// the goals mutations are ported this becomes a Tauri command invocation.
+// surface's primary interaction: the fields are validated with the shared
+// `validateGoalInput`, then persisted via the `create_goal` Tauri command
+// (a no-op in the browser preview). On success the parent closes + refreshes.
 
 import { useState, type FormEvent } from 'react';
-import { GOAL_CATEGORIES } from './goals';
+import { GOAL_CATEGORIES, validateGoalInput } from './goals';
+import { createGoal } from './data';
 
 export function GoalComposer({
   onClose,
@@ -19,15 +15,34 @@ export function GoalComposer({
   onClose: () => void;
   onCreated: () => void;
 }) {
-  const [pending] = useState(false);
-  const [error] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // deferred: becomes a Tauri command. The web app validated the fields with
-    // validateGoalInput and called the createGoal server action here, then
-    // invoked onCreated() on success. Wire this up when goals mutations land.
-    void onCreated;
+    setError(null);
+    const fd = new FormData(e.currentTarget);
+    const validated = validateGoalInput({
+      title: String(fd.get('title') ?? ''),
+      category: String(fd.get('category') ?? ''),
+      metric: String(fd.get('metric') ?? ''),
+      target: String(fd.get('target') ?? ''),
+      current: String(fd.get('current') ?? ''),
+      unit: String(fd.get('unit') ?? ''),
+      cadence: String(fd.get('cadence') ?? ''),
+    });
+    if (!validated.ok) {
+      setError(validated.error);
+      return;
+    }
+    setPending(true);
+    const res = await createGoal(validated.value);
+    setPending(false);
+    if (!res.ok) {
+      setError(res.error ?? 'Could not create the goal.');
+      return;
+    }
+    onCreated();
   }
 
   return (
