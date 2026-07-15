@@ -1,0 +1,28 @@
+{
+  "$comment": "Scenario record for the desktop app. codeyam's visual capture is currently single-app and pinned to the root Next.js app (server-state.json appPort=3000, one global stack.json), so these can't yet live in codeyam's registry. They are captured here instead and carry over when codeyam capture is repointed at the desktop app (planned once the remaining consoles reach parity and the Next.js app is retired). Regenerate screenshots with: npm run build && npx vite preview --port 4188, then screenshot /?s=<Scenario>.",
+  "app": "Wellframe Desktop",
+  "devPort": 1420,
+  "scenarios": [
+    {
+      "name": "Dashboard — Primed",
+      "component": "DashboardConsole",
+      "url": "/?s=Primed",
+      "state": "Full briefing: readiness 72 (Primed), overnight vitals, coach transmission, yesterday's workout.",
+      "screenshot": "screenshots/dashboard-primed.png"
+    },
+    {
+      "name": "Dashboard — Sparse",
+      "component": "DashboardConsole",
+      "url": "/?s=Sparse",
+      "state": "Partial data: steady readiness, two vitals, no coach transmission, no workout.",
+      "screenshot": "screenshots/dashboard-sparse.png"
+    },
+    {
+      "name": "Dashboard — Empty",
+      "component": "DashboardConsole",
+      "url": "/?s=Empty",
+      "state": "Production day-one: no briefing yet — the onboarding empty state.",
+      "screenshot": "screenshots/dashboard-empty.png"
+    }
+  ]
+}
