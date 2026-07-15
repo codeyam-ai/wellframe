@@ -1,114 +1,35 @@
-/* Plinth-inspired deep-ink language: editorial type on a near-black surface,
-   quiet monochrome, thin borders. Matches the existing Wellframe consoles so
-   the ported screens land in the same visual world. */
-
-:root {
-  --ink: #0a0b0d;
-  --surface: #111317;
-  --line: #23262d;
-  --text: #e8e9ec;
-  --muted: #878b93;
-  --accent: #9fb4c7;
-}
+/* App-shell baseline. The ported wellframe.css carries the scaffold's light-mode
+   body default from the web app's globals.css; this file loads after it and
+   forces the deep-ink surface + full-bleed layout the desktop window wants. The
+   .wf console paints its own background — this just guarantees no light gutter
+   around it and defines --font-manrope (the web app supplied it via next/font;
+   here it falls back to a system sans until we bundle the real face). */
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+:root {
+  --font-manrope: 'Manrope', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', Roboto, sans-serif;
 }
 
 html,
 body,
 #root {
   height: 100%;
+  margin: 0;
 }
 
 body {
-  background: radial-gradient(120% 120% at 50% 0%, #14171c 0%, var(--ink) 60%);
-  color: var(--text);
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #070809;
   -webkit-font-smoothing: antialiased;
 }
 
-.shell {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 48px;
-  text-align: center;
+#root {
+  min-height: 100vh;
 }
 
-.mark {
-  width: 56px;
-  height: 56px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  font-size: 18px;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  background: var(--surface);
-}
-
-h1 {
-  font-size: 44px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.tagline {
-  color: var(--muted);
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.status {
-  margin-top: 6px;
-  font-size: 13px;
-  padding: 8px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted);
-}
-
-.status[data-runtime='tauri'] {
-  color: #a9e0c0;
-  border-color: #2e5a44;
-}
-
-.roadmap {
-  margin-top: 28px;
-  list-style: none;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.roadmap li {
-  padding-left: 22px;
-  position: relative;
-}
-
-.roadmap li::before {
-  content: '○';
-  position: absolute;
-  left: 0;
-  color: var(--line);
-}
-
-.roadmap li.done {
-  color: var(--text);
-}
-
-.roadmap li.done::before {
-  content: '●';
-  color: var(--accent);
+.wf {
+  min-height: 100vh;
 }

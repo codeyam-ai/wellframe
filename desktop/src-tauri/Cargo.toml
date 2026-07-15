@@ -17,6 +17,9 @@ tauri-build = { version = "2", features = [] }
 tauri = { version = "2", features = [] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+# Local-first storage. `bundled` compiles SQLite in-tree so the app carries no
+# system-sqlite dependency; SQLCipher encryption is a follow-up (bundled-sqlcipher).
+rusqlite = { version = "0.32", features = ["bundled"] }
 
 [profile.release]
 codegen-units = 1
