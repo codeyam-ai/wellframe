@@ -1,16 +1,34 @@
-// Trends data source. In the native Tauri app this invokes the Rust
-// `get_trends` command (reads local SQLite); in a plain browser — the codeyam
-// live preview / `vite dev` — the Tauri API is absent, so it falls back to a
-// named fixture chosen by the `?s=<Scenario>` query param. One shape
-// (TrendsData) serves both, so the ported UI is unaware of the source.
+// Trends data source. The native Tauri app invokes `get_trends`, which returns
+// the raw metrics + their points; this layer stitches points onto metrics (the
+// same JS join the web app's loader did — the models are flat, no FK). In the
+// browser preview (no Tauri) it falls back to a `?s=` fixture. Production starts
+// empty → no metrics → the day-one "no history yet" state.
 
-import type { TrendsData } from './models';
+import type { TrendsData, TrendMetric, TrendPoint, TrendMetricWithPoints } from './models';
 import { FIXTURES, type ScenarioName } from './fixtures';
 
 async function fromNative(): Promise<TrendsData | null> {
   try {
     const { invoke } = await import('@tauri-apps/api/core');
-    return await invoke<TrendsData>('get_trends');
+    const { metrics, points } = await invoke<{ metrics: TrendMetric[]; points: TrendPoint[] }>(
+      'get_trends',
+    );
+    const byMetric = new Map<number, TrendPoint[]>();
+    for (const p of points) {
+      const list = byMetric.get(p.metricId);
+      if (list) list.push(p);
+      else byMetric.set(p.metricId, [p]);
+    }
+    const withPoints: TrendMetricWithPoints[] = metrics.map((m) => ({
+      ...m,
+      points: byMetric.get(m.id) ?? [],
+    }));
+    const params = new URLSearchParams(window.location.search);
+    return {
+      metrics: withPoints,
+      dateLabel: withPoints.length > 0 ? 'Trailing history' : 'Awaiting first sync',
+      initialRange: params.get('range') ?? 'weekly',
+    };
   } catch {
     return null; // not running under Tauri
   }
@@ -24,6 +42,5 @@ function fromFixture(): TrendsData {
 }
 
 export async function loadTrends(): Promise<TrendsData> {
-  const native = await fromNative();
-  return native ?? fromFixture();
+  return (await fromNative()) ?? fromFixture();
 }

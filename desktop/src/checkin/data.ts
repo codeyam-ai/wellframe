@@ -1,16 +1,27 @@
-// Daily Check-in data source. In the native Tauri app this invokes the Rust
-// `get_checkin` command (reads local SQLite); in a plain browser — the codeyam
-// live preview / `vite dev` — the Tauri API is absent, so it falls back to a
-// named fixture chosen by the `?s=<Scenario>` query param. One shape
-// (CheckinData) serves both, so the ported UI is unaware of the source.
+// Daily Check-in data source. The native Tauri app invokes `get_checkin`, which
+// returns recent Mood rows (most recent first); this layer derives the metabar
+// label and the default morning/evening part-of-day. In the browser preview (no
+// Tauri) it falls back to a `?s=` fixture. Production starts empty → no check-ins
+// → the day-one state with an open form.
 
-import type { CheckinData } from './models';
+import type { CheckinData, Mood } from './models';
+import { inferPartOfDay, PARTS_OF_DAY, type PartOfDay } from './checkin';
 import { FIXTURES, type ScenarioName } from './fixtures';
 
 async function fromNative(): Promise<CheckinData | null> {
   try {
     const { invoke } = await import('@tauri-apps/api/core');
-    return await invoke<CheckinData>('get_checkin');
+    const checkins = await invoke<Mood[]>('get_checkin');
+    const params = new URLSearchParams(window.location.search);
+    const part = params.get('part') ?? '';
+    const defaultPartOfDay: PartOfDay = (PARTS_OF_DAY as readonly string[]).includes(part)
+      ? (part as PartOfDay)
+      : inferPartOfDay(new Date().getHours());
+    return {
+      checkins,
+      dateLabel: checkins.length > 0 ? 'Logging' : 'Awaiting first check-in',
+      defaultPartOfDay,
+    };
   } catch {
     return null; // not running under Tauri
   }
@@ -24,6 +35,5 @@ function fromFixture(): CheckinData {
 }
 
 export async function loadCheckin(): Promise<CheckinData> {
-  const native = await fromNative();
-  return native ?? fromFixture();
+  return (await fromNative()) ?? fromFixture();
 }

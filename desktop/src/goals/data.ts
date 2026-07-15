@@ -1,16 +1,21 @@
-// Goals data source. In the native Tauri app this invokes the Rust `get_goals`
-// command (reads local SQLite); in a plain browser — the codeyam live preview /
-// `vite dev` — the Tauri API is absent, so it falls back to a named fixture
-// chosen by the `?s=<Scenario>` query param. One shape (GoalsData) serves both,
-// so the ported UI is unaware of the source.
+// Goals data source. The native Tauri app invokes `get_goals`, which returns the
+// goal rows in display order; this layer derives the metabar label and reads the
+// composer-open deep link. In the browser preview (no Tauri) it falls back to a
+// `?s=` fixture. Production starts empty → no goals → the day-one empty state.
 
-import type { GoalsData } from './models';
+import type { GoalsData, Goal } from './models';
 import { FIXTURES, type ScenarioName } from './fixtures';
 
 async function fromNative(): Promise<GoalsData | null> {
   try {
     const { invoke } = await import('@tauri-apps/api/core');
-    return await invoke<GoalsData>('get_goals');
+    const goals = await invoke<Goal[]>('get_goals');
+    const params = new URLSearchParams(window.location.search);
+    return {
+      goals,
+      dateLabel: goals.length > 0 ? 'Tracking' : 'Awaiting first goal',
+      initialComposing: params.get('new') === '1',
+    };
   } catch {
     return null; // not running under Tauri
   }
@@ -24,6 +29,5 @@ function fromFixture(): GoalsData {
 }
 
 export async function loadGoals(): Promise<GoalsData> {
-  const native = await fromNative();
-  return native ?? fromFixture();
+  return (await fromNative()) ?? fromFixture();
 }
