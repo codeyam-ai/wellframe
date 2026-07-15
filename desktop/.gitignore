@@ -1,0 +1,10 @@
+# Frontend build output
+dist/
+node_modules/
+
+# Rust / Tauri build artifacts
+src-tauri/target/
+src-tauri/gen/schemas/
+
+# Generated icon source (regenerated via scripts/gen-icon.mjs)
+src-tauri/icons/source.png

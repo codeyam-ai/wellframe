@@ -7,6 +7,13 @@
       "port": 3000,
       "startCommand": "npm run dev",
       "type": "web"
+    },
+    {
+      "dir": "desktop",
+      "name": "Wellframe Desktop",
+      "port": 1420,
+      "startCommand": "npm run dev",
+      "type": "web"
     }
   ],
   "audit": {
