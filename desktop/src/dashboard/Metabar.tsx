@@ -20,7 +20,7 @@ export function Metabar({
 }) {
   return (
     <div className="wf-metabar">
-      <a href="#" className="b">
+      <a href="/" className="b">
         WELL<i>FRAME</i>
       </a>
       <div className="c">{subject}</div>
