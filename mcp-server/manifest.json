@@ -23,7 +23,9 @@
     { "name": "compute_training_load", "description": "Training-load trend plus recent workout counts by type." },
     { "name": "recommend_recovery", "description": "Current recovery read: score, contributing factors, and suggested actions." },
     { "name": "list_goals", "description": "Tracked goals with progress toward each target." },
-    { "name": "recent_checkins", "description": "Recent daily check-ins with energy/mood/sleep/soreness/stress and notes." }
+    { "name": "recent_checkins", "description": "Recent daily check-ins with energy/mood/sleep/soreness/stress and notes." },
+    { "name": "estimate_fatigue", "description": "Composite fatigue estimate (0-100) from recovery + recent check-in signals, with a band and breakdown." },
+    { "name": "generate_plan", "description": "A day-by-day training plan modulated by current fatigue, readiness, and goals." }
   ],
   "user_config": {
     "db_path": {

@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "test": "npm run build && node --test dist/analysis.test.js",
     "pack": "npm run build && npx @anthropic-ai/mcpb pack . dist/wellframe-coach.mcpb",
     "validate": "npx @anthropic-ai/mcpb validate manifest.json"
   },

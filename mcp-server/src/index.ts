@@ -10,6 +10,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 import { query, queryOne, DB_PATH, DbMissingError } from './db.js';
+import { fatigueIndex, generateTrainingPlan, type CheckinRatings } from './analysis.js';
 
 const server = new McpServer({ name: 'wellframe-coach', version: '0.1.0' });
 
@@ -140,6 +141,73 @@ server.tool(
         [limit],
       ),
     ),
+);
+
+// Shared gather for the fatigue-derived tools: latest recovery score, recent
+// check-in ratings, and the training-load trend (numeric, for context).
+async function fatigueInputs() {
+  const recovery = await queryOne<{ score: number | null }>(
+    `SELECT score FROM recovery_read ORDER BY date DESC LIMIT 1`,
+  );
+  const checkins = await query<{
+    energy: number | null;
+    soreness: number | null;
+    stress: number | null;
+    sleep_quality: number | null;
+  }>(
+    `SELECT energy, soreness, stress, sleep_quality FROM mood ORDER BY occurred_at DESC LIMIT 7`,
+  );
+  const tl = await queryOne<{ latest: string }>(
+    `SELECT latest FROM trend_metric
+     WHERE lower(metric_key) IN ('training_load','load') OR lower(label) LIKE 'training%' LIMIT 1`,
+  );
+  const trainingLoadLatest = tl ? Number(String(tl.latest).replace(/[^0-9.]/g, '')) || null : null;
+  const mapped: CheckinRatings[] = checkins.map((c) => ({
+    energy: c.energy,
+    soreness: c.soreness,
+    stress: c.stress,
+    sleepQuality: c.sleep_quality,
+  }));
+  return { recoveryScore: recovery?.score ?? null, checkins: mapped, trainingLoadLatest };
+}
+
+server.tool(
+  'estimate_fatigue',
+  'Composite fatigue estimate (0–100) blending your recovery score and recent check-in ratings, with a band and per-signal breakdown.',
+  {},
+  () =>
+    run(async () => {
+      const inp = await fatigueInputs();
+      return { ...fatigueIndex(inp), checkinsConsidered: inp.checkins.length };
+    }),
+);
+
+server.tool(
+  'generate_plan',
+  'A day-by-day training plan modulated by your current fatigue, readiness, and goals (rest-led when fatigued, quality when fresh; folds in strength/volume by goal).',
+  { days: z.number().int().min(1).max(28).default(7) },
+  ({ days }) =>
+    run(async () => {
+      const inp = await fatigueInputs();
+      const fat = fatigueIndex(inp);
+      const readiness = await queryOne<{ readiness_label: string | null }>(
+        `SELECT readiness_label FROM daily_briefing ORDER BY date DESC LIMIT 1`,
+      );
+      const goals = await query<{ title: string; category: string; target: number; current: number }>(
+        `SELECT title, category, target, current FROM goal ORDER BY ord, id`,
+      );
+      return generateTrainingPlan({
+        fatigue: fat.fatigue,
+        band: fat.band,
+        readinessLabel: readiness?.readiness_label ?? null,
+        goals: goals.map((g) => ({
+          title: g.title,
+          category: g.category,
+          percent: g.target > 0 ? Math.round((100 * g.current) / g.target) : null,
+        })),
+        days,
+      });
+    }),
 );
 
 const transport = new StdioServerTransport();
