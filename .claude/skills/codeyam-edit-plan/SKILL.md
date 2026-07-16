@@ -47,7 +47,7 @@ End your turn here.
 
 ### Step 3: Apply the edits
 
-When the user replies, write the updated plan back with the Write tool. Preserve the frontmatter fields exactly: `title`, `mode`, `createdAt`, `source`, `order` if present, and `dependsOn` if present (a bracket array of prerequisite plan slugs, e.g. `dependsOn: ["session-recovery-ux"]`). Only the fields the user asks to change should change — `dependsOn` is preserved through edits unless the user explicitly asks to add or remove a dependency.
+When the user replies, write the updated plan back with the Write tool. **Copy the existing frontmatter block through byte-for-byte, except for the fields the user actually asked to change.** In particular, `createdAt` records when the plan was created and is stamped by the tooling — never re-type, regenerate, or "refresh" it. You have no reliable clock, so any value you type there is a guess, and the audit will flag it. `dependsOn` (a bracket array of prerequisite plan slugs, e.g. `dependsOn: ["session-recovery-ux"]`) likewise survives edits unless the user explicitly asks to add or remove a dependency.
 
 After writing, briefly confirm what was updated (one or two short bullets). Then loop back to Step 2 and ask again — the user may want to make several changes in the same session.
 

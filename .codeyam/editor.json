@@ -2,16 +2,17 @@
   "$comment": "Per-developer settings (port, provider, proxy ports, startCommand, etc.) belong in editor.local.json. That file is gitignored and is deep-merged on top of this one at load time. See CLAUDE.md or run `codeyam-editor editor config-show` to inspect the effective config.",
   "apps": [
     {
-      "dir": ".",
-      "name": "Wellframe",
-      "port": 3000,
-      "startCommand": "npm run dev",
-      "type": "web"
-    },
-    {
       "dir": "desktop",
       "name": "Wellframe Desktop",
       "port": 1420,
+      "startCommand": "npm run dev",
+      "type": "web",
+      "framework": "vite-react"
+    },
+    {
+      "dir": ".",
+      "name": "Wellframe",
+      "port": 3000,
       "startCommand": "npm run dev",
       "type": "web"
     }

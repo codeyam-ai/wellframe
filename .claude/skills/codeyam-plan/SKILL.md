@@ -150,30 +150,31 @@ Good questions:
 
 ### Step 5: Write the plan file
 
-Create `.codeyam/plans/<slug>.md` using the Write tool.
+**Do not create the plan file with the Write tool, and never hand-author its
+YAML frontmatter.** Write the plan **body** to a scratch file, then hand it to
+`plan-create`, which derives the slug, writes the frontmatter, stamps
+`createdAt`, and validates the result:
 
-**Slug:** Derive from the title — lowercase, alphanumeric + hyphens only. Example: "Session Recovery UX" becomes `session-recovery-ux.md`.
+```bash
+codeyam-editor editor plan-create \
+  --title "Dark Mode Toggle" \
+  --prefix "PROJ-123" \
+  --mode ui \
+  --body-file .codeyam/tmp/plan-body.md
+```
 
-- **With a name prefix** (from Step 2): prepend the slugified prefix joined to
-  the base title with a **double hyphen** (`--`) —
-  `<slugify(prefix)>--<slugify(base title)>`. Slugify each half the same way
-  (lowercase, alphanumeric + hyphens) and join the two halves with `--`, so the
-  prefix boundary stays visible in the filename even when the prefix itself
-  contains a single hyphen. Example: prefix `PROJ-123` + title "Dark Mode
-  Toggle" → `proj-123--dark-mode-toggle.md`.
-- **Without a prefix**: derive from the title exactly as above. Example: title
-  "Dark Mode Toggle" → `dark-mode-toggle.md`.
+Omit `--prefix` when Step 2 produced no prefix. The command prints the path it
+wrote, and refuses rather than clobbering an existing slug.
 
-**Plan file format:**
+**Why a command and not the Write tool:** `createdAt` has to be a real
+timestamp, and you have no reliable clock — anything you type there is a guess
+that the Plan tab then renders as fact. `plan-create` stamps it from the system
+clock, so the field is not on your authoring surface at all. There is nothing to
+guess and nothing to get wrong.
+
+**Body format** (no frontmatter — `plan-create` writes it):
 
 ```markdown
----
-title: "Feature Name"
-mode: ui
-createdAt: "YYYY-MM-DDTHH:MM:SSZ"
-source: manual
----
-
 ## Summary
 
 One-paragraph description of what to build or fix and why.
@@ -233,44 +234,28 @@ returns `[[1, 3], [2, 5]]`, so the `toEqual([[1, 5]])` assertion fails.
 - Edge case 2
 ```
 
-**Frontmatter fields:**
-- `title` (required) — Feature name. Becomes the `--feature` value in the editor.
-  **With a name prefix** (from Step 2), write it as `"<prefix> -- <base title>"`:
-  the prefix verbatim (as the user typed it, with any double-quotes stripped), a
-  space, a double hyphen, a space, then the base title. The ` -- ` delimiter
-  makes the prefix visually distinct from the title (far harder to miss than a
-  bare colon). The prefix is kept readable here — only the filename slug
-  normalizes it. Example: prefix `PROJ-123` + "Dark Mode Toggle" →
-  `title: "PROJ-123 -- Dark Mode Toggle"`. **Without a prefix**, it's just the
-  feature name, e.g. `title: "Dark Mode Toggle"`.
-- `mode` (required) — `"ui"` or `"backend"`. Default to `"ui"` unless the change is purely backend.
-- `createdAt` (required) — ISO 8601 UTC timestamp of when the plan was created.
-- `source` (required) — Always `"manual"` for this skill.
-- `prefix` (optional) — The author/work-item prefix, written **verbatim** (any
-  double-quotes stripped) when Step 2 produced one. This is the canonical record
-  of the prefix — `editor plan-prefixes` (and `editor last-plan-prefix`) read it
-  back to seed the next plan's options. The title's ` -- ` separator is NOT
-  parsed to recover the prefix (a title could legitimately contain ` -- `),
-  which is why the prefix is stored explicitly here. **Omit the line entirely
-  when no prefix was chosen.**
-- `order` (optional) — Positive integer. Controls queue position in the Plan tab.
-  Missing/tied plans fall back to ascending `createdAt` (first-created first).
-  Usually set via the UI drag or `editor plan-reorder`, not written by hand.
-- `dependsOn` (optional) — Array of plan slugs this plan depends on, e.g.
-  `dependsOn: ["session-recovery-ux", "auth-rewrite"]`. The Plan tab gates Run
-  on this plan until each listed plan has been completed (i.e. archived under
-  `.codeyam/plans/completed/`). Use the bracket-array form; a bare scalar
-  (`dependsOn: foo`) is also accepted and parsed as a single-element list.
+**`plan-create` flags:**
+- `--title` (required) — Feature name, the **base title only**. Pass the prefix
+  separately via `--prefix`; do not fold it into the title yourself.
+- `--mode` (required) — `ui` or `backend`. Default to `ui` unless the change is
+  purely backend.
+- `--prefix` (optional) — The author/work-item prefix from Step 2, **verbatim**
+  as the user typed it. It is stored as the canonical record of the prefix —
+  `editor plan-prefixes` (and `editor last-plan-prefix`) read it back to seed the
+  next plan's options. **Omit the flag entirely when no prefix was chosen.**
+- `--body-file` (required in practice) — Path to the body markdown. Reads stdin
+  when omitted.
+- `--depends-on <slug>` (optional, repeatable) — A prerequisite plan. The Plan
+  tab gates Run on this plan until each listed plan has been archived under
+  `.codeyam/plans/completed/`.
 
-**Worked example (prefixed):** prefix `PROJ-123` + title "Dark Mode Toggle"
-produces these coupled lines / paths — note the ` -- ` in the title and the
-`--` join in the slug:
+Queue position (`order`) is set via the Plan tab's drag or `editor plan-reorder`,
+not at creation.
 
-```
-file:   .codeyam/plans/proj-123--dark-mode-toggle.md
-title:  "PROJ-123 -- Dark Mode Toggle"
-prefix: "PROJ-123"
-```
+**Worked example (prefixed):** `--title "Dark Mode Toggle" --prefix "PROJ-123"`
+writes `.codeyam/plans/proj-123--dark-mode-toggle.md` with
+`title: "PROJ-123 -- Dark Mode Toggle"` and `prefix: "PROJ-123"` — the ` -- ` in
+the title and the `--` join in the slug are both derived for you.
 
 **When to use `dependsOn`:** if the user's request is too big to deliver in
 one plan and you split it into multiple plans, declare dependencies on the
