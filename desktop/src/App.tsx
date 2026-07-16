@@ -2,7 +2,7 @@ import { useEffect, useState, type ComponentType } from 'react';
 import { loadDashboard } from './dashboard/data';
 import DashboardConsole from './dashboard/DashboardConsole';
 import { loadTimeline } from './timeline/data';
-import Timeline from './timeline/Timeline';
+import Timeline from './timeline/TimelineConsole';
 import { loadTrends } from './trends/data';
 import TrendsConsole from './trends/TrendsConsole';
 import { loadRecovery } from './recovery/data';
