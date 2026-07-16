@@ -1,0 +1,39 @@
+{
+  "manifest_version": "0.2",
+  "name": "wellframe-coach",
+  "display_name": "Wellframe Coach",
+  "version": "0.1.0",
+  "description": "Structured, read-only access to your local Wellframe health data for an AI coach.",
+  "long_description": "Exposes the Wellframe coach's tools over your LOCAL Wellframe database — readiness, workouts, sleep, training load, recovery, goals, and daily check-ins. The server only reads local SQLite on your machine; nothing is uploaded. Point it at the database the Wellframe desktop app writes, and any MCP-compatible AI host (e.g. Claude Desktop) can reason over your real history.",
+  "author": { "name": "Wellframe" },
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js"],
+      "env": { "WELLFRAME_DB": "${user_config.db_path}" }
+    }
+  },
+  "tools": [
+    { "name": "get_readiness", "description": "Today's readiness briefing: score, label, verdict, and the coach's note." },
+    { "name": "list_workouts", "description": "Recent logged workouts, most recent first." },
+    { "name": "analyze_sleep", "description": "Recent sleep-quality self-ratings and sleep trend series." },
+    { "name": "compute_training_load", "description": "Training-load trend plus recent workout counts by type." },
+    { "name": "recommend_recovery", "description": "Current recovery read: score, contributing factors, and suggested actions." },
+    { "name": "list_goals", "description": "Tracked goals with progress toward each target." },
+    { "name": "recent_checkins", "description": "Recent daily check-ins with energy/mood/sleep/soreness/stress and notes." }
+  ],
+  "user_config": {
+    "db_path": {
+      "type": "file",
+      "title": "Wellframe database (optional)",
+      "description": "Path to your local wellframe.db. Leave blank to use the default Wellframe app-data location for your OS.",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "runtimes": { "node": ">=18.0.0" }
+  }
+}
