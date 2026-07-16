@@ -15,7 +15,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // The desktop app writes to <app-data>/wellframe.db under its bundle identifier.
 // Mirror Tauri v2's app_data_dir resolution per platform.
 export function defaultDbPath(): string {
-  const id = 'com.wellframe.desktop';
+  const id = 'com.codeyam.wellframe';
   const home = homedir();
   if (process.platform === 'darwin') {
     return path.join(home, 'Library', 'Application Support', id, 'wellframe.db');

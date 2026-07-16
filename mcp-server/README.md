@@ -31,7 +31,7 @@ WELLFRAME_DB=/path/to/wellframe.db node dist/index.js
 ```
 
 If `WELLFRAME_DB` is unset it defaults to the desktop app's location for your OS
-(e.g. macOS `~/Library/Application Support/com.wellframe.desktop/wellframe.db`).
+(e.g. macOS `~/Library/Application Support/com.codeyam.wellframe/wellframe.db`).
 
 ## Package as a `.mcpb`
 
