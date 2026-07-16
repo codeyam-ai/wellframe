@@ -25,26 +25,34 @@ create; the steps below are the whole path.
 5. **Find your identity + team** — the signing identity string is
    `Developer ID Application: Your Name (TEAMID)` (see `security find-identity -v -p codesigning`);
    the Team ID is on developer.apple.com → Membership.
-6. **App-specific password** for notarization — <https://appleid.apple.com> → Sign-In and
-   Security → App-Specific Passwords.
+   > **Signing needs the certificate above — an API key does NOT sign.** A live build is
+   > two separate things: **sign** with the Developer ID cert (steps 1–5), then **notarize**
+   > (below). You need both.
+
+6. **Notarization — App Store Connect API key** (the workflow is wired for this). Create a
+   key at App Store Connect → Users and Access → Integrations → App Store Connect API →
+   generate a key with the **Developer** role. You get an **Issuer ID**, a **Key ID**, and a
+   one-time `AuthKey_<KEYID>.p8` download. Base64 it for the secret:
+   ```bash
+   base64 -i AuthKey_<KEYID>.p8 | pbcopy
+   ```
 7. **Add repo secrets** (Settings → Secrets and variables → Actions):
 
    | Secret | Value |
    |---|---|
-   | `APPLE_CERTIFICATE` | the base64 from step 4 |
-   | `APPLE_CERTIFICATE_PASSWORD` | the `.p12` password from step 3 |
+   | `APPLE_CERTIFICATE` | base64 of the Developer ID `.p12` (step 4) |
+   | `APPLE_CERTIFICATE_PASSWORD` | the `.p12` password (step 3) |
    | `APPLE_SIGNING_IDENTITY` | `Developer ID Application: Your Name (TEAMID)` |
-   | `APPLE_ID` | your Apple ID email |
-   | `APPLE_PASSWORD` | the app-specific password from step 6 |
    | `APPLE_TEAM_ID` | your Team ID |
+   | `APPLE_API_ISSUER` | the API key's Issuer ID |
+   | `APPLE_API_KEY` | the API key's Key ID |
+   | `APPLE_API_KEY_P8` | base64 of the `.p8` file (step 6) |
 
-8. **Re-tag** to build: `git tag v0.1.1 && git push origin v0.1.1`. CI signs, notarizes,
-   and staples the ticket into the `.dmg`.
+   The `.p8` file is a **private key** — only ever paste it into the `APPLE_API_KEY_P8` secret,
+   never into a file, commit, or chat. The workflow decodes it to a temp file at build time.
 
-**More robust notarization (optional):** instead of `APPLE_ID` + `APPLE_PASSWORD`, use an
-App Store Connect API key — set `APPLE_API_ISSUER`, `APPLE_API_KEY` (the key ID), and
-`APPLE_API_KEY_PATH` (the `.p8`), and add them to the workflow's `env:` block. This avoids
-app-specific-password expiry and is the recommended CI path.
+8. **Re-tag** to build: `git tag v0.1.1 && git push origin v0.1.1`. CI signs with the
+   certificate, notarizes via the API key, and staples the ticket into the `.dmg`.
 
 **Verify a downloaded build:**
 ```bash

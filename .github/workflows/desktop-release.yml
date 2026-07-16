@@ -64,17 +64,28 @@ jobs:
         working-directory: desktop
         run: npm ci
 
+      # Materialize the App Store Connect API key (.p8) used for notarization.
+      # Stored as a base64 secret so no key file lives in the repo. Inert if the
+      # secret is unset (empty file → notarization is skipped by the bundler).
+      - name: Prepare Apple API key for notarization (macOS)
+        if: startsWith(matrix.platform, 'macos')
+        env:
+          APPLE_API_KEY_P8: ${{ secrets.APPLE_API_KEY_P8 }}
+        run: printf '%s' "$APPLE_API_KEY_P8" | base64 --decode > "$RUNNER_TEMP/apple-api-key.p8"
+
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # macOS signing + notarization (inert until secrets are set)
+          # macOS signing (Developer ID certificate) — required to sign the app.
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
-          APPLE_ID: ${{ secrets.APPLE_ID }}
-          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          # macOS notarization via App Store Connect API key.
+          APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+          APPLE_API_KEY: ${{ secrets.APPLE_API_KEY }}
+          APPLE_API_KEY_PATH: ${{ runner.temp }}/apple-api-key.p8
         with:
           projectPath: desktop
           tagName: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
