@@ -1,14 +1,14 @@
 {
   "schemaVersion": 4,
-  "version": 19,
+  "version": 22,
   "partition": "all",
-  "hash": "836dba4ecc5bcfb3",
+  "hash": "77ff8c9884303244",
   "runners": [
     {
       "name": "tests",
       "format": "vitest-json",
-      "output": "{\"numTotalTestSuites\":22,\"numPassedTestSuites\":22,\"numFailedTestSuites\":0,\"numPendingTestSuites\":0,\"numTotalTests\":55,\"numPassedTests\":55,\"numFailedTests\":0,\"numPendingTests\":0,\"numTodoTests\":0,\"snapshot\":{\"added\":0,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0,\"didUpdate\":false},\"startTime\":1783969057904,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"inferPartOfDay\"],\"fullName\":\"inferPartOfDay is morning before noon, evening after\",\"status\":\"passed\",\"title\":\"is morning before noon, evening after\",\"duration\":2.7337029999998776,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"inferPartOfDay\"],\"fullName\":\"inferPartOfDay falls back to morning for an out-of-range hour\",\"status\":\"passed\",\"title\":\"falls back to morning for an out-of-range hour\",\"duration\":0.41877599999997983,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating passes valid 1-5 ratings through\",\"status\":\"passed\",\"title\":\"passes valid 1-5 ratings through\",\"duration\":2.0747519999999895,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating clamps high values to 5 and rounds\",\"status\":\"passed\",\"title\":\"clamps high values to 5 and rounds\",\"duration\":0.5109170000000631,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating treats missing / blank / sub-1 as not rated\",\"status\":\"passed\",\"title\":\"treats missing / blank / sub-1 as not rated\",\"duration\":0.5563290000000052,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ratingLabel\"],\"fullName\":\"ratingLabel maps values to words\",\"status\":\"passed\",\"title\":\"maps values to words\",\"duration\":0.750054000000091,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput accepts a morning check-in with ratings\",\"status\":\"passed\",\"title\":\"accepts a morning check-in with ratings\",\"duration\":6.278950000000123,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects an invalid part of day\",\"status\":\"passed\",\"title\":\"rejects an invalid part of day\",\"duration\":0.37136400000008507,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects a missing / bad timestamp\",\"status\":\"passed\",\"title\":\"rejects a missing / bad timestamp\",\"duration\":0.9572140000000218,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects an all-blank submission\",\"status\":\"passed\",\"title\":\"rejects an all-blank submission\",\"duration\":0.34464600000001155,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput accepts a submission carrying only a mood word\",\"status\":\"passed\",\"title\":\"accepts a submission carrying only a mood word\",\"duration\":0.2592419999998583,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore returns null when nothing is rated\",\"status\":\"passed\",\"title\":\"returns null when nothing is rated\",\"duration\":0.3239220000000387,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore scores an all-5 positive / all-1 negative day near the top\",\"status\":\"passed\",\"title\":\"scores an all-5 positive / all-1 negative day near the top\",\"duration\":0.3813840000000255,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore inverts soreness and stress so high values pull the score down\",\"status\":\"passed\",\"title\":\"inverts soreness and stress so high values pull the score down\",\"duration\":0.1851090000000113,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore averages only the present fields\",\"status\":\"passed\",\"title\":\"averages only the present fields\",\"duration\":0.21023799999989023,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783969060016,\"endTime\":1783969060034.2102,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/checkin/checkin.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct computes a normal fraction\",\"status\":\"passed\",\"title\":\"computes a normal fraction\",\"duration\":15.147825000000012,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct clamps over-shot progress to 100\",\"status\":\"passed\",\"title\":\"clamps over-shot progress to 100\",\"duration\":0.9355390000000625,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct returns 0 for a non-positive target instead of dividing by zero\",\"status\":\"passed\",\"title\":\"returns 0 for a non-positive target instead of dividing by zero\",\"duration\":0.4066459999999097,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct returns 0 for NaN / infinite inputs\",\"status\":\"passed\",\"title\":\"returns 0 for NaN / infinite inputs\",\"duration\":0.4570969999999761,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct is 0 at the start\",\"status\":\"passed\",\"title\":\"is 0 at the start\",\"duration\":0.2183469999999943,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is active before the target\",\"status\":\"passed\",\"title\":\"is active before the target\",\"duration\":0.29809900000009293,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is complete at or beyond the target\",\"status\":\"passed\",\"title\":\"is complete at or beyond the target\",\"duration\":0.4738900000002104,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is active for a bad target\",\"status\":\"passed\",\"title\":\"is active for a bad target\",\"duration\":0.3904410000000098,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"remaining\"],\"fullName\":\"remaining reports the gap to target\",\"status\":\"passed\",\"title\":\"reports the gap to target\",\"duration\":0.8560340000001361,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"remaining\"],\"fullName\":\"remaining never goes negative on an over-shot goal\",\"status\":\"passed\",\"title\":\"never goes negative on an over-shot goal\",\"duration\":0.27341999999998734,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry circumference matches 2πr\",\"status\":\"passed\",\"title\":\"circumference matches 2πr\",\"duration\":0.22859700000003613,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry offset is full circumference at 0% and 0 at 100%\",\"status\":\"passed\",\"title\":\"offset is full circumference at 0% and 0 at 100%\",\"duration\":0.29135900000005677,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry clamps out-of-range percentages\",\"status\":\"passed\",\"title\":\"clamps out-of-range percentages\",\"duration\":0.1936449999998331,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress renders whole numbers without decimals\",\"status\":\"passed\",\"title\":\"renders whole numbers without decimals\",\"duration\":0.24089500000013686,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress keeps one decimal for fractional values\",\"status\":\"passed\",\"title\":\"keeps one decimal for fractional values\",\"duration\":0.14125000000012733,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress omits the unit when not given\",\"status\":\"passed\",\"title\":\"omits the unit when not given\",\"duration\":0.1150239999999485,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput accepts a well-formed draft and trims text\",\"status\":\"passed\",\"title\":\"accepts a well-formed draft and trims text\",\"duration\":1.3897620000000188,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput rejects an empty title\",\"status\":\"passed\",\"title\":\"rejects an empty title\",\"duration\":0.1758310000000165,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput rejects a non-positive or non-numeric target\",\"status\":\"passed\",\"title\":\"rejects a non-positive or non-numeric target\",\"duration\":0.24275099999999838,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput defaults an unknown category to habit and metric to Progress\",\"status\":\"passed\",\"title\":\"defaults an unknown category to habit and metric to Progress\",\"duration\":0.22473599999989347,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput floors a negative current to 0\",\"status\":\"passed\",\"title\":\"floors a negative current to 0\",\"duration\":0.21800299999995332,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783969060044,\"endTime\":1783969060068.2249,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/goals/goals.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"stateLabel\"],\"fullName\":\"stateLabel maps known states\",\"status\":\"passed\",\"title\":\"maps known states\",\"duration\":2.566014999999993,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"stateLabel\"],\"fullName\":\"stateLabel passes an unknown state through\",\"status\":\"passed\",\"title\":\"passes an unknown state through\",\"duration\":0.4756920000000946,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"isPositiveState\"],\"fullName\":\"isPositiveState is true only for strong\",\"status\":\"passed\",\"title\":\"is true only for strong\",\"duration\":0.413169000000039,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel maps known kinds\",\"status\":\"passed\",\"title\":\"maps known kinds\",\"duration\":0.6349030000000084,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel title-cases an unknown kind\",\"status\":\"passed\",\"title\":\"title-cases an unknown kind\",\"duration\":0.2777419999999893,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel falls back to Action for an empty kind\",\"status\":\"passed\",\"title\":\"falls back to Action for an empty kind\",\"duration\":0.3432359999999335,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"factorTally\"],\"fullName\":\"factorTally counts strong factors out of the total\",\"status\":\"passed\",\"title\":\"counts strong factors out of the total\",\"duration\":1.445410000000038,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"factorTally\"],\"fullName\":\"factorTally handles an empty set\",\"status\":\"passed\",\"title\":\"handles an empty set\",\"duration\":0.3361210000000483,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783969061016,\"endTime\":1783969061023.3362,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/recovery/recovery.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"rangeLabel\"],\"fullName\":\"rangeLabel maps known range keys to titles\",\"status\":\"passed\",\"title\":\"maps known range keys to titles\",\"duration\":2.413440000000037,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"rangeLabel\"],\"fullName\":\"rangeLabel passes through an unknown key unchanged\",\"status\":\"passed\",\"title\":\"passes through an unknown key unchanged\",\"duration\":7.347562000000153,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"normalizeRange\"],\"fullName\":\"normalizeRange accepts each known range\",\"status\":\"passed\",\"title\":\"accepts each known range\",\"duration\":0.6170999999999367,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"normalizeRange\"],\"fullName\":\"normalizeRange defaults unknown / null / undefined to weekly\",\"status\":\"passed\",\"title\":\"defaults unknown / null / undefined to weekly\",\"duration\":0.5835299999998824,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry returns an empty geometry for no values, no NaN coords\",\"status\":\"passed\",\"title\":\"returns an empty geometry for no values, no NaN coords\",\"duration\":1.4600499999999101,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry places a single point at the horizontal centre\",\"status\":\"passed\",\"title\":\"places a single point at the horizontal centre\",\"duration\":1.9550319999998464,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry spreads points evenly across the inner width\",\"status\":\"passed\",\"title\":\"spreads points evenly across the inner width\",\"duration\":0.47693200000003344,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry keeps all y coordinates inside the padded box\",\"status\":\"passed\",\"title\":\"keeps all y coordinates inside the padded box\",\"duration\":6.273672999999917,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry plots a flat series on the vertical centre without dividing by zero\",\"status\":\"passed\",\"title\":\"plots a flat series on the vertical centre without dividing by zero\",\"duration\":7.7234410000000935,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry draws higher values higher on the canvas, smaller y\",\"status\":\"passed\",\"title\":\"draws higher values higher on the canvas, smaller y\",\"duration\":0.40677499999992506,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry closes the area path back to the baseline\",\"status\":\"passed\",\"title\":\"closes the area path back to the baseline\",\"duration\":0.526529999999866,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1783969060003,\"endTime\":1783969060033.5266,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/trends/trends.test.ts\"}]}\n",
-      "invoked_command": "npx vitest run --changed --reporter=json",
+      "output": "{\"numTotalTestSuites\":86,\"numPassedTestSuites\":86,\"numFailedTestSuites\":0,\"numPendingTestSuites\":0,\"numTotalTests\":232,\"numPassedTests\":232,\"numFailedTests\":0,\"numPendingTests\":0,\"numTodoTests\":0,\"snapshot\":{\"added\":0,\"failure\":false,\"filesAdded\":0,\"filesRemoved\":0,\"filesRemovedList\":[],\"filesUnmatched\":0,\"filesUpdated\":0,\"matched\":0,\"total\":0,\"unchecked\":0,\"uncheckedKeysByFile\":[],\"unmatched\":0,\"updated\":0,\"didUpdate\":false},\"startTime\":1784214541720,\"success\":true,\"testResults\":[{\"assertionResults\":[{\"ancestorTitles\":[\"inferPartOfDay\"],\"fullName\":\"inferPartOfDay is morning before noon, evening after\",\"status\":\"passed\",\"title\":\"is morning before noon, evening after\",\"duration\":8.135164000000032,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"inferPartOfDay\"],\"fullName\":\"inferPartOfDay falls back to morning for an out-of-range hour\",\"status\":\"passed\",\"title\":\"falls back to morning for an out-of-range hour\",\"duration\":1.1234930000000531,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating passes valid 1-5 ratings through\",\"status\":\"passed\",\"title\":\"passes valid 1-5 ratings through\",\"duration\":0.8816279999999779,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating clamps high values to 5 and rounds\",\"status\":\"passed\",\"title\":\"clamps high values to 5 and rounds\",\"duration\":0.4213550000000623,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating treats missing / blank / sub-1 as not rated\",\"status\":\"passed\",\"title\":\"treats missing / blank / sub-1 as not rated\",\"duration\":0.4794239999999945,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ratingLabel\"],\"fullName\":\"ratingLabel maps values to words\",\"status\":\"passed\",\"title\":\"maps values to words\",\"duration\":0.5146610000000464,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput accepts a morning check-in with ratings\",\"status\":\"passed\",\"title\":\"accepts a morning check-in with ratings\",\"duration\":1.5434000000000196,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects an invalid part of day\",\"status\":\"passed\",\"title\":\"rejects an invalid part of day\",\"duration\":0.9778769999999213,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects a missing / bad timestamp\",\"status\":\"passed\",\"title\":\"rejects a missing / bad timestamp\",\"duration\":1.2021049999999605,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects an all-blank submission\",\"status\":\"passed\",\"title\":\"rejects an all-blank submission\",\"duration\":0.5671039999999721,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput accepts a submission carrying only a mood word\",\"status\":\"passed\",\"title\":\"accepts a submission carrying only a mood word\",\"duration\":0.39263899999991736,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore returns null when nothing is rated\",\"status\":\"passed\",\"title\":\"returns null when nothing is rated\",\"duration\":0.4706300000000283,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore scores an all-5 positive / all-1 negative day near the top\",\"status\":\"passed\",\"title\":\"scores an all-5 positive / all-1 negative day near the top\",\"duration\":1.3415140000000747,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore inverts soreness and stress so high values pull the score down\",\"status\":\"passed\",\"title\":\"inverts soreness and stress so high values pull the score down\",\"duration\":0.5296319999999923,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore averages only the present fields\",\"status\":\"passed\",\"title\":\"averages only the present fields\",\"duration\":0.38529299999993327,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214545379,\"endTime\":1784214545400.3853,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/checkin/checkin.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput accepts a plausible API key\",\"status\":\"passed\",\"title\":\"accepts a plausible API key\",\"duration\":3.1911079999999856,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects an empty API key\",\"status\":\"passed\",\"title\":\"rejects an empty API key\",\"duration\":0.7949169999999413,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects a too-short API key\",\"status\":\"passed\",\"title\":\"rejects a too-short API key\",\"duration\":0.3995959999999741,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput accepts a URL endpoint for localEndpoint and mcp\",\"status\":\"passed\",\"title\":\"accepts a URL endpoint for localEndpoint and mcp\",\"duration\":0.5738639999999577,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput accepts a host:port endpoint\",\"status\":\"passed\",\"title\":\"accepts a host:port endpoint\",\"duration\":0.26424600000007104,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects a non-address endpoint value\",\"status\":\"passed\",\"title\":\"rejects a non-address endpoint value\",\"duration\":0.37162899999998444,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput rejects an empty endpoint\",\"status\":\"passed\",\"title\":\"rejects an empty endpoint\",\"duration\":0.29591900000002624,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateConnectInput\"],\"fullName\":\"validateConnectInput never rejects oauth regardless of value\",\"status\":\"passed\",\"title\":\"never rejects oauth regardless of value\",\"duration\":0.27796699999998964,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"maskKey\"],\"fullName\":\"maskKey masks all but the last four characters\",\"status\":\"passed\",\"title\":\"masks all but the last four characters\",\"duration\":0.567737999999963,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"maskKey\"],\"fullName\":\"maskKey fully masks a key of four or fewer characters\",\"status\":\"passed\",\"title\":\"fully masks a key of four or fewer characters\",\"duration\":0.3581100000000106,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"maskKey\"],\"fullName\":\"maskKey trims whitespace before masking\",\"status\":\"passed\",\"title\":\"trims whitespace before masking\",\"duration\":0.22425199999997858,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog leaves providers without a row disconnected\",\"status\":\"passed\",\"title\":\"leaves providers without a row disconnected\",\"duration\":0.4947379999999839,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog marks a provider with a connected row as connected and active\",\"status\":\"passed\",\"title\":\"marks a provider with a connected row as connected and active\",\"duration\":0.3736619999999675,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog does not count an error row as connected\",\"status\":\"passed\",\"title\":\"does not count an error row as connected\",\"duration\":0.37537799999995514,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"mergeCatalog\"],\"fullName\":\"mergeCatalog preserves catalog order\",\"status\":\"passed\",\"title\":\"preserves catalog order\",\"duration\":1.2287840000000188,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"activeCoach\"],\"fullName\":\"activeCoach returns the active coach when one is set\",\"status\":\"passed\",\"title\":\"returns the active coach when one is set\",\"duration\":0.300344999999993,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"activeCoach\"],\"fullName\":\"activeCoach returns null when no coach is active\",\"status\":\"passed\",\"title\":\"returns null when no coach is active\",\"duration\":0.1751960000000281,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"findProvider\"],\"fullName\":\"findProvider finds a known provider\",\"status\":\"passed\",\"title\":\"finds a known provider\",\"duration\":0.2985879999999952,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"findProvider\"],\"fullName\":\"findProvider returns undefined for an unknown id\",\"status\":\"passed\",\"title\":\"returns undefined for an unknown id\",\"duration\":0.2966800000000376,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"findProvider\"],\"fullName\":\"findProvider gives every AI provider at least one method\",\"status\":\"passed\",\"title\":\"gives every AI provider at least one method\",\"duration\":0.23138600000004317,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves an apiKey connect to a connected status with a masked-key detail\",\"status\":\"passed\",\"title\":\"resolves an apiKey connect to a connected status with a masked-key detail\",\"duration\":0.6022590000000037,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves a localEndpoint connect and keeps the endpoint\",\"status\":\"passed\",\"title\":\"resolves a localEndpoint connect and keeps the endpoint\",\"duration\":0.45292800000004263,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves an mcp connect with the MCP detail\",\"status\":\"passed\",\"title\":\"resolves an mcp connect with the MCP detail\",\"duration\":0.4002420000000484,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection resolves a health oauth connect to synced\",\"status\":\"passed\",\"title\":\"resolves a health oauth connect to synced\",\"duration\":0.2800760000000082,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection fails an unreachable local endpoint\",\"status\":\"passed\",\"title\":\"fails an unreachable local endpoint\",\"duration\":0.34250899999995,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection rejects an unknown provider\",\"status\":\"passed\",\"title\":\"rejects an unknown provider\",\"duration\":0.23397399999998925,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection rejects an unsupported method for the provider\",\"status\":\"passed\",\"title\":\"rejects an unsupported method for the provider\",\"duration\":0.323517000000038,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"resolveConnection\"],\"fullName\":\"resolveConnection rejects a too-short api key\",\"status\":\"passed\",\"title\":\"rejects a too-short api key\",\"duration\":0.2968829999999798,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"toConnectionRow\"],\"fullName\":\"toConnectionRow narrows a raw row to a typed ConnectionRow\",\"status\":\"passed\",\"title\":\"narrows a raw row to a typed ConnectionRow\",\"duration\":0.3216099999999642,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"toConnectionRow\"],\"fullName\":\"toConnectionRow preserves null detail and endpoint\",\"status\":\"passed\",\"title\":\"preserves null detail and endpoint\",\"duration\":0.25958700000001045,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214543772,\"endTime\":1784214543788.3215,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/connections.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes the default-radius circumference\",\"status\":\"passed\",\"title\":\"computes the default-radius circumference\",\"duration\":2.4792979999999716,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes a custom-radius circumference\",\"status\":\"passed\",\"title\":\"computes a custom-radius circumference\",\"duration\":0.8157260000000406,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns zero offset at a full score\",\"status\":\"passed\",\"title\":\"returns zero offset at a full score\",\"duration\":0.4312039999999797,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns the full circumference at a zero score\",\"status\":\"passed\",\"title\":\"returns the full circumference at a zero score\",\"duration\":0.2793170000001055,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset matches the reference offset near eighty-two\",\"status\":\"passed\",\"title\":\"matches the reference offset near eighty-two\",\"duration\":0.2668179999999438,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps an over-max score to zero offset\",\"status\":\"passed\",\"title\":\"clamps an over-max score to zero offset\",\"duration\":0.2905759999999873,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps a negative score to full circumference\",\"status\":\"passed\",\"title\":\"clamps a negative score to full circumference\",\"duration\":0.27518099999997503,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns full circumference for NaN\",\"status\":\"passed\",\"title\":\"returns full circumference for NaN\",\"duration\":0.24235799999996743,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214546196,\"endTime\":1784214546202.2751,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/dial.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps an asterisk span in em\",\"status\":\"passed\",\"title\":\"wraps an asterisk span in em\",\"duration\":3.4570660000000544,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize passes through plain text\",\"status\":\"passed\",\"title\":\"passes through plain text\",\"duration\":0.46498300000007475,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize escapes angle brackets and ampersands\",\"status\":\"passed\",\"title\":\"escapes angle brackets and ampersands\",\"duration\":0.43051100000002407,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps multiple spans\",\"status\":\"passed\",\"title\":\"wraps multiple spans\",\"duration\":0.3030189999999493,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize does not emit raw tags from an escaped span\",\"status\":\"passed\",\"title\":\"does not emit raw tags from an escaped span\",\"duration\":0.31201899999996385,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize handles the empty string\",\"status\":\"passed\",\"title\":\"handles the empty string\",\"duration\":0.40989299999989726,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns an in-range value unchanged\",\"status\":\"passed\",\"title\":\"returns an in-range value unchanged\",\"duration\":0.3446830000000318,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps a negative value to zero\",\"status\":\"passed\",\"title\":\"clamps a negative value to zero\",\"duration\":0.24397499999997763,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps an over-max value to one hundred\",\"status\":\"passed\",\"title\":\"clamps an over-max value to one hundred\",\"duration\":0.4743829999999889,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns zero for NaN\",\"status\":\"passed\",\"title\":\"returns zero for NaN\",\"duration\":0.3639309999999796,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct preserves the zero and hundred boundaries\",\"status\":\"passed\",\"title\":\"preserves the zero and hundred boundaries\",\"duration\":0.27993000000003576,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214546185,\"endTime\":1784214546193.28,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/dashboard/format.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct computes a normal fraction\",\"status\":\"passed\",\"title\":\"computes a normal fraction\",\"duration\":2.5278729999999996,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct clamps over-shot progress to 100\",\"status\":\"passed\",\"title\":\"clamps over-shot progress to 100\",\"duration\":0.5784089999999651,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct returns 0 for a non-positive target instead of dividing by zero\",\"status\":\"passed\",\"title\":\"returns 0 for a non-positive target instead of dividing by zero\",\"duration\":0.3891599999999471,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct returns 0 for NaN / infinite inputs\",\"status\":\"passed\",\"title\":\"returns 0 for NaN / infinite inputs\",\"duration\":0.41599700000006123,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct is 0 at the start\",\"status\":\"passed\",\"title\":\"is 0 at the start\",\"duration\":0.2785320000000411,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is active before the target\",\"status\":\"passed\",\"title\":\"is active before the target\",\"duration\":0.4524910000000091,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is complete at or beyond the target\",\"status\":\"passed\",\"title\":\"is complete at or beyond the target\",\"duration\":0.3387689999999566,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is active for a bad target\",\"status\":\"passed\",\"title\":\"is active for a bad target\",\"duration\":0.2587140000000545,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"remaining\"],\"fullName\":\"remaining reports the gap to target\",\"status\":\"passed\",\"title\":\"reports the gap to target\",\"duration\":0.42198000000007596,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"remaining\"],\"fullName\":\"remaining never goes negative on an over-shot goal\",\"status\":\"passed\",\"title\":\"never goes negative on an over-shot goal\",\"duration\":0.2901049999998122,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry circumference matches 2πr\",\"status\":\"passed\",\"title\":\"circumference matches 2πr\",\"duration\":0.3746200000000499,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry offset is full circumference at 0% and 0 at 100%\",\"status\":\"passed\",\"title\":\"offset is full circumference at 0% and 0 at 100%\",\"duration\":0.3322419999999511,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry clamps out-of-range percentages\",\"status\":\"passed\",\"title\":\"clamps out-of-range percentages\",\"duration\":0.20537999999987733,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress renders whole numbers without decimals\",\"status\":\"passed\",\"title\":\"renders whole numbers without decimals\",\"duration\":0.2700760000000173,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress keeps one decimal for fractional values\",\"status\":\"passed\",\"title\":\"keeps one decimal for fractional values\",\"duration\":0.1636030000001938,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress omits the unit when not given\",\"status\":\"passed\",\"title\":\"omits the unit when not given\",\"duration\":0.15091399999982968,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput accepts a well-formed draft and trims text\",\"status\":\"passed\",\"title\":\"accepts a well-formed draft and trims text\",\"duration\":1.317878999999948,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput rejects an empty title\",\"status\":\"passed\",\"title\":\"rejects an empty title\",\"duration\":0.29288900000005924,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput rejects a non-positive or non-numeric target\",\"status\":\"passed\",\"title\":\"rejects a non-positive or non-numeric target\",\"duration\":0.3362329999999929,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput defaults an unknown category to habit and metric to Progress\",\"status\":\"passed\",\"title\":\"defaults an unknown category to habit and metric to Progress\",\"duration\":0.5198390000000472,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput floors a negative current to 0\",\"status\":\"passed\",\"title\":\"floors a negative current to 0\",\"duration\":0.23794400000019778,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214542878,\"endTime\":1784214542889.5198,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/goals/goals.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"stateLabel\"],\"fullName\":\"stateLabel maps known states\",\"status\":\"passed\",\"title\":\"maps known states\",\"duration\":3.1053550000000314,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"stateLabel\"],\"fullName\":\"stateLabel passes an unknown state through\",\"status\":\"passed\",\"title\":\"passes an unknown state through\",\"duration\":0.7183310000000347,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"isPositiveState\"],\"fullName\":\"isPositiveState is true only for strong\",\"status\":\"passed\",\"title\":\"is true only for strong\",\"duration\":0.5316189999999779,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel maps known kinds\",\"status\":\"passed\",\"title\":\"maps known kinds\",\"duration\":0.6422150000000784,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel title-cases an unknown kind\",\"status\":\"passed\",\"title\":\"title-cases an unknown kind\",\"duration\":0.2588780000000952,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel falls back to Action for an empty kind\",\"status\":\"passed\",\"title\":\"falls back to Action for an empty kind\",\"duration\":0.2964870000000701,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"factorTally\"],\"fullName\":\"factorTally counts strong factors out of the total\",\"status\":\"passed\",\"title\":\"counts strong factors out of the total\",\"duration\":1.5503360000000157,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"factorTally\"],\"fullName\":\"factorTally handles an empty set\",\"status\":\"passed\",\"title\":\"handles an empty set\",\"duration\":0.5688470000000052,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214545433,\"endTime\":1784214545441.5688,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/recovery/recovery.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"dayKey\"],\"fullName\":\"dayKey takes the UTC calendar date from an ISO datetime\",\"status\":\"passed\",\"title\":\"takes the UTC calendar date from an ISO datetime\",\"duration\":3.703330000000051,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel labels the newest day Today\",\"status\":\"passed\",\"title\":\"labels the newest day Today\",\"duration\":0.7188209999999344,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel labels the prior day Yesterday\",\"status\":\"passed\",\"title\":\"labels the prior day Yesterday\",\"duration\":2.906509000000028,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel labels older days with weekday + month + date\",\"status\":\"passed\",\"title\":\"labels older days with weekday + month + date\",\"duration\":0.37630799999999454,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel never returns a negative-diff label for entries after the reference\",\"status\":\"passed\",\"title\":\"never returns a negative-diff label for entries after the reference\",\"duration\":0.2716299999999592,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"timeLabel\"],\"fullName\":\"timeLabel extracts HH:MM\",\"status\":\"passed\",\"title\":\"extracts HH:MM\",\"duration\":0.37182800000005045,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"groupByDay\"],\"fullName\":\"groupByDay returns empty for no entries\",\"status\":\"passed\",\"title\":\"returns empty for no entries\",\"duration\":2.8830050000000256,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"groupByDay\"],\"fullName\":\"groupByDay groups entries into newest-first days with relative labels\",\"status\":\"passed\",\"title\":\"groups entries into newest-first days with relative labels\",\"duration\":32.14963499999999,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter passes everything when type is empty or all\",\"status\":\"passed\",\"title\":\"passes everything when type is empty or all\",\"duration\":0.6993529999999737,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter filters by the entry filterKey\",\"status\":\"passed\",\"title\":\"filters by the entry filterKey\",\"duration\":0.5294320000000425,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter matches the query across title, summary, and accent case-insensitively\",\"status\":\"passed\",\"title\":\"matches the query across title, summary, and accent case-insensitively\",\"duration\":0.41474799999991774,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter ANDs the type and query\",\"status\":\"passed\",\"title\":\"ANDs the type and query\",\"duration\":0.370270000000005,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"parseEntryId\"],\"fullName\":\"parseEntryId splits kind and numeric id\",\"status\":\"passed\",\"title\":\"splits kind and numeric id\",\"duration\":0.5502669999999625,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"parseEntryId\"],\"fullName\":\"parseEntryId rejects malformed ids\",\"status\":\"passed\",\"title\":\"rejects malformed ids\",\"duration\":0.529894000000013,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"summary builders\"],\"fullName\":\"summary builders joins present workout stats, skipping missing ones\",\"status\":\"passed\",\"title\":\"joins present workout stats, skipping missing ones\",\"duration\":0.4405189999999948,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"summary builders\"],\"fullName\":\"summary builders builds a mood summary from present fields\",\"status\":\"passed\",\"title\":\"builds a mood summary from present fields\",\"duration\":0.3333109999999806,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"summary builders\"],\"fullName\":\"summary builders appends the weight delta only when present\",\"status\":\"passed\",\"title\":\"appends the weight delta only when present\",\"duration\":0.28626699999995253,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips returns just the All chip for empty data\",\"status\":\"passed\",\"title\":\"returns just the All chip for empty data\",\"duration\":14.840096000000017,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips derives chips from present kinds in CHIP_ORDER order\",\"status\":\"passed\",\"title\":\"derives chips from present kinds in CHIP_ORDER order\",\"duration\":0.5744950000000699,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips dedupes repeated kinds\",\"status\":\"passed\",\"title\":\"dedupes repeated kinds\",\"duration\":0.36997699999994893,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips appends chips for unexpected kinds so nothing is unreachable\",\"status\":\"passed\",\"title\":\"appends chips for unexpected kinds so nothing is unreachable\",\"duration\":0.2899529999999686,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"briefingOccurredAt\"],\"fullName\":\"briefingOccurredAt appends a morning time to a bare date\",\"status\":\"passed\",\"title\":\"appends a morning time to a bare date\",\"duration\":0.23126400000001013,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"briefingOccurredAt\"],\"fullName\":\"briefingOccurredAt leaves a full datetime untouched\",\"status\":\"passed\",\"title\":\"leaves a full datetime untouched\",\"duration\":0.2679810000000771,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline returns an empty array for empty sources\",\"status\":\"passed\",\"title\":\"returns an empty array for empty sources\",\"duration\":0.5252570000000105,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline skips workouts that have no occurredAt\",\"status\":\"passed\",\"title\":\"skips workouts that have no occurredAt\",\"duration\":0.5168630000000576,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline normalizes all four source kinds into grouped entries\",\"status\":\"passed\",\"title\":\"normalizes all four source kinds into grouped entries\",\"duration\":0.8580089999999245,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline groups entries into newest-first days\",\"status\":\"passed\",\"title\":\"groups entries into newest-first days\",\"duration\":0.3804200000000719,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214543666,\"endTime\":1784214543735.3804,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/timeline/timeline.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"rangeLabel\"],\"fullName\":\"rangeLabel maps known range keys to titles\",\"status\":\"passed\",\"title\":\"maps known range keys to titles\",\"duration\":8.391695000000027,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"rangeLabel\"],\"fullName\":\"rangeLabel passes through an unknown key unchanged\",\"status\":\"passed\",\"title\":\"passes through an unknown key unchanged\",\"duration\":0.41720599999996466,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"normalizeRange\"],\"fullName\":\"normalizeRange accepts each known range\",\"status\":\"passed\",\"title\":\"accepts each known range\",\"duration\":0.5586359999999786,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"normalizeRange\"],\"fullName\":\"normalizeRange defaults unknown / null / undefined to weekly\",\"status\":\"passed\",\"title\":\"defaults unknown / null / undefined to weekly\",\"duration\":0.4492200000000821,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry returns an empty geometry for no values, no NaN coords\",\"status\":\"passed\",\"title\":\"returns an empty geometry for no values, no NaN coords\",\"duration\":1.522666000000072,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry places a single point at the horizontal centre\",\"status\":\"passed\",\"title\":\"places a single point at the horizontal centre\",\"duration\":2.0976089999999203,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry spreads points evenly across the inner width\",\"status\":\"passed\",\"title\":\"spreads points evenly across the inner width\",\"duration\":0.5276320000000396,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry keeps all y coordinates inside the padded box\",\"status\":\"passed\",\"title\":\"keeps all y coordinates inside the padded box\",\"duration\":0.9831000000000358,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry plots a flat series on the vertical centre without dividing by zero\",\"status\":\"passed\",\"title\":\"plots a flat series on the vertical centre without dividing by zero\",\"duration\":0.8816120000000183,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry draws higher values higher on the canvas, smaller y\",\"status\":\"passed\",\"title\":\"draws higher values higher on the canvas, smaller y\",\"duration\":0.4323259999999891,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry closes the area path back to the baseline\",\"status\":\"passed\",\"title\":\"closes the area path back to the baseline\",\"duration\":0.5277059999999665,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214544652,\"endTime\":1784214544670.5276,\"status\":\"passed\",\"message\":\"\",\"name\":\"components/trends/trends.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"inferPartOfDay\"],\"fullName\":\"inferPartOfDay is morning before noon, evening after\",\"status\":\"passed\",\"title\":\"is morning before noon, evening after\",\"duration\":3.030636000000186,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"inferPartOfDay\"],\"fullName\":\"inferPartOfDay falls back to morning for an out-of-range hour\",\"status\":\"passed\",\"title\":\"falls back to morning for an out-of-range hour\",\"duration\":18.750510000000077,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating passes valid 1-5 ratings through\",\"status\":\"passed\",\"title\":\"passes valid 1-5 ratings through\",\"duration\":0.62519199999997,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating clamps high values to 5 and rounds\",\"status\":\"passed\",\"title\":\"clamps high values to 5 and rounds\",\"duration\":0.38931700000011915,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampRating\"],\"fullName\":\"clampRating treats missing / blank / sub-1 as not rated\",\"status\":\"passed\",\"title\":\"treats missing / blank / sub-1 as not rated\",\"duration\":0.49895600000013474,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ratingLabel\"],\"fullName\":\"ratingLabel maps values to words\",\"status\":\"passed\",\"title\":\"maps values to words\",\"duration\":0.509555999999975,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput accepts a morning check-in with ratings\",\"status\":\"passed\",\"title\":\"accepts a morning check-in with ratings\",\"duration\":0.8060700000000907,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects an invalid part of day\",\"status\":\"passed\",\"title\":\"rejects an invalid part of day\",\"duration\":0.34254299999997784,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects a missing / bad timestamp\",\"status\":\"passed\",\"title\":\"rejects a missing / bad timestamp\",\"duration\":0.4378470000001471,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput rejects an all-blank submission\",\"status\":\"passed\",\"title\":\"rejects an all-blank submission\",\"duration\":0.3700850000000173,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateCheckinInput\"],\"fullName\":\"validateCheckinInput accepts a submission carrying only a mood word\",\"status\":\"passed\",\"title\":\"accepts a submission carrying only a mood word\",\"duration\":0.28215499999987514,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore returns null when nothing is rated\",\"status\":\"passed\",\"title\":\"returns null when nothing is rated\",\"duration\":0.3607050000000527,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore scores an all-5 positive / all-1 negative day near the top\",\"status\":\"passed\",\"title\":\"scores an all-5 positive / all-1 negative day near the top\",\"duration\":0.23761999999987893,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore inverts soreness and stress so high values pull the score down\",\"status\":\"passed\",\"title\":\"inverts soreness and stress so high values pull the score down\",\"duration\":0.37240799999995033,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"wellbeingScore\"],\"fullName\":\"wellbeingScore averages only the present fields\",\"status\":\"passed\",\"title\":\"averages only the present fields\",\"duration\":0.3689520000000357,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214542869,\"endTime\":1784214542901.369,\"status\":\"passed\",\"message\":\"\",\"name\":\"desktop/src/checkin/checkin.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes the default-radius circumference\",\"status\":\"passed\",\"title\":\"computes the default-radius circumference\",\"duration\":2.3480899999999565,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"circumference\"],\"fullName\":\"circumference computes a custom-radius circumference\",\"status\":\"passed\",\"title\":\"computes a custom-radius circumference\",\"duration\":0.44266400000003614,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns zero offset at a full score\",\"status\":\"passed\",\"title\":\"returns zero offset at a full score\",\"duration\":0.3756670000000213,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns the full circumference at a zero score\",\"status\":\"passed\",\"title\":\"returns the full circumference at a zero score\",\"duration\":0.26134799999999814,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset matches the reference offset near eighty-two\",\"status\":\"passed\",\"title\":\"matches the reference offset near eighty-two\",\"duration\":0.2424829999999929,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps an over-max score to zero offset\",\"status\":\"passed\",\"title\":\"clamps an over-max score to zero offset\",\"duration\":0.30472199999996974,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset clamps a negative score to full circumference\",\"status\":\"passed\",\"title\":\"clamps a negative score to full circumference\",\"duration\":0.2822079999999687,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"readinessDashOffset\"],\"fullName\":\"readinessDashOffset returns full circumference for NaN\",\"status\":\"passed\",\"title\":\"returns full circumference for NaN\",\"duration\":0.22983299999998508,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214546050,\"endTime\":1784214546055.2297,\"status\":\"passed\",\"message\":\"\",\"name\":\"desktop/src/dashboard/dial.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps an asterisk span in em\",\"status\":\"passed\",\"title\":\"wraps an asterisk span in em\",\"duration\":2.5180890000000318,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize passes through plain text\",\"status\":\"passed\",\"title\":\"passes through plain text\",\"duration\":0.7601359999999886,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize escapes angle brackets and ampersands\",\"status\":\"passed\",\"title\":\"escapes angle brackets and ampersands\",\"duration\":0.41118699999992714,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize wraps multiple spans\",\"status\":\"passed\",\"title\":\"wraps multiple spans\",\"duration\":0.2552499999999327,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize does not emit raw tags from an escaped span\",\"status\":\"passed\",\"title\":\"does not emit raw tags from an escaped span\",\"duration\":0.31571599999995215,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"emphasize\"],\"fullName\":\"emphasize handles the empty string\",\"status\":\"passed\",\"title\":\"handles the empty string\",\"duration\":0.31225899999992635,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns an in-range value unchanged\",\"status\":\"passed\",\"title\":\"returns an in-range value unchanged\",\"duration\":0.3356430000000046,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps a negative value to zero\",\"status\":\"passed\",\"title\":\"clamps a negative value to zero\",\"duration\":0.2511140000000296,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct clamps an over-max value to one hundred\",\"status\":\"passed\",\"title\":\"clamps an over-max value to one hundred\",\"duration\":0.2658079999999927,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct returns zero for NaN\",\"status\":\"passed\",\"title\":\"returns zero for NaN\",\"duration\":0.35773599999993166,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"clampPct\"],\"fullName\":\"clampPct preserves the zero and hundred boundaries\",\"status\":\"passed\",\"title\":\"preserves the zero and hundred boundaries\",\"duration\":0.4529530000000932,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214544602,\"endTime\":1784214544608.453,\"status\":\"passed\",\"message\":\"\",\"name\":\"desktop/src/dashboard/format.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct computes a normal fraction\",\"status\":\"passed\",\"title\":\"computes a normal fraction\",\"duration\":2.886290000000031,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct clamps over-shot progress to 100\",\"status\":\"passed\",\"title\":\"clamps over-shot progress to 100\",\"duration\":8.71427200000005,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct returns 0 for a non-positive target instead of dividing by zero\",\"status\":\"passed\",\"title\":\"returns 0 for a non-positive target instead of dividing by zero\",\"duration\":0.6138839999999846,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct returns 0 for NaN / infinite inputs\",\"status\":\"passed\",\"title\":\"returns 0 for NaN / infinite inputs\",\"duration\":0.5855999999999995,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"progressPct\"],\"fullName\":\"progressPct is 0 at the start\",\"status\":\"passed\",\"title\":\"is 0 at the start\",\"duration\":0.34850299999993695,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is active before the target\",\"status\":\"passed\",\"title\":\"is active before the target\",\"duration\":0.5323040000000674,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is complete at or beyond the target\",\"status\":\"passed\",\"title\":\"is complete at or beyond the target\",\"duration\":0.5689049999999725,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"goalStatus\"],\"fullName\":\"goalStatus is active for a bad target\",\"status\":\"passed\",\"title\":\"is active for a bad target\",\"duration\":0.42028800000002775,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"remaining\"],\"fullName\":\"remaining reports the gap to target\",\"status\":\"passed\",\"title\":\"reports the gap to target\",\"duration\":0.8558500000000322,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"remaining\"],\"fullName\":\"remaining never goes negative on an over-shot goal\",\"status\":\"passed\",\"title\":\"never goes negative on an over-shot goal\",\"duration\":0.3745649999999614,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry circumference matches 2πr\",\"status\":\"passed\",\"title\":\"circumference matches 2πr\",\"duration\":0.3770840000000817,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry offset is full circumference at 0% and 0 at 100%\",\"status\":\"passed\",\"title\":\"offset is full circumference at 0% and 0 at 100%\",\"duration\":0.43675200000006953,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"ring geometry\"],\"fullName\":\"ring geometry clamps out-of-range percentages\",\"status\":\"passed\",\"title\":\"clamps out-of-range percentages\",\"duration\":0.29926799999998366,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress renders whole numbers without decimals\",\"status\":\"passed\",\"title\":\"renders whole numbers without decimals\",\"duration\":0.362948000000074,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress keeps one decimal for fractional values\",\"status\":\"passed\",\"title\":\"keeps one decimal for fractional values\",\"duration\":0.22220100000004095,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"formatProgress\"],\"fullName\":\"formatProgress omits the unit when not given\",\"status\":\"passed\",\"title\":\"omits the unit when not given\",\"duration\":0.19132600000000366,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput accepts a well-formed draft and trims text\",\"status\":\"passed\",\"title\":\"accepts a well-formed draft and trims text\",\"duration\":1.7951170000000047,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput rejects an empty title\",\"status\":\"passed\",\"title\":\"rejects an empty title\",\"duration\":0.2540350000000444,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput rejects a non-positive or non-numeric target\",\"status\":\"passed\",\"title\":\"rejects a non-positive or non-numeric target\",\"duration\":0.32594800000003943,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput defaults an unknown category to habit and metric to Progress\",\"status\":\"passed\",\"title\":\"defaults an unknown category to habit and metric to Progress\",\"duration\":0.3369760000000497,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"validateGoalInput\"],\"fullName\":\"validateGoalInput floors a negative current to 0\",\"status\":\"passed\",\"title\":\"floors a negative current to 0\",\"duration\":0.2991100000000415,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214544535,\"endTime\":1784214544558.337,\"status\":\"passed\",\"message\":\"\",\"name\":\"desktop/src/goals/goals.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"stateLabel\"],\"fullName\":\"stateLabel maps known states\",\"status\":\"passed\",\"title\":\"maps known states\",\"duration\":2.652559999999994,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"stateLabel\"],\"fullName\":\"stateLabel passes an unknown state through\",\"status\":\"passed\",\"title\":\"passes an unknown state through\",\"duration\":0.5750990000000229,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"isPositiveState\"],\"fullName\":\"isPositiveState is true only for strong\",\"status\":\"passed\",\"title\":\"is true only for strong\",\"duration\":0.473681000000056,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel maps known kinds\",\"status\":\"passed\",\"title\":\"maps known kinds\",\"duration\":0.6498729999999568,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel title-cases an unknown kind\",\"status\":\"passed\",\"title\":\"title-cases an unknown kind\",\"duration\":0.3124129999999923,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"actionKindLabel\"],\"fullName\":\"actionKindLabel falls back to Action for an empty kind\",\"status\":\"passed\",\"title\":\"falls back to Action for an empty kind\",\"duration\":0.29383899999993446,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"factorTally\"],\"fullName\":\"factorTally counts strong factors out of the total\",\"status\":\"passed\",\"title\":\"counts strong factors out of the total\",\"duration\":1.424082999999996,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"factorTally\"],\"fullName\":\"factorTally handles an empty set\",\"status\":\"passed\",\"title\":\"handles an empty set\",\"duration\":0.45465200000001005,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214545546,\"endTime\":1784214545553.4546,\"status\":\"passed\",\"message\":\"\",\"name\":\"desktop/src/recovery/recovery.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"dayKey\"],\"fullName\":\"dayKey takes the UTC calendar date from an ISO datetime\",\"status\":\"passed\",\"title\":\"takes the UTC calendar date from an ISO datetime\",\"duration\":1.9455020000000331,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel labels the newest day Today\",\"status\":\"passed\",\"title\":\"labels the newest day Today\",\"duration\":0.3937020000000757,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel labels the prior day Yesterday\",\"status\":\"passed\",\"title\":\"labels the prior day Yesterday\",\"duration\":0.2195160000001124,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel labels older days with weekday + month + date\",\"status\":\"passed\",\"title\":\"labels older days with weekday + month + date\",\"duration\":0.19776999999999134,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"relativeDayLabel\"],\"fullName\":\"relativeDayLabel never returns a negative-diff label for entries after the reference\",\"status\":\"passed\",\"title\":\"never returns a negative-diff label for entries after the reference\",\"duration\":0.16422899999997753,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"timeLabel\"],\"fullName\":\"timeLabel extracts HH:MM\",\"status\":\"passed\",\"title\":\"extracts HH:MM\",\"duration\":0.30303699999990386,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"groupByDay\"],\"fullName\":\"groupByDay returns empty for no entries\",\"status\":\"passed\",\"title\":\"returns empty for no entries\",\"duration\":1.323560999999927,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"groupByDay\"],\"fullName\":\"groupByDay groups entries into newest-first days with relative labels\",\"status\":\"passed\",\"title\":\"groups entries into newest-first days with relative labels\",\"duration\":27.58038099999999,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter passes everything when type is empty or all\",\"status\":\"passed\",\"title\":\"passes everything when type is empty or all\",\"duration\":1.0642069999998967,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter filters by the entry filterKey\",\"status\":\"passed\",\"title\":\"filters by the entry filterKey\",\"duration\":0.7728779999999915,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter matches the query across title, summary, and accent case-insensitively\",\"status\":\"passed\",\"title\":\"matches the query across title, summary, and accent case-insensitively\",\"duration\":0.46746299999995244,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"entryMatchesFilter\"],\"fullName\":\"entryMatchesFilter ANDs the type and query\",\"status\":\"passed\",\"title\":\"ANDs the type and query\",\"duration\":0.4363540000001649,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"parseEntryId\"],\"fullName\":\"parseEntryId splits kind and numeric id\",\"status\":\"passed\",\"title\":\"splits kind and numeric id\",\"duration\":0.6000520000000051,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"parseEntryId\"],\"fullName\":\"parseEntryId rejects malformed ids\",\"status\":\"passed\",\"title\":\"rejects malformed ids\",\"duration\":1.782269000000042,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"summary builders\"],\"fullName\":\"summary builders joins present workout stats, skipping missing ones\",\"status\":\"passed\",\"title\":\"joins present workout stats, skipping missing ones\",\"duration\":0.43833199999994577,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"summary builders\"],\"fullName\":\"summary builders builds a mood summary from present fields\",\"status\":\"passed\",\"title\":\"builds a mood summary from present fields\",\"duration\":0.3634950000000572,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"summary builders\"],\"fullName\":\"summary builders appends the weight delta only when present\",\"status\":\"passed\",\"title\":\"appends the weight delta only when present\",\"duration\":0.3291470000001482,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips returns just the All chip for empty data\",\"status\":\"passed\",\"title\":\"returns just the All chip for empty data\",\"duration\":0.7316690000000108,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips derives chips from present kinds in CHIP_ORDER order\",\"status\":\"passed\",\"title\":\"derives chips from present kinds in CHIP_ORDER order\",\"duration\":0.6446330000001126,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips dedupes repeated kinds\",\"status\":\"passed\",\"title\":\"dedupes repeated kinds\",\"duration\":0.3234890000001087,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"deriveChips\"],\"fullName\":\"deriveChips appends chips for unexpected kinds so nothing is unreachable\",\"status\":\"passed\",\"title\":\"appends chips for unexpected kinds so nothing is unreachable\",\"duration\":0.43248800000014853,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"briefingOccurredAt\"],\"fullName\":\"briefingOccurredAt appends a morning time to a bare date\",\"status\":\"passed\",\"title\":\"appends a morning time to a bare date\",\"duration\":0.2313770000000659,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"briefingOccurredAt\"],\"fullName\":\"briefingOccurredAt leaves a full datetime untouched\",\"status\":\"passed\",\"title\":\"leaves a full datetime untouched\",\"duration\":0.1695150000000467,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline returns an empty array for empty sources\",\"status\":\"passed\",\"title\":\"returns an empty array for empty sources\",\"duration\":0.5085209999999734,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline skips workouts that have no occurredAt\",\"status\":\"passed\",\"title\":\"skips workouts that have no occurredAt\",\"duration\":0.7564429999999902,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline normalizes all four source kinds into grouped entries\",\"status\":\"passed\",\"title\":\"normalizes all four source kinds into grouped entries\",\"duration\":0.9546880000000328,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildTimeline\"],\"fullName\":\"buildTimeline groups entries into newest-first days\",\"status\":\"passed\",\"title\":\"groups entries into newest-first days\",\"duration\":0.43126600000005055,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214542804,\"endTime\":1784214542853.4312,\"status\":\"passed\",\"message\":\"\",\"name\":\"desktop/src/timeline/timeline.test.ts\"},{\"assertionResults\":[{\"ancestorTitles\":[\"rangeLabel\"],\"fullName\":\"rangeLabel maps known range keys to titles\",\"status\":\"passed\",\"title\":\"maps known range keys to titles\",\"duration\":3.0483319999999594,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"rangeLabel\"],\"fullName\":\"rangeLabel passes through an unknown key unchanged\",\"status\":\"passed\",\"title\":\"passes through an unknown key unchanged\",\"duration\":1.1826580000000604,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"normalizeRange\"],\"fullName\":\"normalizeRange accepts each known range\",\"status\":\"passed\",\"title\":\"accepts each known range\",\"duration\":0.5976180000000113,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"normalizeRange\"],\"fullName\":\"normalizeRange defaults unknown / null / undefined to weekly\",\"status\":\"passed\",\"title\":\"defaults unknown / null / undefined to weekly\",\"duration\":0.49753499999997075,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry returns an empty geometry for no values, no NaN coords\",\"status\":\"passed\",\"title\":\"returns an empty geometry for no values, no NaN coords\",\"duration\":1.5207209999999804,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry places a single point at the horizontal centre\",\"status\":\"passed\",\"title\":\"places a single point at the horizontal centre\",\"duration\":1.9465779999999313,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry spreads points evenly across the inner width\",\"status\":\"passed\",\"title\":\"spreads points evenly across the inner width\",\"duration\":0.520087999999987,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry keeps all y coordinates inside the padded box\",\"status\":\"passed\",\"title\":\"keeps all y coordinates inside the padded box\",\"duration\":2.1392059999999447,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry plots a flat series on the vertical centre without dividing by zero\",\"status\":\"passed\",\"title\":\"plots a flat series on the vertical centre without dividing by zero\",\"duration\":0.9686440000000403,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry draws higher values higher on the canvas, smaller y\",\"status\":\"passed\",\"title\":\"draws higher values higher on the canvas, smaller y\",\"duration\":0.39523400000007314,\"failureMessages\":[],\"meta\":{}},{\"ancestorTitles\":[\"buildChartGeometry\"],\"fullName\":\"buildChartGeometry closes the area path back to the baseline\",\"status\":\"passed\",\"title\":\"closes the area path back to the baseline\",\"duration\":0.582997999999975,\"failureMessages\":[],\"meta\":{}}],\"startTime\":1784214543760,\"endTime\":1784214543774.583,\"status\":\"passed\",\"message\":\"\",\"name\":\"desktop/src/trends/trends.test.ts\"}]}\n",
+      "invoked_command": "npx vitest run --reporter=json",
       "exit_code": 0,
       "tests": [
         {
@@ -127,542 +127,6 @@
           "key": "wellbeingScore › averages only the present fields",
           "status": "passed",
           "file": "components/checkin/checkin.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "progressPct › computes a normal fraction",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "progressPct › clamps over-shot progress to 100",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "progressPct › returns 0 for a non-positive target instead of dividing by zero",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "progressPct › returns 0 for NaN / infinite inputs",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "progressPct › is 0 at the start",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "goalStatus › is active before the target",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "goalStatus › is complete at or beyond the target",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "goalStatus › is active for a bad target",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "remaining › reports the gap to target",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "remaining › never goes negative on an over-shot goal",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "ring geometry › circumference matches 2πr",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "ring geometry › offset is full circumference at 0% and 0 at 100%",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "ring geometry › clamps out-of-range percentages",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatProgress › renders whole numbers without decimals",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatProgress › keeps one decimal for fractional values",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "formatProgress › omits the unit when not given",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "validateGoalInput › accepts a well-formed draft and trims text",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "validateGoalInput › rejects an empty title",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "validateGoalInput › rejects a non-positive or non-numeric target",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "validateGoalInput › defaults an unknown category to habit and metric to Progress",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "validateGoalInput › floors a negative current to 0",
-          "status": "passed",
-          "file": "components/goals/goals.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "stateLabel › maps known states",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "stateLabel › passes an unknown state through",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "isPositiveState › is true only for strong",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "actionKindLabel › maps known kinds",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "actionKindLabel › title-cases an unknown kind",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "actionKindLabel › falls back to Action for an empty kind",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "factorTally › counts strong factors out of the total",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "factorTally › handles an empty set",
-          "status": "passed",
-          "file": "components/recovery/recovery.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "rangeLabel › maps known range keys to titles",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "rangeLabel › passes through an unknown key unchanged",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "normalizeRange › accepts each known range",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "normalizeRange › defaults unknown / null / undefined to weekly",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildChartGeometry › returns an empty geometry for no values, no NaN coords",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildChartGeometry › places a single point at the horizontal centre",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildChartGeometry › spreads points evenly across the inner width",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildChartGeometry › keeps all y coordinates inside the padded box",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildChartGeometry › plots a flat series on the vertical centre without dividing by zero",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildChartGeometry › draws higher values higher on the canvas, smaller y",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildChartGeometry › closes the area path back to the baseline",
-          "status": "passed",
-          "file": "components/trends/trends.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "dayKey › takes the UTC calendar date from an ISO datetime",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "relativeDayLabel › labels the newest day Today",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "relativeDayLabel › labels the prior day Yesterday",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "relativeDayLabel › labels older days with weekday + month + date",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "relativeDayLabel › never returns a negative-diff label for entries after the reference",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "timeLabel › extracts HH:MM",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "groupByDay › returns empty for no entries",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "groupByDay › groups entries into newest-first days with relative labels",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "entryMatchesFilter › passes everything when type is empty or all",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "entryMatchesFilter › filters by the entry filterKey",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "entryMatchesFilter › matches the query across title, summary, and accent case-insensitively",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "entryMatchesFilter › ANDs the type and query",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "parseEntryId › splits kind and numeric id",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "parseEntryId › rejects malformed ids",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "summary builders › joins present workout stats, skipping missing ones",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "summary builders › builds a mood summary from present fields",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "summary builders › appends the weight delta only when present",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "deriveChips › returns just the All chip for empty data",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "deriveChips › derives chips from present kinds in CHIP_ORDER order",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "deriveChips › dedupes repeated kinds",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "deriveChips › appends chips for unexpected kinds so nothing is unreachable",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "briefingOccurredAt › appends a morning time to a bare date",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "briefingOccurredAt › leaves a full datetime untouched",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildTimeline › returns an empty array for empty sources",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildTimeline › skips workouts that have no occurredAt",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildTimeline › normalizes all four source kinds into grouped entries",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
-          "line": null,
-          "runner": "tests",
-          "format": "vitest"
-        },
-        {
-          "key": "buildTimeline › groups entries into newest-first days",
-          "status": "passed",
-          "file": "components/timeline/timeline.test.ts",
           "line": null,
           "runner": "tests",
           "format": "vitest"
@@ -1055,6 +519,1350 @@
           "key": "clampPct › preserves the zero and hundred boundaries",
           "status": "passed",
           "file": "components/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › computes a normal fraction",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › clamps over-shot progress to 100",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › returns 0 for a non-positive target instead of dividing by zero",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › returns 0 for NaN / infinite inputs",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › is 0 at the start",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "goalStatus › is active before the target",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "goalStatus › is complete at or beyond the target",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "goalStatus › is active for a bad target",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "remaining › reports the gap to target",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "remaining › never goes negative on an over-shot goal",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "ring geometry › circumference matches 2πr",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "ring geometry › offset is full circumference at 0% and 0 at 100%",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "ring geometry › clamps out-of-range percentages",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatProgress › renders whole numbers without decimals",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatProgress › keeps one decimal for fractional values",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatProgress › omits the unit when not given",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › accepts a well-formed draft and trims text",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › rejects an empty title",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › rejects a non-positive or non-numeric target",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › defaults an unknown category to habit and metric to Progress",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › floors a negative current to 0",
+          "status": "passed",
+          "file": "components/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "stateLabel › maps known states",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "stateLabel › passes an unknown state through",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "isPositiveState › is true only for strong",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "actionKindLabel › maps known kinds",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "actionKindLabel › title-cases an unknown kind",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "actionKindLabel › falls back to Action for an empty kind",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "factorTally › counts strong factors out of the total",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "factorTally › handles an empty set",
+          "status": "passed",
+          "file": "components/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "dayKey › takes the UTC calendar date from an ISO datetime",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › labels the newest day Today",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › labels the prior day Yesterday",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › labels older days with weekday + month + date",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › never returns a negative-diff label for entries after the reference",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "timeLabel › extracts HH:MM",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "groupByDay › returns empty for no entries",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "groupByDay › groups entries into newest-first days with relative labels",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › passes everything when type is empty or all",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › filters by the entry filterKey",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › matches the query across title, summary, and accent case-insensitively",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › ANDs the type and query",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "parseEntryId › splits kind and numeric id",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "parseEntryId › rejects malformed ids",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "summary builders › joins present workout stats, skipping missing ones",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "summary builders › builds a mood summary from present fields",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "summary builders › appends the weight delta only when present",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › returns just the All chip for empty data",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › derives chips from present kinds in CHIP_ORDER order",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › dedupes repeated kinds",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › appends chips for unexpected kinds so nothing is unreachable",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "briefingOccurredAt › appends a morning time to a bare date",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "briefingOccurredAt › leaves a full datetime untouched",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › returns an empty array for empty sources",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › skips workouts that have no occurredAt",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › normalizes all four source kinds into grouped entries",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › groups entries into newest-first days",
+          "status": "passed",
+          "file": "components/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "rangeLabel › maps known range keys to titles",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "rangeLabel › passes through an unknown key unchanged",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "normalizeRange › accepts each known range",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "normalizeRange › defaults unknown / null / undefined to weekly",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › returns an empty geometry for no values, no NaN coords",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › places a single point at the horizontal centre",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › spreads points evenly across the inner width",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › keeps all y coordinates inside the padded box",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › plots a flat series on the vertical centre without dividing by zero",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › draws higher values higher on the canvas, smaller y",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › closes the area path back to the baseline",
+          "status": "passed",
+          "file": "components/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "inferPartOfDay › is morning before noon, evening after",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "inferPartOfDay › falls back to morning for an out-of-range hour",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampRating › passes valid 1-5 ratings through",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampRating › clamps high values to 5 and rounds",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampRating › treats missing / blank / sub-1 as not rated",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "ratingLabel › maps values to words",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateCheckinInput › accepts a morning check-in with ratings",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateCheckinInput › rejects an invalid part of day",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateCheckinInput › rejects a missing / bad timestamp",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateCheckinInput › rejects an all-blank submission",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateCheckinInput › accepts a submission carrying only a mood word",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "wellbeingScore › returns null when nothing is rated",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "wellbeingScore › scores an all-5 positive / all-1 negative day near the top",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "wellbeingScore › inverts soreness and stress so high values pull the score down",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "wellbeingScore › averages only the present fields",
+          "status": "passed",
+          "file": "desktop/src/checkin/checkin.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "circumference › computes the default-radius circumference",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "circumference › computes a custom-radius circumference",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "readinessDashOffset › returns zero offset at a full score",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "readinessDashOffset › returns the full circumference at a zero score",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "readinessDashOffset › matches the reference offset near eighty-two",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "readinessDashOffset › clamps an over-max score to zero offset",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "readinessDashOffset › clamps a negative score to full circumference",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "readinessDashOffset › returns full circumference for NaN",
+          "status": "passed",
+          "file": "desktop/src/dashboard/dial.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "emphasize › wraps an asterisk span in em",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "emphasize › passes through plain text",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "emphasize › escapes angle brackets and ampersands",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "emphasize › wraps multiple spans",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "emphasize › does not emit raw tags from an escaped span",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "emphasize › handles the empty string",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampPct › returns an in-range value unchanged",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampPct › clamps a negative value to zero",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampPct › clamps an over-max value to one hundred",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampPct › returns zero for NaN",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "clampPct › preserves the zero and hundred boundaries",
+          "status": "passed",
+          "file": "desktop/src/dashboard/format.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › computes a normal fraction",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › clamps over-shot progress to 100",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › returns 0 for a non-positive target instead of dividing by zero",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › returns 0 for NaN / infinite inputs",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "progressPct › is 0 at the start",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "goalStatus › is active before the target",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "goalStatus › is complete at or beyond the target",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "goalStatus › is active for a bad target",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "remaining › reports the gap to target",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "remaining › never goes negative on an over-shot goal",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "ring geometry › circumference matches 2πr",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "ring geometry › offset is full circumference at 0% and 0 at 100%",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "ring geometry › clamps out-of-range percentages",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatProgress › renders whole numbers without decimals",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatProgress › keeps one decimal for fractional values",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "formatProgress › omits the unit when not given",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › accepts a well-formed draft and trims text",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › rejects an empty title",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › rejects a non-positive or non-numeric target",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › defaults an unknown category to habit and metric to Progress",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "validateGoalInput › floors a negative current to 0",
+          "status": "passed",
+          "file": "desktop/src/goals/goals.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "stateLabel › maps known states",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "stateLabel › passes an unknown state through",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "isPositiveState › is true only for strong",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "actionKindLabel › maps known kinds",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "actionKindLabel › title-cases an unknown kind",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "actionKindLabel › falls back to Action for an empty kind",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "factorTally › counts strong factors out of the total",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "factorTally › handles an empty set",
+          "status": "passed",
+          "file": "desktop/src/recovery/recovery.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "dayKey › takes the UTC calendar date from an ISO datetime",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › labels the newest day Today",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › labels the prior day Yesterday",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › labels older days with weekday + month + date",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "relativeDayLabel › never returns a negative-diff label for entries after the reference",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "timeLabel › extracts HH:MM",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "groupByDay › returns empty for no entries",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "groupByDay › groups entries into newest-first days with relative labels",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › passes everything when type is empty or all",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › filters by the entry filterKey",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › matches the query across title, summary, and accent case-insensitively",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "entryMatchesFilter › ANDs the type and query",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "parseEntryId › splits kind and numeric id",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "parseEntryId › rejects malformed ids",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "summary builders › joins present workout stats, skipping missing ones",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "summary builders › builds a mood summary from present fields",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "summary builders › appends the weight delta only when present",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › returns just the All chip for empty data",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › derives chips from present kinds in CHIP_ORDER order",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › dedupes repeated kinds",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "deriveChips › appends chips for unexpected kinds so nothing is unreachable",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "briefingOccurredAt › appends a morning time to a bare date",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "briefingOccurredAt › leaves a full datetime untouched",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › returns an empty array for empty sources",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › skips workouts that have no occurredAt",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › normalizes all four source kinds into grouped entries",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildTimeline › groups entries into newest-first days",
+          "status": "passed",
+          "file": "desktop/src/timeline/timeline.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "rangeLabel › maps known range keys to titles",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "rangeLabel › passes through an unknown key unchanged",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "normalizeRange › accepts each known range",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "normalizeRange › defaults unknown / null / undefined to weekly",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › returns an empty geometry for no values, no NaN coords",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › places a single point at the horizontal centre",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › spreads points evenly across the inner width",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › keeps all y coordinates inside the padded box",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › plots a flat series on the vertical centre without dividing by zero",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › draws higher values higher on the canvas, smaller y",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
+          "line": null,
+          "runner": "tests",
+          "format": "vitest"
+        },
+        {
+          "key": "buildChartGeometry › closes the area path back to the baseline",
+          "status": "passed",
+          "file": "desktop/src/trends/trends.test.ts",
           "line": null,
           "runner": "tests",
           "format": "vitest"

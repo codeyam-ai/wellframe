@@ -60,9 +60,9 @@ on Windows, `.msi`/NSIS. Cross-OS artifacts come from CI — see
 
 ## Regenerate icons
 
+The icon set under `src-tauri/icons/` is committed. To replace the placeholder mark
+with real brand art, drop a 1024×1024 PNG at `src-tauri/icons/source.png` and run:
+
 ```bash
-node scripts/gen-icon.mjs                     # writes src-tauri/icons/source.png
 npx tauri icon src-tauri/icons/source.png     # emits all platform sizes (.icns/.ico/PNG)
 ```
-
-Replace `scripts/gen-icon.mjs`'s placeholder mark with the real brand art when ready.

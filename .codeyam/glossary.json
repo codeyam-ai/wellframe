@@ -9,11 +9,38 @@
     ]
   },
   {
+    "description": "Populated dashboard deck: the readiness hero above a three-panel info row (vitals, coach transmission, field log). Pure layout composition driven by the console.",
+    "filePath": "desktop/src/dashboard/BriefingDeck.tsx",
+    "name": "BriefingDeck",
+    "scenarios": [
+      "briefingdeck-primed",
+      "briefingdeck-no-workout"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "Daily-briefing entry detail: readiness label + score kicker, the serif verdict headline, status line, and the coach transmission with its signature.",
     "filePath": "components/timeline/BriefingDetail.tsx",
     "name": "BriefingDetail",
     "scenarios": [
       "briefingdetail-default"
+    ]
+  },
+  {
+    "description": "Daily-briefing entry detail: readiness label + score kicker, serif verdict headline, status line, and the coach transmission with its signature.",
+    "filePath": "desktop/src/timeline/BriefingDetail.tsx",
+    "name": "BriefingDetail",
+    "scenarios": [
+      "briefingdetail-default"
+    ],
+    "tags": [
+      "timeline",
+      "detail",
+      "component"
     ]
   },
   {
@@ -26,11 +53,38 @@
     ]
   },
   {
+    "description": "The Daily Check-in surface: a morning/evening check-in form plus the recent-check-ins history, owning the selected part of day.",
+    "filePath": "desktop/src/checkin/CheckinConsole.tsx",
+    "name": "CheckinConsole",
+    "scenarios": [
+      "checkinconsole-empty",
+      "checkinconsole-logging"
+    ],
+    "tags": [
+      "checkin",
+      "console",
+      "surface"
+    ]
+  },
+  {
     "description": "Quiet empty state for the recent-check-ins history: a mono bracket label plus a line of plain-language copy, shown under the form on day one.",
     "filePath": "components/checkin/CheckinEmpty.tsx",
     "name": "CheckinEmpty",
     "scenarios": [
       "checkinempty-default"
+    ]
+  },
+  {
+    "description": "Quiet empty state for the recent-check-ins history, shown under the form on day one before any check-in has been logged.",
+    "filePath": "desktop/src/checkin/CheckinEmpty.tsx",
+    "name": "CheckinEmpty",
+    "scenarios": [
+      "checkinempty-default"
+    ],
+    "tags": [
+      "checkin",
+      "empty-state",
+      "presentational"
     ]
   },
   {
@@ -40,6 +94,19 @@
     "scenarios": [
       "checkinform-morning",
       "checkinform-evening"
+    ]
+  },
+  {
+    "description": "The daily check-in form: a part-of-day toggle, a mood word, four 1-5 rating scales, and a note; validates and submits a Mood row, owning field and pending/error state.",
+    "filePath": "desktop/src/checkin/CheckinForm.tsx",
+    "name": "CheckinForm",
+    "scenarios": [
+      "checkinform-morning",
+      "checkinform-evening"
+    ],
+    "tags": [
+      "checkin",
+      "form"
     ]
   },
   {
@@ -61,6 +128,20 @@
     ]
   },
   {
+    "description": "One recent-check-in history entry: the date and part of day, the mood word, a rolled-up wellbeing score, and the note.",
+    "filePath": "desktop/src/checkin/CheckinRow.tsx",
+    "name": "CheckinRow",
+    "scenarios": [
+      "checkinrow-minimal",
+      "checkinrow-withnote"
+    ],
+    "tags": [
+      "checkin",
+      "list-item",
+      "presentational"
+    ]
+  },
+  {
     "description": "The ⌘K coach entry point rendered as a right-side slide-in panel; in this build it is a stub confirming the entry point works ahead of the full context-aware coach.",
     "filePath": "components/dashboard/CoachDock.tsx",
     "name": "CoachDock",
@@ -75,6 +156,20 @@
     "scenarios": [
       "coachtransmission-default",
       "coachtransmission-no-transmission"
+    ]
+  },
+  {
+    "description": "Coach transmission block: one observant note (with emphasis markup), its directive, and a local-model signature, or a quiet empty label when there is no transmission yet.",
+    "filePath": "desktop/src/dashboard/CoachTransmission.tsx",
+    "name": "CoachTransmission",
+    "scenarios": [
+      "coachtransmission-default",
+      "coachtransmission-no-transmission"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -115,6 +210,20 @@
     ]
   },
   {
+    "description": "Instrument coordinates strip beneath the dial (labelled readouts like ELEV/WIND/WINDOW); drops entries with no value and renders nothing when none remain.",
+    "filePath": "desktop/src/dashboard/CoordStrip.tsx",
+    "name": "CoordStrip",
+    "scenarios": [
+      "coordstrip-default",
+      "coordstrip-partial"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "Client composer for the whole briefing console: renders the metabar plus the readiness hero, vitals, coach transmission, and field log when a briefing exists, or the day-one onboarding state when it does not; owns the coach-dock open state and the ⌘K shortcut.",
     "filePath": "components/dashboard/DashboardConsole.tsx",
     "name": "DashboardConsole",
@@ -122,6 +231,21 @@
       "dashboardconsole-primed",
       "dashboardconsole-coach-open",
       "dashboardconsole-empty"
+    ]
+  },
+  {
+    "description": "The Wellframe dashboard Daily Briefing Console (desktop port): composes the metabar with either the populated briefing deck or the day-one onboarding empty state when there is no briefing yet.",
+    "filePath": "desktop/src/dashboard/DashboardConsole.tsx",
+    "name": "DashboardConsole",
+    "scenarios": [
+      "dashboardconsole-primed",
+      "dashboardconsole-coach-open",
+      "dashboardconsole-empty"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "console"
     ]
   },
   {
@@ -134,11 +258,38 @@
     ]
   },
   {
+    "description": "A label/value pair in an entry detail's stat row (distance, pace, ...), with timeline-specific styling.",
+    "filePath": "desktop/src/timeline/DetailStat.tsx",
+    "name": "DetailStat",
+    "scenarios": [
+      "detailstat-default",
+      "detailstat-long-value"
+    ],
+    "tags": [
+      "timeline",
+      "detail",
+      "component"
+    ]
+  },
+  {
     "description": "Day-one onboarding state (production default, empty DB): the console frame with a muted dial, a serif prompt, and bracket-labeled connect-a-source options.",
     "filePath": "components/dashboard/EmptyBriefing.tsx",
     "name": "EmptyBriefing",
     "scenarios": [
       "emptybriefing-default"
+    ]
+  },
+  {
+    "description": "Day-one onboarding state (production default on an empty database): the onboarding lead plus a numbered two-step setup (connect AI coach, connect health source) routing into the Connections panel.",
+    "filePath": "desktop/src/dashboard/EmptyBriefing.tsx",
+    "name": "EmptyBriefing",
+    "scenarios": [
+      "emptybriefing-default"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -149,6 +300,21 @@
       "entrydetail-workout",
       "entrydetail-mood",
       "entrydetail-briefing"
+    ]
+  },
+  {
+    "description": "The detail surface for a single timeline entry: frames a numbered section with a back link and dispatches to the per-kind detail component (workout/mood/weight/briefing).",
+    "filePath": "desktop/src/timeline/EntryDetail.tsx",
+    "name": "EntryDetail",
+    "scenarios": [
+      "entrydetail-workout",
+      "entrydetail-mood",
+      "entrydetail-briefing"
+    ],
+    "tags": [
+      "timeline",
+      "detail",
+      "component"
     ]
   },
   {
@@ -170,6 +336,20 @@
     ]
   },
   {
+    "description": "Field Log panel for yesterday's logged activity: a grayscale photo plate beside title and distance/pace/vertical stats, or a quiet empty label when nothing was logged.",
+    "filePath": "desktop/src/dashboard/FieldLog.tsx",
+    "name": "FieldLog",
+    "scenarios": [
+      "fieldlog-default",
+      "fieldlog-no-workout"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "One goal as a hairline-bordered row: progress ring, title + metric + progress read, and cadence/due; a completed goal shows a mint ring and a Complete badge.",
     "filePath": "components/goals/GoalCard.tsx",
     "name": "GoalCard",
@@ -179,11 +359,38 @@
     ]
   },
   {
+    "description": "One goal as a hairline-bordered row: progress ring, title + metric + progress read, and cadence/due; a completed goal shows a mint ring and a Complete badge.",
+    "filePath": "desktop/src/goals/GoalCard.tsx",
+    "name": "GoalCard",
+    "scenarios": [
+      "goalcard-complete",
+      "goalcard-inprogress"
+    ],
+    "tags": [
+      "goals",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "The create-a-goal composer: a slide-in panel with the new-goal form (title, category, metric, target/current/unit, cadence); submitting calls the createGoal action.",
     "filePath": "components/goals/GoalComposer.tsx",
     "name": "GoalComposer",
     "scenarios": [
       "goalcomposer-open"
+    ]
+  },
+  {
+    "description": "The create-a-goal composer: a slide-in panel with the new-goal form (title, category, metric, target/current/unit, cadence) that validates the fields with validateGoalInput and persists via the createGoal action.",
+    "filePath": "desktop/src/goals/GoalComposer.tsx",
+    "name": "GoalComposer",
+    "scenarios": [
+      "goalcomposer-open"
+    ],
+    "tags": [
+      "goals",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -196,6 +403,20 @@
     ]
   },
   {
+    "description": "A goal progress ring: hairline track plus a stroked arc encoding completion with the whole-number percentage centred; mint when complete, signal-blue while in progress.",
+    "filePath": "desktop/src/goals/GoalRing.tsx",
+    "name": "GoalRing",
+    "scenarios": [
+      "goalring-complete",
+      "goalring-partial"
+    ],
+    "tags": [
+      "goals",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "The Goals surface: lists tracked goals as progress cards and opens a slide-in composer to create a new goal (the primary interaction). Shows an empty state that opens straight into the composer on day one.",
     "filePath": "components/goals/GoalsConsole.tsx",
     "name": "GoalsConsole",
@@ -205,11 +426,38 @@
     ]
   },
   {
+    "description": "The Goals surface (desktop port): lists tracked goals as progress cards and opens a slide-in composer to create a new goal, owning the composer open state and showing a day-one empty state that opens straight into the composer.",
+    "filePath": "desktop/src/goals/GoalsConsole.tsx",
+    "name": "GoalsConsole",
+    "scenarios": [
+      "goalsconsole-empty",
+      "goalsconsole-tracking"
+    ],
+    "tags": [
+      "goals",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "Day-one empty state for the Goals surface: serif verdict and the primary + New goal call to action that opens the composer.",
     "filePath": "components/goals/GoalsEmpty.tsx",
     "name": "GoalsEmpty",
     "scenarios": [
       "goalsempty-default"
+    ]
+  },
+  {
+    "description": "Day-one empty state for the Goals surface: serif verdict, plain-language copy, and the primary + New goal call to action that opens the composer.",
+    "filePath": "desktop/src/goals/GoalsEmpty.tsx",
+    "name": "GoalsEmpty",
+    "scenarios": [
+      "goalsempty-default"
+    ],
+    "tags": [
+      "goals",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -242,12 +490,39 @@
     ]
   },
   {
+    "description": "Quiet in-place expand/collapse disclosure (mono bracket toggle, no chevron) that reveals plain-language explanatory content below a hairline; used to de-jargon the readiness directive.",
+    "filePath": "desktop/src/dashboard/InfoDisclosure.tsx",
+    "name": "InfoDisclosure",
+    "scenarios": [
+      "infodisclosure-default"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "Plinth three-zone metadata bar: WELLFRAME brand, the 'Daily Briefing · Console' subject, and a timestamp with the mint LOCAL LINK status dot that signals the local-first, no-cloud posture.",
     "filePath": "components/dashboard/Metabar.tsx",
     "name": "Metabar",
     "scenarios": [
       "metabar-default",
       "metabar-awaiting-sync"
+    ]
+  },
+  {
+    "description": "Plinth three-zone metadata bar: brand left, page subject center, and on the right nav links, timestamp, a LOCAL LINK status dot, and an optional Set Up affordance.",
+    "filePath": "desktop/src/dashboard/Metabar.tsx",
+    "name": "Metabar",
+    "scenarios": [
+      "metabar-default",
+      "metabar-awaiting-sync"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -280,11 +555,38 @@
     ]
   },
   {
+    "description": "Check-in entry detail: the morning/evening mood word plus its 1-5 self-ratings (energy, sleep, soreness, stress) and the optional reflection note.",
+    "filePath": "desktop/src/timeline/MoodDetail.tsx",
+    "name": "MoodDetail",
+    "scenarios": [
+      "mooddetail-morning",
+      "mooddetail-evening"
+    ],
+    "tags": [
+      "timeline",
+      "detail",
+      "component"
+    ]
+  },
+  {
     "description": "The lead block of the day-one onboarding state: the no-data placeholder dial, headline, and privacy-first intro copy.",
     "filePath": "components/dashboard/OnboardLead.tsx",
     "name": "OnboardLead",
     "scenarios": [
       "onboardlead-default"
+    ]
+  },
+  {
+    "description": "Lead block of the day-one onboarding state: the no-data placeholder dial, the headline, and the privacy-first intro copy.",
+    "filePath": "desktop/src/dashboard/OnboardLead.tsx",
+    "name": "OnboardLead",
+    "scenarios": [
+      "onboardlead-default"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -294,6 +596,20 @@
     "scenarios": [
       "onboardstep-primary",
       "onboardstep-secondary"
+    ]
+  },
+  {
+    "description": "One numbered setup step in the day-one onboarding state: index, title/body, and a Connect button that routes into the Connections panel.",
+    "filePath": "desktop/src/dashboard/OnboardStep.tsx",
+    "name": "OnboardStep",
+    "scenarios": [
+      "onboardstep-primary",
+      "onboardstep-secondary"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -336,12 +652,41 @@
     ]
   },
   {
+    "description": "A 1-5 self-rating from a check-in rendered as five ticks with the filled ones in signal ink; renders nothing when the value is absent.",
+    "filePath": "desktop/src/timeline/Rating.tsx",
+    "name": "Rating",
+    "scenarios": [
+      "rating-default",
+      "rating-low",
+      "rating-full"
+    ],
+    "tags": [
+      "timeline",
+      "detail",
+      "component"
+    ]
+  },
+  {
     "description": "One 1-5 rating row in the check-in form: a label, five toggle ticks, and the word for the current value; reused for energy, sleep, soreness, and stress.",
     "filePath": "components/checkin/RatingScale.tsx",
     "name": "RatingScale",
     "scenarios": [
       "ratingscale-rated",
       "ratingscale-unrated"
+    ]
+  },
+  {
+    "description": "One 1-5 rating row in the check-in form: a label, five toggle ticks, and the word for the current value; reused for energy, sleep, soreness, and stress.",
+    "filePath": "desktop/src/checkin/RatingScale.tsx",
+    "name": "RatingScale",
+    "scenarios": [
+      "ratingscale-rated",
+      "ratingscale-unrated"
+    ],
+    "tags": [
+      "checkin",
+      "form",
+      "presentational"
     ]
   },
   {
@@ -355,12 +700,41 @@
     ]
   },
   {
+    "description": "Readiness instrument dial: a fixed tick-marked bezel with a score arc whose length is derived from the score (via ./dial geometry), plus the centered numeric readout.",
+    "filePath": "desktop/src/dashboard/ReadinessDial.tsx",
+    "name": "ReadinessDial",
+    "scenarios": [
+      "readinessdial-primed",
+      "readinessdial-compromised",
+      "readinessdial-no-data"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "Left instrument hero: the readiness dial (arc length derived from the score), the elevation/wind/window coordinates strip, the serif verdict headline, and the suggested-workout + query-coach actions.",
     "filePath": "components/dashboard/ReadinessHero.tsx",
     "name": "ReadinessHero",
     "scenarios": [
       "readinesshero-primed",
       "readinesshero-low-readiness"
+    ]
+  },
+  {
+    "description": "Left instrument hero: assembles the readiness dial, the coordinates strip, and the serif verdict, preparing the coordinate rows from the briefing.",
+    "filePath": "desktop/src/dashboard/ReadinessHero.tsx",
+    "name": "ReadinessHero",
+    "scenarios": [
+      "readinesshero-primed",
+      "readinesshero-low-readiness"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
     ]
   },
   {
@@ -373,12 +747,41 @@
     ]
   },
   {
+    "description": "Serif verdict block under the dial: headline (with emphasis markup), status line, the suggested-workout and Query-coach buttons, and the plain-language disclosure for the suggested session.",
+    "filePath": "desktop/src/dashboard/ReadinessVerdict.tsx",
+    "name": "ReadinessVerdict",
+    "scenarios": [
+      "readinessverdict-primed",
+      "readinessverdict-no-workout"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "One suggested-recovery-action row in the Recovery Center: kind, title, and optional duration; expands to reveal why it's suggested.",
     "filePath": "components/recovery/RecoveryActionRow.tsx",
     "name": "RecoveryActionRow",
     "scenarios": [
       "recoveryactionrow-open",
       "recoveryactionrow-collapsed"
+    ]
+  },
+  {
+    "description": "One suggested-recovery-action row in the Recovery Center: kind, title, and optional duration; expands to reveal why it's suggested. Pure presentational; open state and toggle owned by RecoveryConsole.",
+    "filePath": "desktop/src/recovery/RecoveryActionRow.tsx",
+    "name": "RecoveryActionRow",
+    "scenarios": [
+      "recoveryactionrow-collapsed",
+      "recoveryactionrow-open"
+    ],
+    "tags": [
+      "recovery",
+      "desktop",
+      "component",
+      "presentational"
     ]
   },
   {
@@ -391,11 +794,40 @@
     ]
   },
   {
+    "description": "The Recovery Center surface: a recovery-score instrument (RecoveryHero) beside expandable contributing-factor and suggested-action rows, or the day-one empty state when there is no read. Owns which factor/action rows are open and resolves ?factor=/?action= deep-link positions to open on first render.",
+    "filePath": "desktop/src/recovery/RecoveryConsole.tsx",
+    "name": "RecoveryConsole",
+    "scenarios": [
+      "recoveryconsole-recovering",
+      "recoveryconsole-empty"
+    ],
+    "tags": [
+      "recovery",
+      "desktop",
+      "component",
+      "console"
+    ]
+  },
+  {
     "description": "Day-one empty state for the Recovery Center: serif verdict and the connect-a-source / see-trends entry paths.",
     "filePath": "components/recovery/RecoveryEmpty.tsx",
     "name": "RecoveryEmpty",
     "scenarios": [
       "recoveryempty-default"
+    ]
+  },
+  {
+    "description": "Day-one empty state for the Recovery Center: serif verdict, plain-language explanatory copy, and the connect-a-source / see-trends entry paths. Pure presentational.",
+    "filePath": "desktop/src/recovery/RecoveryEmpty.tsx",
+    "name": "RecoveryEmpty",
+    "scenarios": [
+      "recoveryempty-default"
+    ],
+    "tags": [
+      "recovery",
+      "desktop",
+      "component",
+      "presentational"
     ]
   },
   {
@@ -408,11 +840,40 @@
     ]
   },
   {
+    "description": "One contributing-signal row in the Recovery Center: label, track bar, formatted value, and state (strong/steady/strained); expands to reveal a plain-language read. Pure presentational; open state and toggle owned by RecoveryConsole.",
+    "filePath": "desktop/src/recovery/RecoveryFactorRow.tsx",
+    "name": "RecoveryFactorRow",
+    "scenarios": [
+      "recoveryfactorrow-strained",
+      "recoveryfactorrow-strongopen"
+    ],
+    "tags": [
+      "recovery",
+      "desktop",
+      "component",
+      "presentational"
+    ]
+  },
+  {
     "description": "The left instrument panel of the Recovery Center: the recovery-score dial (reusing the readiness-dial geometry), score + label, a signals-strong coordinates strip, and the serif verdict + summary.",
     "filePath": "components/recovery/RecoveryHero.tsx",
     "name": "RecoveryHero",
     "scenarios": [
       "recoveryhero-recovering"
+    ]
+  },
+  {
+    "description": "Left instrument panel of the Recovery Center: the recovery-score dial (reusing the readiness-dial geometry), the score and label, a signals-strong coordinates strip with status line, and the serif verdict plus summary. Pure presentational.",
+    "filePath": "desktop/src/recovery/RecoveryHero.tsx",
+    "name": "RecoveryHero",
+    "scenarios": [
+      "recoveryhero-recovering"
+    ],
+    "tags": [
+      "recovery",
+      "desktop",
+      "component",
+      "presentational"
     ]
   },
   {
@@ -452,6 +913,20 @@
     ]
   },
   {
+    "description": "Presentational label/value pair used inside the Field Log stats row.",
+    "filePath": "desktop/src/dashboard/Stat.tsx",
+    "name": "Stat",
+    "scenarios": [
+      "stat-default",
+      "stat-long-value"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "The Activity Timeline surface (client): owns the active type chip + search query (seeded from the URL), derives the chip set from the data, filters the day groups, and renders the filters + days, with quiet empty and no-match states.",
     "filePath": "components/timeline/Timeline.tsx",
     "name": "Timeline",
@@ -459,6 +934,21 @@
       "timeline-rich-week",
       "timeline-filtered-runs",
       "timeline-empty"
+    ]
+  },
+  {
+    "description": "The Activity Timeline surface (desktop port): owns the active type chip + search query, derives the chip set, filters the day groups, and renders the filters + days, with day-one and no-match quiet states.",
+    "filePath": "desktop/src/timeline/Timeline.tsx",
+    "name": "Timeline",
+    "scenarios": [
+      "timeline-rich-week",
+      "timeline-filtered-runs",
+      "timeline-empty"
+    ],
+    "tags": [
+      "timeline",
+      "console",
+      "component"
     ]
   },
   {
@@ -471,11 +961,37 @@
     ]
   },
   {
+    "description": "A single day group in the timeline: a date header with label + entry-count bracket followed by that day's entries.",
+    "filePath": "desktop/src/timeline/TimelineDay.tsx",
+    "name": "TimelineDay",
+    "scenarios": [
+      "timelineday-default",
+      "timelineday-single-entry"
+    ],
+    "tags": [
+      "timeline",
+      "component"
+    ]
+  },
+  {
     "description": "The timeline's day-one empty state (the production default before any activity syncs): a numbered section and a short serif line, no illustration.",
     "filePath": "components/timeline/TimelineEmpty.tsx",
     "name": "TimelineEmpty",
     "scenarios": [
       "timelineempty-default"
+    ]
+  },
+  {
+    "description": "The timeline's day-one empty state shown before any activity has synced: a numbered section and a short serif line.",
+    "filePath": "desktop/src/timeline/TimelineEmpty.tsx",
+    "name": "TimelineEmpty",
+    "scenarios": [
+      "timelineempty-default"
+    ],
+    "tags": [
+      "timeline",
+      "empty-state",
+      "component"
     ]
   },
   {
@@ -492,6 +1008,23 @@
     ]
   },
   {
+    "description": "One timeline row rendered by kind: workouts carry a grayscale photo plate, other kinds render as compact instrument rows with a mono time gutter and bracket kind label (detail routing deferred).",
+    "filePath": "desktop/src/timeline/TimelineEntry.tsx",
+    "name": "TimelineEntry",
+    "scenarios": [
+      "timelineentry-workout",
+      "timelineentry-briefing",
+      "timelineentry-mood",
+      "timelineentry-weight",
+      "timelineentry-long-title",
+      "timelineentry-minimal"
+    ],
+    "tags": [
+      "timeline",
+      "component"
+    ]
+  },
+  {
     "description": "The timeline filter row: toggleable type chips plus a mono search box (controlled by the Timeline parent). The active chip flips to ink.",
     "filePath": "components/timeline/TimelineFilters.tsx",
     "name": "TimelineFilters",
@@ -499,6 +1032,21 @@
       "timelinefilters-default",
       "timelinefilters-active-chip",
       "timelinefilters-searching"
+    ]
+  },
+  {
+    "description": "The timeline filter row: a controlled set of type chips plus a mono search box, with the active chip flipped to ink.",
+    "filePath": "desktop/src/timeline/TimelineFilters.tsx",
+    "name": "TimelineFilters",
+    "scenarios": [
+      "timelinefilters-default",
+      "timelinefilters-active-chip",
+      "timelinefilters-searching"
+    ],
+    "tags": [
+      "timeline",
+      "filters",
+      "component"
     ]
   },
   {
@@ -569,12 +1117,41 @@
     ]
   },
   {
+    "description": "Overnight vitals telemetry rows: each a label, a track bar (mint when favorable, signal-blue otherwise), and a formatted value with optional unit and trend chip; fewer rows renders the partial-data state.",
+    "filePath": "desktop/src/dashboard/VitalsPanel.tsx",
+    "name": "VitalsPanel",
+    "scenarios": [
+      "vitalspanel-default",
+      "vitalspanel-partial-data",
+      "vitalspanel-empty"
+    ],
+    "tags": [
+      "dashboard",
+      "desktop",
+      "component"
+    ]
+  },
+  {
     "description": "Body-weight entry detail: the reading in large tabular type plus its trend delta (mint for a good move, signal-blue otherwise).",
     "filePath": "components/timeline/WeightDetail.tsx",
     "name": "WeightDetail",
     "scenarios": [
       "weightdetail-default",
       "weightdetail-up"
+    ]
+  },
+  {
+    "description": "Body-weight entry detail: the reading in large tabular type plus its trend delta versus the previous reading.",
+    "filePath": "desktop/src/timeline/WeightDetail.tsx",
+    "name": "WeightDetail",
+    "scenarios": [
+      "weightdetail-default",
+      "weightdetail-up"
+    ],
+    "tags": [
+      "timeline",
+      "detail",
+      "component"
     ]
   },
   {
@@ -587,10 +1164,30 @@
     ]
   },
   {
+    "description": "Workout entry detail: grayscale photo plate plus the full distance/pace/vertical/duration stat set, falling back to a one-line summary when no discrete stats exist.",
+    "filePath": "desktop/src/timeline/WorkoutDetail.tsx",
+    "name": "WorkoutDetail",
+    "scenarios": [
+      "workoutdetail-default",
+      "workoutdetail-no-photo"
+    ],
+    "tags": [
+      "timeline",
+      "detail",
+      "component"
+    ]
+  },
+  {
     "description": "Human label for a suggested-recovery-action kind (run/rest/mobility/hydration/walk/nutrition); title-cases an unknown kind, falls back to 'Action' for empty.",
     "filePath": "components/recovery/recovery.ts",
     "name": "actionKindLabel",
     "testFile": "components/recovery/recovery.test.ts"
+  },
+  {
+    "description": "Human label for a suggested-action kind; unknown kinds title-case the raw value as a fallback.",
+    "filePath": "desktop/src/recovery/recovery.ts",
+    "name": "actionKindLabel",
+    "testFile": "desktop/src/recovery/recovery.test.ts"
   },
   {
     "description": "Returns the active-coach view among merged provider views, or null when none is active.",
@@ -599,10 +1196,31 @@
     "testFile": "components/dashboard/connections.test.ts"
   },
   {
+    "description": "Tauri command returning native runtime details (name, version, tauri version, OS) so the shell can prove the React-Rust IPC bridge is live.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "app_info",
+    "tags": [
+      "desktop",
+      "rust",
+      "tauri-command",
+      "app-info"
+    ],
+    "untestabilityReason": {
+      "justification": "Tauri command exposing native runtime info; not unit-testable without the runtime.",
+      "kind": "platform-glue"
+    }
+  },
+  {
     "description": "Resolves a daily briefing's timeline timestamp from its stored date: a bare YYYY-MM-DD is placed at 07:00 so it sorts among morning entries, a full ISO datetime passes through unchanged.",
     "filePath": "components/timeline/timeline.ts",
     "name": "briefingOccurredAt",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "A briefing's timeline timestamp is its ISO `date`; when only a bare date is stored, place it at 07:00 so it sorts among the morning entries.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "briefingOccurredAt",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
   },
   {
     "description": "Maps an ordered list of numeric values to SVG line + area path geometry inside a padded box, handling empty, single-point, and flat series without NaN coordinates.",
@@ -611,10 +1229,22 @@
     "testFile": "components/trends/trends.test.ts"
   },
   {
+    "description": "Map an ordered list of numeric values to SVG coordinates inside a width×height box with `pad` inset on every edge. The y-axis is inverted (SVG origin is top-left) and the value range is padded by 8% so the line never touches the frame. A flat series (min === max) plots on the vertical centre. A single point sits at the horizontal centre. Empty input yields an empty geometry rather than NaN coordinates.",
+    "filePath": "desktop/src/trends/trends.ts",
+    "name": "buildChartGeometry",
+    "testFile": "desktop/src/trends/trends.test.ts"
+  },
+  {
     "description": "Pure normalizer for the Activity Timeline: maps the four raw source arrays (workouts, briefings, moods, weights) into TimelineEntry rows (skipping workouts with no occurredAt) and groups them into newest-first days. All shaping the server loader delegates lives here.",
     "filePath": "components/timeline/timeline.ts",
     "name": "buildTimeline",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Normalize the four raw source arrays into TimelineEntry rows and group them into newest-first days. Pure — the server loader (app/lib/timeline.ts) reads the rows via Prisma and delegates all shaping here. A workout with no occurredAt is skipped (it exists only for the dashboard's latest-by-id read).",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "buildTimeline",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
   },
   {
     "description": "Returns the arc length (2 pi r) of the readiness dial ring for a given radius, defaulting to the design's 176px ring; used for both the dash array and the dash offset.",
@@ -623,16 +1253,34 @@
     "testFile": "components/dashboard/dial.test.ts"
   },
   {
+    "description": "Arc length of the dial ring for a given radius (defaults to the design's 176px ring). Used for both stroke-dasharray and the offset computation.",
+    "filePath": "desktop/src/dashboard/dial.ts",
+    "name": "circumference",
+    "testFile": "desktop/src/dashboard/dial.test.ts"
+  },
+  {
     "description": "Clamps a vitals track-fill percentage into the renderable 0-100 range so a stray seed value cannot overflow the bar; NaN degrades to 0.",
     "filePath": "components/dashboard/format.ts",
     "name": "clampPct",
     "testFile": "components/dashboard/format.test.ts"
   },
   {
+    "description": "Clamp a track-fill percentage into the renderable [0, 100] range so a stray seed value can't overflow the bar; NaN degrades to 0.",
+    "filePath": "desktop/src/dashboard/format.ts",
+    "name": "clampPct",
+    "testFile": "desktop/src/dashboard/format.test.ts"
+  },
+  {
     "description": "Clamps a raw 1-5 self-rating to an integer in [1,5]; missing/blank/sub-1 becomes null (not rated), high values clamp to 5.",
     "filePath": "components/checkin/checkin.ts",
     "name": "clampRating",
     "testFile": "components/checkin/checkin.test.ts"
+  },
+  {
+    "description": "Clamp a raw rating to the integer range [1, 5]. Anything missing / NaN / out-of-range on the low side becomes null (not rated); high values clamp to 5.",
+    "filePath": "desktop/src/checkin/checkin.ts",
+    "name": "clampRating",
+    "testFile": "desktop/src/checkin/checkin.test.ts"
   },
   {
     "description": "Server Action: resolves a connect attempt (via resolveConnection) then upserts the ProviderConnection row and revalidates the dashboard. Returns ok or an inline error.",
@@ -653,10 +1301,60 @@
     }
   },
   {
+    "description": "Persists a validated new goal via the create_goal Tauri command and emits wf:data-changed on success; a no-op in the browser preview.",
+    "filePath": "desktop/src/goals/data.ts",
+    "name": "createGoal",
+    "tags": [
+      "goals",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "Wraps the Tauri create_goal invoke and event dispatch; only exercises under the native runtime.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Write command: opens the app-data DB and persists an already-validated new goal.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "create_goal",
+    "tags": [
+      "desktop",
+      "rust",
+      "tauri-command",
+      "db-write",
+      "goals"
+    ],
+    "untestabilityReason": {
+      "justification": "Tauri command that opens the app-data SQLite DB.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Routing helper that returns the current window.location.pathname when it maps to a known route, falling back to '/' otherwise.",
+    "filePath": "desktop/src/App.tsx",
+    "name": "currentPath",
+    "tags": [
+      "routing",
+      "desktop",
+      "helper"
+    ],
+    "untestabilityReason": {
+      "justification": "reads window.location to pick the active route",
+      "kind": "platform-glue"
+    }
+  },
+  {
     "description": "Returns the UTC calendar-date key (YYYY-MM-DD) of an ISO datetime, used to group timeline entries into days deterministically regardless of render timezone.",
     "filePath": "components/timeline/timeline.ts",
     "name": "dayKey",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Calendar-date key of an ISO datetime, e.g. \"2026-07-06T07:14:00Z\" -> \"2026-07-06\". Uses the UTC date so grouping is deterministic and independent of the render machine's timezone (scenarios must screenshot identically anywhere).",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "dayKey",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
   },
   {
     "description": "Whole days between two YYYY-MM-DD date keys (a minus b), computed from the UTC calendar date; the internal basis for relativeDayLabel Today/Yesterday math.",
@@ -665,10 +1363,36 @@
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Whole days between two date keys (a - b), computed from the UTC calendar date.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "daysBetween",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Reads the ?factor= / ?action= URL params into 1-based factor/action row positions to open on first render, ignoring non-finite values.",
+    "filePath": "desktop/src/recovery/data.ts",
+    "name": "deepLinks",
+    "tags": [
+      "recovery",
+      "desktop",
+      "data-loader"
+    ],
+    "untestabilityReason": {
+      "justification": "Reads window.location.search from the browser DOM; exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
     "description": "Builds the timeline filter-chip set from the entry kinds actually present in the data: leads with an All chip, lists known kinds in CHIP_ORDER order, and appends any unexpected filterKey so nothing in the feed is unreachable by the filters.",
     "filePath": "components/timeline/timeline.ts",
     "name": "deriveChips",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Build the filter chip set from the entry kinds actually present in the data. Always leads with an \"All\" chip; known kinds appear in CHIP_ORDER order, and any unexpected filterKey still gets a chip so nothing in the feed is unreachable by the filters.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "deriveChips",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
   },
   {
     "description": "Server Action: deletes a provider's ProviderConnection row and revalidates the dashboard.",
@@ -686,16 +1410,34 @@
     "testFile": "components/dashboard/format.test.ts"
   },
   {
+    "description": "Pure formatting helpers for the briefing console. No DB, fs, or secret imports — safe anywhere in the client bundle. Escape HTML, then turn *word* spans into <em>word</em>. Lets a briefing headline or coach message italicize one phrase (serif emphasis) while any author/seed-supplied markup stays inert. Escaping runs BEFORE emphasis so an injected tag cannot survive as live markup.",
+    "filePath": "desktop/src/dashboard/format.ts",
+    "name": "emphasize",
+    "testFile": "desktop/src/dashboard/format.test.ts"
+  },
+  {
     "description": "Predicate driving the timeline's type chips and search box: an entry passes when the active type chip matches its filterKey (empty/'all' matches everything) AND the query substring-matches its title, summary, or accent case-insensitively.",
     "filePath": "components/timeline/timeline.ts",
     "name": "entryMatchesFilter",
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Does an entry pass the active type chip + search box? An empty `type` (or \"all\") matches every kind; the query matches case-insensitively across the title, summary, and accent.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "entryMatchesFilter",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
+  },
+  {
     "description": "Tallies how many of a recovery read's contributing factors are 'strong' out of the total, for the coordinates strip.",
     "filePath": "components/recovery/recovery.ts",
     "name": "factorTally",
     "testFile": "components/recovery/recovery.test.ts"
+  },
+  {
+    "description": "\"2 of 6 signals strong\" — a one-line read of how many contributing factors are in good shape. Returns { strong, total } for the caller to format.",
+    "filePath": "desktop/src/recovery/recovery.ts",
+    "name": "factorTally",
+    "testFile": "desktop/src/recovery/recovery.test.ts"
   },
   {
     "description": "Looks up a catalog provider by id across the combined AI + health provider list; undefined if unknown.",
@@ -710,12 +1452,186 @@
     "testFile": "components/goals/goals.test.ts"
   },
   {
+    "description": "\"128 / 500 mi\" — the human progress label. Unit is optional.",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "formatProgress",
+    "testFile": "desktop/src/goals/goals.test.ts"
+  },
+  {
     "description": "Presentational helper: formats a goal's remaining amount (rounded, optional unit) for the GoalCard 'to go' label.",
     "filePath": "components/goals/GoalCard.tsx",
     "name": "formatRemaining",
     "untestabilityReason": {
       "justification": "One-line display formatter with no branching beyond the shared tidy pattern; visually covered by the GoalCard component scenarios.",
       "kind": "trivial-wrapper"
+    }
+  },
+  {
+    "description": "Presentational helper: formats a goal's remaining amount (rounded to one decimal, optional unit) for the GoalCard 'to go' label.",
+    "filePath": "desktop/src/goals/GoalCard.tsx",
+    "name": "formatRemaining",
+    "tags": [
+      "goals",
+      "desktop",
+      "component"
+    ],
+    "untestabilityReason": {
+      "justification": "One-line display formatter with no branching beyond the shared tidy rounding pattern; visually covered by the GoalCard scenarios.",
+      "kind": "trivial-wrapper"
+    }
+  },
+  {
+    "description": "Browser-preview fallback that returns a check-in fixture selected by the `?s=` scenario query param, defaulting to the Rich fixture.",
+    "filePath": "desktop/src/checkin/data.ts",
+    "name": "fromFixture",
+    "tags": [
+      "checkin",
+      "data-loader",
+      "preview-fixture"
+    ],
+    "untestabilityReason": {
+      "justification": "Reads the preview URL params to pick a fixture; a browser-preview substitute for the native backend.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Browser-preview fallback dashboard source: reads the ?s scenario query param from window.location and returns the matching named fixture, defaulting to the Primed fixture.",
+    "filePath": "desktop/src/dashboard/data.ts",
+    "name": "fromFixture",
+    "tags": [
+      "dashboard",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "reads window.location.search to select the preview fixture",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Browser-preview fallback that returns the goals fixture selected by the ?s= query param, defaulting to the Rich fixture.",
+    "filePath": "desktop/src/goals/data.ts",
+    "name": "fromFixture",
+    "tags": [
+      "goals",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "Selects a preview fixture from the URL query string; browser-only glue with no production logic.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Browser-preview fallback that selects a bundled recovery fixture from the ?s= scenario URL param (defaulting to Rich) and attaches the deep-link positions.",
+    "filePath": "desktop/src/recovery/data.ts",
+    "name": "fromFixture",
+    "tags": [
+      "recovery",
+      "desktop",
+      "data-loader"
+    ],
+    "untestabilityReason": {
+      "justification": "Reads window.location URL params and picks a bundled fixture; browser/preview glue exercised via scenarios.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Browser-preview fallback: read the ?s= query param and return the matching in-memory timeline fixture, defaulting to the Rich scenario.",
+    "filePath": "desktop/src/timeline/data.ts",
+    "name": "fromFixture",
+    "tags": [
+      "timeline",
+      "data-loader",
+      "fixture"
+    ],
+    "untestabilityReason": {
+      "justification": "Reads the ?s= fixture query param and returns a static in-memory fixture.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Browser-preview fallback (no Tauri): returns the fixture named by the ?s= query param, or the Rich default when absent/unknown.",
+    "filePath": "desktop/src/trends/data.ts",
+    "name": "fromFixture",
+    "tags": [
+      "trends",
+      "data-loader",
+      "browser-preview"
+    ],
+    "untestabilityReason": {
+      "justification": "Reads window.location.search to pick a preview fixture; a thin preview-only shim with no in-process aggregation.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Loads recent check-in Mood rows via the native Tauri `get_checkin` command and derives the metabar label and default morning/evening part-of-day; returns null when not under Tauri.",
+    "filePath": "desktop/src/checkin/data.ts",
+    "name": "fromNative",
+    "tags": [
+      "checkin",
+      "data-loader",
+      "native"
+    ],
+    "untestabilityReason": {
+      "justification": "Invokes a native Tauri command and reads window.location; only meaningful inside the desktop shell.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Dashboard data source under Tauri: dynamically imports the Tauri core API and invokes the native get_dashboard command (reads local SQLite), returning null when not running under Tauri.",
+    "filePath": "desktop/src/dashboard/data.ts",
+    "name": "fromNative",
+    "tags": [
+      "dashboard",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "dynamically imports the Tauri API and invokes the native get_dashboard command; returns null outside Tauri",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Loads goals from the native Tauri get_goals command, deriving the metabar date label and the composer-open deep link; returns null when not under Tauri.",
+    "filePath": "desktop/src/goals/data.ts",
+    "name": "fromNative",
+    "tags": [
+      "goals",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "Wraps the Tauri invoke/import and window.location read; only meaningful inside the native runtime.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Invokes the Tauri `get_recovery` command and stitches the raw read plus its factors and actions into a flat RecoveryReadFull, or returns null when not running under Tauri.",
+    "filePath": "desktop/src/recovery/data.ts",
+    "name": "fromNative",
+    "tags": [
+      "recovery",
+      "desktop",
+      "data-loader"
+    ],
+    "untestabilityReason": {
+      "justification": "Tauri IPC boundary (dynamic import + invoke); exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Load the timeline under Tauri: invoke get_timeline for the four raw activity sources, group them via buildTimeline, and seed the initial type/query from the URL; returns null when not running under Tauri.",
+    "filePath": "desktop/src/timeline/data.ts",
+    "name": "fromNative",
+    "tags": [
+      "timeline",
+      "data-loader",
+      "tauri"
+    ],
+    "untestabilityReason": {
+      "justification": "Wraps the Tauri invoke('get_timeline'); returns null when not under Tauri and delegates all shaping to the unit-tested buildTimeline.",
+      "kind": "platform-glue"
     }
   },
   {
@@ -787,10 +1703,52 @@
     }
   },
   {
+    "description": "Check-in: recent Mood rows (most recent first).",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "get_checkin",
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Dashboard: most-recent briefing + its ordered overnight vitals + latest workout.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "get_dashboard",
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Goals: every goal in display order.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "get_goals",
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Recovery: the latest read plus its contributing factors and suggested actions.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "get_recovery",
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Timeline: the four activity sources; the TS layer groups them into days.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "get_timeline",
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Trends: every metric chart + its points; the TS layer stitches points on.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "get_trends",
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
     "description": "Classifies a goal as 'complete' (current >= target) or 'active'; a bad target reads as active.",
     "filePath": "components/goals/goals.ts",
     "name": "goalStatus",
     "testFile": "components/goals/goals.test.ts"
+  },
+  {
+    "description": "A goal is complete once current reaches (or passes) its target.",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "goalStatus",
+    "testFile": "desktop/src/goals/goals.test.ts"
   },
   {
     "description": "Groups normalized timeline entries into newest-first days, each day's entries newest-first, attaching a relative day label keyed off the single newest entry across the set.",
@@ -799,16 +1757,197 @@
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Group already-normalized entries (any order) into newest-first days, each day's entries also newest-first. The relative labels key off the single newest entry across the whole set.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "groupByDay",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
+  },
+  {
     "description": "Infers morning (before noon) vs evening (noon on) from an hour; falls back to morning for an out-of-range hour.",
     "filePath": "components/checkin/checkin.ts",
     "name": "inferPartOfDay",
     "testFile": "components/checkin/checkin.test.ts"
   },
   {
+    "description": "Morning before noon, evening after. Hours outside 0-23 fall back to morning.",
+    "filePath": "desktop/src/checkin/checkin.ts",
+    "name": "inferPartOfDay",
+    "testFile": "desktop/src/checkin/checkin.test.ts"
+  },
+  {
+    "description": "Inserts a new goal appended at the list end (ord = current count), mirroring dueLabel from cadence.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "insert_goal",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-write",
+      "goals"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Inserts a new mood (check-in) row from an already-validated draft.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "insert_mood",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-write",
+      "checkin"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
     "description": "True only when a recovery factor is 'strong' (mint), so the eye lands on steady/strained signals that hold recovery back.",
     "filePath": "components/recovery/recovery.ts",
     "name": "isPositiveState",
     "testFile": "components/recovery/recovery.test.ts"
+  },
+  {
+    "description": "A factor counts as positive (mint) only when it's strong; steady and strained read in ink / signal so the eye lands on what's holding recovery back.",
+    "filePath": "desktop/src/recovery/recovery.ts",
+    "name": "isPositiveState",
+    "testFile": "desktop/src/recovery/recovery.test.ts"
+  },
+  {
+    "description": "Detects whether the check-in surface is running inside the native Tauri shell (vs. the browser preview) by checking for `__TAURI_INTERNALS__` on window.",
+    "filePath": "desktop/src/checkin/data.ts",
+    "name": "isTauri",
+    "tags": [
+      "checkin",
+      "data",
+      "platform-detect"
+    ],
+    "untestabilityReason": {
+      "justification": "Branches on the Tauri runtime global; its result depends entirely on the native shell being present.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Detects whether the app is running under Tauri by probing for the __TAURI_INTERNALS__ global on window.",
+    "filePath": "desktop/src/goals/data.ts",
+    "name": "isTauri",
+    "tags": [
+      "goals",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "Probes the Tauri runtime via a window global; no deterministic logic to unit-test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Top-level check-in data loader: returns native Tauri data when available, otherwise the browser-preview fixture.",
+    "filePath": "desktop/src/checkin/data.ts",
+    "name": "loadCheckin",
+    "tags": [
+      "checkin",
+      "data-loader"
+    ],
+    "untestabilityReason": {
+      "justification": "Dispatches between the native Tauri read path and the browser-preview fixture path.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Dashboard data loader: returns the native Tauri dashboard read when available, otherwise the browser-preview fixture, so the ported UI is unaware of the source.",
+    "filePath": "desktop/src/dashboard/data.ts",
+    "name": "loadDashboard",
+    "tags": [
+      "dashboard",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "delegates to the Tauri native read with a browser-preview fixture fallback",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Loads the goals data, preferring the native Tauri source and falling back to the fixture in the browser preview.",
+    "filePath": "desktop/src/goals/data.ts",
+    "name": "loadGoals",
+    "tags": [
+      "goals",
+      "desktop",
+      "data"
+    ],
+    "untestabilityReason": {
+      "justification": "Thin async selector between the native and fixture sources; behaviour depends on the runtime, not testable logic.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Recovery Center data entry point: returns the native Tauri read, falling back to the bundled fixture loader when not running under Tauri (browser preview).",
+    "filePath": "desktop/src/recovery/data.ts",
+    "name": "loadRecovery",
+    "tags": [
+      "recovery",
+      "desktop",
+      "data-loader"
+    ],
+    "untestabilityReason": {
+      "justification": "Dispatches between the Tauri-native and browser-fixture data sources; exercised via app scenarios rather than a unit test.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Timeline data entry point: return the native (Tauri) result when available, otherwise fall back to the browser-preview fixture.",
+    "filePath": "desktop/src/timeline/data.ts",
+    "name": "loadTimeline",
+    "tags": [
+      "timeline",
+      "data-loader"
+    ],
+    "untestabilityReason": {
+      "justification": "Native-or-fixture entry point wiring fromNative()/fromFixture() together with no in-process logic of its own.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Trends data source: returns the native Tauri result, falling back to a browser-preview fixture when not running under Tauri.",
+    "filePath": "desktop/src/trends/data.ts",
+    "name": "loadTrends",
+    "tags": [
+      "trends",
+      "data-loader"
+    ],
+    "untestabilityReason": {
+      "justification": "Bare boundary dispatch between the native loader and the fixture fallback; no branching logic of its own.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Build-script entrypoint invoking tauri_build::build().",
+    "filePath": "desktop/src-tauri/build.rs",
+    "name": "main",
+    "tags": [
+      "desktop",
+      "rust",
+      "entrypoint",
+      "build"
+    ],
+    "untestabilityReason": {
+      "justification": "binary/build entrypoint",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Desktop binary entrypoint delegating to the library run().",
+    "filePath": "desktop/src-tauri/src/main.rs",
+    "name": "main",
+    "tags": [
+      "desktop",
+      "rust",
+      "entrypoint",
+      "binary"
+    ],
+    "untestabilityReason": {
+      "justification": "binary/build entrypoint",
+      "kind": "platform-glue"
+    }
   },
   {
     "description": "Prisma seed entrypoint (npm run db:seed). Intentionally a no-op in this project: production starts empty and each CodeYam scenario carries its own seed payload.",
@@ -818,6 +1957,32 @@
       "justification": "Scaffolded Prisma seed script, no-op for production; scenario seeding goes through the CodeYam seed adapter.",
       "kind": "scaffold"
     }
+  },
+  {
+    "description": "Maps a SQLite row to a DailyBriefing struct.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "map_briefing",
+    "tags": [
+      "desktop",
+      "rust",
+      "row-mapper",
+      "dashboard",
+      "timeline"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Maps a SQLite row to a Workout struct.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "map_workout",
+    "tags": [
+      "desktop",
+      "rust",
+      "row-mapper",
+      "dashboard",
+      "timeline"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
   },
   {
     "description": "Masks an API key for display, keeping only the last four characters (fully masked when four or fewer).",
@@ -838,10 +2003,63 @@
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "e.g. \"Energy 4 · Steady · Slept well\". Only present fields appear.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "moodSummary",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Inert placeholder callback passed as the check-in form's onLogged handler while the parent refresh is deferred.",
+    "filePath": "desktop/src/checkin/CheckinConsole.tsx",
+    "name": "noop",
+    "tags": [
+      "checkin",
+      "placeholder"
+    ],
+    "untestabilityReason": {
+      "justification": "inert no-op placeholder callback",
+      "kind": "trivial-wrapper"
+    }
+  },
+  {
+    "description": "Inert no-op placeholder callback passed to the console's deferred coach/setup triggers.",
+    "filePath": "desktop/src/dashboard/DashboardConsole.tsx",
+    "name": "noop",
+    "tags": [
+      "dashboard",
+      "desktop",
+      "placeholder"
+    ],
+    "untestabilityReason": {
+      "justification": "inert no-op placeholder callback",
+      "kind": "trivial-wrapper"
+    }
+  },
+  {
     "description": "Narrows an arbitrary string to a known TrendRange, defaulting to 'weekly' so a stray ?range= value never leaves the switcher blank.",
     "filePath": "components/trends/trends.ts",
     "name": "normalizeRange",
     "testFile": "components/trends/trends.test.ts"
+  },
+  {
+    "description": "Narrow an arbitrary string to a known range, defaulting to \"weekly\" so a stray ?range= value can never leave the switcher in an empty state.",
+    "filePath": "desktop/src/trends/trends.ts",
+    "name": "normalizeRange",
+    "testFile": "desktop/src/trends/trends.test.ts"
+  },
+  {
+    "description": "Opens (creating the app-data dir) the wellframe.db SQLite database and applies the schema, returning a Connection.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "open_db",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-open"
+    ],
+    "untestabilityReason": {
+      "justification": "Opens the app-data SQLite DB via the Tauri path resolver; needs the runtime.",
+      "kind": "platform-glue"
+    }
   },
   {
     "description": "Parses a composite timeline entry id ('workout-3') into its kind and numeric db id for the detail route; returns null on a malformed id or unknown kind.",
@@ -850,10 +2068,22 @@
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Parse a composite entry id (\"workout-3\") back into its kind + numeric id for the detail route. Returns null on a malformed id.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "parseEntryId",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
+  },
+  {
     "description": "Fraction complete of a goal (current/target) clamped to 0-100; degrades to 0 for a non-positive target or NaN/infinite inputs.",
     "filePath": "components/goals/goals.ts",
     "name": "progressPct",
     "testFile": "components/goals/goals.test.ts"
+  },
+  {
+    "description": "Fraction complete, clamped to [0, 100]. A zero or negative target degrades to 0% rather than dividing by zero or reporting Infinity. NaN inputs → 0.",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "progressPct",
+    "testFile": "desktop/src/goals/goals.test.ts"
   },
   {
     "description": "Maps a trend range key (weekly/monthly/yearly) to its human title; passes unknown keys through unchanged.",
@@ -862,10 +2092,180 @@
     "testFile": "components/trends/trends.test.ts"
   },
   {
+    "description": "Human label for a range key (drives the switcher chips).",
+    "filePath": "desktop/src/trends/trends.ts",
+    "name": "rangeLabel",
+    "testFile": "desktop/src/trends/trends.test.ts"
+  },
+  {
     "description": "Word for a 1-5 check-in rating (Very low … Excellent); null renders as an em dash.",
     "filePath": "components/checkin/checkin.ts",
     "name": "ratingLabel",
     "testFile": "components/checkin/checkin.test.ts"
+  },
+  {
+    "description": "Word for a 1-5 rating; null → \"—\".",
+    "filePath": "desktop/src/checkin/checkin.ts",
+    "name": "ratingLabel",
+    "testFile": "desktop/src/checkin/checkin.test.ts"
+  },
+  {
+    "description": "Reads the most-recent daily briefing row (ordered by date), or None when empty.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_briefing_latest",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "dashboard",
+      "timeline"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all daily briefing rows for the timeline.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_briefings_all",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "timeline"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all goal rows in display order (ord ASC, id ASC).",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_goals",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "goals"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all mood rows, most recent first (backs timeline and check-in).",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_moods",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "checkin",
+      "timeline"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads a recovery read's suggested-action rows, ordered by ord.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_recovery_actions",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "recovery"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads a recovery read's contributing-factor rows, ordered by ord.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_recovery_factors",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "recovery"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads the latest recovery read row (ordered by date), or None when empty.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_recovery_latest",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "recovery"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all trend metric rows ordered by range then ord.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_trend_metrics",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "trends"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all trend point rows ordered by ord.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_trend_points",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "trends"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all vital rows ordered by ord.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_vitals",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "dashboard"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all weight rows for the timeline.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_weights",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "timeline"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads the latest workout row (ordered by id), or None when empty.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_workout_latest",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "dashboard"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
+  },
+  {
+    "description": "Reads all workout rows for the timeline.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "read_workouts_all",
+    "tags": [
+      "desktop",
+      "rust",
+      "db-read",
+      "timeline"
+    ],
+    "testFile": "desktop/src-tauri/src/lib.rs"
   },
   {
     "description": "Computes the SVG stroke-dashoffset that encodes a 0-100 readiness score on the dial ring (full ring at 100, empty at 0), clamping out-of-range or NaN scores so the arc is always valid.",
@@ -874,16 +2274,34 @@
     "testFile": "components/dashboard/dial.test.ts"
   },
   {
+    "description": "stroke-dashoffset for a score. The score is clamped to [0, 100] (NaN -> 0) so an out-of-range reading can never produce a negative or overlong dash.",
+    "filePath": "desktop/src/dashboard/dial.ts",
+    "name": "readinessDashOffset",
+    "testFile": "desktop/src/dashboard/dial.test.ts"
+  },
+  {
     "description": "Human day label for a timeline entry relative to the newest entry's day (Today / Yesterday / 'Wed Jul 2'), derived from the data's newest timestamp rather than the wall clock so seeded scenarios render stable labels.",
     "filePath": "components/timeline/timeline.ts",
     "name": "relativeDayLabel",
     "testFile": "components/timeline/timeline.test.ts"
   },
   {
+    "description": "Human day label relative to the newest entry's day (the timeline's \"now\"), never relative to the wall clock — so a seeded scenario always renders the same labels. The newest day is \"Today\", the one before \"Yesterday\", and anything older is \"Wed Jul 2\".",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "relativeDayLabel",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
+  },
+  {
     "description": "Amount of a goal still to go (target - current), never negative for an over-shot goal.",
     "filePath": "components/goals/goals.ts",
     "name": "remaining",
     "testFile": "components/goals/goals.test.ts"
+  },
+  {
+    "description": "Amount still to go. Never negative — an over-shot goal reports 0 remaining.",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "remaining",
+    "testFile": "desktop/src/goals/goals.test.ts"
   },
   {
     "description": "Pure resolution of a connect attempt: validates provider/method/input then maps the method to the status and status-line detail to persist, or an error. The deterministic stand-in for the real handshake; no side effects.",
@@ -898,16 +2316,54 @@
     "testFile": "components/goals/goals.test.ts"
   },
   {
+    "description": "Circumference of the progress ring for a given radius.",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "ringCircumference",
+    "testFile": "desktop/src/goals/goals.test.ts"
+  },
+  {
     "description": "stroke-dashoffset for a goal ring at a completion percentage: full ring at 100, empty at 0, clamped so a stray value can't produce a negative or overlong dash.",
     "filePath": "components/goals/goals.ts",
     "name": "ringDashOffset",
     "testFile": "components/goals/goals.test.ts"
   },
   {
+    "description": "stroke-dashoffset for a completion percentage: a full ring at 100, an empty ring at 0. The percentage is clamped so a stray value can't produce a negative or overlong dash.",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "ringDashOffset",
+    "testFile": "desktop/src/goals/goals.test.ts"
+  },
+  {
     "description": "Internal helper: rounds a number to 2 decimal places for stable SVG path coordinates in buildChartGeometry.",
     "filePath": "components/trends/trends.ts",
     "name": "round",
     "testFile": "components/trends/trends.test.ts"
+  },
+  {
+    "description": "Internal helper: rounds a number to 2 decimal places for stable SVG path coordinates in buildChartGeometry.",
+    "filePath": "desktop/src/trends/trends.ts",
+    "name": "round",
+    "tags": [
+      "trends",
+      "chart-geometry",
+      "internal-helper"
+    ],
+    "testFile": "desktop/src/trends/trends.test.ts"
+  },
+  {
+    "description": "Tauri builder entrypoint: registers the invoke handlers and runs the app.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "run",
+    "tags": [
+      "desktop",
+      "rust",
+      "entrypoint",
+      "tauri"
+    ],
+    "untestabilityReason": {
+      "justification": "Builds and runs the Tauri app.",
+      "kind": "platform-glue"
+    }
   },
   {
     "description": "Server Action: makes one AI provider the sole active coach (clears others, sets this one) in a transaction, then revalidates the dashboard.",
@@ -925,11 +2381,48 @@
     "testFile": "components/recovery/recovery.test.ts"
   },
   {
+    "description": "Human label for a factor state; unknown states pass through unchanged.",
+    "filePath": "desktop/src/recovery/recovery.ts",
+    "name": "stateLabel",
+    "testFile": "desktop/src/recovery/recovery.test.ts"
+  },
+  {
     "description": "Server Action: validates a check-in (via validateCheckinInput), writes a Mood row (also read by the Activity Timeline), and revalidates /checkin and /timeline. The pure decision logic is validateCheckinInput, which is unit-tested.",
     "filePath": "app/lib/checkin.actions.ts",
     "name": "submitCheckin",
     "untestabilityReason": {
       "justification": "Server Action performing Prisma create + revalidatePath; decision logic is validateCheckinInput, unit-tested.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Persists a validated check-in draft via the native Tauri `submit_checkin` command and dispatches `wf:data-changed` on success; a local no-op in the browser preview.",
+    "filePath": "desktop/src/checkin/data.ts",
+    "name": "submitCheckin",
+    "tags": [
+      "checkin",
+      "data",
+      "mutation",
+      "native"
+    ],
+    "untestabilityReason": {
+      "justification": "Writes through a native Tauri command and fires a window event; inert with no persistence in the browser preview.",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Write command: opens the app-data DB and persists an already-validated check-in (mood) row.",
+    "filePath": "desktop/src-tauri/src/lib.rs",
+    "name": "submit_checkin",
+    "tags": [
+      "desktop",
+      "rust",
+      "tauri-command",
+      "db-write",
+      "checkin"
+    ],
+    "untestabilityReason": {
+      "justification": "Tauri command that opens the app-data SQLite DB.",
       "kind": "platform-glue"
     }
   },
@@ -940,10 +2433,22 @@
     "testFile": "components/goals/goals.test.ts"
   },
   {
+    "description": "Trim trailing \".0\" so whole numbers read as \"128\" not \"128.0\", but keep one decimal for fractional progress (\"12.5\").",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "tidy",
+    "testFile": "desktop/src/goals/goals.test.ts"
+  },
+  {
     "description": "Extracts the HH:MM mono time stamp from an ISO datetime for the timeline's left time gutter and the entry-detail metabar.",
     "filePath": "components/timeline/timeline.ts",
     "name": "timeLabel",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "Short mono time stamp, e.g. \"07:14\".",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "timeLabel",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
   },
   {
     "description": "Pure mapper that narrows a raw ProviderConnection DB row's string columns to the typed ConnectionRow unions and drops the numeric id.",
@@ -958,6 +2463,12 @@
     "testFile": "components/checkin/checkin.test.ts"
   },
   {
+    "description": "Validate + normalize a check-in submission. Requires a valid part of day, a valid ISO timestamp, and at least one signal (a rating or a mood word) so an all-blank submission can't be logged. Ratings are clamped to 1-5.",
+    "filePath": "desktop/src/checkin/checkin.ts",
+    "name": "validateCheckinInput",
+    "testFile": "desktop/src/checkin/checkin.test.ts"
+  },
+  {
     "description": "Validates the typed value for a connect method (non-empty/long-enough API key; URL or host:port for local/MCP endpoints), returning an error string or null. OAuth needs no input.",
     "filePath": "components/dashboard/connections.ts",
     "name": "validateConnectInput",
@@ -970,10 +2481,22 @@
     "testFile": "components/goals/goals.test.ts"
   },
   {
+    "description": "Validate + normalize a new-goal form submission. Pure so the create form and the server action share one source of truth and it's unit-testable. Trims text, defaults an unknown category to \"habit\", coerces numeric fields, and rejects an empty title or a non-positive target.",
+    "filePath": "desktop/src/goals/goals.ts",
+    "name": "validateGoalInput",
+    "testFile": "desktop/src/goals/goals.test.ts"
+  },
+  {
     "description": "Builds a body-weight reading's one-line summary (value + unit), appending the trend delta only when present.",
     "filePath": "components/timeline/timeline.ts",
     "name": "weightSummary",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "e.g. \"154.2 lb · ▼0.4\". Delta is appended only when present.",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "weightSummary",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
   },
   {
     "description": "Rolls present check-in ratings into a single 0-100 wellbeing read, inverting soreness and stress so low values read as high wellbeing; null when nothing is rated.",
@@ -982,9 +2505,71 @@
     "testFile": "components/checkin/checkin.test.ts"
   },
   {
+    "description": "Roll the present ratings into a single 0-100 wellbeing read. Positive fields (energy, sleep) count as-is; inverted fields (soreness, stress) are flipped so low soreness reads as high wellbeing. Returns null when nothing is rated.",
+    "filePath": "desktop/src/checkin/checkin.ts",
+    "name": "wellbeingScore",
+    "testFile": "desktop/src/checkin/checkin.test.ts"
+  },
+  {
     "description": "Builds a workout's one-line summary by joining its present distance / pace / vertical / duration stats with a middle dot, skipping missing fields.",
     "filePath": "components/timeline/timeline.ts",
     "name": "workoutSummary",
     "testFile": "components/timeline/timeline.test.ts"
+  },
+  {
+    "description": "── one-line summary builders ─────────────────────────────────────────────── Join the present workout stats with a middle dot, e.g. \"8.2 mi · 8:42 · 1,240 ft\".",
+    "filePath": "desktop/src/timeline/timeline.ts",
+    "name": "workoutSummary",
+    "testFile": "desktop/src/timeline/timeline.test.ts"
+  },
+  {
+    "description": "A single trend chart: a soft-filled sparkline over a hairline baseline with the metric label, latest value + delta, x-axis bucket labels, and a one-line read. Geometry comes from the pure trends helpers; mint line when improving, signal-blue when declining.",
+    "filePath": "desktop/src/trends/TrendChart.tsx",
+    "name": "TrendChart",
+    "tags": [
+      "trends",
+      "chart",
+      "presentational"
+    ]
+  },
+  {
+    "description": "The Weekly/Monthly/Yearly switcher for the Trends surface (the page's primary interaction); disables ranges with no data so the user can never land on a blank view. Active range and setter are owned by TrendsConsole.",
+    "filePath": "desktop/src/trends/TrendRangeSwitcher.tsx",
+    "name": "TrendRangeSwitcher",
+    "tags": [
+      "trends",
+      "interaction",
+      "presentational"
+    ]
+  },
+  {
+    "description": "The Trends surface (desktop port): loads every metric chart and a Weekly/Monthly/Yearly range switcher that re-scopes which charts render (the primary interaction). Owns the selected-range view state locally; shows the day-one empty state when there is no history.",
+    "filePath": "desktop/src/trends/TrendsConsole.tsx",
+    "name": "TrendsConsole",
+    "tags": [
+      "trends",
+      "console",
+      "interaction"
+    ]
+  },
+  {
+    "description": "Day-one empty state for the Trends surface: serif verdict, plain-language copy, and the connect-a-source / view-timeline entry paths.",
+    "filePath": "desktop/src/trends/TrendsEmpty.tsx",
+    "name": "TrendsEmpty",
+    "tags": [
+      "trends",
+      "empty-state",
+      "presentational"
+    ]
+  },
+  {
+    "description": "Native Tauri loader: invokes get_trends, stitches each metric's points onto it by metricId (a flat-model JS join), and reads the initial range from the URL. Returns null when not running under Tauri so the fixture fallback takes over.",
+    "filePath": "desktop/src/trends/data.ts",
+    "name": "fromNative",
+    "tags": [
+      "trends",
+      "data-loader",
+      "tauri-ipc"
+    ]
   }
 ]
