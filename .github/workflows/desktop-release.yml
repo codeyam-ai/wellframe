@@ -20,6 +20,11 @@ on:
 
 jobs:
   build:
+    # tauri-action creates the GitHub Release + uploads assets, which needs write
+    # access to repo contents. Org/private-repo default tokens are often read-only,
+    # which fails every matrix job at the release step — grant it explicitly.
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -71,7 +76,8 @@ jobs:
         if: startsWith(matrix.platform, 'macos')
         env:
           APPLE_API_KEY_P8: ${{ secrets.APPLE_API_KEY_P8 }}
-        run: printf '%s' "$APPLE_API_KEY_P8" | base64 --decode > "$RUNNER_TEMP/apple-api-key.p8"
+        # openssl decodes portably (macOS/BSD base64 lacks GNU's --decode; -A joins wrapped lines).
+        run: printf '%s' "$APPLE_API_KEY_P8" | openssl base64 -d -A > "$RUNNER_TEMP/apple-api-key.p8"
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
