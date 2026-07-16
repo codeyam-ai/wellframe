@@ -10,6 +10,11 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   clearScreen: false,
+  // The desktop app uses plain CSS (no Tailwind/PostCSS). Pin an inline empty
+  // PostCSS config so vite does NOT search up the tree and pick up the root
+  // Next.js app's postcss.config.mjs (which needs @tailwindcss/postcss — a root
+  // dep that isn't installed when CI only `npm ci`s the desktop app).
+  css: { postcss: {} },
   server: {
     host: host || '127.0.0.1',
     port: 1420,
