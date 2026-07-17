@@ -30,40 +30,26 @@ isn't lost.
   (Developer ID Application: Nod Labs, Inc.), `APPLE_CERTIFICATE_PASSWORD`,
   `APPLE_SIGNING_IDENTITY`, `APPLE_API_ISSUER`, `APPLE_API_KEY`,
   `APPLE_API_KEY_P8`. Team ID `88QLZH998K` is hardcoded in the workflow.
-- The `codeyam-editor` binary in the sandbox is a **stale dev build**
-  (`rebuild-self` fails — no editor Cargo.toml here). Its `isolate` scaffolds
-  Next-style routes and `glossary-add` is stricter than documented. This blocks
-  codeyam-registry scenario capture for the desktop app (below).
-- All work this session was pushed with `--allow-deferred` (a `session-finalize`
-  is owed before merge/alignment).
+- The `codeyam-editor` binary is now current (0.1.7) on the rebuilt VM — the
+  earlier "stale dev build" blocker on desktop scenario capture is resolved.
 
 ## Pending — decisions needed
 
-### 1. Rename (blocker for icon/README/release finalization)
-**"Wellframe" is an existing digital-health company** (care-management platform,
-acquired by HealthEdge) — same space, real trademark/confusion risk. Rename before
-going public. Constraint from owner: **no "health" in the name; "well"/"wellness" OK.**
+### 1. Name — RESOLVED: keeping Wellframe
+**Decision (2026-07-17): keep "Wellframe."** There is an existing digital-health
+Wellframe (B2B care-management, acquired by HealthEdge), but this is a B2C consumer
+side project in a different sub-class, so the collision is acceptable for now.
+**Backup name if it ever needs to change: Artesian.** (52 alternatives were screened;
+~80% collided with an existing health app — Artesian was the cleanest survivor.)
 
-Preliminary checks (consumer wellness naming is very saturated):
-- ❌ Halcyon — multiple "Halcyon Health" apps on the App Store / Play.
-- ❌ Vela — many wellness/fitness apps (Vela AI, Vela Wellness, Vela Pilates).
-- ⚠️ Almanac — Almanac.io (funded collaboration-software startup).
-- ⚠️ Keel — keel.digital (workplace well-being health-tech).
-- ⚠️ Throughline — design/brand agencies hold the mark (different class).
-- ~ Cairn — main "Cairn Personalized Health" app is closed; more available.
-
-None fully clear. A coined/abstract word is the safer route. **Any final pick needs
-a proper USPTO + domain + App Store search (attorney-grade).** Rename touches:
-`tauri.conf.json` (identifier + productName), `desktop/package.json`,
-`mcp-server` (id + `defaultDbPath` in `src/db.ts`), READMEs, the release, and the
-git remote/repo name if desired.
-
-### 2. App icon
-Four options rendered in **`docs/icon-options.html`** (open in a browser) /
-**`docs/icon-options.png`**: (1) Signal Dial [blue], (2) Ink Dial [mono],
-(3) Bracketed, (4) Readiness Rings [blue+mint]. Pick one, then:
-`node` the chosen SVG → 1024px PNG → `cd desktop && npx tauri icon <src.png>`
-→ commit the icon set → re-tag (`v0.1.2`) to rebuild.
+### 2. App icon — RESOLVED
+Final mark: **"Signal / Nested gauge"** — an outer readiness arc (blue, on a tick
+track, with a luminous terminus) around an inner recovery gauge (mint), on the
+Plinth deep-ink squircle. Master art lives at **`desktop/branding/wellframe-icon.svg`**
+(→ `wellframe-icon-1024.png`); the full platform set was regenerated into
+`desktop/src-tauri/icons/` via `npx tauri icon`. To revise: edit the SVG, re-render
+with sharp, re-run `npx tauri icon branding/wellframe-icon-1024.png`. Re-tag
+(`v0.1.2`) to ship a rebuild.
 
 ## Pending — work
 

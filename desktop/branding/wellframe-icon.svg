@@ -1,0 +1,55 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Wellframe app icon — "Signal / Nested gauge" (Plinth deep-ink).
+    Outer: readiness reading (blue, 72%) on a fine tick track, with a luminous terminus.
+    Inner: recovery gauge (mint) echoing the outer, both zeroed at top.
+    Dash arrays are computed against real circumference (no pathLength) for renderer fidelity.
+    Full-bleed rounded-rect tile; area outside the squircle is transparent for a native macOS shape.
+  -->
+  <defs>
+    <radialGradient id="well" cx="50%" cy="30%" r="82%">
+      <stop offset="0" stop-color="#17191f"/>
+      <stop offset="0.6" stop-color="#0b0c0f"/>
+      <stop offset="1" stop-color="#070708"/>
+    </radialGradient>
+    <linearGradient id="ready" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f7ad6"/>
+      <stop offset="1" stop-color="#8fbcff"/>
+    </linearGradient>
+    <linearGradient id="recover" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2ba97a"/>
+      <stop offset="1" stop-color="#6bf0bf"/>
+    </linearGradient>
+    <filter id="bloomB" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="11"/></filter>
+    <filter id="bloomM" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="8"/></filter>
+    <clipPath id="squircle"><rect x="0" y="0" width="1024" height="1024" rx="235" ry="235"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#squircle)">
+    <rect x="0" y="0" width="1024" height="1024" fill="url(#well)"/>
+    <!-- faint bezel -->
+    <circle cx="512" cy="512" r="432" fill="none" stroke="rgba(239,236,229,0.05)" stroke-width="2"/>
+
+    <!-- OUTER: readiness -->
+    <!-- tick track: 72 ticks over circumference 1884.956 -> dash 2.5 / gap 23.68 -->
+    <circle cx="512" cy="512" r="300" fill="none" stroke="rgba(239,236,229,0.22)" stroke-width="14"
+      stroke-dasharray="2.5 23.68" transform="rotate(-90 512 512)"/>
+    <!-- unfilled arc bed -->
+    <circle cx="512" cy="512" r="300" fill="none" stroke="rgba(239,236,229,0.06)" stroke-width="30"/>
+    <!-- reading arc 72%: visible 1357.17 / gap 527.79 -->
+    <circle cx="512" cy="512" r="300" fill="none" stroke="url(#ready)" stroke-width="30" stroke-linecap="round"
+      stroke-dasharray="1357.17 527.79" transform="rotate(-90 512 512)"/>
+    <!-- readiness terminus -->
+    <circle cx="217" cy="568" r="30" fill="#8fbcff" filter="url(#bloomB)" opacity="0.9"/>
+    <circle cx="217" cy="568" r="17" fill="#cfe2ff"/>
+
+    <!-- INNER: recovery -->
+    <circle cx="512" cy="512" r="150" fill="none" stroke="rgba(239,236,229,0.08)" stroke-width="22"/>
+    <!-- recovery arc 55.5%: circumference 942.478 -> visible 523.1 / gap 419.4 -->
+    <circle cx="512" cy="512" r="150" fill="none" stroke="url(#recover)" stroke-width="22" stroke-linecap="round"
+      stroke-dasharray="523.1 419.4" transform="rotate(-90 512 512)"/>
+    <!-- recovery terminus -->
+    <circle cx="461" cy="653" r="18" fill="#6bf0bf" filter="url(#bloomM)"/>
+    <circle cx="461" cy="653" r="10" fill="#c4fce8"/>
+  </g>
+</svg>
