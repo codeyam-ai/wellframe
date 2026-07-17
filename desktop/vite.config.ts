@@ -18,7 +18,7 @@ export default defineConfig({
   server: {
     host: host || '127.0.0.1',
     port: 1420,
-    strictPort: true,
+    strictPort: false,
   },
   build: {
     outDir: 'dist',

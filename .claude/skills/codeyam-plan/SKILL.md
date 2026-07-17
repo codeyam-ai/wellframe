@@ -107,6 +107,31 @@ After the registry/glossary pass, use the Explore agent or direct
 Glob/Grep/Read tools to investigate code the indexes pointed you at. Be
 thorough — the plan quality depends on understanding the codebase.
 
+**Existing-implementation survey (config field / gate dimension plans).** If
+the plan will add a config field, threshold, or gate dimension, grep the
+target crate for the proposed field/behavior *before* writing the plan, and
+record the result in the `## Reused existing code` section — even when the
+answer is "nothing equivalent exists" (write that explicitly). A proposed
+`perPathFloor` that duplicates an already-implemented `per_file` threshold
+must be caught here, not mid-build. The Confirm gate's
+`plan-staleness-check --format json` surfaces a non-null `existingImplAdvisory`
+when a field/dimension-adding plan records no survey, so a missing survey
+will be flagged at approval.
+
+**Mechanism-feasibility (per-scenario delivery plans).** If the plan
+introduces a new mechanism for carrying per-scenario state — an env var, a
+launch flag, a process-level config — confirm in the plan that the chosen seam
+is read on scenario activation, not only once at dev-server launch. The dev
+server starts once and stays up, so a launch-time value is fixed for the whole
+session and cannot vary per scenario; the per-scenario seam is the MockEngine
+path, not a launch env var.
+
+**First-time cross-target gate inventory.** If the plan adds a cross-target
+gate (a new entry in `crossTargetChecks`) for the first time, run a full
+no-`-D` inventory of that target and put the real file/item count in the plan.
+Scope discovered mid-build (one named file turning into 14 across 10 files)
+forces a stop-and-re-scope; the inventory belongs in the plan before approval.
+
 **Constrained-file pre-check.** Once investigation has produced the
 candidate file list, run it through the editor so the plan never invites an
 edit the guards will reject:
@@ -306,6 +331,25 @@ editor workflow a red-first reproduction it can materialize verbatim. Shape:
   guidance should live in instead, and call out any authorized agent-config
   edit explicitly so the editor workflow isn't surprised by the self-mod guard
 
+**Co-locating plan assets (screenshots, mockups, reference images):** when the
+user uploaded or provided an asset the plan should carry, write it into the
+plan's own asset directory and reference it from the body with a **relative**
+path:
+
+- Directory: `.codeyam/plans/assets/<slug>/<name>` — the same `<slug>` as the
+  `.md` file (no prefix normalization beyond the slug rules above).
+- Reference in the markdown body with standard image syntax and the path
+  **relative to the plan file**: `![description](assets/<slug>/<name>)`.
+
+Use the relative form deliberately. The editor's Rust lifecycle moves the asset
+directory into `.codeyam/plans/completed/assets/<slug>/` in parallel with the
+`.md` when the plan is selected, so the identical relative reference resolves
+in both the queued and completed locations — an absolute or
+`.codeyam/plans/…`-rooted path would break on that move. You only write the
+files and the relative reference; the engine guarantees the move and the
+eventual cleanup (prune / delete) even if this skill forgets. A plan with no
+assets simply has no `assets/<slug>/` directory — it is entirely optional.
+
 ### Step 6: Present and confirm
 
 Run `codeyam-editor editor plans` to verify the plan is parseable and shows up correctly.
@@ -319,7 +363,16 @@ Show the user a brief summary of the plan, then use AskUserQuestion with these o
 
 - **Looks good** — Commit the plan, then signal the UI.
 
-  **Commit hygiene:** the plan commit must contain only `.codeyam/plans/<slug>.md`. Use the pathspec form below — do not run a bare `git commit`, since other files may be staged from prior work. (This is the plan-creation commit specifically — it must contain only the plan file. The feature-commit step at the end of the editor workflow has a different rule: it auto-commits all non-gitignored leftovers.) After committing, verify with `git show --stat HEAD` that only the plan file is listed; if anything else appears, run `git reset --soft HEAD~1` and retry with the pathspec form.
+  **Commit hygiene:** the plan commit must contain only the plan file
+  `.codeyam/plans/<slug>.md` **plus, when the plan co-located assets, its
+  `.codeyam/plans/assets/<slug>/` directory**. Use the pathspec form below — do
+  not run a bare `git commit`, since other files may be staged from prior work.
+  (This is the plan-creation commit specifically — it must contain only the plan
+  file and its asset directory. The feature-commit step at the end of the editor
+  workflow has a different rule: it auto-commits all non-gitignored leftovers.)
+  After committing, verify with `git show --stat HEAD` that only the plan file
+  (and any asset files) are listed; if anything else appears, run `git reset
+  --soft HEAD~1` and retry with the pathspec form.
 
   **Always append `[skip ci]` to the commit message.** Plan files don't change source or tests, so CI must not be triggered. This is non-optional — apply it on the initial commit and on any amend.
 
@@ -331,9 +384,11 @@ Show the user a brief summary of the plan, then use AskUserQuestion with these o
   still scopes the commit to that one file).
 
   ```bash
+  # Add the asset dir pathspec too when the plan co-located assets:
+  #   git add .codeyam/plans/<slug>.md .codeyam/plans/assets/<slug>
   git add .codeyam/plans/<slug>.md
   git commit -m "plan: <short description of the feature/fix> [skip ci]" -- .codeyam/plans/<slug>.md
-  git show --stat --name-only HEAD   # verify only the plan file is in the commit
+  git show --stat --name-only HEAD   # verify only the plan file (and any assets) are in the commit
   codeyam-editor editor plan-complete
   ```
   After the commit succeeds, `plan-complete` triggers a confirmation modal

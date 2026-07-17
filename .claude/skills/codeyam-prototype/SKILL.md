@@ -125,6 +125,16 @@ When you receive that message:
 
    Backend mode: `--mode backend --step 8`.
 
+   **Carrying an asset forward:** if the prototype produced an asset worth
+   keeping with the plan (a screenshot, mockup, reference image), copy it into
+   `.codeyam/plans/assets/<slug>/<name>` — taking `<slug>` from the path
+   `plan-create` just printed — and reference it from the body with the
+   **relative** path `![description](assets/<slug>/<name>)`. Prototype does not
+   commit — leftovers sweep into the eventual feature commit — so writing the
+   files into that directory is sufficient; the editor's Rust lifecycle handles
+   moving the asset dir into `completed/` alongside the `.md` and cleaning it up
+   later. Assets are optional; skip this when there are none.
+
 3. Then run `codeyam-editor editor launch-plan <slug>` with the slug from the
    printed path. This deterministically selects the plan and switches the UI to
    the Build tab via `usePlanLauncher.launchPlan` — it does not depend on the UI
