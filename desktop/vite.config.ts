@@ -17,8 +17,10 @@ export default defineConfig({
   css: { postcss: {} },
   server: {
     host: host || '127.0.0.1',
-    port: 1420,
-    strictPort: true,
+    // Honor the port codeyam's preview proxy injects via PORT; fall back to
+    // Tauri's fixed 1420 for real local `tauri dev`.
+    port: process.env.PORT ? Number(process.env.PORT) : 1420,
+    strictPort: false,
   },
   build: {
     outDir: 'dist',
