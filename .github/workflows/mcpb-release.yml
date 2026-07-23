@@ -1,0 +1,105 @@
+name: MCPB Release
+
+# Builds the Wellframe Coach .mcpb bundle (the MCP server that gives an AI host
+# read-only access to your local Wellframe database) into an installable,
+# smoke-tested, optionally-signed artifact.
+#
+# The bundle is node-only (sql.js/WASM, no native module), so a single Ubuntu
+# runner produces the portable .mcpb for every OS.
+#
+# Two ways to run, mirroring desktop-release.yml:
+#   - workflow_dispatch (manual): builds + smoke-tests + validates, then uploads
+#     the .mcpb as a workflow artifact you can download and TEST in Claude
+#     Desktop. Nothing is published.
+#   - push a tag 'mcpb-v1.2.3': same build, then attaches the .mcpb to a DRAFT
+#     GitHub Release for that tag. The release stays a draft until you publish it
+#     by hand — so tagging never makes anything public on its own.
+#
+# The mcp-server versions independently of the desktop app, hence its own
+# 'mcpb-v*' tag namespace (desktop uses 'v*').
+#
+# Signing is inert until you add secrets (mirrors the desktop Apple-signing
+# pattern). To sign in CI with the SAME stable identity as local builds, set:
+#   MCPB_SIGNING_CERT  base64 of mcp-server/.signing/cert.pem
+#   MCPB_SIGNING_KEY   base64 of mcp-server/.signing/key.pem
+# With those unset the bundle ships unsigned (still smoke-tested + validated).
+# Note: .mcpb signing is tamper-evidence only — mcpb 2.x cannot verify publisher
+# identity — so an unsigned test bundle is fully functional.
+
+on:
+  push:
+    tags:
+      - 'mcpb-v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # attach the .mcpb to the draft Release on a tag push
+    env:
+      MCPB_SIGNING_CERT: ${{ secrets.MCPB_SIGNING_CERT }}
+      MCPB_SIGNING_KEY: ${{ secrets.MCPB_SIGNING_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: mcp-server
+        run: npm ci
+
+      # pack (compile TS + stage a prod-only tree + mcpb pack), then run all 9
+      # tools against missing/empty/populated fixture DBs, then schema-validate
+      # the manifest. Any failure fails the job before anything is uploaded.
+      - name: Pack, smoke-test, and validate
+        working-directory: mcp-server
+        run: |
+          npm run pack
+          npm run smoke
+          npm run validate
+
+      # Materialize the stable signing cert/key from secrets, if present, so the
+      # CI-built bundle carries the same signing identity as local builds.
+      - name: Materialize signing certificate (if configured)
+        if: env.MCPB_SIGNING_CERT != ''
+        working-directory: mcp-server
+        run: |
+          mkdir -p .signing
+          printf '%s' "$MCPB_SIGNING_CERT" | base64 -d > .signing/cert.pem
+          printf '%s' "$MCPB_SIGNING_KEY" | base64 -d > .signing/key.pem
+          chmod 600 .signing/key.pem
+
+      - name: Sign the bundle (if configured)
+        if: env.MCPB_SIGNING_CERT != ''
+        working-directory: mcp-server
+        run: npm run sign
+
+      - name: Note unsigned build
+        if: env.MCPB_SIGNING_CERT == ''
+        run: echo "::notice::MCPB_SIGNING_CERT not set — shipping an UNSIGNED .mcpb (functional; tamper-evidence signature omitted)."
+
+      # Always available on manual runs so you can grab the bundle and test it in
+      # Claude Desktop before any release exists.
+      - name: Upload .mcpb as a test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wellframe-coach-mcpb
+          path: mcp-server/build/wellframe-coach.mcpb
+          if-no-files-found: error
+          retention-days: 14
+
+      # On a tag push, attach the .mcpb to a DRAFT release. Draft = not public
+      # until you click Publish. softprops/action-gh-release keys on the tag, so
+      # it creates or updates the draft for that tag.
+      - name: Attach .mcpb to draft Release (tag push only)
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          name: Wellframe Coach ${{ github.ref_name }}
+          files: mcp-server/build/wellframe-coach.mcpb
