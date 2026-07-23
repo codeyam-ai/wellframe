@@ -135,6 +135,45 @@ Authenticode signing is not yet wired (add a signing step when you have a cert).
 
 ---
 
+## 5. Rehearse the publish flow (dry run — nothing goes public)
+
+You can exercise the entire go-public pipeline without publishing, because tagging
+only ever produces a **draft** Release. A draft is visible to repo collaborators
+only — never the public — has no public URL, and fires no notifications. The one
+public act is clicking **Publish**; a dry run simply deletes instead.
+
+> Note: this repo is **public**, so the git *tag* you push is itself visible under
+> Tags (a tag alone is harmless). The draft Release and its attached installers
+> stay private until published. Delete the throwaway tag afterward for zero trace.
+
+Use a clearly-throwaway tag so it never reads as a real version:
+
+```bash
+# Desktop dry run (swap in mcpb-v0.0.0-test1 to rehearse the MCPB flow)
+git tag v0.0.0-test1
+git push origin v0.0.0-test1
+```
+
+1. Watch **Actions → Desktop Release** build. When it finishes, open **Releases** —
+   you'll see a **draft** "Wellframe v0.0.0-test1" with installers attached.
+   Confirm it's marked *Draft* and is absent from the public releases list.
+2. Download an installer from the draft to confirm the attached artifacts are real.
+3. **Clean up (leaves zero trace):**
+   ```bash
+   # In the GitHub UI: Releases → the draft → Delete, then:
+   git push --delete origin v0.0.0-test1
+   git tag -d v0.0.0-test1
+   ```
+
+This runs the exact publish machinery — build → draft → attached installers → the
+Publish button — the only difference being you delete instead of publishing. Repeat
+with `mcpb-v0.0.0-test1` to rehearse the MCPB release.
+
+**Don't reuse a real version tag for a rehearsal.** The draft keys off the tag name,
+so delete the test tag and its draft before pushing that name for real.
+
+---
+
 ## Quick reference
 
 | I want to… | Do this |
