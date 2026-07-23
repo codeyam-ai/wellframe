@@ -210,26 +210,32 @@ present concrete options, and wait** — do not autonomously pay these down:
   discipline; **ask when truly unsure** rather than guessing.
 - **Anything that deletes or rewrites content** — see step 6. Ask first.
 
-> GOTCHA — **`reconcile-glossary` proposals are advisory, not merge-blocking.**
-> `editor reconcile-glossary` can print a long `add` list (we've seen 100+),
-> which reads like a merge-blocking wall. It is not. Two facts:
-> 1. The underlying invariant, `SOURCE_HAS_UNREGISTERED_ENTITY`, is
->    **`info`-severity** — `run_audit_gate` always *surfaces* it but never
->    *blocks* on it. So no reconcile-glossary `add` is required for
->    merge-ready; registering is optional polish the user owns.
-> 2. `reconcile-glossary` now walks the **same source scope** the invariant
+> GOTCHA — **`reconcile-glossary` proposals ARE merge-blocking. Size them
+> before you quote the user a number.**
+> `editor reconcile-glossary` can print a long `add` list (we've seen 100+).
+> That list is real, merge-required work — not polish. Two facts:
+> 1. The underlying invariant, `SOURCE_HAS_UNREGISTERED_ENTITY`, carries no
+>    `_ADVISORY` suffix, so `audit_failure_is_advisory` does not exempt it: it
+>    reaches the **strict** gate and blocks `session-finalize` /
+>    `verify-full-finalize`. Every `add` needs a `glossary-add` (or a
+>    `glossary-skip-add` for a genuine test-fixture / derive-generated
+>    artifact) before the branch is merge-ready.
+> 2. `reconcile-glossary` walks the **same source scope** the invariant
 >    consumes (`discover_source_rel_paths` → `collect_source_entities_for_files`,
 >    which excludes `ALWAYS_EXCLUDED_DIRS` like `.codeyam/`). It previously
 >    walked the broader dependency graph and proposed adds for
 >    `.codeyam/`-internal capture scripts/hooks the gate never touches — pure
->    noise that inflated the wall.
+>    noise that inflated the wall. Post-fix, the list is not inflated: what it
+>    shows is what you owe.
 >
-> Before treating any reconcile-glossary output as blocking, confirm against the
-> gate: `editor audit --findings-only --format json` and check `blocking` /
-> `missingGlossaryEntries` — the file-level glossary gap that *does* block lives
-> there, separate from the per-entity advisory invariant. (`audit --only
-> SOURCE_HAS_UNREGISTERED_ENTITY` shows the advisory per-entity set, but
-> remember it never blocks.)
+> **Size the wall with `editor finalize-preview`** — it reports the true
+> comprehensive count that `verify-full-finalize` will block on. Do NOT size it
+> with the mid-session `editor audit-gate` / `audit --findings-only` count: that
+> one downgrades inherited debt and will **under-report** the obligation, which
+> is exactly how a run gets mis-priced and then re-scoped in front of the user.
+>
+> This makes the stop-and-ask above *more* important, not less: the user is
+> authorizing real, required spend. Quote them the `finalize-preview` number.
 
 This is the convergence contract in practice: each run fixes all the mechanical
 drift it can, then stops at the **first** genuine judgment call with a specific,
@@ -318,6 +324,18 @@ codeyam-editor editor session-finalize 2>&1 | tee /tmp/codeyam-audit-finalize.lo
 > streams. The finalize prints its terminal status as a JSON line carrying
 > `CODEYAM_CMD_COMPLETE` on **both** success and failure — wait on that token,
 > read its `status`, and don't regex English success strings.
+
+> GOTCHA — **the per-test-evidence union-clobber.** If the finalize's evidence
+> phase reports a large `per-test-evidence` "missing" / "out of sync" count
+> (thousands of rows) that appeared *right after* a `pre-commit-sync` pulled
+> sibling commits, suspect the union-clobber, not a real evidence gap: a
+> non-driver merge (a `git pull --rebase` autostash pop) dropped local rows.
+> `origin` retains the intact file, so recover in one line —
+> `git checkout origin/<branch> -- .codeyam/per-test-evidence.json` — instead of
+> paying a full flag-free `refresh-tests`. The normal `pre-commit-sync` now
+> integrates through the union-safe transient-commit rebase and re-asserts a
+> post-integration shrink guard, so a fresh clobber should no longer occur; this
+> recovery is for a file already damaged by an older sync.
 
 > GOTCHA — **infra crashes, not code bugs.** A finalize can die on a full disk
 > or an OOM. If it crashes non-deterministically, check `df -h` / free memory
