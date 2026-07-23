@@ -31,12 +31,16 @@ jobs:
         include:
           - platform: macos-latest # Apple Silicon
             args: '--target aarch64-apple-darwin'
+            label: macos-aarch64
           - platform: macos-latest # Intel
             args: '--target x86_64-apple-darwin'
+            label: macos-x86_64
           - platform: ubuntu-22.04
             args: ''
+            label: linux-x86_64
           - platform: windows-latest
             args: ''
+            label: windows-x86_64
 
     runs-on: ${{ matrix.platform }}
 
@@ -100,3 +104,22 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
+
+      # On a manual (workflow_dispatch) run there is no tag, so tauri-action
+      # builds the installers but attaches them nowhere. Upload them as workflow
+      # artifacts so you can download and TEST a real build before ever cutting a
+      # public release. On a tag push this is skipped — the installers already go
+      # to the draft GitHub Release above.
+      - name: Upload installers as test artifacts (manual runs only)
+        if: github.ref_type != 'tag'
+        uses: actions/upload-artifact@v4
+        with:
+          name: wellframe-${{ matrix.label }}
+          # Tauri writes bundles under target/release/bundle (Linux/Windows, no
+          # --target) or target/<triple>/release/bundle (macOS, with --target).
+          # Glob both so every platform's installer is captured.
+          path: |
+            desktop/src-tauri/target/release/bundle/**/*
+            desktop/src-tauri/target/*/release/bundle/**/*
+          if-no-files-found: warn
+          retention-days: 14
