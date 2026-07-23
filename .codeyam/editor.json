@@ -204,6 +204,26 @@
         "filePath": "desktop/src/trends/fixtures.ts",
         "name": "chart",
         "reason": "test-fixture"
+      },
+      {
+        "filePath": "mcp-server/scripts/smoke.mjs",
+        "name": "check",
+        "reason": "test-fixture"
+      },
+      {
+        "filePath": "mcp-server/scripts/smoke.mjs",
+        "name": "desktopSchema",
+        "reason": "test-fixture"
+      },
+      {
+        "filePath": "mcp-server/scripts/smoke.mjs",
+        "name": "makeDb",
+        "reason": "test-fixture"
+      },
+      {
+        "filePath": "mcp-server/scripts/smoke.mjs",
+        "name": "withServer",
+        "reason": "test-fixture"
       }
     ],
     "stepBudget": {
