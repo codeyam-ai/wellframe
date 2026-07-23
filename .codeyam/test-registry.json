@@ -2,7 +2,7 @@
   "tests": [
     {
       "description": "An empty kind falls back to the generic 'Action' label.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "actionKindLabel › falls back to Action for an empty kind",
       "line": 43,
@@ -11,7 +11,7 @@
     },
     {
       "description": "Known action kinds map to their human labels.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "actionKindLabel › maps known kinds",
       "line": 33,
@@ -20,7 +20,7 @@
     },
     {
       "description": "An unknown kind is title-cased as a fallback.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "actionKindLabel › title-cases an unknown kind",
       "line": 39,
@@ -47,7 +47,7 @@
     },
     {
       "description": "a bare date is placed at 07:00 so it sorts among morning entries",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "briefingOccurredAt › appends a morning time to a bare date",
       "line": 186,
@@ -56,7 +56,7 @@
     },
     {
       "description": "a full ISO datetime is passed through unchanged",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "briefingOccurredAt › leaves a full datetime untouched",
       "line": 190,
@@ -65,7 +65,7 @@
     },
     {
       "description": "The area path is the line path closed back down to the baseline.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "buildChartGeometry › closes the area path back to the baseline",
       "line": 84,
@@ -74,7 +74,7 @@
     },
     {
       "description": "Larger values render higher on the canvas (a smaller y, since y is inverted).",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "buildChartGeometry › draws higher values higher on the canvas, smaller y",
       "line": 78,
@@ -83,7 +83,7 @@
     },
     {
       "description": "Every y coordinate stays inside the padded box (peaks never clip).",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "buildChartGeometry › keeps all y coordinates inside the padded box",
       "line": 62,
@@ -92,7 +92,7 @@
     },
     {
       "description": "A single value plots at the horizontal centre of the box.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "buildChartGeometry › places a single point at the horizontal centre",
       "line": 45,
@@ -101,7 +101,7 @@
     },
     {
       "description": "A flat series plots on the vertical centre without dividing by zero.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "buildChartGeometry › plots a flat series on the vertical centre without dividing by zero",
       "line": 71,
@@ -110,7 +110,7 @@
     },
     {
       "description": "No values yields an empty geometry with no NaN coordinates.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "buildChartGeometry › returns an empty geometry for no values, no NaN coords",
       "line": 37,
@@ -119,7 +119,7 @@
     },
     {
       "description": "Multiple points spread evenly across the inner (padded) width.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "buildChartGeometry › spreads points evenly across the inner width",
       "line": 55,
@@ -128,7 +128,7 @@
     },
     {
       "description": "entries across days land in newest-first day groups",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "buildTimeline › groups entries into newest-first days",
       "line": 246,
@@ -137,7 +137,7 @@
     },
     {
       "description": "each source kind is normalized with a composite id, filterKey, and summary",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "buildTimeline › normalizes all four source kinds into grouped entries",
       "line": 225,
@@ -146,7 +146,7 @@
     },
     {
       "description": "no rows yields no days (the production day-one state)",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "buildTimeline › returns an empty array for empty sources",
       "line": 210,
@@ -155,7 +155,7 @@
     },
     {
       "description": "a workout without occurredAt cannot be placed on the timeline and is skipped",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "buildTimeline › skips workouts that have no occurredAt",
       "line": 215,
@@ -164,7 +164,7 @@
     },
     {
       "description": "honors a custom radius argument",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "circumference › computes a custom-radius circumference",
       "line": 11,
@@ -173,7 +173,7 @@
     },
     {
       "description": "computes 2 pi r for the default dial radius",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "circumference › computes the default-radius circumference",
       "line": 6,
@@ -182,7 +182,7 @@
     },
     {
       "description": "negative values clamp up to zero",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "clampPct › clamps a negative value to zero",
       "line": 43,
@@ -191,7 +191,7 @@
     },
     {
       "description": "values above one hundred clamp down to one hundred",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "clampPct › clamps an over-max value to one hundred",
       "line": 48,
@@ -200,7 +200,7 @@
     },
     {
       "description": "the range boundaries themselves are preserved",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "clampPct › preserves the zero and hundred boundaries",
       "line": 58,
@@ -209,7 +209,7 @@
     },
     {
       "description": "values inside the range pass through unchanged",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "clampPct › returns an in-range value unchanged",
       "line": 38,
@@ -218,7 +218,7 @@
     },
     {
       "description": "NaN degrades to zero rather than propagating",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "clampPct › returns zero for NaN",
       "line": 53,
@@ -227,7 +227,7 @@
     },
     {
       "description": "Values above 5 clamp to 5 and fractionals round.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "clampRating › clamps high values to 5 and rounds",
       "line": 33,
@@ -236,7 +236,7 @@
     },
     {
       "description": "Valid 1-5 ratings (numeric or string) pass through.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "clampRating › passes valid 1-5 ratings through",
       "line": 28,
@@ -245,7 +245,7 @@
     },
     {
       "description": "Missing, blank, or sub-1 values read as not rated (null).",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "clampRating › treats missing / blank / sub-1 as not rated",
       "line": 38,
@@ -254,7 +254,7 @@
     },
     {
       "description": "takes the UTC calendar date (YYYY-MM-DD) from an ISO datetime",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "dayKey › takes the UTC calendar date from an ISO datetime",
       "line": 33,
@@ -263,7 +263,7 @@
     },
     {
       "description": "an unknown filterKey still gets a chip (labeled by its key) so it is reachable",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "deriveChips › appends chips for unexpected kinds so nothing is unreachable",
       "line": 177,
@@ -272,7 +272,7 @@
     },
     {
       "description": "a duplicate kind across entries produces a single chip",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "deriveChips › dedupes repeated kinds",
       "line": 171,
@@ -281,7 +281,7 @@
     },
     {
       "description": "only kinds present in the data get chips, in canonical order",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "deriveChips › derives chips from present kinds in CHIP_ORDER order",
       "line": 164,
@@ -290,7 +290,7 @@
     },
     {
       "description": "always leads with an All chip even when there is no data",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "deriveChips › returns just the All chip for empty data",
       "line": 159,
@@ -298,8 +298,35 @@
       "runner": "tests"
     },
     {
+      "description": "The extracted text is executed as SQL to build the fixture, so every statement between the quotes must survive intact.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "desktopSchemaFrom › extracts the schema between the Rust string delimiters",
+      "line": 80,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Non-greedy matching: a later string literal must not be swallowed into the schema, which would feed invalid SQL to the fixture builder.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "desktopSchemaFrom › stops at the first closing delimiter",
+      "line": 97,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The failure that matters: if the const is renamed, the fixture would otherwise be built with no tables and every tool would fail confusingly.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "desktopSchemaFrom › throws a named error when the schema constant is absent",
+      "line": 104,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
       "description": "escaping runs before emphasis so injected tags cannot survive as live markup",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "emphasize › does not emit raw tags from an escaped span",
       "line": 26,
@@ -308,7 +335,7 @@
     },
     {
       "description": "escapes HTML-significant characters so seed content cannot inject markup",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "emphasize › escapes angle brackets and ampersands",
       "line": 16,
@@ -317,7 +344,7 @@
     },
     {
       "description": "the empty string maps to the empty string",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "emphasize › handles the empty string",
       "line": 31,
@@ -326,7 +353,7 @@
     },
     {
       "description": "leaves text with no asterisks unchanged",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "emphasize › passes through plain text",
       "line": 11,
@@ -335,7 +362,7 @@
     },
     {
       "description": "wraps a single asterisk-delimited span in an em element",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "emphasize › wraps an asterisk span in em",
       "line": 6,
@@ -344,7 +371,7 @@
     },
     {
       "description": "converts more than one emphasis span in a single string",
-      "file": "components/dashboard/format.test.ts",
+      "file": "desktop/src/dashboard/format.test.ts",
       "format": "vitest",
       "key": "emphasize › wraps multiple spans",
       "line": 21,
@@ -353,7 +380,7 @@
     },
     {
       "description": "the type chip and the query must both pass",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "entryMatchesFilter › ANDs the type and query",
       "line": 104,
@@ -362,7 +389,7 @@
     },
     {
       "description": "a type chip matches only entries with that filterKey",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "entryMatchesFilter › filters by the entry filterKey",
       "line": 92,
@@ -371,7 +398,7 @@
     },
     {
       "description": "the query matches title, summary, and accent case-insensitively",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "entryMatchesFilter › matches the query across title, summary, and accent case-insensitively",
       "line": 97,
@@ -380,7 +407,7 @@
     },
     {
       "description": "an empty or 'all' type matches every entry",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "entryMatchesFilter › passes everything when type is empty or all",
       "line": 87,
@@ -388,8 +415,62 @@
       "runner": "tests"
     },
     {
+      "description": "Guards the empty-input edge rather than letting readUInt32LE throw a range error out of a build script.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "extractSignatureBlock › handles an empty buffer",
+      "line": 70,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A zip payload can contain the footer bytes by coincidence. Without the header check that would be parsed as a malformed signature.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "extractSignatureBlock › ignores a footer that has no matching header",
+      "line": 41,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A truncated block would otherwise yield a short signature via subarray's silent clamping — verification would then fail and wrongly implicate the certificate instead of the corrupt file.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "extractSignatureBlock › rejects a block whose declared length does not reach the footer",
+      "line": 49,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unsigned bundle is the common case (fresh `mcpb pack` output); it must report no signature rather than throwing.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "extractSignatureBlock › reports no signature for an unsigned bundle",
+      "line": 32,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The happy path: the payload must be returned byte-exact, because the signature is verified against its digest — one extra or missing byte and a valid signature reads as a forgery.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "extractSignatureBlock › splits a signed bundle into payload and signature",
+      "line": 22,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Re-signing appends a second block; the last one is the live signature and the earlier block is part of what it covers.",
+      "file": "mcp-server/src/bundle.test.ts",
+      "format": "vitest",
+      "key": "extractSignatureBlock › uses the last signature block when a bundle was signed twice",
+      "line": 60,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
       "description": "Counts how many factors are 'strong' out of the total.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "factorTally › counts strong factors out of the total",
       "line": 50,
@@ -398,11 +479,29 @@
     },
     {
       "description": "An empty factor set tallies to zero of zero.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "factorTally › handles an empty set",
       "line": 60,
       "registeredAt": "2026-07-13T14:14:15Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The composite must agree with the band function it reports, or the coach would describe a number that contradicts its own label.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "fatigueIndex › blends recovery and subjective signals and bands correctly",
+      "line": 24,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A fresh install has no data at all; the tool must say why it cannot answer instead of reporting a fabricated zero.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "fatigueIndex › reports when no signals exist",
+      "line": 37,
+      "registeredAt": "2026-07-22T21:46:19Z",
       "runner": "tests"
     },
     {
@@ -434,7 +533,7 @@
     },
     {
       "description": "Fractional values keep one decimal place.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "formatProgress › keeps one decimal for fractional values",
       "line": 89,
@@ -443,7 +542,7 @@
     },
     {
       "description": "The unit is omitted when not supplied.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "formatProgress › omits the unit when not given",
       "line": 93,
@@ -452,7 +551,7 @@
     },
     {
       "description": "Whole numbers render without a decimal point.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "formatProgress › renders whole numbers without decimals",
       "line": 85,
@@ -460,8 +559,35 @@
       "runner": "tests"
     },
     {
+      "description": "The opposite direction: a fresh athlete should get hard work, otherwise the plan is uselessly conservative.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "generateTrainingPlan › adds quality work when fresh",
+      "line": 110,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Goals must actually shape the plan and be explained in the rationale, so the athlete can see why a session was chosen.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "generateTrainingPlan › folds in a strength goal",
+      "line": 123,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The safety-critical direction: when the athlete is deeply fatigued the plan must skew to rest rather than prescribe more load.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "generateTrainingPlan › is rest-led under very high fatigue",
+      "line": 95,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
       "description": "Below the target the goal is active.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "goalStatus › is active before the target",
       "line": 40,
@@ -470,7 +596,7 @@
     },
     {
       "description": "A bad (non-positive) target reads as active.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "goalStatus › is active for a bad target",
       "line": 49,
@@ -479,7 +605,7 @@
     },
     {
       "description": "At or beyond the target the goal is complete.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "goalStatus › is complete at or beyond the target",
       "line": 44,
@@ -488,7 +614,7 @@
     },
     {
       "description": "entries are grouped into newest-first days with relative labels",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "groupByDay › groups entries into newest-first days with relative labels",
       "line": 72,
@@ -497,7 +623,7 @@
     },
     {
       "description": "no entries yields no day groups",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "groupByDay › returns empty for no entries",
       "line": 68,
@@ -506,7 +632,7 @@
     },
     {
       "description": "An out-of-range or NaN hour falls back to morning.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "inferPartOfDay › falls back to morning for an out-of-range hour",
       "line": 19,
@@ -515,7 +641,7 @@
     },
     {
       "description": "Before noon is morning; noon onward is evening.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "inferPartOfDay › is morning before noon, evening after",
       "line": 12,
@@ -524,7 +650,7 @@
     },
     {
       "description": "Only 'strong' counts as positive (mint); steady and strained do not.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "isPositiveState › is true only for strong",
       "line": 24,
@@ -596,7 +722,7 @@
     },
     {
       "description": "Each known range narrows to itself.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "normalizeRange › accepts each known range",
       "line": 24,
@@ -605,7 +731,7 @@
     },
     {
       "description": "Unknown / null / undefined all default to the weekly range.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "normalizeRange › defaults unknown / null / undefined to weekly",
       "line": 28,
@@ -614,7 +740,7 @@
     },
     {
       "description": "malformed ids (no kind, unknown kind, non-positive/non-numeric id) return null",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "parseEntryId › rejects malformed ids",
       "line": 117,
@@ -623,7 +749,7 @@
     },
     {
       "description": "a well-formed id splits into kind and numeric db id",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "parseEntryId › splits kind and numeric id",
       "line": 112,
@@ -631,8 +757,35 @@
       "runner": "tests"
     },
     {
+      "description": "Trend metrics arrive as display strings; the leading number must be pulled out for the fatigue math to use it.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "parseMetricNumber › extracts the numeric value from a metric string",
+      "line": 71,
+      "registeredAt": "2026-07-23T13:36:17.171618780+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Absent or non-numeric input is \"no signal\", returned as null so callers don't feed NaN into the composite.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "parseMetricNumber › returns null for null, undefined, or non-numeric input",
+      "line": 79,
+      "registeredAt": "2026-07-23T13:36:17.171618780+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A parsed zero collapses to null so \"no signal\" and \"0\" are treated alike by the fatigue math, matching the original inline behavior.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "parseMetricNumber › treats a zero value as null",
+      "line": 87,
+      "registeredAt": "2026-07-23T13:36:17.171618780+00:00",
+      "runner": "tests"
+    },
+    {
       "description": "Progress beyond the target clamps to 100%.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "progressPct › clamps over-shot progress to 100",
       "line": 19,
@@ -641,7 +794,7 @@
     },
     {
       "description": "A normal current/target yields the expected percentage.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "progressPct › computes a normal fraction",
       "line": 15,
@@ -650,7 +803,7 @@
     },
     {
       "description": "Zero current is 0% at the start.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "progressPct › is 0 at the start",
       "line": 33,
@@ -659,7 +812,7 @@
     },
     {
       "description": "NaN or infinite inputs degrade to 0.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "progressPct › returns 0 for NaN / infinite inputs",
       "line": 28,
@@ -668,7 +821,7 @@
     },
     {
       "description": "A non-positive target degrades to 0 rather than dividing by zero.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "progressPct › returns 0 for a non-positive target instead of dividing by zero",
       "line": 23,
@@ -677,7 +830,7 @@
     },
     {
       "description": "Known range keys map to their title-case labels.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "rangeLabel › maps known range keys to titles",
       "line": 11,
@@ -686,7 +839,7 @@
     },
     {
       "description": "An unrecognized range key is returned unchanged.",
-      "file": "components/trends/trends.test.ts",
+      "file": "desktop/src/trends/trends.test.ts",
       "format": "vitest",
       "key": "rangeLabel › passes through an unknown key unchanged",
       "line": 17,
@@ -695,7 +848,7 @@
     },
     {
       "description": "Each 1-5 value maps to a word; null renders as an em dash.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "ratingLabel › maps values to words",
       "line": 48,
@@ -704,7 +857,7 @@
     },
     {
       "description": "negative scores clamp to the full circumference",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "readinessDashOffset › clamps a negative score to full circumference",
       "line": 38,
@@ -713,7 +866,7 @@
     },
     {
       "description": "scores above one hundred clamp to a zero offset",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "readinessDashOffset › clamps an over-max score to zero offset",
       "line": 33,
@@ -722,7 +875,7 @@
     },
     {
       "description": "the mockup score of eighty-two matches the reference offset",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "readinessDashOffset › matches the reference offset near eighty-two",
       "line": 28,
@@ -731,7 +884,7 @@
     },
     {
       "description": "NaN degrades to the empty-ring offset",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "readinessDashOffset › returns full circumference for NaN",
       "line": 43,
@@ -740,7 +893,7 @@
     },
     {
       "description": "a zero score leaves the whole ring undrawn",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "readinessDashOffset › returns the full circumference at a zero score",
       "line": 23,
@@ -749,7 +902,7 @@
     },
     {
       "description": "a full score leaves no gap, so the offset is zero",
-      "file": "components/dashboard/dial.test.ts",
+      "file": "desktop/src/dashboard/dial.test.ts",
       "format": "vitest",
       "key": "readinessDashOffset › returns zero offset at a full score",
       "line": 18,
@@ -758,7 +911,7 @@
     },
     {
       "description": "older days read as weekday + month + date",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "relativeDayLabel › labels older days with weekday + month + date",
       "line": 49,
@@ -767,7 +920,7 @@
     },
     {
       "description": "the newest day in the set reads as Today",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "relativeDayLabel › labels the newest day Today",
       "line": 41,
@@ -776,7 +929,7 @@
     },
     {
       "description": "the day before the newest reads as Yesterday",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "relativeDayLabel › labels the prior day Yesterday",
       "line": 45,
@@ -785,7 +938,7 @@
     },
     {
       "description": "an entry later on the newest day still reads Today, never a future label",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "relativeDayLabel › never returns a negative-diff label for entries after the reference",
       "line": 53,
@@ -794,7 +947,7 @@
     },
     {
       "description": "An over-shot goal reports 0 remaining, never negative.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "remaining › never goes negative on an over-shot goal",
       "line": 60,
@@ -803,7 +956,7 @@
     },
     {
       "description": "Reports how much is left to reach the target.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "remaining › reports the gap to target",
       "line": 56,
@@ -884,7 +1037,7 @@
     },
     {
       "description": "Ring circumference is 2πr.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "ring geometry › circumference matches 2πr",
       "line": 67,
@@ -893,7 +1046,7 @@
     },
     {
       "description": "Out-of-range percentages clamp to the [0, 100] dash range.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "ring geometry › clamps out-of-range percentages",
       "line": 77,
@@ -902,7 +1055,7 @@
     },
     {
       "description": "Dash offset is the full circumference at 0% and zero at 100%.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "ring geometry › offset is full circumference at 0% and 0 at 100%",
       "line": 71,
@@ -911,7 +1064,7 @@
     },
     {
       "description": "Known factor states map to their title-case labels.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "stateLabel › maps known states",
       "line": 11,
@@ -920,7 +1073,7 @@
     },
     {
       "description": "An unrecognized state string is returned unchanged.",
-      "file": "components/recovery/recovery.test.ts",
+      "file": "desktop/src/recovery/recovery.test.ts",
       "format": "vitest",
       "key": "stateLabel › passes an unknown state through",
       "line": 17,
@@ -928,8 +1081,17 @@
       "runner": "tests"
     },
     {
+      "description": "Energy and sleep are \"more is better\" while soreness and stress are \"less is better\"; inverting only the first pair is what makes the scale coherent.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "subjectiveFatigue › inverts energy and sleep",
+      "line": 14,
+      "registeredAt": "2026-07-22T21:46:19Z",
+      "runner": "tests"
+    },
+    {
       "description": "a weight summary appends the trend delta only when it is present",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "summary builders › appends the weight delta only when present",
       "line": 141,
@@ -938,7 +1100,7 @@
     },
     {
       "description": "a mood summary is built from the present energy / mood / note fields",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "summary builders › builds a mood summary from present fields",
       "line": 135,
@@ -947,7 +1109,7 @@
     },
     {
       "description": "a workout summary joins present stats with a middle dot, skipping missing ones",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "summary builders › joins present workout stats, skipping missing ones",
       "line": 128,
@@ -956,11 +1118,38 @@
     },
     {
       "description": "extracts the HH:MM portion of an ISO datetime",
-      "file": "components/timeline/timeline.test.ts",
+      "file": "desktop/src/timeline/timeline.test.ts",
       "format": "vitest",
       "key": "timeLabel › extracts HH:MM",
       "line": 61,
       "registeredAt": "2026-07-09T14:26:38Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Null fields carry through so subjectiveFatigue can skip them rather than treating a missing rating as zero.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "toCheckinRatings › preserves null fields",
+      "line": 61,
+      "registeredAt": "2026-07-23T13:36:17.171618780+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "The remap must rename sleep_quality → sleepQuality, or the fatigue math silently sees undefined sleep for every check-in.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "toCheckinRatings › remaps snake_case DB rows to the ratings shape",
+      "line": 47,
+      "registeredAt": "2026-07-23T13:36:17.171618780+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Empty input is the fresh-install case and must stay empty, not throw.",
+      "file": "mcp-server/src/analysis.test.ts",
+      "format": "vitest",
+      "key": "toCheckinRatings › returns an empty array for no rows",
+      "line": 55,
+      "registeredAt": "2026-07-23T13:36:17.171618780+00:00",
       "runner": "tests"
     },
     {
@@ -983,7 +1172,7 @@
     },
     {
       "description": "A morning check-in with ratings is accepted, text trimmed, ratings coerced.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "validateCheckinInput › accepts a morning check-in with ratings",
       "line": 59,
@@ -992,7 +1181,7 @@
     },
     {
       "description": "A submission carrying only a mood word is accepted.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "validateCheckinInput › accepts a submission carrying only a mood word",
       "line": 103,
@@ -1001,7 +1190,7 @@
     },
     {
       "description": "A missing or unparseable timestamp is rejected.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "validateCheckinInput › rejects a missing / bad timestamp",
       "line": 87,
@@ -1010,7 +1199,7 @@
     },
     {
       "description": "A submission with no ratings and no mood word is rejected.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "validateCheckinInput › rejects an all-blank submission",
       "line": 97,
@@ -1019,7 +1208,7 @@
     },
     {
       "description": "An unrecognized part of day is rejected.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "validateCheckinInput › rejects an invalid part of day",
       "line": 80,
@@ -1100,7 +1289,7 @@
     },
     {
       "description": "A well-formed draft is accepted with text trimmed and numbers coerced.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "validateGoalInput › accepts a well-formed draft and trims text",
       "line": 100,
@@ -1109,7 +1298,7 @@
     },
     {
       "description": "An unknown category defaults to 'habit' and a blank metric to 'Progress'.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "validateGoalInput › defaults an unknown category to habit and metric to Progress",
       "line": 131,
@@ -1118,7 +1307,7 @@
     },
     {
       "description": "A negative current value is floored to 0.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "validateGoalInput › floors a negative current to 0",
       "line": 140,
@@ -1127,7 +1316,7 @@
     },
     {
       "description": "A zero, negative, or non-numeric target is rejected.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "validateGoalInput › rejects a non-positive or non-numeric target",
       "line": 125,
@@ -1136,7 +1325,7 @@
     },
     {
       "description": "An empty (whitespace-only) title is rejected.",
-      "file": "components/goals/goals.test.ts",
+      "file": "desktop/src/goals/goals.test.ts",
       "format": "vitest",
       "key": "validateGoalInput › rejects an empty title",
       "line": 120,
@@ -1145,7 +1334,7 @@
     },
     {
       "description": "Only the rated fields count toward the average.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "wellbeingScore › averages only the present fields",
       "line": 129,
@@ -1154,7 +1343,7 @@
     },
     {
       "description": "Soreness and stress are inverted so high values pull the score down.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "wellbeingScore › inverts soreness and stress so high values pull the score down",
       "line": 124,
@@ -1163,7 +1352,7 @@
     },
     {
       "description": "With nothing rated the score is null.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "wellbeingScore › returns null when nothing is rated",
       "line": 115,
@@ -1172,7 +1361,7 @@
     },
     {
       "description": "An all-good day (high energy/sleep, low soreness/stress) scores at the top.",
-      "file": "components/checkin/checkin.test.ts",
+      "file": "desktop/src/checkin/checkin.test.ts",
       "format": "vitest",
       "key": "wellbeingScore › scores an all-5 positive / all-1 negative day near the top",
       "line": 119,

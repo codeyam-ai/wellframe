@@ -10,7 +10,12 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 import { query, queryOne, DB_PATH, DbMissingError } from './db.js';
-import { fatigueIndex, generateTrainingPlan, type CheckinRatings } from './analysis.js';
+import {
+  fatigueIndex,
+  generateTrainingPlan,
+  toCheckinRatings,
+  parseMetricNumber,
+} from './analysis.js';
 
 const server = new McpServer({ name: 'wellframe-coach', version: '0.1.0' });
 
@@ -161,14 +166,11 @@ async function fatigueInputs() {
     `SELECT latest FROM trend_metric
      WHERE lower(metric_key) IN ('training_load','load') OR lower(label) LIKE 'training%' LIMIT 1`,
   );
-  const trainingLoadLatest = tl ? Number(String(tl.latest).replace(/[^0-9.]/g, '')) || null : null;
-  const mapped: CheckinRatings[] = checkins.map((c) => ({
-    energy: c.energy,
-    soreness: c.soreness,
-    stress: c.stress,
-    sleepQuality: c.sleep_quality,
-  }));
-  return { recoveryScore: recovery?.score ?? null, checkins: mapped, trainingLoadLatest };
+  return {
+    recoveryScore: recovery?.score ?? null,
+    checkins: toCheckinRatings(checkins),
+    trainingLoadLatest: parseMetricNumber(tl?.latest),
+  };
 }
 
 server.tool(

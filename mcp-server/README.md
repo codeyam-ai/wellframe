@@ -33,17 +33,68 @@ WELLFRAME_DB=/path/to/wellframe.db node dist/index.js
 If `WELLFRAME_DB` is unset it defaults to the desktop app's location for your OS
 (e.g. macOS `~/Library/Application Support/com.codeyam.wellframe/wellframe.db`).
 
-## Package as a `.mcpb`
+## Build a `.mcpb` you can install
 
 ```bash
-npm run pack          # tsc + mcpb pack . dist/wellframe-coach.mcpb
-npm run validate      # validate the manifest against the mcpb schema
+npm install
+npm run bundle        # pack → smoke-test → sign
 ```
 
-Install the resulting `.mcpb` by double-clicking it (Claude Desktop) or dragging it
-into the host's Settings. To publish: distribute the file, or submit it to the
-extension directory. Signing is optional (`npx @anthropic-ai/mcpb sign`).
+That leaves a signed `build/wellframe-coach.mcpb` (~3.3MB). The steps run
+individually too:
 
-> For the smallest bundle, prune dev dependencies before packing:
-> `npm ci --omit=dev && npx @anthropic-ai/mcpb pack . dist/wellframe-coach.mcpb`
-> (then reinstall dev deps to keep building).
+| Script | What it does |
+|---|---|
+| `npm run pack` | Compiles, stages a production-only tree, prunes unused sql.js variants, packs |
+| `npm run smoke` | Unpacks the bundle and runs all 9 tools against missing / empty / populated databases |
+| `npm run sign` | Self-signs with a stable local certificate, then verifies the signature |
+| `npm run verify-signature` | Re-checks an existing bundle's signature |
+| `npm run validate` | Validates the manifest against the mcpb schema |
+
+`pack` builds from a staged copy rather than the working directory — packing in
+place sweeps in TypeScript, the mcpb CLI, and every sql.js build variant (~50MB
+unpacked vs ~10MB). It never mutates your dev tree, so there is no
+`npm ci --omit=dev` that wipes the dependencies you are still building against.
+
+## Install it in Claude Desktop
+
+1. Run `npm run bundle`.
+2. Open `build/` and double-click `wellframe-coach.mcpb` (or drag it into Claude
+   Desktop → Settings → Extensions).
+3. Claude Desktop will warn that the extension is **not from a verified
+   publisher** — see the signing note below. Approve it to continue.
+4. Leave the **Wellframe database** setting blank to use the desktop app's own
+   database for your OS, or point it at a specific `wellframe.db`.
+5. Ask the coach something — "what's my readiness today?", "am I overtraining?"
+
+If the desktop app has never stored anything, the tools return
+`No Wellframe database at <path>…` rather than failing silently. Open Wellframe,
+log some data, and ask again — the server re-reads the file on every query, so
+no restart is needed.
+
+## About signing
+
+`npm run sign` produces a real PKCS#7 signature over the exact bundle bytes,
+using a certificate in `.signing/` (gitignored — the private key never leaves
+your machine). `npm run verify-signature` confirms it, and fails if a single
+byte of the archive changed.
+
+**It will not make Claude Desktop trust the extension**, and
+`npx @anthropic-ai/mcpb verify` will still say `Extension is not signed`. Two
+separate reasons, neither of them a problem with the bundle:
+
+- A self-signed certificate is not in the OS trust store, so mcpb's chain check
+  fails and it reports the bundle as unsigned.
+- In mcpb 2.1.2 that check is unreachable anyway: `verifyMcpbFile` calls
+  node-forge's `p7.verify()`, which throws *"PKCS#7 signature verification not
+  yet implemented"*, and the surrounding `catch` returns `unsigned`. Every
+  bundle reads as unsigned, however it was signed.
+
+So treat signing here as tamper-evidence for your own distribution, not as
+publisher verification. Real verification needs a CA-issued code-signing
+certificate — pass it with `npx @anthropic-ai/mcpb sign --cert … --key …`.
+
+> Avoid `mcpb sign --self-signed`: it ignores `--cert`/`--key` and writes the
+> certificate inside `node_modules/@anthropic-ai/mcpb/dist/`, which is wiped on
+> every reinstall — so the bundle's signing identity silently changes. That is
+> why `scripts/sign.sh` manages its own certificate instead.

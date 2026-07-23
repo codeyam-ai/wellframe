@@ -20,6 +20,35 @@ export interface CheckinRatings {
   sleepQuality?: number | null;
 }
 
+// A raw `mood` row as the DB returns it (snake_case). Kept here so the
+// snake→camel remap that feeds the fatigue math is a tested pure function
+// rather than inline logic in the DB-gathering layer.
+export interface CheckinRow {
+  energy?: number | null;
+  soreness?: number | null;
+  stress?: number | null;
+  sleep_quality?: number | null;
+}
+
+// Remap DB check-in rows to the CheckinRatings shape the fatigue math expects
+// (notably sleep_quality → sleepQuality).
+export function toCheckinRatings(rows: CheckinRow[]): CheckinRatings[] {
+  return rows.map((r) => ({
+    energy: r.energy,
+    soreness: r.soreness,
+    stress: r.stress,
+    sleepQuality: r.sleep_quality,
+  }));
+}
+
+// Pull the leading numeric value out of a trend metric's `latest` string (e.g.
+// "62", "7.4 h", "1,240"). Returns null for absent, non-numeric, or zero-valued
+// input so downstream fatigue math treats "no signal" and "0" alike.
+export function parseMetricNumber(latest: string | null | undefined): number | null {
+  if (latest == null) return null;
+  return Number(String(latest).replace(/[^0-9.]/g, '')) || null;
+}
+
 // Subjective fatigue 0–100 from recent check-ins. Soreness + stress read
 // directly; energy + sleep are inverted (more energy / better sleep → less
 // fatigue). Averages the present fields per check-in, then across check-ins.

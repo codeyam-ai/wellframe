@@ -6,8 +6,12 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "test": "npm run build && node --test dist/analysis.test.js",
-    "pack": "npm run build && npx @anthropic-ai/mcpb pack . dist/wellframe-coach.mcpb",
+    "test": "cd .. && npx vitest run mcp-server/src",
+    "pack": "bash scripts/pack.sh",
+    "sign": "bash scripts/sign.sh",
+    "smoke": "node scripts/smoke.mjs",
+    "verify-signature": "node scripts/verify-signature.mjs",
+    "bundle": "npm run pack && npm run smoke && npm run sign",
     "validate": "npx @anthropic-ai/mcpb validate manifest.json"
   },
   "dependencies": {

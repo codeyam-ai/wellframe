@@ -72,5 +72,19 @@
   "styling": {
     "tokenFile": "src/index.css",
     "type": "css-custom-properties"
-  }
+  },
+  "frameworkHandlerExports": [
+    {
+      "filePattern": "app/api/**/route.ts",
+      "names": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "PATCH",
+        "HEAD",
+        "OPTIONS"
+      ]
+    }
+  ]
 }

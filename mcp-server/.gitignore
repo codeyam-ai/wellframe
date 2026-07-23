@@ -1,3 +1,8 @@
 node_modules/
 dist/
 *.mcpb
+
+# Packed bundle, staged tree, and smoke-test fixtures.
+build/
+# Code-signing certificate and private key. The key must never be committed.
+.signing/

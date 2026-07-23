@@ -13,5 +13,9 @@
     "declaration": false,
     "sourceMap": true
   },
-  "include": ["src"]
+  // Tests run through the repo's vitest (which compiles TS itself) and import
+  // `vitest`, which is not a dependency of this package — so they are excluded
+  // from the server build rather than emitted into dist/.
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts"]
 }
