@@ -1,6 +1,6 @@
 [package]
 name = "wellframe-desktop"
-version = "0.1.2"
+version = "0.1.3"
 description = "Wellframe — native desktop wellness console"
 authors = ["Wellframe"]
 edition = "2021"
