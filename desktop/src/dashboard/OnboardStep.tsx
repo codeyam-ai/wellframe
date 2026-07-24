@@ -11,23 +11,25 @@ export interface OnboardStepData {
 export function OnboardStep({
   step,
   onConnect = () => {},
+  connected = false,
 }: {
   step: OnboardStepData;
   onConnect?: () => void;
+  connected?: boolean;
 }) {
   return (
-    <article className="wf-step">
+    <article className={`wf-step${connected ? ' is-connected' : ''}`}>
       <div className="wf-step-num">{step.n}</div>
       <div className="wf-step-main">
         <h3>{step.title}</h3>
         <p>{step.body}</p>
       </div>
       <button
-        className={`wf-btn${step.primary ? ' p' : ''} wf-step-btn`}
+        className={`wf-btn${step.primary && !connected ? ' p' : ''} wf-step-btn`}
         type="button"
         onClick={onConnect}
       >
-        Connect
+        {connected ? '✓ Connected' : 'Connect'}
       </button>
     </article>
   );

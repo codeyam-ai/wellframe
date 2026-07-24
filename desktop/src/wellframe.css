@@ -67,15 +67,20 @@ body {
 /* three-zone metabar */
 .wf-metabar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* Outer zones size to their content, center takes the slack — so the right
+     zone (nav links + date + local-link) never gets crammed into a rigid third
+     and forced to wrap. */
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  padding: 16px 44px;
+  column-gap: 24px;
+  padding: 16px 32px;
   border-bottom: 1px solid var(--wf-rule);
   font-family: var(--wf-mono);
   font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--wf-mute);
   text-transform: uppercase;
+  white-space: nowrap;
   flex: none;
 }
 .wf-metabar .b {
@@ -96,14 +101,20 @@ a.wf-metabar-b:hover,
 .wf-metabar .c {
   text-align: center;
   letter-spacing: 0.1em;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .wf-metabar .r {
   text-align: right;
   letter-spacing: 0.08em;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   gap: 14px;
+  white-space: nowrap;
 }
 .wf-metabar .live {
   color: var(--wf-sig);
@@ -735,6 +746,7 @@ a.wf-metabar-b:hover,
   text-transform: uppercase;
   color: var(--wf-mute);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 160ms ease;
 }
 .wf-nav-link::before {

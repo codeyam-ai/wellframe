@@ -1,6 +1,6 @@
 {
   "name": "wellframe-desktop",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Wellframe — native desktop wellness console (Tauri + React + Vite)",
   "type": "module",
   "private": true,

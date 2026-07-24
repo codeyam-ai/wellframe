@@ -264,6 +264,11 @@ CREATE TABLE IF NOT EXISTS goal (
   current REAL NOT NULL DEFAULT 0, unit TEXT, cadence TEXT, due_label TEXT, note TEXT,
   created_at TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS provider_connection (
+  id INTEGER PRIMARY KEY, provider_id TEXT NOT NULL UNIQUE, kind TEXT NOT NULL,
+  method TEXT NOT NULL, status TEXT NOT NULL, detail TEXT, endpoint TEXT,
+  is_active_coach INTEGER NOT NULL DEFAULT 0, connected_at TEXT NOT NULL
+);
 ";
 
 fn open_db(app: &tauri::AppHandle) -> rusqlite::Result<Connection> {
@@ -679,6 +684,118 @@ fn submit_checkin(app: tauri::AppHandle, input: NewCheckin) -> Result<(), String
     insert_mood(&conn, &input).map_err(|e| e.to_string())
 }
 
+// ── Provider connections (AI coach + health sources) ─────────────────────────
+// The connect handshake itself is resolved (validated + mapped to status/detail)
+// on the frontend by the shared, pure `resolveConnection`; these commands just
+// persist the result, mirroring the web app's connections.actions.
+
+#[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+struct ConnectionRow {
+    provider_id: String,
+    kind: String,
+    method: String,
+    status: String,
+    detail: Option<String>,
+    endpoint: Option<String>,
+    is_active_coach: bool,
+    connected_at: String,
+}
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct SaveConnection {
+    provider_id: String,
+    kind: String,
+    method: String,
+    status: String,
+    detail: Option<String>,
+    endpoint: Option<String>,
+}
+
+fn read_connections(conn: &Connection) -> rusqlite::Result<Vec<ConnectionRow>> {
+    let mut stmt = conn.prepare(
+        "SELECT provider_id, kind, method, status, detail, endpoint, is_active_coach, connected_at \
+         FROM provider_connection ORDER BY connected_at DESC, id DESC",
+    )?;
+    let rows = stmt.query_map([], |r| {
+        Ok(ConnectionRow {
+            provider_id: r.get(0)?,
+            kind: r.get(1)?,
+            method: r.get(2)?,
+            status: r.get(3)?,
+            detail: r.get(4)?,
+            endpoint: r.get(5)?,
+            is_active_coach: r.get::<_, i64>(6)? != 0,
+            connected_at: r.get(7)?,
+        })
+    })?;
+    rows.collect()
+}
+
+#[tauri::command]
+fn list_connections(app: tauri::AppHandle) -> Result<Vec<ConnectionRow>, String> {
+    let conn = open_db(&app).map_err(|e| e.to_string())?;
+    read_connections(&conn).map_err(|e| e.to_string())
+}
+
+fn upsert_connection(conn: &Connection, input: &SaveConnection) -> rusqlite::Result<()> {
+    conn.execute(
+        "INSERT INTO provider_connection \
+         (provider_id, kind, method, status, detail, endpoint, is_active_coach, connected_at) \
+         VALUES (?1, ?2, ?3, ?4, ?5, ?6, 0, datetime('now')) \
+         ON CONFLICT(provider_id) DO UPDATE SET \
+           method = excluded.method, status = excluded.status, \
+           detail = excluded.detail, endpoint = excluded.endpoint",
+        params![
+            input.provider_id,
+            input.kind,
+            input.method,
+            input.status,
+            input.detail,
+            input.endpoint
+        ],
+    )?;
+    Ok(())
+}
+
+#[tauri::command]
+fn save_connection(app: tauri::AppHandle, input: SaveConnection) -> Result<(), String> {
+    let conn = open_db(&app).map_err(|e| e.to_string())?;
+    upsert_connection(&conn, &input).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+fn remove_connection(app: tauri::AppHandle, provider_id: String) -> Result<(), String> {
+    let conn = open_db(&app).map_err(|e| e.to_string())?;
+    conn.execute(
+        "DELETE FROM provider_connection WHERE provider_id = ?1",
+        params![provider_id],
+    )
+    .map(|_| ())
+    .map_err(|e| e.to_string())
+}
+
+fn set_active(conn: &Connection, provider_id: &str) -> rusqlite::Result<()> {
+    // Exactly one AI connection is the active coach at a time.
+    conn.execute(
+        "UPDATE provider_connection SET is_active_coach = 0 WHERE kind = 'ai'",
+        [],
+    )?;
+    conn.execute(
+        "UPDATE provider_connection SET is_active_coach = 1 \
+         WHERE provider_id = ?1 AND status != 'error'",
+        params![provider_id],
+    )?;
+    Ok(())
+}
+
+#[tauri::command]
+fn set_active_coach(app: tauri::AppHandle, provider_id: String) -> Result<(), String> {
+    let conn = open_db(&app).map_err(|e| e.to_string())?;
+    set_active(&conn, &provider_id).map_err(|e| e.to_string())
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -691,7 +808,11 @@ pub fn run() {
             get_goals,
             get_checkin,
             create_goal,
-            submit_checkin
+            submit_checkin,
+            list_connections,
+            save_connection,
+            remove_connection,
+            set_active_coach
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

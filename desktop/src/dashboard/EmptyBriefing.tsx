@@ -24,10 +24,19 @@ const STEPS: OnboardStepData[] = [
 export function EmptyBriefing({
   onQueryCoach = () => {},
   onOpenSetup = () => {},
+  coachConnected = false,
+  healthConnected = false,
 }: {
   onQueryCoach?: () => void;
   onOpenSetup?: () => void;
+  coachConnected?: boolean;
+  healthConnected?: boolean;
 }) {
+  // Step 01 is the AI coach, step 02 is the health source.
+  const connectedByStep: Record<string, boolean> = {
+    '01': coachConnected,
+    '02': healthConnected,
+  };
   return (
     <section className="wf-empty">
       <div className="wf-secnum">
@@ -39,7 +48,12 @@ export function EmptyBriefing({
 
         <div className="wf-onboard-steps">
           {STEPS.map((s) => (
-            <OnboardStep key={s.n} step={s} onConnect={onOpenSetup} />
+            <OnboardStep
+              key={s.n}
+              step={s}
+              onConnect={onOpenSetup}
+              connected={connectedByStep[s.n] ?? false}
+            />
           ))}
 
           <div className="wf-onboard-foot">
