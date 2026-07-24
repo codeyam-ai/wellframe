@@ -2,9 +2,9 @@
   "manifest_version": "0.2",
   "name": "wellframe-coach",
   "display_name": "Wellframe Coach",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Structured, read-only access to your local Wellframe health data for an AI coach.",
-  "long_description": "Exposes the Wellframe coach's tools over your LOCAL Wellframe database — readiness, workouts, sleep, training load, recovery, goals, and daily check-ins. The server only reads local SQLite on your machine; nothing is uploaded. Point it at the database the Wellframe desktop app writes, and any MCP-compatible AI host (e.g. Claude Desktop) can reason over your real history.",
+  "long_description": "Exposes the Wellframe coach's tools over your LOCAL Wellframe database — readiness, workouts, sleep, training load, recovery, goals, and daily check-ins. The server only reads local SQLite on your machine; nothing is uploaded. It auto-detects the database the Wellframe desktop app writes in your OS app-data folder, so any MCP-compatible AI host (e.g. Claude Desktop) can reason over your real history with no configuration.",
   "author": { "name": "Wellframe" },
   "license": "MIT",
   "server": {
@@ -12,8 +12,7 @@
     "entry_point": "dist/index.js",
     "mcp_config": {
       "command": "node",
-      "args": ["${__dirname}/dist/index.js"],
-      "env": { "WELLFRAME_DB": "${user_config.db_path}" }
+      "args": ["${__dirname}/dist/index.js"]
     }
   },
   "tools": [
@@ -27,14 +26,6 @@
     { "name": "estimate_fatigue", "description": "Composite fatigue estimate (0-100) from recovery + recent check-in signals, with a band and breakdown." },
     { "name": "generate_plan", "description": "A day-by-day training plan modulated by current fatigue, readiness, and goals." }
   ],
-  "user_config": {
-    "db_path": {
-      "type": "file",
-      "title": "Wellframe database (optional)",
-      "description": "Path to your local wellframe.db. Leave blank to use the default Wellframe app-data location for your OS.",
-      "required": false
-    }
-  },
   "compatibility": {
     "runtimes": { "node": ">=18.0.0" }
   }

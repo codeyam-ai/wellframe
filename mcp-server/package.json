@@ -1,6 +1,6 @@
 {
   "name": "wellframe-coach-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server exposing the Wellframe coach's tools over the user's local health database",
   "type": "module",
   "private": true,
